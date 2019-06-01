@@ -16,6 +16,7 @@
     "gatsby-image": "^2.1.1",
     "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-feed": "^2.2.1",
+    "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.0",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -34,21 +35,31 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.2.1",
+    "wipe.css": "^1.1.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "babel-eslint": "9.x",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.5.0",
+    "gatsby-plugin-sitemap": "^2.1.0",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "husky": "^2.3.0",
     "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git",
     "lint-staged": "^8.1.7",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.17.0",
+    "prettier": "^1.17.1",
     "wait-for-netlify-preview": "^1.2.1"
   },
   "keywords": [
@@ -59,12 +70,12 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "lh": "lighthousebot",
-    "start": "npm run dev",
+    "develop": "gatsby develop -H 0.0.0.0",
+    "dev": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "start": "npm run develop",
+    "format": "prettier --write src/**/*.{js,jsx,md,json,yml,svg}",
+    "lint": "eslint src --ext .js,.jsx"
   },
   "prettier": {
     "proseWrap": "never",

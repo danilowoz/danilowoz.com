@@ -1,0 +1,4 @@
+{
+  "src/**/*.{js,jsx,md,json,yml,svg}": ["npm run format", "git add"],
+  "src/**/*.{js,jsx}": ["npm run lint", "git add"]
+}

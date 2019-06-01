@@ -1,8 +1,8 @@
 ---
-title: "CSS Display Grid and Sketch Layout"
-description: "All the options mentioned above make sense when applied on static medias where all copies will be the same, for example, books and magazines. But on the web things usually work differently: there are…"
-date: "2017-09-23T13:00:43.958Z"
-categories: 
+title: 'CSS Display Grid and Sketch Layout'
+description: 'All the options mentioned above make sense when applied on static medias where all copies will be the same, for example, books and magazines. But on the web things usually work differently: there are…'
+date: '2017-09-23T13:00:43.958Z'
+categories:
   - CSS
   - Design
   - Sketch
@@ -23,19 +23,19 @@ All the options mentioned above make sense when applied on static medias where a
 
 Having this structure in mind, it is easy to mentally picture the largely-adopted 12/16-column grid in order to build responsive websites and define the transition from desktop to smartphone browsers. However, there are still big limitations (such as the fact that the HTML order directly interferes in the content visualization), resulting in a big and complex amount of code. There are some CSS frameworks that try to solve the grid problem, the most famous are: Bootstrap, Foundation, Flexbox Grid, Lost Grid. But let’s see the written code in these frameworks:
 
-```
+```html
 <div class="row">
- <div class="col-xs-6">.col-xs-6</div>
- <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
 </div>
 <div class="row">
- <div class="col-xs-8">.col-xs-8</div>
- <div class="col-xs-4">.col-xs-4</div>
+  <div class="col-xs-8">.col-xs-8</div>
+  <div class="col-xs-4">.col-xs-4</div>
 </div>
 <div class="row">
- <div class="col-xs-4">.col-xs-4</div>
- <div class="col-xs-4">.col-xs-4</div>
- <div class="col-xs-4">.col-xs-4</div>
+  <div class="col-xs-4">.col-xs-4</div>
+  <div class="col-xs-4">.col-xs-4</div>
+  <div class="col-xs-4">.col-xs-4</div>
 </div>
 ```
 
@@ -47,7 +47,7 @@ The display grid is a [new specification](https://developer.mozilla.org/en-US/do
 
 Let’s create an of 12-column grid and try to understand what has changed:
 
-```
+```css
 #container {
   /* 1: Set the width */
   width: 960px;
@@ -64,13 +64,15 @@ Let’s create an of 12-column grid and try to understand what has changed:
   /* 3: And the gap width 10px */
   grid-gap: 10px;
 }
-```![_12-column grid in Display grid and you can see the full code _[_here_](https://codepen.io/danilowzn/pen/NvzYoN)](./asset-2.png)
+```
+
+![12-column grid in Display grid and you can see the full code [here](https://codepen.io/danilowzn/pen/NvzYoN)](./asset-2.png)
 
 Only by using this **amount of the code**, the elements will already fit inside the grid and will never break or exceed the configured width — a problem that existed on CSS frameworks. And we can still easily get all these values from Sketch.
 
 And the elements from the page are described like this:
 
-```
+```css
 .box {
   /* Occupy the third to the eleventh column row */
   grid-column: 3/11;
@@ -96,36 +98,46 @@ Let’s create a classic website as an example, using header, sidebar, article a
 
 Again, we need to define the columns and rows of the layout, and then we start naming the sections of the page with the grid-area property, so you can **describe** which will be the layout format, like this:
 
-```
+```css
 .container {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- grid-template-rows: 100px 400px 100px 100px;
- grid-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 400px 100px 100px;
+  grid-gap: 10px;
 
- grid-template-areas: 'header header header'
-                      'sidebar article article'
-                      'sidebar footer footer';
+  grid-template-areas:
+    'header header header'
+    'sidebar article article'
+    'sidebar footer footer';
 }
 
-.header { grid-area: header }
-.sidebar { grid-area: sidebar }
-.article { grid-area: article }
-.footer { grid-area: footer }
-```![_Classic desktop website, but in display grid and you can see the full code _[_here_](https://codepen.io/danilowzn/pen/rzRzzE?editors=1100)](./asset-4.jpeg)
+.header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.article {
+  grid-area: article;
+}
+.footer {
+  grid-area: footer;
+}
+```
+
+![Classic desktop website, but in display grid and you can see the full code [here](https://codepen.io/danilowzn/pen/rzRzzE?editors=1100)](./asset-4.jpeg)
 
 And to change the layout in the mobile you just have to set up the layout, like this:
 
-```
+```css
 @media screen and (max-width: 768px) {
   .container {
-    grid-template-areas: 'header header header'
-                         'article article article'
-                         'sidebar sidebar sidebar'
-                         'footer footer footer';
+    grid-template-areas: 'header header header' 'article article article' 'sidebar sidebar sidebar' 'footer footer footer';
   }
 }
-```![_Classic mobile website, you can see the full code _[_here_](https://codepen.io/danilowzn/pen/rzRzzE?editors=1100)](./asset-5.jpeg)
+```
+
+![Classic mobile website, you can see the full code [here](https://codepen.io/danilowzn/pen/rzRzzE?editors=1100)](./asset-5.jpeg)
 
 As you can see, it doesn’t matter the order or position of HTML, because what really matters is how we set the layout position in CSS.
 
@@ -151,14 +163,10 @@ And that changes everything again: since the web’s early days there have been 
 
 #### **References**
 
-[**Grid by Example - Usage examples of CSS Grid Layout**  
-_The following examples include an image of how the example should look in a supporting browser, they each link to a…_gridbyexample.com](https://gridbyexample.com/examples/ "https://gridbyexample.com/examples/")[](https://gridbyexample.com/examples/)
+[**Grid by Example - Usage examples of CSS Grid Layout** The following examples include an image of how the example should look in a supporting browser, they each link to a…gridbyexample.com](https://gridbyexample.com/examples/ 'https://gridbyexample.com/examples/')[](https://gridbyexample.com/examples/)
 
-[**Grid layout is a much needed step-change for CSS**  
-_The aim of CSS was to separate content and style but our layouts are as tied to our markup as ever. Grid layout has the…_maketea.co.uk](http://maketea.co.uk/2016/09/28/css-grid-layout-is-a-step-change.html "http://maketea.co.uk/2016/09/28/css-grid-layout-is-a-step-change.html")[](http://maketea.co.uk/2016/09/28/css-grid-layout-is-a-step-change.html)
+[**Grid layout is a much needed step-change for CSS** The aim of CSS was to separate content and style but our layouts are as tied to our markup as ever. Grid layout has the…maketea.co.uk](http://maketea.co.uk/2016/09/28/css-grid-layout-is-a-step-change.html 'http://maketea.co.uk/2016/09/28/css-grid-layout-is-a-step-change.html')[](http://maketea.co.uk/2016/09/28/css-grid-layout-is-a-step-change.html)
 
-[**fantasai 54: Evolution of CSS Layout: 1990s to the Future**  
-_After the conference, PhillyETE posted a screencast of the presentation, so anyone can watch it online. If you're at…_fantasai.inkedblade.net](http://fantasai.inkedblade.net/weblog/2012/css-layout-evolution/ "http://fantasai.inkedblade.net/weblog/2012/css-layout-evolution/")[](http://fantasai.inkedblade.net/weblog/2012/css-layout-evolution/)
+[**fantasai 54: Evolution of CSS Layout: 1990s to the Future** After the conference, PhillyETE posted a screencast of the presentation, so anyone can watch it online. If you're at…fantasai.inkedblade.net](http://fantasai.inkedblade.net/weblog/2012/css-layout-evolution/ 'http://fantasai.inkedblade.net/weblog/2012/css-layout-evolution/')[](http://fantasai.inkedblade.net/weblog/2012/css-layout-evolution/)
 
-[**CSS Grid Layout - creating complex grids**  
-_With the Blink and Webkit implementation moving on at great pace, a number of updates to the specification, and Mozilla…_rachelandrew.co.uk](https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/ "https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/")[](https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/)
+[**CSS Grid Layout - creating complex grids** With the Blink and Webkit implementation moving on at great pace, a number of updates to the specification, and Mozilla…rachelandrew.co.uk](https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/ 'https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/')[](https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/)

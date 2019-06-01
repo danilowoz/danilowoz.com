@@ -1,34 +1,23 @@
 const mdxFeed = require('gatsby-mdx/feed')
 
-const configuration = {
-  // the name of your website
-  title: 'Danilo Woznica',
-  // the description of the website (eg. what shows on Google)
-  description: "Danilo Woznica's blog",
-  // a short bio shown at the bottom of your blog posts
-  // It should complete the sentence: Written by Danilo Woznica ...
-  shortBio: '',
-  // a longer bio showing on the landing page of the blog
-  bio: `I’m a 24-year-old UI developer with 6+ years of professional experience with large and medium-sized projects. I’m currently working in Florianópolis, Brazil.`,
-  author: 'Danilo Woznica',
-  githubUrl: 'https://github.com/',
-  // replace this by the url where your website will be published
-  siteUrl: 'http://localhost:8000',
-  social: {
-    // leave the social media you do not want to appear as empty strings
-    twitter: 'danilowoz',
-    medium: '@danilowoznica',
-    facebook: '',
-    github: '',
-    linkedin: '',
-    instagram: '',
-  },
-}
+const siteConfig = require('./content/site-config')
 
 module.exports = {
-  siteMetadata: configuration,
+  siteMetadata: siteConfig,
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        head: false,
+        anonymize: true,
+      },
+    },
     {
       resolve: 'gatsby-mdx',
       options: {
@@ -77,18 +66,16 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Danilo Woznica',
-        short_name: 'Danilo Woznica',
-        start_url: '/',
-        background_color: '#001724',
-        theme_color: '#001724',
-        display: 'minimal-ui',
-        icon: 'src/images/icon.png', // This path is relative to the root of the site.
+        name: siteConfig.title,
+        short_name: siteConfig.shortName,
+        start_url: `/`,
+        background_color: siteConfig.themeColor,
+        theme_color: siteConfig.themeColor,
+        display: `minimal-ui`,
+        icon: siteConfig.logo,
       },
     },
     {
