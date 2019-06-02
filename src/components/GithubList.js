@@ -1,32 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
+import Snuggle from 'react-snuggle'
 
 import * as T from './typography'
-
-const Grid = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 3em;
-`
-
-const Column = styled.li`
-  list-style: none;
-  border-bottom: 1px solid #ddd;
-
-  ${({ index }) => {
-    if (index === 0) {
-      return `
-        grid-row: 1 / 3;
-        font-size: 1.2em;
-        background: white;
-        padding: 2em 2em;;
-        border-radius: 4px;
-        box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 12px 0px;
-      `
-    }
-  }}
-`
 
 const Label = styled(T.Label)`
   font-size: 0.7em;
@@ -34,30 +11,50 @@ const Label = styled(T.Label)`
   margin-top: 0.5em;
 `
 
-const LinkItem = styled.a`
-  text-decoration: none;
-  color: inherit;
-`
-
 const MetaData = styled.p`
   font-size: 0.7em;
-  margin-top: -1.2em;
-  color: ${({ theme: { colors } }) => colors.grayscale.medium};
-  padding-bottom: 2em;
+  margin-top: -1em;
+  color: var(--main);
+  margin-bottom: 0;
 
   span {
     margin-right: 2em;
   }
 `
 
+const Card = styled.div`
+  background: white;
+  padding: 1.5em 1.7em;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  transition: var(--transitionCubic);
+`
+
+const Grid = styled.div`
+  ${Card} {
+    &:nth-child(1) {
+      font-size: 1.4em;
+    }
+  }
+`
+
+const Column = styled.div`
+  position: relative;
+  ${Label}, ${T.Text}, ${MetaData} {
+    color: var(--foreground);
+  }
+`
+
+const LinkItem = styled.a``
+
 const GithubList = () => {
   const { allProjectGithubNode } = useStaticQuery(query)
 
   return (
-    <Grid>
+    <Snuggle columnWidth={350} rowGap={15} item={<Card />} container={<Grid />}>
       {allProjectGithubNode.nodes.map(
         ({ stars, project, description, link, language }, index) => (
-          <Column index={index}>
+          <Column index={index} key={project}>
             <LinkItem href={link} target="_blank">
               <Label>{project}</Label>
               <T.Text>{description}</T.Text>
@@ -68,7 +65,7 @@ const GithubList = () => {
           </Column>
         )
       )}
-    </Grid>
+    </Snuggle>
   )
 }
 

@@ -1,15 +1,14 @@
 ---
-title: "Atomic Design with React"
-description: "How the Atomic Design methodology allowed me to create a great design system from scratch and made me a better developer, with principles of componentization, hierarchies and reuses of code. I have…"
-date: "2018-01-08T19:28:06.529Z"
-categories: 
+title: 'Atomic Design and ReactJs'
+description: 'How the Atomic Design methodology allowed me to create a great design system from scratch and made me a better developer.'
+date: '2018-01-08T19:28:06.529Z'
+categories:
   - Design
-  - Atomic Design
-  - React
-  - Reactjs
+  - ReactJs
 
 published: true
 canonicalLink: https://codeburst.io/atomic-design-with-react-e7aea8152957
+cover: ./asset-1.jpeg
 ---
 
 ![](./asset-1.jpeg)
@@ -20,13 +19,13 @@ How the Atomic Design methodology allowed me to create a great design system fro
 
 I have recently had the opportunity to work on a new product from scratch made in React and PWA with the well-crafted and componentized UI at Cheesecake. However, when we discussed with the whole team the best way to approach the development, we ended up having the same old problems that have happened in most past projects, such as:
 
--   Lack of Styleguide of components;
--   Lack of precision in estimating development time;
--   Great amount of setup time for developers;
--   Inconsistency between components and view;
--   Repeated code;
--   Side effects;
--   Very specific components to each pages;
+- Lack of Styleguide of components;
+- Lack of precision in estimating development time;
+- Great amount of setup time for developers;
+- Inconsistency between components and view;
+- Repeated code;
+- Side effects;
+- Very specific components to each pages;
 
 We’ve started to build the CSS architecture using the [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) methodology that organizes the style files on stacks from generics styles to the specifics ones, which helps you to scale large projects easily. But along with ITCSS, we were using CSS Modules to scope the components, so we noticed that component stack was getting huge and even the generic styles were being componentized and reused within other one.
 
@@ -86,7 +85,7 @@ So we were able to write a few rules:
 
 ### Let’s code
 
-What I will show here is everything in a  [**boilerplate on GitHub**](https://github.com/danilowoz/react-atomic-design)**,** which you can test and then start your projects using Atomic Design, so let’s do it:
+What I will show here is everything in a [**boilerplate on GitHub**](https://github.com/danilowoz/react-atomic-design)**,** which you can test and then start your projects using Atomic Design, so let’s do it:
 
 ---
 

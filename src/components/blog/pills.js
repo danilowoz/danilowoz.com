@@ -1,5 +1,5 @@
 import React from 'react'
-import { capitalize } from '../utils/string'
+import { capitalize } from '../../utils/string'
 
 import './pills.css'
 

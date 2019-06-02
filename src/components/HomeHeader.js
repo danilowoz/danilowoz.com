@@ -3,30 +3,25 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
 import * as T from './typography'
-import Grid from './Grid'
 
 const Wrapper = styled.header`
   height: 55vh;
   display: flex;
+  text-align: center;
 
   > * {
     margin: auto;
   }
 `
 
-const Col1 = styled.div`
-  grid-column: 3/6;
-`
-
-const Col2 = styled.div`
-  grid-column: 6/11;
+const Row = styled.div`
+  max-width: 580px;
+  position: relative;
 `
 
 const NavLink = styled(Link)`
-  font-size: 0.875rem;
-  color: ${({ theme: { colors } }) => colors.grayscale.light};
-  text-decoration: none;
-  margin-right: 3em;
+  ${T.labelStyle};
+  margin: 0 1.5em;
 `
 
 const HomeHeader = () => {
@@ -37,17 +32,13 @@ const HomeHeader = () => {
 
   return (
     <Wrapper>
-      <Grid>
-        <Col1>
-          <T.MainTitle>{title}</T.MainTitle>
-        </Col1>
-        <Col2>
-          <T.Text>{description}</T.Text>
-          {menu.map(({ name, to }) => (
-            <NavLink to={to}>{name}</NavLink>
-          ))}
-        </Col2>
-      </Grid>
+      <Row>
+        <T.MainTitle>{title}</T.MainTitle>
+        <T.Text>{description}</T.Text>
+        {menu.map(({ name, to }) => (
+          <NavLink to={to}>{name}</NavLink>
+        ))}
+      </Row>
     </Wrapper>
   )
 }

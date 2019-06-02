@@ -5,9 +5,7 @@ import * as T from '../components/typography'
 import GithubList from './GithubList'
 import Grid from './Grid'
 
-const Wrapper = styled.div`
-  padding: 12em 0;
-`
+const Wrapper = styled.div``
 
 const Col1 = styled.div`
   grid-column: 1/4;
@@ -17,7 +15,7 @@ const Col2 = styled.div`
   grid-column: 4/13;
 `
 
-const Sections = () => {
+const OpenSourceSection = () => {
   return (
     <Wrapper>
       <Grid>
@@ -26,7 +24,12 @@ const Sections = () => {
             open source <span>projects</span>
           </T.Title>
           <T.Label>
-            <a href="http://github.com/danilowoz" target="_blank">
+            <a
+              href="http://github.com/danilowoz"
+              target="_blank"
+              without
+              rel="noopener noreferrer"
+            >
               github.com/danilowoz
             </a>
           </T.Label>
@@ -40,4 +43,4 @@ const Sections = () => {
   )
 }
 
-export default Sections
+export default OpenSourceSection

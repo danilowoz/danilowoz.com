@@ -5518,13 +5518,6 @@ gatsby-plugin-styled-components@^3.0.7:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-typography@^2.2.13:
-  version "2.2.13"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-2.2.13.tgz#749db1914ec6c04c0e6453540ce168b9523a335c"
-  integrity sha512-4qjP6IeR1XwZ0/NR2py8Sl4Vx+BRS6D0F8E7kEGXcR4TjzNdwqOIQq0JkPotZxxHQRx2xx7Cu6Y7Wf+hM9MitA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-
 gatsby-react-router-scroll@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.7.tgz#b9425e366d4be546036080d85664d60ae76e6c29"
@@ -8839,6 +8832,15 @@ node-forge@0.7.5:
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.5.tgz#6c152c345ce11c52f465c2abd957e8639cd674df"
   integrity sha512-MmbQJ2MTESTjt3Gi/3yG1wGpIMhUfcIypUCGtTizFR9IiccFwxSpfp0vtIZlkFclEqERemxfnSdZEMR9VqqEFQ==
 
+node-instagram@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/node-instagram/-/node-instagram-4.3.0.tgz#b96242bd3b2558c082eab1b5671fdf50911344d4"
+  integrity sha512-VDw9IH2XDSOHvgU2s63TkZe1EhWCg/NpA8qb6kw301Zmf907hcWGmDVpgo0jkMfWAt5cDL8ZEa90ZA6rGXqdEw==
+  dependencies:
+    lodash "^4.17.11"
+    node-fetch "^2.3.0"
+    query-string "^6.2.0"
+
 node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
@@ -10456,7 +10458,7 @@ query-string@^5.0.1:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
-query-string@^6.1.0:
+query-string@^6.1.0, query-string@^6.2.0:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.5.0.tgz#2e1a70125af01f6f04573692d02c09302a1d8bfc"
   integrity sha512-TYC4hDjZSvVxLMEucDMySkuAS9UIzSbAiYGyA9GWCjLKB8fQpviFbjd20fD7uejCDxZS+ftSdBKE6DS+xucJFg==
@@ -10585,9 +10587,9 @@ react-helmet@^5.2.1:
     react-side-effect "^1.1.0"
 
 react-hot-loader@^4.8.4:
-  version "4.8.8"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.8.8.tgz#71e3c7ba301556aa24c52cef2f6ed0af82395eea"
-  integrity sha512-58bgeS7So8V93MhhnKogbraor8xdrTncil+b6IoIXkTIr3blJNAE7bU4tn/iJvy2J7rjxQmKFRaxKrWdKUZpqg==
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.9.0.tgz#498e5f76aae28bfd420efdabddf5af156745b4dd"
+  integrity sha512-1N6MWV9++qYWrrs41MRhxATwyx743tr8RpeyL1VOZ54zsU8fOx4slYreHZ8v2BDGVfy+dJ0myJZrJA9/26RlCA==
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
@@ -10598,6 +10600,13 @@ react-hot-loader@^4.8.4:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
     source-map "^0.7.3"
+
+react-intersection-visible@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-visible/-/react-intersection-visible-2.1.0.tgz#4ff7b999c12c326170533bab1d4651485b488db5"
+  integrity sha512-1HzHsTdFyJ1vRahLOSBisMbH3ow6qFtuYDc2qAVdx46M/2pqM+TP3Jn7AMZ24mxlkEUc6h97ry3vrBV0WOLjJA==
+  dependencies:
+    prop-types "^15.6.1"
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.8.6"
@@ -10626,6 +10635,11 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-snuggle@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-snuggle/-/react-snuggle-1.1.0.tgz#094a4d251ba2069871fd5298a91d92876bfcff7e"
+  integrity sha512-3UGCIvmbSgvNGxJaTVJfpyYXizfqSmH54IrBWkwb8xRJg+LLOYqUsQgP2vsdLCvnensGyOTSnP0Li8Whl0C/6w==
 
 react-typography@^0.16.19:
   version "0.16.19"

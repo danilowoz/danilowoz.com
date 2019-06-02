@@ -12,12 +12,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     `gatsby-transformer-yaml`,
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/components/typography`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',

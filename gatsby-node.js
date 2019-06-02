@@ -2,6 +2,11 @@ const Promise = require(`bluebird`)
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const axios = require('axios')
+const Instagram = require('node-instagram').default
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 exports.sourceNodes = ({
   actions,
@@ -11,10 +16,43 @@ exports.sourceNodes = ({
 }) => {
   const { createNode } = actions
   const data = getNodesByType('HomeSectionsYaml')
-
   const openSourceProject = data[0].openSourceProject
 
-  return Promise.map(openSourceProject, async project => {
+  const instagram = new Instagram({
+    clientId: process.env.INSTAGRAM_CLIENT_ID,
+    clientSecret: process.env.INSTAGRAM_CLIENT_SECRET,
+    accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
+  })
+
+  const sourceFromInstagram = new Promise(resolve => {
+    instagram.get('users/self/media/recent', (err, data) => {
+      if (err) {
+        // an error occured
+        console.log(err)
+      } else {
+        data.data.forEach(photo => {
+          const node = {
+            id: createNodeId(photo.id),
+            images: photo.images,
+            link: photo.link,
+            location: photo.location.name,
+            parent: null,
+            children: [],
+            internal: {
+              type: `InstagramImages`,
+              contentDigest: createContentDigest(photo),
+            },
+          }
+
+          createNode(node)
+
+          resolve()
+        })
+      }
+    })
+  })
+
+  const sourceFromGithub = Promise.map(openSourceProject, async project => {
     const { data } = await axios(
       `https://api.github.com/repos/danilowoz/${project}`
     )
@@ -36,6 +74,8 @@ exports.sourceNodes = ({
 
     createNode(node)
   })
+
+  return Promise.all([sourceFromInstagram, sourceFromGithub])
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

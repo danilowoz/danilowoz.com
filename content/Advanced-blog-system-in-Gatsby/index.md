@@ -1,16 +1,15 @@
 ---
 title: 'Advanced blog system in Gatsby'
-description: 'Today, static site generators are one of the most popular ways to build websites. You get a complete build done quickly without complications, hosted cheaply or even for free. That’s why the…'
+description: 'Create a complete blog from scratch in Gatsby with pagination, categories, featured post, author, SEO and navigation.'
 date: '2019-05-02T15:06:01.607Z'
 categories:
-  - Web Development
-  - Reactjs
+  - ReactJs
   - JavaScript
-  - Gatsbyjs
-  - Programming
+  - GatsbyJs
 
 published: true
 canonicalLink: https://medium.com/significa/advanced-blog-system-in-gatsby-16e0cd6b85ad
+cover: ./asset-1.png
 ---
 
 ## Create a complete blog from scratch in Gatsby with pagination, categories, featured post, author, SEO and navigation.

@@ -1,16 +1,14 @@
 ---
 title: 'CSS Display Grid and Sketch Layout'
-description: 'All the options mentioned above make sense when applied on static medias where all copies will be the same, for example, books and magazines. But on the web things usually work differently: there are…'
+description: Building super layouts that so far are not possible.
 date: '2017-09-23T13:00:43.958Z'
 categories:
   - CSS
   - Design
-  - Sketch
-  - Grid
-  - Display Grid
 
 published: true
 canonicalLink: https://medium.com/@danilowoznica/dear-designers-love-your-developers-because-theyve-learned-display-grid-and-you-ve-done-it-too-1a24eb8bd0
+cover: ./asset-1.jpeg
 ---
 
 ## Depending on your journey as a designer, you may be used to the freedom that graphic media allows: to create overlaps/overlays or to elaborate compositions and grids that fill all the paper with pretty organized photos and texts. However, why is it so hard to build a web page with this same freedom? Fortunately the capacity to build these layouts have been improving and what’s best: it is so simple that you can start using it right now!
