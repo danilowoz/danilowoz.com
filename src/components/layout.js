@@ -1,12 +1,29 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { GoogleFont } from 'react-typography'
+import { ThemeProvider } from 'styled-components'
 
-import './layout.css'
+import typography from './typography'
 
-const Layout = ({ children }) => <main>{children}</main>
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+const theme = {
+  colors: {
+    grayscale: {
+      black: '#000',
+      medium: '#4A4A4A',
+      light: '#9B9B9B',
+    },
+  },
 }
+
+const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <>
+      <Helmet>
+        <GoogleFont typography={typography} />
+      </Helmet>
+      <main>{children}</main>
+    </>
+  </ThemeProvider>
+)
 
 export default Layout

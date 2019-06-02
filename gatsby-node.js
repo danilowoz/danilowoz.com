@@ -1,11 +1,49 @@
+const Promise = require(`bluebird`)
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const axios = require('axios')
+
+exports.sourceNodes = ({
+  actions,
+  getNodesByType,
+  createNodeId,
+  createContentDigest,
+}) => {
+  const { createNode } = actions
+  const data = getNodesByType('HomeSectionsYaml')
+
+  const openSourceProject = data[0].openSourceProject
+
+  return Promise.map(openSourceProject, async project => {
+    const { data } = await axios(
+      `https://api.github.com/repos/danilowoz/${project}`
+    )
+
+    const node = {
+      id: createNodeId(project),
+      project: project,
+      description: data.description,
+      stars: data.stargazers_count,
+      link: data.html_url,
+      language: data.language,
+      parent: null,
+      children: [],
+      internal: {
+        type: `ProjectGithubNode`,
+        contentDigest: createContentDigest(data),
+      },
+    }
+
+    createNode(node)
+  })
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })
+
     createNodeField({
       name: 'slug',
       node,

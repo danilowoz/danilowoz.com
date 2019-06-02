@@ -10,6 +10,13 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/components/typography`,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -62,7 +69,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'blog',
+        name: 'content',
         path: `${__dirname}/content`,
       },
     },

@@ -3,9 +3,10 @@ const path = require('path')
 module.exports = {
   title: 'Danilo Woznica',
   shortName: `Danilo Woznica`,
-  description: 'TODO',
+  description:
+    'I’m a 26-year-old UI developer with 8+ years of professional experience with large and medium-sized projects. I’m currently working in Porto, Portugal.',
   shortBio: '',
-  bio: `TODO`,
+  bio: `I’m a 26-year-old UI developer with 8+ years of professional experience with large and medium-sized projects. I’m currently working in Porto, Portugal.`,
   author: 'Danilo Woznica',
   githubUrl: 'https://github.com/danilowoz',
   siteUrl: 'https://danilowoz.com',
@@ -31,4 +32,10 @@ module.exports = {
   backgroundColor: '#fff',
   pathPrefix: null,
   logo: path.resolve(__dirname, '../src/images/icon.png'),
+  menu: [
+    { name: 'Blog', to: '#blog' },
+    { name: 'Open source', to: '#open-source' },
+    { name: 'Where I have been', to: '#blog' },
+    { name: 'Contact', to: '#contact' },
+  ],
 }
