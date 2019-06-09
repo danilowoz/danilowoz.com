@@ -16,11 +16,11 @@ const Variables = styled.div`
   --foreground: #4a4a4a;
   --background: #9b9b9b;
 
-  --transitionCubic: all cubic-bezier(0.19, 1, 0.22, 1) 600ms;
-  --transitionEase: all ease-in-out 600ms;
+  --transitionCubic: all cubic-bezier(0.19, 1, 0.22, 1) 400ms;
+  --transitionEase: all ease-in-out 400ms;
 
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow: 0 4px 18px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.12);
+  --bordeRadius: 6px;
 `
 
 const Layout = ({ children }) => (

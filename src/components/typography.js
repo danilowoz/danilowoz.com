@@ -7,7 +7,7 @@ const headerontFamily = 'Merriweather'
 export const typography = new Typography({
   baseFontSize: '20px',
   baseLineHeight: 1.666,
-  scaleRatio: 2.8,
+  scaleRatio: 2.6,
   headerFontFamily: [headerontFamily],
   bodyFontFamily: [baseFontFamily],
   googleFonts: [
@@ -29,6 +29,7 @@ export default typography
 export const MainTitle = styled.h1`
   color: var(--main);
   transition: var(--transitionEase);
+  margin-bottom: 0.3em;
 `
 
 export const Title = styled.h2`

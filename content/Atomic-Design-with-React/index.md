@@ -4,7 +4,7 @@ description: 'How the Atomic Design methodology allowed me to create a great des
 date: '2018-01-08T19:28:06.529Z'
 categories:
   - Design
-  - ReactJs
+  - Methodology
 
 published: true
 canonicalLink: https://codeburst.io/atomic-design-with-react-e7aea8152957

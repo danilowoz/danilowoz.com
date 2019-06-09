@@ -7,7 +7,7 @@ import * as T from './typography'
 import BaseGrid from './Grid'
 
 const Card = styled.div`
-  border-radius: 4px;
+  border-radius: var(--bordeRadius);
   overflow: hidden;
   box-shadow: var(--shadow);
 

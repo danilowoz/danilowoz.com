@@ -20,7 +20,7 @@ const Container = styled.div`
   min-height: 55vh;
   background-color: var(--background);
   margin: 0 1.5em;
-  border-radius: 4px;
+  border-radius: var(--bordeRadius);
   transition: var(--transitionEase);
 `
 
@@ -28,11 +28,17 @@ const Variables = styled.div`
   --main: ${({ vars }) => vars.main};
   --foreground: ${({ vars }) => vars.foreground};
   --background: ${({ vars }) => vars.background};
+  --hover: ${({ vars }) => vars.hover};
 `
 
 const colors = [
   { background: '#eee', main: '#282828', foreground: '#555' },
-  { background: '#A9CEF433', main: '#363946', foreground: '#738290' },
+  {
+    background: '#eeeeee55',
+    main: '#171717',
+    foreground: '#676767',
+    hover: '#004BCE',
+  },
   { background: '#004BCE', main: '#fff', foreground: '#555' },
   { background: '#232B35', main: '#fff', foreground: '#555' },
 ]

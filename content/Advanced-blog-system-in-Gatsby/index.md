@@ -4,7 +4,6 @@ description: 'Create a complete blog from scratch in Gatsby with pagination, cat
 date: '2019-05-02T15:06:01.607Z'
 categories:
   - ReactJs
-  - JavaScript
   - GatsbyJs
 
 published: true

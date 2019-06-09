@@ -22,12 +22,12 @@ const RowGrid = styled(Grid)`
 
 const CategoryItem = styled(T.Label).attrs({ as: 'button' })`
   margin-right: 1em;
-  color: var(--main) !important;
+  color: var(--foreground) !important;
 
   ${({ active }) =>
     active &&
     `
-      opacity: 1 !important;
+      color: var(--main) !important;
     `}
 `
 
@@ -53,9 +53,7 @@ const Sections = () => {
     <Wrapper>
       <Grid>
         <Row>
-          <T.Title>
-            blog<span> posts</span>
-          </T.Title>
+          <T.Title>Articles</T.Title>
 
           {categories.map(e => {
             return (
@@ -70,7 +68,7 @@ const Sections = () => {
         </Row>
 
         <RowGrid>
-          <BlogList />
+          <BlogList categorySelected={categorySelected} />
         </RowGrid>
       </Grid>
     </Wrapper>
