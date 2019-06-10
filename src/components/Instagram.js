@@ -7,7 +7,6 @@ import * as T from '../components/typography'
 
 const Row = styled.div`
   grid-column: 1/4;
-  margin-bottom: 2em;
 `
 
 const Grid = styled.div`

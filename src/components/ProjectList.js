@@ -1,24 +1,52 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import * as T from './typography'
 import BaseGrid from './Grid'
 
+const Grid = styled(BaseGrid)`
+  grid-template-columns: repeat(1, 1fr);
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    border-top: 1px solid #eee;
+    opacity: 0.1;
+    padding-top: 1.25em;
+    margin-top: 1.25em;
+  }
+`
+
 const Card = styled.div`
   border-radius: var(--bordeRadius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  background: var(--card);
+`
 
-  a {
-    display: block;
-    width: 100%;
+const LinkWrapper = styled.a`
+  display: flex;
+`
+
+const Content = styled.div`
+  width: 50%;
+  display: flex;
+
+  > div {
+    margin: auto;
+    width: 80%;
   }
 `
 
-const Grid = styled(BaseGrid)`
-  grid-template-columns: repeat(5, 1fr);
+const Image = styled(Img)`
+  width: 50%;
+`
+
+const Title = styled(T.HeadLine)`
+  color: var(--foreground);
 `
 
 const ProjectList = () => {
@@ -29,11 +57,15 @@ const ProjectList = () => {
       {homeSectionsYaml.projectsAndShots.map(project => {
         return (
           <Card>
-            <Link to={project.link}>
-              <Img fluid={project.image.childImageSharp.fluid} />
-              {/* {project.title} */}
-              {/* {project.description} */}
-            </Link>
+            <LinkWrapper href={project.link} target="_blank">
+              <Content>
+                <div>
+                  <Title>{project.title}</Title>
+                  <T.Text>{project.description}</T.Text>
+                </div>
+              </Content>
+              <Image fluid={project.image.childImageSharp.fluid} />
+            </LinkWrapper>
           </Card>
         )
       })}

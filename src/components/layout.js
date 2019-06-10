@@ -1,38 +1,54 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { GoogleFont } from 'react-typography'
 import styled, { createGlobalStyle } from 'styled-components'
 import reset from 'wipe.css'
 
-import typography from './typography'
+import { LayoutContext } from './LayoutContext'
+import * as T from './typography'
 
 const GlobalStyle = createGlobalStyle`
  ${reset}
- ${typography.toString()}
+ ${T.globalStyle}
+
+ :root {
+    --mainFont: Source Sans Pro, sans-serif;
+    --mainFontHeading: Merriweather, serif;
+
+    --transitionCubic: all cubic-bezier(0.19, 1, 0.22, 1) 400ms;
+    --transitionEase: all ease-in-out 400ms;
+
+    --shadow: 0 4px 18px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.12);
+    --bordeRadius: 6px;
+  }
 `
 
 const Variables = styled.div`
-  --main: #000;
-  --foreground: #4a4a4a;
-  --background: #9b9b9b;
+  --body: ${({ vars }) => vars.body};
+  --main: ${({ vars }) => vars.main};
+  --foreground: ${({ vars }) => vars.foreground};
+  --background: ${({ vars }) => vars.background};
+  --hover: ${({ vars }) => vars.hover};
+  --card: ${({ vars }) => vars.card};
 
-  --transitionCubic: all cubic-bezier(0.19, 1, 0.22, 1) 400ms;
-  --transitionEase: all ease-in-out 400ms;
-
-  --shadow: 0 4px 18px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.12);
-  --bordeRadius: 6px;
+  background: var(--body);
+  transition: var(--transitionEase);
 `
 
-const Layout = ({ children }) => (
-  <Variables>
-    <>
+const Layout = ({ children }) => {
+  const { currentVariables } = React.useContext(LayoutContext)
+
+  return (
+    <Variables vars={currentVariables}>
       <Helmet>
-        <GoogleFont typography={typography} />
+        <link
+          href="https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro:400,700&display=swap"
+          rel="stylesheet"
+        />
       </Helmet>
       <GlobalStyle />
       <main>{children}</main>
-    </>
-  </Variables>
-)
+    </Variables>
+  )
+}
 
 export default Layout

@@ -5,15 +5,12 @@ import Snuggle from 'react-snuggle'
 
 import * as T from './typography'
 
-const Label = styled(T.Label)`
+const Label = styled(T.Text)`
   font-size: 0.7em;
-  margin-bottom: 1em;
-  margin-top: 0.5em;
+  opacity: 0.8;
 `
 
 const MetaData = styled.p`
-  font-size: 0.7em;
-  margin-top: -1em;
   color: var(--main);
   margin-bottom: 0;
 
@@ -23,8 +20,8 @@ const MetaData = styled.p`
 `
 
 const Card = styled.div`
-  background: white;
   padding: 1.5em 1.7em;
+  background: var(--card);
   border-radius: var(--bordeRadius);
   box-shadow: var(--shadow);
   transition: var(--transitionCubic);
@@ -51,7 +48,13 @@ const GithubList = () => {
   const { allProjectGithubNode } = useStaticQuery(query)
 
   return (
-    <Snuggle columnWidth={350} rowGap={15} item={<Card />} container={<Grid />}>
+    <Snuggle
+      style={{ marginBottom: '1.25em' }}
+      columnWidth={350}
+      rowGap={22}
+      item={<Card />}
+      container={<Grid />}
+    >
       {allProjectGithubNode.nodes.map(
         ({ stars, project, description, link, language }, index) => (
           <Column index={index} key={project}>

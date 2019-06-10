@@ -33,9 +33,9 @@ module.exports = {
   pathPrefix: null,
   logo: path.resolve(__dirname, '../src/images/icon.png'),
   menu: [
-    { name: 'Blog', to: '#blog' },
-    { name: 'Open source', to: '#open-source' },
-    { name: 'Where I have been', to: '#blog' },
+    { name: 'Articles', to: '#blog' },
+    { name: 'Labs', to: '#open-source' },
+    { name: 'Places', to: '#blog' },
     { name: 'Contact', to: '#contact' },
   ],
 }

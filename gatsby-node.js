@@ -45,37 +45,39 @@ exports.sourceNodes = ({
           }
 
           createNode(node)
-
           resolve()
         })
       }
     })
   })
 
-  const sourceFromGithub = Promise.map(openSourceProject, async project => {
-    const { data } = await axios(
-      `https://api.github.com/repos/danilowoz/${project}`
-    )
+  const sourceFromGithub = openSourceProject.map(async project => {
+    return new Promise(async resolve => {
+      const { data } = await axios(
+        `https://api.github.com/repos/danilowoz/${project}`
+      )
 
-    const node = {
-      id: createNodeId(project),
-      project: project,
-      description: data.description,
-      stars: data.stargazers_count,
-      link: data.html_url,
-      language: data.language,
-      parent: null,
-      children: [],
-      internal: {
-        type: `ProjectGithubNode`,
-        contentDigest: createContentDigest(data),
-      },
-    }
+      const node = {
+        id: createNodeId(project),
+        project: project,
+        description: data.description,
+        stars: data.stargazers_count,
+        link: data.html_url,
+        language: data.language,
+        parent: null,
+        children: [],
+        internal: {
+          type: `ProjectGithubNode`,
+          contentDigest: createContentDigest(data),
+        },
+      }
 
-    createNode(node)
+      createNode(node)
+      resolve()
+    })
   })
 
-  return Promise.all([sourceFromInstagram, sourceFromGithub])
+  return Promise.all([...sourceFromGithub, sourceFromInstagram])
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

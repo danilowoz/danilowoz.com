@@ -24,12 +24,14 @@ const Background = styled.div`
     bottom: 0;
     right: 0;
     width: 30vw;
-    z-index: -1;
+    z-index: 0;
   }
 `
 const Wrapper = styled(Grid)`
   height: 60vh;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 
   > * {
     margin: auto 0;
@@ -42,9 +44,9 @@ const Row = styled.div`
 `
 
 const NavLink = styled(Link)`
-  ${T.labelStyle};
-  margin: 2em 1.5em 0 0;
+  ${T.textStyle};
   color: var(--foreground);
+  margin-right: 1.8em;
 `
 
 const ProfileImage = styled.img`

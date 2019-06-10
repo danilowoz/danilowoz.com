@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import * as T from '../components/typography'
-import BlogList from './BlogList'
+import ArticlesList from './ArticlesList'
 
 import Grid from './Grid'
 
@@ -11,7 +11,6 @@ const Wrapper = styled.div``
 
 const Row = styled.div`
   grid-column: 1/13;
-  margin-bottom: 2em;
 `
 
 const RowGrid = styled(Grid)`
@@ -20,8 +19,9 @@ const RowGrid = styled(Grid)`
   grid-template-columns: repeat(2, 1fr);
 `
 
-const CategoryItem = styled(T.Label).attrs({ as: 'button' })`
-  margin-right: 1em;
+const CategoryItem = styled(T.Linkable).attrs({ as: 'button' })`
+  margin-bottom: 1.27777778em;
+  margin-right: 1.27777778em;
   color: var(--foreground) !important;
 
   ${({ active }) =>
@@ -68,7 +68,7 @@ const Sections = () => {
         </Row>
 
         <RowGrid>
-          <BlogList categorySelected={categorySelected} />
+          <ArticlesList categorySelected={categorySelected} />
         </RowGrid>
       </Grid>
     </Wrapper>

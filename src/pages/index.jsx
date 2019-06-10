@@ -4,14 +4,17 @@ import Layout from '../components/Layout'
 import HomeHeader from '../components/HomeHeader'
 import Sections from '../components/Sections'
 import SEO from '../components/seo'
+import { Provider } from '../components/LayoutContext'
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <SEO />
-      <HomeHeader />
-      <Sections />
-    </Layout>
+    <Provider>
+      <Layout>
+        <SEO />
+        <HomeHeader />
+        <Sections />
+      </Layout>
+    </Provider>
   )
 }
 

@@ -7,15 +7,15 @@ import * as T from './typography'
 import { formatPostDate, formatReadingTime } from '../utils/dates'
 
 const Card = styled.div`
-  padding: 2em 4em 0 0;
+  padding: 2em 8em 0 0;
   position: relative;
 `
 
-const DateText = styled(T.Label)`
-  margin-bottom: 0.3em;
+const DateText = styled(T.Text)`
   color: var(--foreground);
 `
-const Title = styled(T.Title)`
+
+const Title = styled(T.HeadLine)`
   color: var(--main);
 `
 
@@ -24,7 +24,6 @@ const Description = styled(T.Text)`
 `
 
 const ArrowLink = styled.p`
-  margin-bottom: 0;
   color: var(--main);
   transition: var(--transitionEase);
 
@@ -40,13 +39,13 @@ const ArrowLink = styled.p`
   }
 `
 
-const BlogHeroContent = styled.div`
+const ArticleHeroContent = styled.div`
   width: 50%;
   margin-left: 3em;
   display: flex;
 `
 
-const BlogItem = styled.article`
+const ArticleItem = styled.article`
   width: 100%;
   transition: var(--transitionCubic);
 
@@ -69,10 +68,9 @@ const BlogItem = styled.article`
   }
 `
 
-const BlogHero = styled.article`
+const ArticleHero = styled.article`
   display: flex;
   grid-column: 1/3;
-  margin-bottom: 2em;
 
   .gatsby-image-wrapper {
     width: calc(80% - 0.75em);
@@ -89,7 +87,7 @@ const BlogHero = styled.article`
   }
 `
 
-const BlogList = ({ categorySelected }) => {
+const ArticleList = ({ categorySelected }) => {
   const { allMdx } = useStaticQuery(query)
 
   return (
@@ -105,10 +103,10 @@ const BlogList = ({ categorySelected }) => {
         .map((post, index) => {
           if (index === 0) {
             return (
-              <BlogHero>
+              <ArticleHero>
                 <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
 
-                <BlogHeroContent>
+                <ArticleHeroContent>
                   <Link to={post.fields.slug}>
                     <DateText>{formatPostDate(post.frontmatter.date)}</DateText>
                     <Title>{post.frontmatter.title}</Title>
@@ -117,13 +115,13 @@ const BlogList = ({ categorySelected }) => {
                       Read on {formatReadingTime(post.timeToRead)}
                     </ArrowLink>
                   </Link>
-                </BlogHeroContent>
-              </BlogHero>
+                </ArticleHeroContent>
+              </ArticleHero>
             )
           }
 
           return (
-            <BlogItem key={post.fields.slug}>
+            <ArticleItem key={post.fields.slug}>
               <Link to={post.fields.slug}>
                 <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
                 <Card>
@@ -135,17 +133,17 @@ const BlogList = ({ categorySelected }) => {
                   </ArrowLink>
                 </Card>
               </Link>
-            </BlogItem>
+            </ArticleItem>
           )
         })}
     </>
   )
 }
 
-export default BlogList
+export default ArticleList
 
 const query = graphql`
-  query BlogIndex {
+  query ArticleIndex {
     allMdx(
       filter: { fields: { published: { eq: true } } }
       sort: { fields: [frontmatter___date], order: DESC }

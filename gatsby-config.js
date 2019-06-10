@@ -1,6 +1,7 @@
 const mdxFeed = require('gatsby-mdx/feed')
 
 const siteConfig = require('./content/site-config')
+const path = require('path')
 
 module.exports = {
   siteMetadata: siteConfig,
