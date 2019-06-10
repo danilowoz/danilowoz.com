@@ -47,7 +47,7 @@ const ArticleHeroContent = styled.div`
 
 const ArticleItem = styled.article`
   width: 100%;
-  transition: var(--transitionCubic);
+  transition: var(--transitionEase);
 
   a,
   .gatsby-image-wrapper {

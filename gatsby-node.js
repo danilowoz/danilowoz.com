@@ -18,6 +18,7 @@ exports.sourceNodes = ({
   const data = getNodesByType('HomeSectionsYaml')
   const openSourceProject = data[0].openSourceProject
 
+
   const instagram = new Instagram({
     clientId: process.env.INSTAGRAM_CLIENT_ID,
     clientSecret: process.env.INSTAGRAM_CLIENT_SECRET,
@@ -50,6 +51,8 @@ exports.sourceNodes = ({
       }
     })
   })
+
+  console.log(openSourceProject)
 
   const sourceFromGithub = openSourceProject.map(async project => {
     return new Promise(async resolve => {

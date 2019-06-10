@@ -81,7 +81,7 @@ export const Linkable = styled.p`
     opacity: 0.7;
     color: var(--main);
     text-decoration: none;
-    transition: var(--transitionCubic);
+    transition: var(--transitionEase);
 
     &: hover {
       opacity: 1;

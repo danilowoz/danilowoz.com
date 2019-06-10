@@ -4,7 +4,7 @@ import IntersectionVisible from 'react-intersection-visible'
 
 import ArticlesSection from './ArticlesSection'
 import LabsSection from './LabsSection'
-import Instagram from './Instagram'
+import About from './About'
 import { LayoutContext } from './LayoutContext'
 
 const Section = styled.section`
@@ -19,7 +19,7 @@ const Section = styled.section`
 const Container = styled.div`
   min-height: 55vh;
   background-color: var(--background);
-  margin: 0 1.5em;
+  margin: 0 1.5em 1.5em;
   border-radius: var(--bordeRadius);
   transition: var(--transitionEase);
 
@@ -39,7 +39,7 @@ const Sections = () => {
         options={options}
         onShow={() => setCurrentVariables(colors[1])}
       >
-        <Section>
+        <Section id="articles">
           <ArticlesSection />
         </Section>
       </IntersectionVisible>
@@ -49,16 +49,16 @@ const Sections = () => {
         onShow={() => setCurrentVariables(colors[2])}
       >
         <Section>
-          <LabsSection />
+          <LabsSection id="labs" />
         </Section>
       </IntersectionVisible>
 
       <IntersectionVisible
         options={options}
-        onShow={() => setCurrentVariables(colors[2])}
+        onShow={() => setCurrentVariables(colors[3])}
       >
         <Section>
-          <Instagram />
+          <About />
         </Section>
       </IntersectionVisible>
     </Container>

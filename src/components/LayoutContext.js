@@ -17,13 +17,19 @@ const colors = [
     hover: '#004BCE',
   },
   {
-    background: '#1B1B1E',
-    card: '#242B3E',
-    main: '#D8DBE2',
-    foreground: '#ccc',
+    background: '#11151C',
+    card: '#1D2738',
+    main: '#607499',
+    foreground: '#bbb',
     body: '#000',
   },
-  { background: '#232B35', main: '#fff', foreground: '#555' },
+  {
+    background: '#E8F1F2',
+    card: '#fff',
+    main: '#364156',
+    foreground: '#13293D',
+    body: '#fff',
+  },
 ]
 
 export const LayoutContext = React.createContext({

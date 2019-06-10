@@ -13,14 +13,21 @@ const Wrapper = styled.div``
 
 const Col1 = styled.div`
   grid-column: 1/4;
+
   > div {
     position: sticky;
     top: 1.25rem;
+    margin-top: -1.25rem;
   }
 `
 
 const Col2 = styled.div`
   grid-column: 4/13;
+`
+
+const Title = styled(T.Title)`
+  margin-bottom: 1em;
+  color: var(--main);
 `
 
 const LabsSection = () => {
@@ -29,7 +36,7 @@ const LabsSection = () => {
       <Grid>
         <Col1>
           <div>
-            <T.Title css={{ marginBottom: '1em' }}>Labs</T.Title>
+            <Title>Labs</Title>
             <T.Linkable>
               <a
                 href="http://github.com/danilowoz"

@@ -24,7 +24,7 @@ const Card = styled.div`
   background: var(--card);
   border-radius: var(--bordeRadius);
   box-shadow: var(--shadow);
-  transition: var(--transitionCubic);
+  transition: var(--transitionEase);
 `
 
 const Grid = styled.div`
@@ -42,9 +42,7 @@ const Column = styled.div`
   }
 `
 
-const LinkItem = styled.a``
-
-const GithubList = () => {
+const GithubList = React.memo(() => {
   const { allProjectGithubNode } = useStaticQuery(query)
 
   return (
@@ -58,19 +56,19 @@ const GithubList = () => {
       {allProjectGithubNode.nodes.map(
         ({ stars, project, description, link, language }, index) => (
           <Column index={index} key={project}>
-            <LinkItem href={link} target="_blank">
+            <a href={link} target="_blank" rel="noopener noreferrer">
               <Label>{project}</Label>
               <T.Text>{description}</T.Text>
               <MetaData>
                 <span>{language}</span> <span>{stars} stars</span>
               </MetaData>
-            </LinkItem>
+            </a>
           </Column>
         )
       )}
     </Snuggle>
   )
-}
+})
 
 const query = graphql`
   query githubProject {
