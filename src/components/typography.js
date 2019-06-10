@@ -2,9 +2,14 @@ import styled, { css } from 'styled-components'
 
 export const globalStyle = css`
   body {
+    scroll-behavior: smooth;
     font-family: var(--mainFont);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.2em;
+
+    @media (min-width: 800px) {
+      font-size: 18px;
+    }
   }
 `
 
@@ -71,7 +76,7 @@ export const Text = styled.p`
   ${textStyle};
 `
 
-export const Linkable = styled.p`
+export const linkableStyle = css`
   ${textStyle};
   & {
     transition: var(--transitionEase);
@@ -87,4 +92,8 @@ export const Linkable = styled.p`
       opacity: 1;
     }
   }
+`
+
+export const Linkable = styled.p`
+  ${linkableStyle}
 `

@@ -32,7 +32,7 @@ const Title = styled(T.Title)`
 
 const LabsSection = () => {
   return (
-    <Wrapper>
+    <Wrapper id="labs">
       <Grid>
         <Col1>
           <div>

@@ -16,7 +16,21 @@ const Row = styled.div`
 const RowGrid = styled(Grid)`
   grid-column: 1/13;
   width: 100%;
-  grid-template-columns: repeat(2, 1fr);
+
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`
+
+const CategoryList = styled.div`
+  display: flex;
+  overflow: auto;
+  margin-right: -1em;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: 800px) {
+    margin-right: 0;
+  }
 `
 
 const CategoryItem = styled(T.Linkable).attrs({ as: 'button' })`
@@ -55,16 +69,18 @@ const Sections = () => {
         <Row>
           <T.Title>Articles</T.Title>
 
-          {categories.map(e => {
-            return (
-              <CategoryItem
-                onClick={() => handleCategory(e)}
-                active={e === categorySelected}
-              >
-                {e}
-              </CategoryItem>
-            )
-          })}
+          <CategoryList>
+            {categories.map(e => {
+              return (
+                <CategoryItem
+                  onClick={() => handleCategory(e)}
+                  active={e === categorySelected}
+                >
+                  {e}
+                </CategoryItem>
+              )
+            })}
+          </CategoryList>
         </Row>
 
         <RowGrid>

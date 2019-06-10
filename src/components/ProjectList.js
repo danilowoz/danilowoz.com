@@ -7,7 +7,9 @@ import * as T from './typography'
 import BaseGrid from './Grid'
 
 const Grid = styled(BaseGrid)`
-  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   &:before {
     content: '';
@@ -25,24 +27,35 @@ const Card = styled.div`
   overflow: hidden;
   box-shadow: var(--shadow);
   background: var(--card);
+  margin-bottom: 1.5em;
 `
 
 const LinkWrapper = styled.a`
-  display: flex;
+  @media (min-width: 800px) {
+    display: flex;
+  }
 `
 
 const Content = styled.div`
-  width: 50%;
-  display: flex;
+  padding: 0 1em;
 
-  > div {
-    margin: auto;
-    width: 80%;
+  @media (min-width: 800px) {
+    width: 50%;
+    display: flex;
+
+    > div {
+      margin: auto;
+      width: 80%;
+    }
   }
 `
 
 const Image = styled(Img)`
-  width: 50%;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 50%;
+  }
 `
 
 const Title = styled(T.HeadLine)`

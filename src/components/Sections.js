@@ -9,7 +9,11 @@ import { LayoutContext } from './LayoutContext'
 
 const Section = styled.section`
   display: flex;
-  padding: 4em 0 12em;
+  padding: 0 0 6em;
+
+  @media (min-width: 800px) {
+    padding: 4em 0 12em;
+  }
 
   > * {
     width: 100%;
@@ -17,11 +21,16 @@ const Section = styled.section`
 `
 
 const Container = styled.div`
-  min-height: 55vh;
   background-color: var(--background);
-  margin: 0 1.5em 1.5em;
   border-radius: var(--bordeRadius);
   transition: var(--transitionEase);
+
+  padding: 1em;
+
+  @media (min-width: 800px) {
+    margin: 0 1.5em 1.5em;
+    min-height: 55vh;
+  }
 
   body {
     background-color: var(--body);

@@ -20,23 +20,30 @@ const MetaData = styled.p`
 `
 
 const Card = styled.div`
-  padding: 1.5em 1.7em;
   background: var(--card);
   border-radius: var(--bordeRadius);
   box-shadow: var(--shadow);
   transition: var(--transitionEase);
+  padding: 1em;
+
+  @media (min-width: 800px) {
+    padding: 1.5em 1.7em;
+  }
 `
 
 const Grid = styled.div`
-  ${Card} {
-    &:nth-child(1) {
-      font-size: 1.4em;
+  @media (min-width: 800px) {
+    ${Card} {
+      &:nth-child(1) {
+        font-size: 1.4em;
+      }
     }
   }
 `
 
 const Column = styled.div`
   position: relative;
+
   ${Label}, ${T.Text}, ${MetaData} {
     color: var(--foreground);
   }
@@ -48,7 +55,7 @@ const GithubList = React.memo(() => {
   return (
     <Snuggle
       style={{ marginBottom: '1.25em' }}
-      columnWidth={350}
+      columnWidth={330}
       rowGap={22}
       item={<Card />}
       container={<Grid />}

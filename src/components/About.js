@@ -42,7 +42,9 @@ const InstagramPictures = () => {
       <MainGrid>
         <Col1>
           <div>
-            <T.Title css={{ marginBottom: '1em' }}>About</T.Title>
+            <T.Title css={{ marginBottom: '1em' }}>
+              About <span>me</span>
+            </T.Title>
             <T.Linkable>
               <a
                 href="mailto:danilowoz@gmail.com"

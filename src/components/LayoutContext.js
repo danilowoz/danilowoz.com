@@ -6,7 +6,7 @@ const colors = [
     main: '#171717',
     foreground: '#676767',
     body: '#fff',
-    hover: 'red',
+    hover: '#171717',
   },
   {
     background: '#eeeeee55',
@@ -19,14 +19,14 @@ const colors = [
   {
     background: '#11151C',
     card: '#1D2738',
-    main: '#607499',
+    main: '#9bacce',
     foreground: '#bbb',
     body: '#000',
   },
   {
     background: '#E8F1F2',
     card: '#fff',
-    main: '#364156',
+    main: '#006494',
     foreground: '#13293D',
     body: '#fff',
   },

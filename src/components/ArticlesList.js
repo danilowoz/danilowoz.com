@@ -7,8 +7,11 @@ import * as T from './typography'
 import { formatPostDate, formatReadingTime } from '../utils/dates'
 
 const Card = styled.div`
-  padding: 2em 8em 0 0;
   position: relative;
+
+  @media (min-width: 800px) {
+    padding: 2em 8em 0 0;
+  }
 `
 
 const DateText = styled(T.Text)`
@@ -40,19 +43,36 @@ const ArrowLink = styled.p`
 `
 
 const ArticleHeroContent = styled.div`
-  width: 50%;
-  margin-left: 3em;
-  display: flex;
+  margin-bottom: 4em;
+
+  @media (min-width: 800px) {
+    margin-bottom: 0;
+    margin-left: 3em;
+    display: flex;
+    width: 50%;
+  }
 `
 
 const ArticleItem = styled.article`
   width: 100%;
   transition: var(--transitionEase);
 
+  margin-bottom: 4em;
+
+  @media (min-width: 800px) {
+    margin-bottom: 0;
+  }
+
   a,
   .gatsby-image-wrapper {
     width: 100%;
     border-radius: var(--bordeRadius);
+
+    margin-bottom: 1em;
+
+    @media (min-width: 800px) {
+      margin-bottom: 0;
+    }
   }
 
   .gatsby-image-wrapper {
@@ -69,13 +89,21 @@ const ArticleItem = styled.article`
 `
 
 const ArticleHero = styled.article`
-  display: flex;
-  grid-column: 1/3;
+  @media (min-width: 800px) {
+    display: flex;
+    grid-column: 1/3;
+  }
 
   .gatsby-image-wrapper {
-    width: calc(80% - 0.75em);
     border-radius: var(--bordeRadius);
     box-shadow: var(--shadow);
+    width: 100%;
+    margin-bottom: 1em;
+
+    @media (min-width: 800px) {
+      margin-bottom: 0;
+      width: calc(80% - 0.75em);
+    }
   }
 
   &:hover ${ArrowLink}, &:hover ${Title} {

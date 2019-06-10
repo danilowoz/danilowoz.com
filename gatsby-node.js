@@ -15,9 +15,14 @@ exports.sourceNodes = ({
   createContentDigest,
 }) => {
   const { createNode } = actions
-  const data = getNodesByType('HomeSectionsYaml')
-  const openSourceProject = data[0].openSourceProject
-
+  // const data = getNodesByType('HomeSectionsYaml')
+  const openSourceProject = [
+    'react-content-loader',
+    'create-content-loader',
+    'react-atomic-design',
+    'wipe.css',
+    'gatsby-advanced-blog-system',
+  ]
 
   const instagram = new Instagram({
     clientId: process.env.INSTAGRAM_CLIENT_ID,
@@ -51,8 +56,6 @@ exports.sourceNodes = ({
       }
     })
   })
-
-  console.log(openSourceProject)
 
   const sourceFromGithub = openSourceProject.map(async project => {
     return new Promise(async resolve => {
