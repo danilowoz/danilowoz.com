@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import HomeHeader from '../components/HomeHeader'
 import Sections from '../components/Sections'
 import SEO from '../components/seo'
