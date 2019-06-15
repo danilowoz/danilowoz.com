@@ -5,7 +5,7 @@ module.exports = {
   shortName: `Danilo Woznica`,
   description:
     'I’m a 26-year-old UI developer with 8+ years of professional experience with large and medium-sized projects. I’m currently working in Porto, Portugal.',
-  shortBio: '',
+  shortBio: 'Cool guy',
   bio: `I’m a 26-year-old UI developer with 8+ years of professional experience with large and medium-sized projects. I’m currently working in Porto, Portugal.`,
   author: 'Danilo Woznica',
   githubUrl: 'https://github.com/danilowoz',

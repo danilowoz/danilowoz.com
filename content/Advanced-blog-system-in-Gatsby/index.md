@@ -11,13 +11,9 @@ canonicalLink: https://medium.com/significa/advanced-blog-system-in-gatsby-16e0c
 cover: ./asset-1.png
 ---
 
-## Create a complete blog from scratch in Gatsby with pagination, categories, featured post, author, SEO and navigation.
-
-![Photo by [Frederico Jesus](https://dribbble.com/Fredjesus1)](./asset-1.png)
-
 👉 Check out the [demo](https://gatsby-advanced-blog-system.danilowoz.now.sh/blog) and [source](https://github.com/danilowoz/gatsby-advanced-blog-system).
 
-![](./asset-2.jpeg)
+![Gatsbyjs](./asset-2.jpeg)
 
 ### What’s Gatsby.js?
 
@@ -117,8 +113,8 @@ module.exports = {
 
 **These plugins are:**
 
-- `[gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/)`: turn the markdown readable to Gatsby;
-- `[gatsby-remark-images](https://www.gatsbyjs.org/packages/gatsby-remark-images/)`: you will need this later to consume images.
+- [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/): turn the markdown readable to Gatsby;
+- [gatsby-remark-images](https://www.gatsbyjs.org/packages/gatsby-remark-images/): you will need this later to consume images.
 
 \* Don’t forget to install them and add those in the `package.json` as dev dependencies.
 

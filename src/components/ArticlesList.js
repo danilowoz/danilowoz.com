@@ -66,7 +66,7 @@ const ArticleItem = styled.article`
   a,
   .gatsby-image-wrapper {
     width: 100%;
-    border-radius: var(--bordeRadius);
+    border-radius: var(--borderRadius);
 
     margin-bottom: 1em;
 
@@ -95,7 +95,7 @@ const ArticleHero = styled.article`
   }
 
   .gatsby-image-wrapper {
-    border-radius: var(--bordeRadius);
+    border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     width: 100%;
     margin-bottom: 1em;

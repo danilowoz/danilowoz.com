@@ -23,7 +23,7 @@ export const MainTitle = styled.h1`
   margin-bottom: 0.4893617em;
 `
 
-export const Title = styled.h2`
+export const titleStyle = css`
   transition: var(--transitionEase);
   font-family: var(--mainFontHeading);
   color: var(--main);
@@ -36,6 +36,10 @@ export const Title = styled.h2`
   span {
     font-weight: normal;
   }
+`
+
+export const Title = styled.h2`
+  ${titleStyle}
 `
 
 export const HeadLine = styled.h3`

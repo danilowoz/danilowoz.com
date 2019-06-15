@@ -21,7 +21,7 @@ const MetaData = styled.p`
 
 const Card = styled.div`
   background: var(--card);
-  border-radius: var(--bordeRadius);
+  border-radius: var(--borderRadius);
   box-shadow: var(--shadow);
   transition: var(--transitionEase);
   padding: 1em;

@@ -1,68 +1,60 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
+import styled from 'styled-components'
 
-function Bio() {
-  const { site, avatar } = useStaticQuery(
-    graphql`
-      query BioQuery {
-        avatar: file(absolutePath: { regex: "/avatar.png/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50, quality: 80) {
-              base64
-              width
-              height
-              src
-              srcSet
-            }
-          }
-        }
-        site {
-          siteMetadata {
-            author
-            shortBio
-            social {
-              twitter
-            }
-          }
-        }
-      }
-    `
-  )
+import * as T from '../typography'
 
-  const { author, social, shortBio } = site.siteMetadata
+const Wrapper = styled.div`
+  display: flex;
+`
+
+const ImageWrapper = styled.div`
+  border-radius: 100%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  margin-right: 1em;
+`
+
+const Bio = () => {
+  const { site, avatar } = useStaticQuery(query)
+  const { author, shortBio } = site.siteMetadata
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        marginBottom: '4.375rem',
-      }}
-    >
-      <Image
-        fixed={avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: '0.875rem',
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: '100%',
-        }}
-        imgStyle={{
-          borderRadius: '50%',
-        }}
-      />
-      <p style={{ margin: 0 }}>
+    <Wrapper>
+      <ImageWrapper>
+        <Image fixed={avatar.childImageSharp.fixed} alt={author} />
+      </ImageWrapper>
+      <T.Text>
         Written by <strong>{author}</strong>
-        {shortBio ? ` ${shortBio}` : ''}.{` `}
-        {social.twitter ? (
-          <a href={`https://twitter.com/${social.twitter}`}>
-            You should follow them on Twitter.
-          </a>
-        ) : null}
-      </p>
-    </div>
+        <br />
+        <small>{shortBio ? ` ${shortBio}` : ''}.</small>
+      </T.Text>
+    </Wrapper>
   )
 }
 
 export default Bio
+
+const query = graphql`
+  query BioQuery {
+    avatar: file(absolutePath: { regex: "/avatar.png/" }) {
+      childImageSharp {
+        fixed(width: 50, height: 50, quality: 80) {
+          base64
+          width
+          height
+          src
+          srcSet
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        author
+        shortBio
+      }
+    }
+  }
+`

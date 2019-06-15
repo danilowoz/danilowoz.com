@@ -1,105 +1,59 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import SEO from '../components/seo'
-import Pills from '../components/blog/pills'
-import Bio from '../components/blog/bio'
-import Embed from '../components/blog/embed'
-import { formatPostDate, formatReadingTime } from '../utils/dates'
+import Layout from '../components/layout'
+import { Provider } from '../components/LayoutContext'
 
-import './blog-post.css'
+import * as Blog from '../components/blog'
 
-export default function PageTemplate({ data: { mdx, site }, pageContext }) {
+const BlogTemplate = ({ data: { mdx, site }, pageContext }) => {
   const { previous, next } = pageContext
-  const publicUrl = `${site.siteMetadata.siteUrl}${mdx.fields.slug}`
 
   return (
-    <div>
-      <SEO
-        title={mdx.frontmatter.title}
-        description={mdx.frontmatter.description}
-        canonicalLink={mdx.frontmatter.canonicalLink}
-        keywords={mdx.frontmatter.categories || []}
-        meta={[
-          {
-            name: 'twitter:label1',
-            content: 'Reading time',
-          },
-          {
-            name: 'twitter:data1',
-            content: `${mdx.timeToRead} min read`,
-          },
-        ]}
-      />
-      <section className="center blog">
-        <article className="container small">
-          <header>
-            <h1>{mdx.frontmatter.title}</h1>
-            <p>
-              {formatPostDate(mdx.frontmatter.date)}
-              {` • ${formatReadingTime(mdx.timeToRead)}`}
-            </p>
-            <Pills items={mdx.frontmatter.categories} />
-          </header>
+    <Provider>
+      <Layout>
+        <SEO
+          title={mdx.frontmatter.title}
+          description={mdx.frontmatter.description}
+          canonicalLink={mdx.frontmatter.canonicalLink}
+          keywords={mdx.frontmatter.categories || []}
+          meta={[
+            {
+              name: 'twitter:label1',
+              content: 'Reading time',
+            },
+            {
+              name: 'twitter:data1',
+              content: `${mdx.timeToRead} min read`,
+            },
+          ]}
+        />
 
-          <MDXRenderer scope={{ Embed }}>{mdx.code.body}</MDXRenderer>
-        </article>
-        <footer className="container small">
-          <small>
-            <a
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              href={`https://twitter.com/search?q=${publicUrl}`}
-            >
-              Discuss on Twitter
-            </a>{' '}
-            &middot;{' '}
-            <a
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              href={`${site.siteMetadata.githubUrl}/edit/master/content${
-                mdx.fields.slug
-              }index.md`}
-            >
-              Edit this post on GitHub
-            </a>
-          </small>
-          <hr
-            style={{
-              margin: `24px 0`,
-            }}
-          />
-          <Bio />
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </footer>
-      </section>
-    </div>
+        <section>
+          <article>
+            <Blog.Header
+              title={mdx.frontmatter.title}
+              description={mdx.frontmatter.description}
+              date={mdx.frontmatter.date}
+              timeToRead={mdx.timeToRead}
+              cover={mdx.frontmatter.cover}
+            />
+            <Blog.Content body={mdx.code.body} />
+            <Blog.Footer
+              site={site}
+              previous={previous}
+              next={next}
+              slug={mdx.fields.slug}
+            />
+          </article>
+        </section>
+      </Layout>
+    </Provider>
   )
 }
+
+export default BlogTemplate
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
@@ -120,6 +74,13 @@ export const pageQuery = graphql`
         categories
         date(formatString: "MMMM DD, YYYY")
         canonicalLink
+        cover {
+          childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 300, cropFocus: CENTER) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
       }
       code {
         body

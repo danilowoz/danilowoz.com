@@ -28,7 +28,7 @@ const Col3 = styled.div`
 
 const Card = styled.div`
   img {
-    border-radius: var(--bordeRadius);
+    border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     display: block;
   }

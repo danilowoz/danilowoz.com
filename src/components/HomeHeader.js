@@ -86,7 +86,7 @@ const HomeHeader = () => {
     <Background>
       <Wrapper>
         <Row>
-          <T.MainTitle>{title}</T.MainTitle>
+          <T.MainTitle>{title} 👋</T.MainTitle>
           <T.Text>{description}</T.Text>
           {menu.map(({ name, to }) => (
             <NavLink to={to}>{name}</NavLink>

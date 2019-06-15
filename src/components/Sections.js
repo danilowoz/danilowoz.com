@@ -22,7 +22,7 @@ const Section = styled.section`
 
 const Container = styled.div`
   background-color: var(--background);
-  border-radius: var(--bordeRadius);
+  border-radius: var(--borderRadius);
   transition: var(--transitionEase);
 
   padding: 1em;

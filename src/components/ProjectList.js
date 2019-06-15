@@ -23,7 +23,7 @@ const Grid = styled(BaseGrid)`
 `
 
 const Card = styled.div`
-  border-radius: var(--bordeRadius);
+  border-radius: var(--borderRadius);
   overflow: hidden;
   box-shadow: var(--shadow);
   background: var(--card);

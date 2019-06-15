@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React from 'react'
 
-import './embed.css'
-
 function Embed({ height, width, src }) {
   return (
     <div className="embed">

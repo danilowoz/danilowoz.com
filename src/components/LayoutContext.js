@@ -4,9 +4,9 @@ const colors = [
   {
     background: '#eeeeee55',
     main: '#171717',
-    foreground: '#676767',
+    foreground: '#7f7f7f',
     body: '#fff',
-    hover: '#171717',
+    hover: '#004BCE',
   },
   {
     background: '#eeeeee55',
@@ -24,7 +24,7 @@ const colors = [
     body: '#000',
   },
   {
-    background: '#E8F1F2',
+    background: '#E8F1F255',
     card: '#fff',
     main: '#006494',
     foreground: '#13293D',
