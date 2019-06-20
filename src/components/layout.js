@@ -11,13 +11,12 @@ const GlobalStyle = createGlobalStyle`
  ${T.globalStyle}
 
  :root {
-    --mainFont: Source Sans Pro, sans-serif;
-    --mainFontHeading: Merriweather, serif;
+    --mainFont: "Roboto", sans-serif;
 
     --transitionCubic: all cubic-bezier(0.19, 1, 0.22, 1) 400ms;
     --transitionEase: all ease-in-out 400ms;
 
-    --shadow: 0 4px 18px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.12);
+    --shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;;
     --borderRadius: 4px;
   }
 `
@@ -27,6 +26,7 @@ const Variables = styled.div`
   --main: ${({ vars }) => vars.main};
   --foreground: ${({ vars }) => vars.foreground};
   --background: ${({ vars }) => vars.background};
+  --section: ${({ vars }) => vars.section};
   --hover: ${({ vars }) => vars.hover};
   --card: ${({ vars }) => vars.card};
 
@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
     <Variables vars={currentVariables}>
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro:400,700&display=swap"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
           rel="stylesheet"
         />
       </Helmet>

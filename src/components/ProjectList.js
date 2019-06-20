@@ -6,19 +6,13 @@ import Img from 'gatsby-image'
 import * as T from './typography'
 import BaseGrid from './Grid'
 
+const Title = styled(T.HeadLine)`
+  color: var(--foreground);
+`
+
 const Grid = styled(BaseGrid)`
   @media (min-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    width: 100%;
-    border-top: 1px solid #eee;
-    opacity: 0.1;
-    padding-top: 1.25em;
-    margin-top: 1.25em;
   }
 `
 
@@ -27,7 +21,12 @@ const Card = styled.div`
   overflow: hidden;
   box-shadow: var(--shadow);
   background: var(--card);
-  margin-bottom: 1.5em;
+
+  &:hover {
+    ${Title}, ${T.Text} {
+      color: var(--hover);
+    }
+  }
 `
 
 const LinkWrapper = styled.a`
@@ -56,10 +55,6 @@ const Image = styled(Img)`
   @media (min-width: 800px) {
     width: 50%;
   }
-`
-
-const Title = styled(T.HeadLine)`
-  color: var(--foreground);
 `
 
 const ProjectList = () => {

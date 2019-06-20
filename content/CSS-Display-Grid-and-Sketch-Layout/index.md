@@ -11,10 +11,6 @@ canonicalLink: https://medium.com/@danilowoznica/dear-designers-love-your-develo
 cover: ./asset-1.jpeg
 ---
 
-## Depending on your journey as a designer, you may be used to the freedom that graphic media allows: to create overlaps/overlays or to elaborate compositions and grids that fill all the paper with pretty organized photos and texts. However, why is it so hard to build a web page with this same freedom? Fortunately the capacity to build these layouts have been improving and what’s best: it is so simple that you can start using it right now!
-
-![](./asset-1.jpeg)
-
 ### How the web layout works
 
 All the options mentioned above make sense when applied on static medias where all copies will be the same, for example, books and magazines. But on the web things usually work differently: there are infinite device sizes, pages need to load quickly, while being accessible for screen readers and you need the developer’s ability to build everything that was drawn in Sketch or Photoshop, using the minimum possible amount of code so it can be reusable as much as possible.

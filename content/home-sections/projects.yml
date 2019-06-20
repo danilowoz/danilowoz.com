@@ -4,11 +4,6 @@ projectsAndShots:
     image: ./images/skapen.jpg
     link: https://www.behance.net/gallery/27308949/Skapen-Skateboard-pencil-
 
-  - title: Atomic design with React
-    description: Shot on Dribbble
-    image: ./images/atomic-design-dribbble.jpg
-    link: https://dribbble.com/shots/4082308-Atomic-design-with-React
-
   - title: Valid.js
     description: It is a logo suggestion for the open source project Valid.js, that is a library for data validation.
     image: ./images/validjs.png

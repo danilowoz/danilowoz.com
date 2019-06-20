@@ -19,7 +19,6 @@ const Wrapper = styled.div`
     margin: 2.75rem 0 1rem;
     line-height: 1.15;
     position: relative;
-    font-family: var(--mainFontHeading);
 
     &:hover .anchor {
       opacity: 1;
@@ -85,6 +84,11 @@ const Wrapper = styled.div`
 
   .gatsby-highlight {
     margin-bottom: 2rem;
+  }
+
+  .gatsby-resp-image-figcaption {
+    ${T.labelStyle};
+    text-align: center;
   }
 
   a {

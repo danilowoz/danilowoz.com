@@ -11,12 +11,6 @@ canonicalLink: https://codeburst.io/atomic-design-with-react-e7aea8152957
 cover: ./asset-1.jpeg
 ---
 
-![](./asset-1.jpeg)
-
-How the Atomic Design methodology allowed me to create a great design system from scratch and made me a better developer, with principles of componentization, hierarchies and reuses of code.
-
----
-
 I have recently had the opportunity to work on a new product from scratch made in React and PWA with the well-crafted and componentized UI at Cheesecake. However, when we discussed with the whole team the best way to approach the development, we ended up having the same old problems that have happened in most past projects, such as:
 
 - Lack of Styleguide of components;

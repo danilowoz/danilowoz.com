@@ -7,7 +7,7 @@ import { Provider } from '../components/LayoutContext'
 
 import * as Blog from '../components/blog'
 
-const BlogTemplate = ({ data: { mdx, site }, pageContext }) => {
+const BlogTemplate = ({ data: { mdx }, pageContext }) => {
   const { previous, next } = pageContext
 
   return (
@@ -41,7 +41,6 @@ const BlogTemplate = ({ data: { mdx, site }, pageContext }) => {
             />
             <Blog.Content body={mdx.code.body} />
             <Blog.Footer
-              site={site}
               previous={previous}
               next={next}
               slug={mdx.fields.slug}
@@ -57,12 +56,6 @@ export default BlogTemplate
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
-    site {
-      siteMetadata {
-        siteUrl
-        githubUrl
-      }
-    }
     mdx(id: { eq: $id }) {
       fields {
         slug

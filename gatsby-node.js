@@ -119,8 +119,23 @@ exports.createPages = ({ graphql, actions, reporter, pathPrefix }) => {
                 slug
                 published
               }
+              timeToRead
               frontmatter {
                 title
+                description
+                categories
+                date(formatString: "MMMM DD, YYYY")
+                canonicalLink
+                cover {
+                  childImageSharp {
+                    fluid(maxWidth: 500, maxHeight: 300, cropFocus: CENTER) {
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
               }
             }
           }
@@ -149,6 +164,7 @@ exports.createPages = ({ graphql, actions, reporter, pathPrefix }) => {
       if (previous && !previous.fields.published) {
         previous = null
       }
+
       if (next && !next.fields.published) {
         next = null
       }

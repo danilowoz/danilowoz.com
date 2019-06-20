@@ -9,7 +9,12 @@ import GithubIcon from '../images/github'
 import DribbbleIcon from '../images/dribbble'
 import BehanceIcon from '../images/behance'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  background: var(--section);
+  padding: 6vw;
+  border-radius: var(--borderRadius);
+  transition: var(--transitionEase);
+`
 
 const Col1 = styled.div`
   grid-column: 1/4;
@@ -23,6 +28,7 @@ const Col1 = styled.div`
 
 const Col2 = styled.div`
   grid-column: 4/13;
+  margin-top: -12vw;
 `
 
 const Title = styled(T.Title)`
@@ -37,7 +43,7 @@ const LabsSection = () => {
         <Col1>
           <div>
             <Title>Labs</Title>
-            <T.Linkable>
+            <T.Linkable css={{ marginBottom: '.7em' }}>
               <a
                 href="http://github.com/danilowoz"
                 target="_blank"
@@ -48,7 +54,7 @@ const LabsSection = () => {
                 github.com/danilowoz
               </a>
             </T.Linkable>
-            <T.Linkable>
+            <T.Linkable css={{ marginBottom: '.7em' }}>
               <a
                 href="https://dribbble.com/danilowoz"
                 target="_blank"
@@ -59,7 +65,7 @@ const LabsSection = () => {
                 dribbble.com/danilowoz
               </a>
             </T.Linkable>
-            <T.Linkable>
+            <T.Linkable css={{ marginBottom: '.7em' }}>
               <a
                 href="https://www.behance.net/danilowoz"
                 target="_blank"

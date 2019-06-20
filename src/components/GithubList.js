@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Snuggle from 'react-snuggle'
 
 import * as T from './typography'
+import abbreviateNumber from '../utils/abbreviateNumber'
 
 const Label = styled(T.Text)`
   font-size: 0.7em;
@@ -13,6 +14,8 @@ const Label = styled(T.Text)`
 const MetaData = styled.p`
   color: var(--main);
   margin-bottom: 0;
+  transition: var(--transitionEase);
+  font-size: 1rem;
 
   span {
     margin-right: 2em;
@@ -27,7 +30,7 @@ const Card = styled.div`
   padding: 1em;
 
   @media (min-width: 800px) {
-    padding: 1.5em 1.7em;
+    padding: 1.3em 1.5em;
   }
 `
 
@@ -37,6 +40,9 @@ const Grid = styled.div`
       &:nth-child(1) {
         font-size: 1.4em;
       }
+      &:nth-child(2) {
+        margin-top: 2em;
+      }
     }
   }
 `
@@ -44,8 +50,16 @@ const Grid = styled.div`
 const Column = styled.div`
   position: relative;
 
+  
+
   ${Label}, ${T.Text}, ${MetaData} {
     color: var(--foreground);
+  }
+
+  &:hover {
+    ${Label}, ${T.Text}, ${MetaData} {
+      color: var(--hover);
+    }
   }
 `
 
@@ -67,7 +81,8 @@ const GithubList = React.memo(() => {
               <Label>{project}</Label>
               <T.Text>{description}</T.Text>
               <MetaData>
-                <span>{language}</span> <span>{stars} stars</span>
+                <span>{language}</span>{' '}
+                <span>{abbreviateNumber(stars)} stars</span>
               </MetaData>
             </a>
           </Column>

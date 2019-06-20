@@ -45,7 +45,7 @@ const InstagramPictures = () => {
             <T.Title css={{ marginBottom: '1em' }}>
               About <span>me</span>
             </T.Title>
-            <T.Linkable>
+            <T.Linkable css={{ marginBottom: '.7em' }}>
               <a
                 href="mailto:danilowoz@gmail.com"
                 target="_blank"
@@ -56,7 +56,7 @@ const InstagramPictures = () => {
                 danilowoz@gmail.com
               </a>
             </T.Linkable>
-            <T.Linkable>
+            <T.Linkable css={{ marginBottom: '.7em' }}>
               <a
                 href="https://www.instagram.com/danilowoz/"
                 target="_blank"
