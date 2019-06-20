@@ -14,7 +14,7 @@ export const globalStyle = css`
 `
 
 export const MainTitle = styled.h1`
-  transition: var(--transitionEase);
+  transition: color var(--transitionEase);
 
   font-size: 2.8em;
   line-height: 1.2em;
@@ -23,7 +23,7 @@ export const MainTitle = styled.h1`
 `
 
 export const titleStyle = css`
-  transition: var(--transitionEase);
+  transition: color var(--transitionEase);
   color: var(--main);
 
   font-size: 1.8em;
@@ -41,7 +41,7 @@ export const Title = styled.h2`
 `
 
 export const HeadLine = styled.h3`
-  transition: var(--transitionEase);
+  transition: color var(--transitionEase);
 
   font-size: 1.5em;
   line-height: 1.5862069em;
@@ -50,7 +50,7 @@ export const HeadLine = styled.h3`
 `
 
 export const labelStyle = css`
-  transition: var(--transitionEase);
+  transition: color var(--transitionEase);
   color: var(--foreground);
   line-height: 1.4em;
   font-size: 0.7em;
@@ -61,11 +61,11 @@ export const labelStyle = css`
 
 export const Label = styled.p`
   ${labelStyle}
-  transition: var(--transitionEase);
+  transition: color var(--transitionEase);
 `
 
 export const textStyle = css`
-  transition: var(--transitionEase);
+  transition: color var(--transitionEase);
   color: var(--foreground);
   line-height: 1.6em;
 
@@ -80,14 +80,14 @@ export const Text = styled.p`
 export const linkableStyle = css`
   ${textStyle};
   & {
-    transition: var(--transitionEase);
+    transition: color var(--transitionEase);
     border: 0;
     background: none;
     padding: 0;
     opacity: 0.7;
     color: var(--main);
     text-decoration: none;
-    transition: var(--transitionEase);
+    transition: color var(--transitionEase);
 
     &: hover {
       opacity: 1;

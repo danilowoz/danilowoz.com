@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   p,
   li {
     ${T.textStyle}
-    color: var(--main);
+    color: #666;
   }
 
   p > code.language-text {

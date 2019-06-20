@@ -9,8 +9,13 @@ import Email from '../images/email'
 import Snuggle from 'react-snuggle'
 
 const Col1 = styled.div`
-  grid-column: 1/4;
-  margin-top: -1.25rem;
+  grid-column: 1/6;
+  margin-top: 4rem;
+
+  @media (min-width: 1200px) {
+    margin-top: -1.25rem;
+    grid-column: 1/4;
+  }
 
   > div {
     position: sticky;
@@ -19,11 +24,29 @@ const Col1 = styled.div`
 `
 
 const Col2 = styled.div`
-  grid-column: 4/8;
+  grid-column: 6/13;
+  margin-top: 2em;
+
+  @media (min-width: 800px) {
+    margin-top: 0em;
+  }
+
+  @media (min-width: 1200px) {
+    grid-column: 4/8;
+  }
 `
 
 const Col3 = styled.div`
-  grid-column: 9/13;
+  grid-column: 1/13;
+  margin-top: 4em;
+
+  @media (min-width: 800px) {
+    margin-top: 0em;
+  }
+
+  @media (min-width: 1200px) {
+    grid-column: 9/13;
+  }
 `
 
 const Card = styled.div`

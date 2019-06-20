@@ -14,7 +14,7 @@ const Label = styled(T.Text)`
 const MetaData = styled.p`
   color: var(--main);
   margin-bottom: 0;
-  transition: var(--transitionEase);
+  transition: color var(--transitionEase);
   font-size: 1rem;
 
   span {
@@ -26,16 +26,22 @@ const Card = styled.div`
   background: var(--card);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow);
-  transition: var(--transitionEase);
+  transition: background var(--transitionEase);
   padding: 1em;
 
   @media (min-width: 800px) {
     padding: 1.3em 1.5em;
   }
+
+  @media (max-width: 800px) {
+    &:nth-child(2n) {
+      display: none;
+    }
+  }
 `
 
 const Grid = styled.div`
-  @media (min-width: 800px) {
+  @media (min-width: 1300px) {
     ${Card} {
       &:nth-child(1) {
         font-size: 1.4em;
@@ -49,8 +55,6 @@ const Grid = styled.div`
 
 const Column = styled.div`
   position: relative;
-
-  
 
   ${Label}, ${T.Text}, ${MetaData} {
     color: var(--foreground);

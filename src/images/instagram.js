@@ -6,6 +6,7 @@ const SVG = styled.svg`
   width: 20px;
   vertical-align: middle;
   margin-right: 0.4em;
+  margin-top: -0.1em;
 `
 
 export default () => (

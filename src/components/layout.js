@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     --mainFont: "Roboto", sans-serif;
 
     --transitionCubic: all cubic-bezier(0.19, 1, 0.22, 1) 400ms;
-    --transitionEase: all ease-in-out 400ms;
+    --transitionEase: ease-in-out 400ms;
 
     --shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;;
     --borderRadius: 4px;
@@ -31,7 +31,7 @@ const Variables = styled.div`
   --card: ${({ vars }) => vars.card};
 
   background: var(--body);
-  transition: var(--transitionEase);
+  transition: background var(--transitionEase);
 `
 
 const Layout = ({ children }) => {

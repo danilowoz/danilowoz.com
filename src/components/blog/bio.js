@@ -17,6 +17,11 @@ const ImageWrapper = styled.div`
   margin-right: 1em;
 `
 
+const Text = styled(T.Text)`
+  line-height: 1.2;
+  margin-top: 0.2em;
+`
+
 const Bio = () => {
   const { site, avatar } = useStaticQuery(query)
   const { author, shortBio } = site.siteMetadata
@@ -26,11 +31,11 @@ const Bio = () => {
       <ImageWrapper>
         <Image fixed={avatar.childImageSharp.fixed} alt={author} />
       </ImageWrapper>
-      <T.Text>
-        Written by <strong>{author}</strong>
+      <Text>
+        Written by {author}
         <br />
         <small>{shortBio ? ` ${shortBio}` : ''}.</small>
-      </T.Text>
+      </Text>
     </Wrapper>
   )
 }

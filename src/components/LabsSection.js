@@ -10,14 +10,29 @@ import DribbbleIcon from '../images/dribbble'
 import BehanceIcon from '../images/behance'
 
 const Wrapper = styled.div`
-  background: var(--section);
-  padding: 6vw;
-  border-radius: var(--borderRadius);
-  transition: var(--transitionEase);
+  @media (min-width: 800px) {
+    background: var(--section);
+    border-radius: var(--borderRadius);
+    transition: var(--transitionEase);
+    padding: 1.5em;
+    margin-top: 10em;
+  }
+
+  @media (min-width: 1300px) {
+    padding: 6vw;
+  }
 `
 
 const Col1 = styled.div`
-  grid-column: 1/4;
+  grid-column: 1/13;
+
+  @media (min-width: 800px) {
+    grid-column: 1/5;
+  }
+
+  @media (min-width: 1300px) {
+    grid-column: 1/4;
+  }
 
   > div {
     position: sticky;
@@ -27,8 +42,17 @@ const Col1 = styled.div`
 `
 
 const Col2 = styled.div`
-  grid-column: 4/13;
-  margin-top: -12vw;
+  grid-column: 1/13;
+  margin-top: 4vw;
+
+  @media (min-width: 800px) {
+    grid-column: 5/13;
+    margin-top: -12vw;
+  }
+
+  @media (min-width: 1300px) {
+    grid-column: 4/13;
+  }
 `
 
 const Title = styled(T.Title)`

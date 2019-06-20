@@ -22,9 +22,28 @@ const Card = styled.div`
   box-shadow: var(--shadow);
   background: var(--card);
 
+  margin-bottom: 1em;
+  @media (min-width: 800px) {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: block;
+
+    @media (min-width: 800px) {
+      display: flex;
+    }
+  }
+
   &:hover {
     ${Title}, ${T.Text} {
       color: var(--hover);
+    }
+  }
+
+  @media (max-width: 800px) {
+    &:nth-child(2n) {
+      display: none;
     }
   }
 `
@@ -37,6 +56,10 @@ const LinkWrapper = styled.a`
 
 const Content = styled.div`
   padding: 0 1em;
+
+  > div {
+    padding: 2em 0;
+  }
 
   @media (min-width: 800px) {
     width: 50%;

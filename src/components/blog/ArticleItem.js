@@ -30,7 +30,7 @@ const Description = styled(T.Text)`
 
 const ArrowLink = styled.p`
   color: var(--main);
-  transition: var(--transitionEase);
+  transition: color var(--transitionEase);
 
   &:after {
     content: '';
@@ -57,7 +57,6 @@ const ArticleHeroContent = styled.div`
 
 const ArticleItem = styled.article`
   width: 100%;
-  transition: var(--transitionEase);
 
   margin-bottom: 4em;
 
