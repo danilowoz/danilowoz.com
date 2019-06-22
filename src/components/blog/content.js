@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import styled from 'styled-components'
 
@@ -7,6 +6,8 @@ import Embed from './embed'
 import * as T from '../typography'
 
 const Wrapper = styled.div`
+  padding: 1em;
+
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;

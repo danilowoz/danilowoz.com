@@ -22,6 +22,10 @@ const MetaData = styled.p`
   }
 `
 
+const Text = styled(T.Text)`
+  font-size: 1em;
+`
+
 const Card = styled.div`
   background: var(--card);
   border-radius: var(--borderRadius);
@@ -56,12 +60,12 @@ const Grid = styled.div`
 const Column = styled.div`
   position: relative;
 
-  ${Label}, ${T.Text}, ${MetaData} {
+  ${Label}, ${Text}, ${MetaData} {
     color: var(--foreground);
   }
 
   &:hover {
-    ${Label}, ${T.Text}, ${MetaData} {
+    ${Label}, ${Text}, ${MetaData} {
       color: var(--hover);
     }
   }
@@ -83,7 +87,7 @@ const GithubList = React.memo(() => {
           <Column index={index} key={project}>
             <a href={link} target="_blank" rel="noopener noreferrer">
               <Label>{project}</Label>
-              <T.Text>{description}</T.Text>
+              <Text>{description}</Text>
               <MetaData>
                 <span>{language}</span>{' '}
                 <span>{abbreviateNumber(stars)} stars</span>

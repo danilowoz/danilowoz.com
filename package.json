@@ -36,6 +36,7 @@
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.1",
     "react-intersection-visible": "^2.1.0",
     "react-snuggle": "^1.1.0",

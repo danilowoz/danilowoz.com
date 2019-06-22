@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
  ${T.globalStyle}
 
  :root {
-    --mainFont: "Roboto", sans-serif;
+    --mainFont: "Raleway", sans-serif;
+    --mainFontSerif: 'Playfair Display', serif;
 
     --transitionCubic: all cubic-bezier(0.19, 1, 0.22, 1) 400ms;
     --transitionEase: ease-in-out 400ms;
@@ -41,7 +42,7 @@ const Layout = ({ children }) => {
     <Variables vars={currentVariables}>
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+          href="https://fonts.googleapis.com/css?family=Playfair+Display:400|Raleway:400,700&display=swap"
           rel="stylesheet"
         />
       </Helmet>

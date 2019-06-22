@@ -31,6 +31,7 @@ const Description = styled(T.Text)`
 const ArrowLink = styled.p`
   color: var(--main);
   transition: color var(--transitionEase);
+  font-size: 1rem;
 
   &:after {
     content: '';
@@ -95,7 +96,7 @@ const ArticleHero = styled.article`
     grid-column: 1/3;
   }
 
-  .gatsby-image-wrapper {
+  > a {
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     width: 100%;
@@ -118,7 +119,9 @@ const ArticleHero = styled.article`
 
 export const ArticleFeatured = ({ post }) => (
   <ArticleHero>
-    <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
+    <Link to={post.fields.slug}>
+      <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
+    </Link>
 
     <ArticleHeroContent>
       <Link to={post.fields.slug}>

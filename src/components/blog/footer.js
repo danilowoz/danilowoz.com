@@ -59,6 +59,7 @@ const Wrapper = styled.footer`
   padding-top: 2em;
   padding-bottom: 10em;
   margin-top: 4em;
+  padding: 1em;
 
   display: flex;
   justify-content: space-between;

@@ -12,12 +12,17 @@ const Container = styled(Grid).attrs({ as: 'header' })`
 `
 
 const Content = styled.div`
-  display: flex;
-  grid-column: 1 / 6;
-  padding-right: 4em;
+  padding: 1em;
 
-  > div {
-    margin: auto;
+  @media (min-width: 1000px) {
+    padding-right: 4em;
+
+    display: flex;
+    grid-column: 1 / 6;
+
+    > div {
+      margin: auto;
+    }
   }
 `
 

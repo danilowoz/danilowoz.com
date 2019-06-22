@@ -4,7 +4,7 @@ export const globalStyle = css`
   body {
     scroll-behavior: smooth;
     font-family: var(--mainFont);
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.4em;
 
     @media (min-width: 800px) {
@@ -15,6 +15,7 @@ export const globalStyle = css`
 
 export const MainTitle = styled.h1`
   transition: color var(--transitionEase);
+  font-family: var(--mainFontSerif);
 
   font-size: 2.8em;
   line-height: 1.2em;
@@ -25,8 +26,10 @@ export const MainTitle = styled.h1`
 export const titleStyle = css`
   transition: color var(--transitionEase);
   color: var(--main);
+  font-family: var(--mainFontSerif);
+  letter-spacing: 1px;
 
-  font-size: 1.8em;
+  font-size: 2em;
   line-height: 1.5862069em;
   margin-top: 0.79310345em;
   margin-bottom: 0.2em;
@@ -67,7 +70,8 @@ export const Label = styled.p`
 export const textStyle = css`
   transition: color var(--transitionEase);
   color: var(--foreground);
-  line-height: 1.6em;
+  line-height: 1.5em;
+  font-size: 1rem;
 
   margin-top: 0em;
   margin-bottom: 1.27777778em;

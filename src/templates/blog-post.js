@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { Provider } from '../components/LayoutContext'
 
 import * as Blog from '../components/blog'
+import Header from '../components/Header'
 
 const BlogTemplate = ({ data: { mdx }, pageContext }) => {
   const { previous, next } = pageContext
@@ -13,6 +14,7 @@ const BlogTemplate = ({ data: { mdx }, pageContext }) => {
   return (
     <Provider>
       <Layout>
+        <Header />
         <SEO
           title={mdx.frontmatter.title}
           description={mdx.frontmatter.description}
