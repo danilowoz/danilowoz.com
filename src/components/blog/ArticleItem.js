@@ -69,6 +69,7 @@ const ArticleItem = styled.article`
   .gatsby-image-wrapper {
     width: 100%;
     border-radius: var(--borderRadius);
+    overflow: hidden;
 
     margin-bottom: 1em;
 
@@ -101,6 +102,7 @@ const ArticleHero = styled.article`
     box-shadow: var(--shadow);
     width: 100%;
     margin-bottom: 1em;
+    overflow: hidden;
 
     @media (min-width: 800px) {
       margin-bottom: 0;

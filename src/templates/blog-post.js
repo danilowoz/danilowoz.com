@@ -41,6 +41,7 @@ const BlogTemplate = ({ data: { mdx }, pageContext }) => {
               timeToRead={mdx.timeToRead}
               cover={mdx.frontmatter.cover}
             />
+            <Blog.TableOfContents tableOfContents={mdx.tableOfContents} />
             <Blog.Content body={mdx.code.body} />
             <Blog.Footer
               previous={previous}
@@ -80,6 +81,7 @@ export const pageQuery = graphql`
       code {
         body
       }
+      tableOfContents
     }
   }
 `

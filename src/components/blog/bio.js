@@ -19,7 +19,7 @@ const ImageWrapper = styled.div`
 
 const Text = styled(T.Text)`
   line-height: 1.2;
-  margin-top: 0.2em;
+  margin-top: 0.5em;
 `
 
 const Bio = () => {

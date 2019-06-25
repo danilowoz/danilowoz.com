@@ -111,7 +111,7 @@ module.exports = {
 }
 ```
 
-#### These plugins are:
+**These plugins are:**
 
 - [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/): turn the markdown readable to Gatsby;
 - [gatsby-remark-images](https://www.gatsbyjs.org/packages/gatsby-remark-images/): you will need this later to consume images.

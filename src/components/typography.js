@@ -91,9 +91,9 @@ export const linkableStyle = css`
     opacity: 0.7;
     color: var(--main);
     text-decoration: none;
-    transition: color var(--transitionEase);
+    transition: opacity var(--transitionEase);
 
-    &: hover {
+    &:hover {
       opacity: 1;
     }
   }
