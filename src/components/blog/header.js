@@ -34,7 +34,7 @@ const ImageWrapper = styled.div`
 
 const Header = ({ title, date, timeToRead, description, cover }) => {
   return (
-    <Container>
+    <Container id="blog-header">
       <Content>
         <div>
           <T.Text>

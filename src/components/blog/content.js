@@ -103,7 +103,7 @@ const Wrapper = styled.div`
 
 const BlogContent = ({ body }) => {
   return (
-    <Wrapper>
+    <Wrapper id="blog-content">
       <MDXRenderer scope={{ Embed }}>{body}</MDXRenderer>
     </Wrapper>
   )
