@@ -1,5 +1,3 @@
-const Promise = require(`bluebird`)
-
 exports.sourceNodes = async (...args) => {
   await Promise.all([
     ...require('./gatsby/get-github-data.js')(...args),
