@@ -58,7 +58,9 @@ const Header = () => {
 
           <div>
             {menu.map(({ name, to }) => (
-              <NavLink to={to}>{name}</NavLink>
+              <NavLink key={name} to={to}>
+                {name}
+              </NavLink>
             ))}
           </div>
         </Wrapper>

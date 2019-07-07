@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 import * as T from '../typography'
@@ -95,7 +95,7 @@ const ReadMoreSection = styled.div`
   }
 `
 
-const Footer = ({ next, previous, slug }) => {
+const Footer = ({ slug, allPosts }) => {
   const { site } = useStaticQuery(query)
   const { social } = site.siteMetadata
 
@@ -135,8 +135,9 @@ const Footer = ({ next, previous, slug }) => {
         <ReadMoreSection>
           <T.HeadLine>Read more:</T.HeadLine>
 
-          {previous && <Article post={previous} />}
-          {next && <Article post={next} />}
+          {allPosts.map(e => (
+            <Article key={e.node.id} post={e.node} />
+          ))}
         </ReadMoreSection>
       </Wrapper>
     </Container>

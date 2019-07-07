@@ -18,10 +18,10 @@ const ArticleList = ({ categorySelected }) => {
         })
         .map((post, index) => {
           if (index === 0) {
-            return <ArticleFeatured post={post} />
+            return <ArticleFeatured key={post.id} post={post} />
           }
 
-          return <Article post={post} />
+          return <Article key={post.id} post={post} />
         })}
     </>
   )
@@ -36,6 +36,7 @@ const query = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
+        id
         fields {
           slug
         }

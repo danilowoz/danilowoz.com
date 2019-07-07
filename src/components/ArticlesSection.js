@@ -73,6 +73,7 @@ const Sections = () => {
             {categories.map(e => {
               return (
                 <CategoryItem
+                  key={e}
                   onClick={() => handleCategory(e)}
                   active={e === categorySelected}
                 >

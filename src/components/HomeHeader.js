@@ -70,6 +70,7 @@ const NavLink = styled(Link)`
   ${T.linkableStyle};
   color: var(--foreground);
   margin-right: 1.8em;
+  font-weight: bold;
 `
 
 const ProfileImage = styled.img`
@@ -101,7 +102,9 @@ const HomeHeader = () => {
           </T.MainTitle>
           <T.Text>{description}</T.Text>
           {menu.map(({ name, to }) => (
-            <NavLink to={to}>{name}</NavLink>
+            <NavLink key={name} to={to}>
+              {name}
+            </NavLink>
           ))}
         </Row>
 

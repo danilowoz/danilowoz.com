@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import MainGrid from './Grid'
 import * as T from '../components/typography'
 import Instagram from '../images/instagram'
+import Twitter from '../images/twitter'
 import Email from '../images/email'
 import Snuggle from 'react-snuggle'
 
@@ -72,7 +73,6 @@ const InstagramPictures = () => {
               <a
                 href="mailto:danilowoz@gmail.com"
                 target="_blank"
-                without
                 rel="noopener noreferrer"
               >
                 <Email />
@@ -83,11 +83,20 @@ const InstagramPictures = () => {
               <a
                 href="https://www.instagram.com/danilowoz/"
                 target="_blank"
-                without
                 rel="noopener noreferrer"
               >
                 <Instagram />
                 instagram.com/danilowoz
+              </a>
+            </T.Linkable>
+            <T.Linkable css={{ marginBottom: '.7em' }}>
+              <a
+                href="https://twitter.com/danilowoz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter />
+                twitter.com/danilowoz
               </a>
             </T.Linkable>
           </div>
@@ -115,7 +124,6 @@ const InstagramPictures = () => {
                   <a
                     href={link}
                     target="_blank"
-                    without
                     rel="noopener noreferrer"
                     key={id}
                   >

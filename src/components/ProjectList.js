@@ -87,7 +87,7 @@ const ProjectList = () => {
     <Grid>
       {homeSectionsYaml.projectsAndShots.map(project => {
         return (
-          <Card>
+          <Card key={project.link}>
             <LinkWrapper href={project.link} target="_blank">
               <Content>
                 <div>

@@ -70,7 +70,7 @@ const Item = React.memo(({ item, activeItems }) => {
       </Link>
       {item.items &&
         item.items.map(subItems => (
-          <Item item={subItems} activeItems={activeItems} />
+          <Item key={subItems.url} item={subItems} activeItems={activeItems} />
         ))}
     </Divisor>
   )
@@ -140,11 +140,11 @@ const TableOfContents = React.memo(({ tableOfContents }) => {
       <>
         <Progress style={{ height: `${progress}px` }} />
         {tableOfContents.items.map(item => (
-          <Item item={item} activeItems={activeItems} />
+          <Item key={item.url} item={item} activeItems={activeItems} />
         ))}
       </>
     )
-  }, [progress, tableOfContents.items, activeItems])
+  }, [tableOfContents, progress, activeItems])
 
   return (
     <Container show={show}>

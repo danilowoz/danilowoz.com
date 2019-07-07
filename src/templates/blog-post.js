@@ -9,7 +9,7 @@ import * as Blog from '../components/blog'
 import Header from '../components/Header'
 
 const BlogTemplate = ({ data: { mdx }, pageContext }) => {
-  const { previous, next } = pageContext
+  const { allPosts } = pageContext
 
   return (
     <Provider>
@@ -43,11 +43,7 @@ const BlogTemplate = ({ data: { mdx }, pageContext }) => {
             />
             <Blog.TableOfContents tableOfContents={mdx.tableOfContents} />
             <Blog.Content body={mdx.code.body} />
-            <Blog.Footer
-              previous={previous}
-              next={next}
-              slug={mdx.fields.slug}
-            />
+            <Blog.Footer allPosts={allPosts} slug={mdx.fields.slug} />
           </article>
         </section>
       </Layout>

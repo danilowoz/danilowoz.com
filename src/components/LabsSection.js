@@ -71,7 +71,6 @@ const LabsSection = () => {
               <a
                 href="http://github.com/danilowoz"
                 target="_blank"
-                without
                 rel="noopener noreferrer"
               >
                 <GithubIcon />
@@ -82,7 +81,6 @@ const LabsSection = () => {
               <a
                 href="https://dribbble.com/danilowoz"
                 target="_blank"
-                without
                 rel="noopener noreferrer"
               >
                 <DribbbleIcon />
@@ -93,7 +91,6 @@ const LabsSection = () => {
               <a
                 href="https://www.behance.net/danilowoz"
                 target="_blank"
-                without
                 rel="noopener noreferrer"
               >
                 <BehanceIcon />
