@@ -64,19 +64,22 @@ const Sections = () => {
     }, [])
     .filter((v, i, arr) => arr.indexOf(v) === i)
 
-
-  const [props, set] = useSpring(() => ({ opacity: 0, transform: `translateY(4em)`, config: config.slow }))
+  const [props, set] = useSpring(() => ({
+    opacity: 0,
+    transform: `translateY(4em)`,
+    config: config.slow,
+  }))
 
   React.useEffect(() => {
     setTimeout(() => {
       set({ opacity: 1, transform: `translateY(0)` })
     }, 1200)
-  }, [])
+  }, [set])
 
   return (
     <Wrapper style={props}>
       <Grid>
-        <Row >
+        <Row>
           <T.Title>Articles</T.Title>
 
           <CategoryList>

@@ -114,7 +114,7 @@ const HomeHeader = () => {
     setTimeout(() => {
       set({ height: '60vh' })
     }, 1000)
-  }, [])
+  }, [set])
 
   return (
     <Background>
@@ -122,7 +122,10 @@ const HomeHeader = () => {
         <Wrapper>
           <Row>
             <T.MainTitle>
-              {title} <span>👋</span>
+              {title}{' '}
+              <span role="img" aria-label="hey there">
+                👋
+              </span>
             </T.MainTitle>
             <T.Text>{description}</T.Text>
             {menu.map(({ name, to }) => (

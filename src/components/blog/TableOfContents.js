@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import removeEmoji from '../../utils/removeEmoji'
 import * as T from '../typography'
 
 const Container = styled.div`
@@ -57,7 +56,7 @@ const Link = styled.a`
     `}
 `
 
-const WINDOW_HEIGHT = window.innerHeight
+const WINDOW_HEIGHT = typeof window !== 'undefined' && window.innerHeight
 
 const Item = React.memo(({ item, activeItems }) => {
   const isActive =
@@ -101,13 +100,6 @@ const TableOfContents = React.memo(({ tableOfContents }) => {
     setShow(document.documentElement.scrollTop > top + height)
   }
 
-  const checkScroll = () => {
-    if (blogHeaderSelector && tableOfContentsRefs) {
-      handleShow(blogHeaderSelector)
-      handleMenuActive(tableOfContentsRefs)
-    }
-  }
-
   React.useEffect(() => {
     const refs = tableOfContents.items
       .reduce((prev, curr) => {
@@ -130,10 +122,17 @@ const TableOfContents = React.memo(({ tableOfContents }) => {
   }, [tableOfContents.items, tableOfContentsRefs])
 
   React.useEffect(() => {
+    const checkScroll = () => {
+      if (blogHeaderSelector && tableOfContentsRefs) {
+        handleShow(blogHeaderSelector)
+        handleMenuActive(tableOfContentsRefs)
+      }
+    }
+
     document.addEventListener('scroll', checkScroll)
 
     return () => document.removeEventListener('scroll', checkScroll)
-  }, [checkScroll])
+  }, [blogHeaderSelector, tableOfContentsRefs])
 
   const renderProgressAndItems = React.useMemo(() => {
     return (

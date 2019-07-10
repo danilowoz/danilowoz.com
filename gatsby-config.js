@@ -1,4 +1,3 @@
-const mdxFeed = require('gatsby-mdx/feed')
 const siteConfig = require('./content/site-config')
 
 module.exports = {
@@ -10,6 +9,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     `gatsby-transformer-yaml`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -37,7 +37,6 @@ module.exports = {
               showLineNumbers: true,
             },
           },
-          'gatsby-remark-copy-linked-files',
           'gatsby-remark-embed-video',
           {
             resolve: 'gatsby-remark-responsive-iframe',
@@ -45,8 +44,6 @@ module.exports = {
               wrapperStyle: 'margin-bottom: 1.0725rem',
             },
           },
-          'gatsby-remark-autolink-headers',
-          'gatsby-remark-smartypants',
           {
             resolve: '@weknow/gatsby-remark-twitter',
             options: {
@@ -82,10 +79,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: siteConfig.logo,
       },
-    },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: mdxFeed,
     },
   ],
 }
