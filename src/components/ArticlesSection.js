@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
+import { useSpring, animated, config } from 'react-spring'
 
 import * as T from '../components/typography'
 import ArticlesList from './ArticlesList'
 
 import Grid from './Grid'
 
-const Wrapper = styled.div``
+const Wrapper = styled(animated.div)``
 
 const Row = styled.div`
   grid-column: 1/13;
@@ -63,10 +64,19 @@ const Sections = () => {
     }, [])
     .filter((v, i, arr) => arr.indexOf(v) === i)
 
+
+  const [props, set] = useSpring(() => ({ opacity: 0, transform: `translateY(4em)`, config: config.slow }))
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      set({ opacity: 1, transform: `translateY(0)` })
+    }, 1200)
+  }, [])
+
   return (
-    <Wrapper>
+    <Wrapper style={props}>
       <Grid>
-        <Row>
+        <Row >
           <T.Title>Articles</T.Title>
 
           <CategoryList>

@@ -29,7 +29,7 @@ const Col2 = styled.div`
   margin-top: 2em;
 
   @media (min-width: 800px) {
-    margin-top: 0em;
+    margin-top: 1em;
   }
 
   @media (min-width: 1200px) {
@@ -42,7 +42,7 @@ const Col3 = styled.div`
   margin-top: 4em;
 
   @media (min-width: 800px) {
-    margin-top: 0em;
+    margin-top: 1em;
   }
 
   @media (min-width: 1200px) {
@@ -58,7 +58,7 @@ const Card = styled.div`
   }
 `
 
-const InstagramPictures = () => {
+const About = () => {
   const { allInstagramImages, homeSectionsYaml, site } = useStaticQuery(query)
 
   return (
@@ -166,4 +166,4 @@ const query = graphql`
   }
 `
 
-export default InstagramPictures
+export default About

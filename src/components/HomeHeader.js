@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
+import { useSpring, animated } from 'react-spring'
 
 import * as T from './typography'
 import Grid from './Grid'
@@ -39,16 +40,20 @@ const Background = styled.div`
     }
   }
 `
-const Wrapper = styled(Grid)`
+
+const ContainerAnimated = styled(animated.div)`
   height: 50vh;
+  @media (min-width: 800px) {
+    height: 60vh;
+  }
+`
+
+const Wrapper = styled(Grid)`
   overflow: hidden;
   position: relative;
   z-index: 1;
   display: flex;
-
-  @media (min-width: 800px) {
-    height: 60vh;
-  }
+  height: 100%;
 
   > * {
     margin: auto 0;
@@ -73,8 +78,9 @@ const NavLink = styled(Link)`
   font-weight: bold;
 `
 
-const ProfileImage = styled.img`
+const ProfileImage = styled.div`
   display: none;
+  position: relative;
 
   @media (min-width: 800px) {
     grid-column: 6 / 13;
@@ -85,6 +91,15 @@ const ProfileImage = styled.img`
   @media (min-width: 1200px) {
     grid-column: 8 / 13;
   }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: none;
+  }
 `
 
 const HomeHeader = () => {
@@ -93,23 +108,35 @@ const HomeHeader = () => {
   const title = site.siteMetadata.title
   const { menu, description } = site.siteMetadata
 
+  const [props, set] = useSpring(() => ({ height: '90vh' }))
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      set({ height: '60vh' })
+    }, 1000)
+  }, [])
+
   return (
     <Background>
-      <Wrapper>
-        <Row>
-          <T.MainTitle>
-            {title} <span>👋</span>
-          </T.MainTitle>
-          <T.Text>{description}</T.Text>
-          {menu.map(({ name, to }) => (
-            <NavLink key={name} to={to}>
-              {name}
-            </NavLink>
-          ))}
-        </Row>
+      <ContainerAnimated style={props}>
+        <Wrapper>
+          <Row>
+            <T.MainTitle>
+              {title} <span>👋</span>
+            </T.MainTitle>
+            <T.Text>{description}</T.Text>
+            {menu.map(({ name, to }) => (
+              <NavLink key={name} to={to}>
+                {name}
+              </NavLink>
+            ))}
+          </Row>
 
-        <ProfileImage src={profileSource} alt={title} />
-      </Wrapper>
+          <ProfileImage src={profileSource} alt={title}>
+            <img src={profileSource} alt={title} />
+          </ProfileImage>
+        </Wrapper>
+      </ContainerAnimated>
     </Background>
   )
 }

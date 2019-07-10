@@ -77,6 +77,10 @@ const ButtonEdit = styled.a`
 
 const Social = styled.ul`
   display: flex;
+
+  a {
+    display: block;
+  }
 `
 
 const SocialWrapper = styled(T.Linkable).attrs({ as: 'li' })`
@@ -106,9 +110,7 @@ const Footer = ({ slug, allPosts }) => {
           <ButtonEdit
             target="_blank"
             rel="nofollow noopener noreferrer"
-            href={`${
-              site.siteMetadata.githubUrl
-            }/edit/master/content${slug}index.md`}
+            href={`${site.siteMetadata.githubUrl}/edit/master/content${slug}index.md`}
           >
             Edit this post on GitHub
           </ButtonEdit>
