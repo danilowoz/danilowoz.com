@@ -38,6 +38,7 @@ module.exports = {
             },
           },
           'gatsby-remark-embed-video',
+          `gatsby-remark-autolink-headers`,
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {

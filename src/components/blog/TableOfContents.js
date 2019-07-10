@@ -100,6 +100,13 @@ const TableOfContents = React.memo(({ tableOfContents }) => {
     setShow(document.documentElement.scrollTop > top + height)
   }
 
+  const checkScroll = React.useCallback(() => {
+    if (blogHeaderSelector && tableOfContentsRefs) {
+      handleShow(blogHeaderSelector)
+      handleMenuActive(tableOfContentsRefs)
+    }
+  }, [blogHeaderSelector, tableOfContentsRefs])
+
   React.useEffect(() => {
     const refs = tableOfContents.items
       .reduce((prev, curr) => {
@@ -122,17 +129,10 @@ const TableOfContents = React.memo(({ tableOfContents }) => {
   }, [tableOfContents.items, tableOfContentsRefs])
 
   React.useEffect(() => {
-    const checkScroll = () => {
-      if (blogHeaderSelector && tableOfContentsRefs) {
-        handleShow(blogHeaderSelector)
-        handleMenuActive(tableOfContentsRefs)
-      }
-    }
-
     document.addEventListener('scroll', checkScroll)
 
     return () => document.removeEventListener('scroll', checkScroll)
-  }, [blogHeaderSelector, tableOfContentsRefs])
+  }, [checkScroll])
 
   const renderProgressAndItems = React.useMemo(() => {
     return (
