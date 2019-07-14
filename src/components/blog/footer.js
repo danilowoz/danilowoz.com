@@ -103,6 +103,14 @@ const Footer = ({ slug, allPosts }) => {
   const { site } = useStaticQuery(query)
   const { social } = site.siteMetadata
 
+  const renderAllPostsExceptTHeCurrent = allPosts.reduce((prev, {node}) => {
+    if(node.fields.slug !== slug) {
+      prev.push(<Article key={node.id} post={node} />)
+    }
+
+    return prev
+  }, [])
+
   return (
     <Container>
       <Wrapper>
@@ -137,9 +145,7 @@ const Footer = ({ slug, allPosts }) => {
         <ReadMoreSection>
           <T.HeadLine>Read more:</T.HeadLine>
 
-          {allPosts.map(e => (
-            <Article key={e.node.id} post={e.node} />
-          ))}
+          {renderAllPostsExceptTHeCurrent}
         </ReadMoreSection>
       </Wrapper>
     </Container>

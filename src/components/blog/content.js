@@ -43,6 +43,7 @@ const Wrapper = styled.div`
   h5 {
     font-weight: bold;
     font-size: 1em;
+    margin-bottom: .5em;
   }
 
   small,
@@ -53,7 +54,8 @@ const Wrapper = styled.div`
   p,
   li {
     ${T.textStyle}
-    color: #666;
+    color: #333;
+    line-height: 1.8;
   }
 
   p > code.language-text {
@@ -90,6 +92,16 @@ const Wrapper = styled.div`
   .gatsby-resp-image-figcaption {
     ${T.labelStyle};
     text-align: center;
+  }
+
+  .gatsby-resp-image-image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   a {

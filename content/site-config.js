@@ -4,9 +4,9 @@ module.exports = {
   title: 'Danilo Woznica',
   shortName: `Danilo Woznica`,
   description:
-    'I’m a 26-year-old UI developer with 8+ years of professional experience with large and medium-sized projects. I’m currently working in Porto, Portugal.',
-  shortBio: 'Cool guy',
-  bio: `I’m a 26-year-old UI developer with 8+ years of professional experience with large and medium-sized projects. I’m currently working in Porto, Portugal.`,
+    'Brazilian frontend developer based in Porto, Portugal. Design-driven developer focused on crafting meaningful products',
+  shortBio: 'Brazilian frontend developer based in Porto, Portugal.',
+  bio: `Brazilian frontend developer based in Porto, Portugal. Design-driven developer focused on crafting meaningful products`,
   author: 'Danilo Woznica',
   githubUrl: 'https://github.com/danilowoz',
   siteUrl: 'https://danilowoz.com',

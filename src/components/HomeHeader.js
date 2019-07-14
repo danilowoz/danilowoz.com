@@ -55,11 +55,6 @@ const Wrapper = styled(Grid)`
   display: flex;
   height: 100%;
 
-  > * {
-    margin: auto 0;
-    grid-column: 1 / 5;
-  }
-
   @media (max-width: 800px) {
     ${T.MainTitle} span {
       display: none;
@@ -69,6 +64,8 @@ const Wrapper = styled(Grid)`
 
 const Row = styled.div`
   position: relative;
+  margin: auto 0;
+  grid-column: 1 / 6;
 `
 
 const NavLink = styled(Link)`

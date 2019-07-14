@@ -12,14 +12,20 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   border-radius: 100%;
   overflow: hidden;
+  min-width: 50px;
   width: 50px;
+  min-height: 50px;
   height: 50px;
   margin-right: 1em;
 `
 
 const Text = styled(T.Text)`
   line-height: 1.2;
-  margin-top: 0.5em;
+
+  small {
+    max-width: 20em;
+    display: inline-block;
+  }
 `
 
 const Bio = () => {
