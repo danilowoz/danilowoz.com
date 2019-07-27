@@ -13,6 +13,7 @@
     "develop": "gatsby develop -H 0.0.0.0",
     "dev": "npm run develop",
     "serve": "gatsby serve",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "start": "npm run develop",
     "format": "prettier --write src/**/*.{js,jsx,md,json,yml,svg}",
     "lint": "eslint src --ext .js,.jsx --fix"
@@ -66,6 +67,7 @@
     "gatsby-source-filesystem": "2.1.2",
     "gatsby-transformer-sharp": "2.2.1",
     "gatsby-transformer-yaml": "2.2.0",
+    "gh-pages": "^2.0.1",
     "husky": "3.0.0",
     "lint-staged": "9.1.0",
     "node-instagram": "4.3.0",
