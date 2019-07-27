@@ -102,7 +102,7 @@ const ProfileImage = styled.div`
 const HomeHeader = () => {
   const { site } = useStaticQuery(query)
 
-  const title = site.siteMetadata.title
+  const shortName = site.siteMetadata.shortName
   const { menu, description } = site.siteMetadata
 
   const [props, set] = useSpring(() => ({ height: '90vh' }))
@@ -119,7 +119,7 @@ const HomeHeader = () => {
         <Wrapper>
           <Row>
             <T.MainTitle>
-              {title}{' '}
+              {shortName}{' '}
               <span role="img" aria-label="hey there">
                 👋
               </span>
@@ -132,8 +132,8 @@ const HomeHeader = () => {
             ))}
           </Row>
 
-          <ProfileImage src={profileSource} alt={title}>
-            <img src={profileSource} alt={title} />
+          <ProfileImage src={profileSource}>
+            <img src={profileSource} alt={shortName} />
           </ProfileImage>
         </Wrapper>
       </ContainerAnimated>
@@ -147,6 +147,7 @@ const query = graphql`
       siteMetadata {
         title
         description
+        shortName
         menu {
           name
           to
