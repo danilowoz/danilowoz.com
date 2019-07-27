@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  title: 'Danilo Woznica',
+  title: 'Danilo Woznica - Design-driven developer focused on crafting meaningful products',
   shortName: `Danilo Woznica`,
   description:
     'Brazilian frontend developer based in Porto, Portugal. Design-driven developer focused on crafting meaningful products',
