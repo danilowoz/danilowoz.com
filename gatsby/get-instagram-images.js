@@ -1,10 +1,11 @@
 const Instagram = require('node-instagram').default
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-module.exports = ({
+const sourceNodes = ({
   actions: { createNode },
   createNodeId,
   createContentDigest,
@@ -24,7 +25,7 @@ module.exports = ({
         data.data.forEach(photo => {
           const node = {
             id: createNodeId(photo.id),
-            images: photo.images,
+            image: photo.images.standard_resolution.url,
             link: photo.link,
             location: photo.location.name,
             parent: null,
@@ -42,3 +43,5 @@ module.exports = ({
     })
   })
 }
+
+module.exports = { sourceNodes }

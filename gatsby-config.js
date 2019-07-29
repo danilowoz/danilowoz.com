@@ -11,6 +11,13 @@ module.exports = {
     `gatsby-transformer-yaml`,
     `gatsby-plugin-netlify`,
     {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'InstagramImages',
+        imagePath: 'image',
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-112414056-1',

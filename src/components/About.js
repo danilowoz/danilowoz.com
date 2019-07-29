@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
+import Image from 'gatsby-image'
 
 import MainGrid from './Grid'
 import * as T from '../components/typography'
@@ -51,6 +52,10 @@ const Col3 = styled.div`
 `
 
 const Card = styled.div`
+  a {
+    display: block;
+  }
+
   img {
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
@@ -119,7 +124,7 @@ const About = () => {
             item={<Card />}
           >
             {allInstagramImages.edges.map(
-              ({ node: { images, id, link, location } }) => {
+              ({ node: { location, id, link, localImage } }) => {
                 return (
                   <a
                     href={link}
@@ -127,7 +132,10 @@ const About = () => {
                     rel="noopener noreferrer"
                     key={id}
                   >
-                    <img src={images.standard_resolution.url} alt={location} />
+                    <Image
+                      fluid={localImage.childImageSharp.fluid}
+                      alt={location}
+                    />
                   </a>
                 )
               }
@@ -147,9 +155,11 @@ const query = graphql`
           id
           link
           location
-          images {
-            standard_resolution {
-              url
+          localImage {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_noBase64
+              }
             }
           }
         }

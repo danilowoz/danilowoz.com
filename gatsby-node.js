@@ -1,7 +1,7 @@
 exports.sourceNodes = async (...args) => {
   await Promise.all([
     ...require('./gatsby/get-github-data.js')(...args),
-    require('./gatsby/get-instagram-images.js')(...args),
+    require('./gatsby/get-instagram-images.js').sourceNodes(...args),
   ])
 }
 
