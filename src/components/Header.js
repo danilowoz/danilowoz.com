@@ -45,7 +45,7 @@ const NavLink = styled(Link)`
 const Header = () => {
   const { site } = useStaticQuery(query)
 
-  const title = site.siteMetadata.title
+  const shortName = site.siteMetadata.shortName
   const { menu } = site.siteMetadata
 
   return (
@@ -53,7 +53,7 @@ const Header = () => {
       <Container>
         <Wrapper>
           <Title>
-            <Link to="/">{title}</Link>
+            <Link to="/">{shortName}</Link>
           </Title>
 
           <div>
@@ -73,7 +73,7 @@ const query = graphql`
   query headerTemplate {
     site {
       siteMetadata {
-        title
+        shortName
         menu {
           name
           to
