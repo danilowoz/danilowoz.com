@@ -1,5 +1,4 @@
 const Instagram = require('node-instagram').default
-const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,

@@ -126,7 +126,7 @@ const TableOfContents = React.memo(({ tableOfContents }) => {
 
     setTableOfContentsRefs(refs)
     setBlogHeaderSelector(document.querySelector('#blog-header'))
-  }, [tableOfContents.items, tableOfContentsRefs])
+  }, [])
 
   React.useEffect(() => {
     document.addEventListener('scroll', checkScroll)

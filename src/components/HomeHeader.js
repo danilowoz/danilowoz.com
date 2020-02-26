@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from 'styled-components'
-import { useSpring, animated } from 'react-spring'
 
 import * as T from './typography'
 import Grid from './Grid'
@@ -41,11 +40,8 @@ const Background = styled.div`
   }
 `
 
-const ContainerAnimated = styled(animated.div)`
-  height: 50vh;
-  @media (min-width: 800px) {
-    height: 60vh;
-  }
+const Container = styled.div`
+  height: 60vh;
 `
 
 const Wrapper = styled(Grid)`
@@ -105,17 +101,9 @@ const HomeHeader = () => {
   const shortName = site.siteMetadata.shortName
   const { menu, description } = site.siteMetadata
 
-  const [props, set] = useSpring(() => ({ height: '90vh' }))
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      set({ height: '60vh' })
-    }, 1000)
-  }, [set])
-
   return (
     <Background>
-      <ContainerAnimated style={props}>
+      <Container>
         <Wrapper>
           <Row>
             <T.MainTitle>
@@ -136,7 +124,7 @@ const HomeHeader = () => {
             <img src={profileSource} alt={shortName} />
           </ProfileImage>
         </Wrapper>
-      </ContainerAnimated>
+      </Container>
     </Background>
   )
 }

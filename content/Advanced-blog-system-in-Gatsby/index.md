@@ -1,10 +1,13 @@
 ---
-title: 'Advanced blog system in Gatsby'
-description: 'Create a complete blog from scratch in Gatsby with pagination, categories, featured post, author, SEO and navigation.'
+slug: 'Advanced-blog-system-in-Gatsby'
+title: 'Building advanced blog system in Gatsby and React'
+description: 'Template of a complete blog from scratch using React and Gatsby with pagination, categories, featured post, author, SEO and navigation.'
 date: '2019-05-02T15:06:01.607Z'
 categories:
-  - ReactJs
-  - GatsbyJs
+  - React
+  - Gatsby
+  - Starter
+  - Template
 
 published: true
 canonicalLink: https://medium.com/significa/advanced-blog-system-in-gatsby-16e0cd6b85ad
@@ -21,7 +24,7 @@ Today, static site generators are one of the most popular ways to build websites
 
 The React community has a couple of tools/frameworks that can generate a static website. My favorite, and yours probably too, is Gatsby: “a free and open source framework based on React that helps developers build blazing fast websites and apps.”
 
-### 🛠 What will we build?
+### 🛠 Gatsby starter blog
 
 I suppose you know enough about Gatsby, so I won’t go into detail on how basic things like [query/StaticQuey](https://www.gatsbyjs.org/docs/static-query/), layout, and pages work. My goal here is to show you how I implemented a complete blog “from scratch” only using `gatsby-node.js` and its `pageContext` API.
 
@@ -35,7 +38,7 @@ So, let’s try to solve the following problems:
 - Next and prev post;
 - SEO component.
 
-### ✍️ Data structure
+### ✍️ Blog template
 
 To organize the data, I normally create a folder in the root project called `/content` where I put all the files related to the content of my website. Then I usually create another folder named `/content/blog` which will be the base folder to write every blog post. Even though that is the way I prefer to work, feel free to choose what is better for you.
 

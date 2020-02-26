@@ -25,6 +25,7 @@ const Text = styled(T.Text)`
   small {
     max-width: 20em;
     display: inline-block;
+    margin-top: 0.2em;
   }
 `
 

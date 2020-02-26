@@ -34,25 +34,6 @@ const createPosts = ({
               id
               fields {
                 slug
-                published
-              }
-              timeToRead
-              frontmatter {
-                title
-                description
-                categories
-                date(formatString: "MMMM DD, YYYY")
-                canonicalLink
-                cover {
-                  childImageSharp {
-                    fluid(maxWidth: 500, maxHeight: 300, cropFocus: CENTER) {
-                      aspectRatio
-                      src
-                      srcSet
-                      sizes
-                    }
-                  }
-                }
               }
             }
           }
