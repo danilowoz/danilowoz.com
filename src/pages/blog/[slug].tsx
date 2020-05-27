@@ -3,12 +3,12 @@ import dynamic from 'next/dynamic'
 
 import { getPaths } from 'common/utils/blog'
 
-const BlogPostPage = ({ filename }) => {
+const BlogPostPage = ({ filename }: any) => {
   const Content = dynamic(() => import(`content/${filename}.mdx`))
 
-  const MDXMetadata = dynamic(() =>
-    import(`./${filename}`).then((mod) => mod.metadata)
-  )
+  // const MDXMetadata = dynamic(() =>
+  //   import(`./${filename}`).then((mod) => mod.metadata)
+  // )
 
   return (
     <div>
@@ -19,7 +19,7 @@ const BlogPostPage = ({ filename }) => {
   )
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: any) => {
   return { props: { filename: params.slug } }
 }
 

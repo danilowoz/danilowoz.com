@@ -1,0 +1,25 @@
+body > * {
+  padding-left: calc(var(--grid-gutter) / 2);
+  padding-right: calc(var(--grid-gutter) / 2);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 100%;
+  max-width: var(--grid-width);
+}
+
+@media (min-width: 576px) {
+  body > * {
+    display: grid;
+    grid-template-columns: repeat(
+      var(--grid-column),
+      calc(var(--grid-width) / var(--grid-column) - var(--grid-gutter))
+    );
+    grid-column-gap: var(--grid-gutter);
+  }
+}
+
+main {
+  grid-column: 1/12;
+}
