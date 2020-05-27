@@ -1,6 +1,6 @@
-import App from 'next/app'
 import React from 'react'
 
+import App from 'next/app'
 import { Layout } from 'common/components'
 
 class MyApp extends App {

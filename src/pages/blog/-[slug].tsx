@@ -1,6 +1,6 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 
+import dynamic from 'next/dynamic'
 import { getPaths } from 'common/utils/blog'
 
 const BlogPostPage = ({ filename }: any) => {

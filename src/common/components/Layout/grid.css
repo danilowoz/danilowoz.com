@@ -21,5 +21,28 @@ body > * {
 }
 
 main {
-  grid-column: 1/12;
+  grid-column: 1/13;
+}
+
+section {
+  background: var(--color-background);
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  margin-left: calc(0px - (50vw - 50%));
+  margin-right: calc(0px - (50vw - 50%));
+
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+@media (min-width: 576px) {
+  section {
+    display: grid;
+    grid-template-columns: repeat(
+      var(--grid-column),
+      calc(var(--grid-width) / var(--grid-column) - var(--grid-gutter))
+    );
+    grid-column-gap: var(--grid-gutter);
+  }
 }
