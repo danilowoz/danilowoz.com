@@ -55,6 +55,11 @@ strong {
   font-weight: 600;
 }
 
+em {
+  color: var(--color-haze);
+  font-style: normal;
+}
+
 @media (min-width: 576px) {
   h1,
   h2,

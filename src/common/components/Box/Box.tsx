@@ -1,6 +1,7 @@
 import { createElement } from 'react'
 
-import style from './Box.style.css'
+import gridCss from './grid.module.css'
+import variantCss from './variant.module.css'
 
 const Box: React.FC<{
   as?: string
@@ -14,9 +15,9 @@ const Box: React.FC<{
   container = false,
   variant = 'light',
 }) => {
-  const classNameComposed = `${style[variant]} ${style.grid} ${className} ${
-    container ? style.container : ''
-  }`
+  const classNameComposed = `${variantCss[variant]} ${
+    gridCss.grid
+  } ${className} ${container ? gridCss.container : ''}`
 
   return createElement(as, {
     className: classNameComposed,

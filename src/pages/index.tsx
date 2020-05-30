@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Header, AboutMe, Box } from 'common/components'
+import { Header, Footer, AboutMe, Box } from 'common/components'
 
 const IndexPage = () => {
   return (
@@ -19,6 +19,8 @@ const IndexPage = () => {
 
         <AboutMe />
       </Box>
+
+      <Footer />
     </Box>
   )
 }
