@@ -1,6 +1,6 @@
 {
   "extends": "@significa/eslint-config",
   "settings": {
-    "import/internal-regex": "^common|/|^pages/|^content/"
+    "import/internal-regex": "^components|/|^pages/|^content/|^utils/"
   }
 }

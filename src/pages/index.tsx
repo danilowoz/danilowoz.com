@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Header, Footer, AboutMe } from 'common/components'
+import { Header, Footer, AboutMe } from 'components'
 
 const IndexPage = () => {
   return (

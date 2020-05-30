@@ -1,7 +1,7 @@
 import React from 'react'
 
 import dynamic from 'next/dynamic'
-import { getPaths } from 'common/utils/blog'
+import { getPaths } from 'utils/blog'
 
 const BlogPostPage = ({ filename }: any) => {
   const Content = dynamic(() => import(`content/${filename}.mdx`))

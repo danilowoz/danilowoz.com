@@ -44,7 +44,7 @@
 
   position: absolute;
   right: 0.5em;
-  bottom: 0;
+  bottom: -0.4em;
 }
 
 .scrollToTop:hover {

@@ -11,6 +11,9 @@ const config = {
     importLoaders: 1,
     localIdentName: '[local]-[hash:base64:2]',
   },
+  devIndicators: {
+    autoPrerender: false,
+  },
 }
 
 module.exports = withPlugins([withMDX, withCSS, withImages], config)
