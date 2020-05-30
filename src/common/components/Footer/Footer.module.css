@@ -1,20 +1,15 @@
 .divider {
-  grid-column: 1/13;
   border-top: 1px solid #ffffff40;
-}
-
-.title {
-  grid-column: 1/6;
 }
 
 .social {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   position: relative;
 
-  grid-column: 6/13;
+  overflow: hidden;
 }
 
 .social a,
@@ -26,7 +21,7 @@
 }
 
 .social a {
-  margin-left: 2em;
+  margin-right: 2em;
   transition: opacity 200ms ease-in-out;
 }
 
@@ -49,9 +44,40 @@
 
   position: absolute;
   right: 0.5em;
-  bottom: 30%;
+  bottom: 0;
 }
 
 .scrollToTop:hover {
   opacity: 1;
+}
+
+@media (min-width: 576px) {
+  .title,
+  .divider {
+    grid-column: 1/6;
+  }
+}
+
+@media (min-width: 769px) {
+  .divider {
+    grid-column: 1/13;
+  }
+
+  .title {
+    grid-column: 1/6;
+  }
+
+  .social {
+    grid-column: 6/13;
+    justify-content: flex-end;
+  }
+
+  .social a {
+    margin-right: 0;
+    margin-left: 2em;
+  }
+
+  .scrollToTop {
+    bottom: 40%;
+  }
 }

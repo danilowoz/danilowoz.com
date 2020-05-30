@@ -6,18 +6,18 @@ import variantCss from './variant.module.css'
 const Box: React.FC<{
   as?: string
   className?: string
-  container?: boolean
+  grid?: boolean
   variant?: 'light' | 'dark'
 }> = ({
   as = 'section',
   children,
   className = '',
-  container = false,
+  grid = true,
   variant = 'light',
 }) => {
-  const classNameComposed = `${variantCss[variant]} ${
-    gridCss.grid
-  } ${className} ${container ? gridCss.container : ''}`
+  const classNameComposed = `${variantCss[variant]} ${gridCss.common} ${
+    grid ? gridCss.grid : ''
+  } ${className}`
 
   return createElement(as, {
     className: classNameComposed,

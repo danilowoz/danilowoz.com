@@ -1,6 +1,4 @@
 .wrap {
-  grid-column: 1/2;
-
   color: var(--color-heading);
 }
 
