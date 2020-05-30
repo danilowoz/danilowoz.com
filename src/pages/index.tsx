@@ -1,19 +1,28 @@
 import React from 'react'
+import { GetStaticProps } from 'next'
 
-import { Header, Footer, AboutMe } from 'components'
+import { Header, Footer, AboutMe, Projects } from 'components'
+import { getPosts, PostsListProps } from 'service/blog'
 
-const IndexPage = () => {
+const IndexPage: React.FC<{ posts: PostsListProps[] }> = ({ posts }) => {
   return (
-    <div>
+    <>
       <Header />
 
       <main>
+        <Projects data={posts} />
         <AboutMe />
       </main>
 
       <Footer />
-    </div>
+    </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await getPosts()
+
+  return { props: { posts } }
 }
 
 export default IndexPage

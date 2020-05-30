@@ -9,7 +9,7 @@ const config = {
   pageExtensions: ['tsx', 'mdx'],
   cssLoaderOptions: {
     importLoaders: 1,
-    localIdentName: '[local]-[hash:base64:2]',
+    localIdentName: '[local]',
   },
   devIndicators: {
     autoPrerender: false,

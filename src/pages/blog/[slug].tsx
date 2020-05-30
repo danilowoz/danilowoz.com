@@ -1,10 +1,11 @@
 import React from 'react'
 
 import dynamic from 'next/dynamic'
-import { getPaths } from 'utils/blog'
+import { getPostsPaths } from 'service/blog'
+// import Article, { metadata } from 'content/projects'
 
 const BlogPostPage = ({ filename }: any) => {
-  const Content = dynamic(() => import(`content/${filename}.mdx`))
+  const Content = dynamic(() => import(`content/projects/${filename}.mdx`))
 
   // const MDXMetadata = dynamic(() =>
   //   import(`./${filename}`).then((mod) => mod.metadata)
@@ -24,7 +25,7 @@ export const getStaticProps = async ({ params }: any) => {
 }
 
 export const getStaticPaths = async () => {
-  const paths = await getPaths()
+  const paths = await getPostsPaths()
 
   return { paths, fallback: false }
 }

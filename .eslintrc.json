@@ -1,5 +1,5 @@
 {
-  "extends": "@significa/eslint-config",
+  "extends": ["@significa/eslint-config", "plugin:mdx/recommended"],
   "settings": {
     "import/internal-regex": "^components|/|^pages/|^content/|^utils/"
   }

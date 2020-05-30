@@ -10,7 +10,7 @@
     "deploy:staging": "serverless --stage=staging",
     "deploy:production": "serverless --stage=production",
     "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx}\"",
-    "format": "prettier \"./src/**/*.+(ts|tsx|js|jsx|json|yml|yaml|md|mdx)\"",
+    "format": "prettier \"./src/**/*.+(ts|tsx|js|jsx|json|yml|yaml)\"",
     "format:write": "npm run format -- --write",
     "validate:format": "npm run format -- --check",
     "validate:build": "tsc",
@@ -40,10 +40,12 @@
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
     "eslint": "7.1.0",
+    "eslint-plugin-mdx": "^1.7.0",
     "husky": "4.2.5",
     "lint-staged": "10.2.6",
     "next-compose-plugins": "^2.2.0",
     "prettier": "2.0.5",
+    "remark-frontmatter": "^2.0.0",
     "typescript": "3.9.3"
   }
 }
