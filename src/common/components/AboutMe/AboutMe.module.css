@@ -1,22 +1,38 @@
-.about-me article {
-  grid-column: 2/8;
-}
-
 .about-me article > *:first-child,
 .about-me aside > *:first-child {
   margin-top: 0;
 }
 
 .about-me aside {
-  grid-column: 9/13;
-  padding-top: calc((2.074rem * var(--font-line-height-base)) * 3 + 1.5em);
-}
-
-.about-me span {
-  display: block;
-  padding-right: calc(var(--grid-width) / var(--grid-column));
+  padding-top: 1.15rem;
 }
 
 .about-me aside p {
   color: var(--color-heading);
+}
+
+@media (min-width: 576px) {
+  .about-me article {
+    grid-column: 1/7;
+  }
+
+  .about-me aside {
+    grid-column: 1/7;
+    padding-top: calc((2.074rem * var(--font-line-height-base)) * 3 + 1.5em);
+  }
+
+  .about-me span {
+    display: block;
+    padding-right: calc(var(--grid-width) / var(--grid-column));
+  }
+}
+
+@media (min-width: 769px) {
+  .about-me article {
+    grid-column: 2/8;
+  }
+
+  .about-me aside {
+    grid-column: 9/13;
+  }
 }

@@ -1,12 +1,17 @@
-header {
+.wrap {
   grid-column: 1/2;
 
   color: var(--color-heading);
-  margin-top: 20vh;
 }
 
 @media (min-width: 576px) {
-  header {
+  .wrap {
+    grid-column: 1/7;
+  }
+}
+
+@media (min-width: 769px) {
+  .wrap {
     grid-column: 2/11;
   }
 }

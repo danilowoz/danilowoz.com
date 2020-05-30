@@ -2,16 +2,14 @@ import React from 'react'
 
 import Content from 'content/about-me.mdx'
 
-import { DarkTheme } from '../DarkTheme'
 import style from './AboutMe.module.css'
+import { Box } from '../Box'
 
 const AboutMe: React.FC = () => {
   return (
-    <DarkTheme>
-      <section className={style['about-me']}>
-        <Content />
-      </section>
-    </DarkTheme>
+    <Box variant="dark" className={style['about-me']}>
+      <Content />
+    </Box>
   )
 }
 

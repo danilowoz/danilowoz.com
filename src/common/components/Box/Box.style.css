@@ -1,0 +1,66 @@
+/**
+ * grid
+*/
+.grid {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  margin-left: calc(0px - (50vw - 50%));
+  margin-right: calc(0px - (50vw - 50%));
+
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+
+  grid-column: 1/2;
+}
+
+@media (min-width: 576px) {
+  .grid {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    display: grid;
+    grid-template-columns: repeat(
+      var(--grid-column),
+      calc(var(--grid-width) / var(--grid-column) - var(--grid-gutter))
+    );
+    grid-column-gap: var(--grid-gutter);
+
+    grid-column: 1/7;
+  }
+}
+
+@media (min-width: 769px) {
+  .grid {
+    grid-column: 1/13;
+  }
+}
+
+.container {
+  padding-left: calc(var(--grid-gutter) / 2);
+  padding-right: calc(var(--grid-gutter) / 2);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: 0;
+  padding-bottom: 0;
+
+  width: 100%;
+  max-width: var(--grid-width);
+}
+
+/**
+ * Theme
+*/
+.light {
+  background: var(--color-background);
+}
+
+.dark {
+  --color-background: #000;
+  --color-foreground: #fff;
+  --color-heading: #929292;
+
+  background: var(--color-background);
+}

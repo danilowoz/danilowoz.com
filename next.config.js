@@ -5,5 +5,9 @@ module.exports = withMDX(
   withCSS({
     cssModules: true,
     pageExtensions: ['tsx', 'mdx'],
+    cssLoaderOptions: {
+      importLoaders: 1,
+      localIdentName: '[local]-[hash:base64:2]',
+    },
   })
 )

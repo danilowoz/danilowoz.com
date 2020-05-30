@@ -1,13 +1,17 @@
 import React from 'react'
 
 import Content from 'content/header.mdx'
-import './style.css'
+
+import { Box } from '../Box'
+import styles from './Header.module.css'
 
 const Header: React.FC = () => {
   return (
-    <header>
-      <Content />
-    </header>
+    <Box as="header">
+      <div className={styles.wrap}>
+        <Content />
+      </div>
+    </Box>
   )
 }
 

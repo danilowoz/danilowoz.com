@@ -36,7 +36,7 @@
 /**
  * > Medium
  */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   :root {
     /* Grid */
     --grid-column: 12;
