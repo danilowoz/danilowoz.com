@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-var-requires, import/order */
 import { createRequire } from 'module'
 import fs from 'fs'
 import path from 'path'
@@ -13,7 +13,9 @@ type FrontMatterPost = {
   date?: string
   tagline?: string
   title?: string
-  path?: string
+  link?: string
+  type?: 'article' | 'github' | 'web'
+  priority?: number
 }
 
 export type PostsListProps = FrontMatterPost & {
@@ -50,6 +52,8 @@ const requireFromString = async (code: string, filename: string) => {
       fs.writeFile(tempPath, code, () => {
         const require = createRequire(tempPath)
         const file = require(tempPath)
+
+        delete require.cache[require.resolve(tempPath)]
 
         resolve(file)
       })
@@ -98,7 +102,10 @@ export const getPosts = async () => {
         ...metadata,
         filename,
         path: filename.replace('.mdx', ''),
-        slug: `blog/${filename.replace('.mdx', '')}`,
+        slug:
+          metadata?.type === 'article'
+            ? `blog/${filename.replace('.mdx', '')}`
+            : metadata?.link,
       }
     })
 
@@ -108,7 +115,14 @@ export const getPosts = async () => {
   rimraf(TEMP_DIR, {}, (err) => console.error(err))
 
   return completedPosts.sort((a, b) => {
-    return new Date(b?.date ?? '').getTime() - new Date(a?.date ?? '').getTime()
+    const dateA = new Date(a?.date ?? '').getTime()
+    const dateB = new Date(b?.date ?? '').getTime()
+
+    if (a.priority === b.priority) {
+      return dateA - dateB
+    }
+
+    return (a?.priority ?? 0) - (b.priority ?? 0)
   })
 }
 
@@ -117,6 +131,9 @@ export const getPosts = async () => {
  */
 export const getPostsPaths = async () => {
   const posts = await getPosts()
+  const onlyPosts = (e: PostsListProps) => e.type === 'article'
 
-  return posts.map((post) => ({ params: { slug: post.path } }))
+  return posts
+    .filter(onlyPosts)
+    .map((post) => ({ params: { slug: post?.link } }))
 }

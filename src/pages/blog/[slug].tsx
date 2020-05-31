@@ -1,7 +1,6 @@
 import React from 'react'
-
 import dynamic from 'next/dynamic'
-import { getPostsPaths } from 'service/blog'
+import { getPostsPaths } from 'service/projects'
 // import Article, { metadata } from 'content/projects'
 
 const BlogPostPage = ({ filename }: any) => {

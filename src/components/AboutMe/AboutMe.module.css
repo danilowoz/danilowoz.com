@@ -29,7 +29,7 @@
 
 @media (min-width: 769px) {
   .about-me article {
-    grid-column: 2/8;
+    grid-column: 1/7;
   }
 
   .about-me aside {

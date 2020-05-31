@@ -1,0 +1,101 @@
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article {
+  width: calc(
+    50% - (var(--grid-width) / var(--grid-column) - var(--grid-gutter)) / 2
+  );
+}
+
+.article a {
+  display: block;
+}
+
+/* variants */
+.article-figure {
+  width: 100%;
+  height: 0;
+
+  position: relative;
+}
+
+.article:nth-child(4n) .article-figure,
+.article:nth-child(4n + 1) .article-figure {
+  padding-top: 60%;
+}
+.article:nth-child(4n + 2) .article-figure,
+.article:nth-child(4n + 3) .article-figure {
+  padding-top: 100%;
+}
+
+.article-figure div,
+.article-figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.article-figure div {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.article-figure img {
+  object-fit: cover;
+}
+
+.article-figure figcaption {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+
+  padding: 2rem 1rem 1rem;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.article-figure * {
+  margin: 0;
+  color: var(--color-background);
+}
+
+.article .description {
+  padding: 1rem;
+}
+
+.description p {
+  color: var(--color-haze);
+}
+
+.description .cta,
+.description .cta span {
+  color: var(--color-cta);
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.description .cta span {
+  margin-right: 2em;
+}
+
+.description .cta img {
+  margin-left: 0.5em;
+  position: relative;
+  top: 0.05em;
+}
+
+.small-article {
+  grid-column: span 4;
+}
+
+.small-article h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}

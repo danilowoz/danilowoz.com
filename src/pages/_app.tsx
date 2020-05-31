@@ -1,8 +1,8 @@
 import React from 'react'
 import { NextSeo } from 'next-seo'
-
 import { Layout } from 'components'
 import App from 'next/app'
+
 import content from 'content/base.json'
 
 class MyApp extends App {

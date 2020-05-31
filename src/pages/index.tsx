@@ -1,8 +1,7 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
-
 import { Header, Footer, AboutMe, Projects } from 'components'
-import { getPosts, PostsListProps } from 'service/blog'
+import { getPosts, PostsListProps } from 'service/projects'
 
 const IndexPage: React.FC<{ posts: PostsListProps[] }> = ({ posts }) => {
   return (
