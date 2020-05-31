@@ -1,6 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
 
+import Link from 'next/link'
 import { PostsListProps } from 'service/blog'
 
 const Projects: React.FC<{ data: PostsListProps[] }> = ({ data }) => {
@@ -10,7 +10,7 @@ const Projects: React.FC<{ data: PostsListProps[] }> = ({ data }) => {
         return (
           <article key={item.title}>
             <Link href={item?.slug ?? ''}>
-              <a>
+              <a href={item?.slug ?? ''}>
                 <h1>{item.title}</h1>
                 <h2>{item.tagline}</h2>
               </a>

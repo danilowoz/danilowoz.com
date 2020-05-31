@@ -1,15 +1,11 @@
----
-title: 'Building advanced blog system in Gatsby and React'
-tagline: 'Template of a complete blog from scratch using React and Gatsby with pagination, categories, featured post, author, SEO and navigation.'
-date: '2019-05-02T15:06:01.607Z'
-categories:
-  - React
-  - Gatsby
-  - Starter
-  - Template
-cover: './images/advanced-blog-system-in-gatsby/asset-1.png'
----
-
+export const metadata = {
+  title: 'Building advanced blog system in Gatsby and React',
+  tagline:
+    'Template of a complete blog from scratch using React and Gatsby with pagination, categories, featured post, author, SEO and navigation.',
+  date: '2019-05-02T15:06:01.607Z',
+  categories: ['React', 'Gatsby', 'Starter', 'Template'],
+  cover: './images/advanced-blog-system-in-gatsby/asset-1.png',
+}
 
 👉 Check out the [demo](https://gatsby-advanced-blog-system.danilowoz.now.sh/blog) and [source](https://github.com/danilowoz/gatsby-advanced-blog-system).
 
@@ -214,7 +210,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     // 2.1 Handle the errors
     if (result.errors) {
       console.error(result.errors)
@@ -443,7 +439,7 @@ Then, get all categories and save it in a new array:
 const categories = []
 
 posts.forEach((post, index) => {
-  post.node.frontmatter.category.forEach(cat => categories.push(cat))
+  post.node.frontmatter.category.forEach((cat) => categories.push(cat))
 
   createPage({
     path: post.node.fields.slug,
@@ -506,7 +502,7 @@ const BlogCategory = ({ data, pageContext }) => {
   return (
     <>
       <h1>Categories:</h1>
-      {pageContext.allCategories.map(cat => (
+      {pageContext.allCategories.map((cat) => (
         <Link to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
       ))}
       <br />
@@ -524,7 +520,7 @@ const BlogCategory = ({ data, pageContext }) => {
             <p>By {node.frontmatter.author}</p>
             <p>
               In:{' '}
-              {node.frontmatter.category.map(cat => (
+              {node.frontmatter.category.map((cat) => (
                 <Link to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
               ))}
             </p>
@@ -610,7 +606,7 @@ As you can imagine, to solve this issue, you need to pass a new context when you
 
 ```jsx
 posts.forEach((post, index, arr) => {
-  post.node.frontmatter.category.forEach(cat => categories.push(cat))
+  post.node.frontmatter.category.forEach((cat) => categories.push(cat))
 
   const prev = arr[index - 1]
   const next = arr[index + 1]
