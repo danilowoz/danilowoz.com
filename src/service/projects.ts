@@ -14,13 +14,13 @@ type FrontMatterPost = {
   tagline?: string
   title?: string
   link?: string
+  slug?: string
   type?: 'article' | 'github' | 'web'
   priority?: number
 }
 
 export type PostsListProps = FrontMatterPost & {
   filename?: string
-  slug?: string
 }
 
 /**
@@ -97,14 +97,16 @@ export const getPosts = async () => {
     .filter(onlyMdxFiles)
     .map(async (filename) => {
       const metadata = await transformMdx(filename)
+      const fileNameCleaned = filename.replace('.mdx', '')
 
       return {
         ...metadata,
         filename,
-        path: filename.replace('.mdx', ''),
-        slug:
+        path: fileNameCleaned,
+        slug: fileNameCleaned,
+        link:
           metadata?.type === 'article'
-            ? `blog/${filename.replace('.mdx', '')}`
+            ? `blog/${fileNameCleaned}`
             : metadata?.link,
       }
     })
@@ -135,5 +137,5 @@ export const getPostsPaths = async () => {
 
   return posts
     .filter(onlyPosts)
-    .map((post) => ({ params: { slug: post?.link } }))
+    .map((post) => ({ params: { slug: post?.slug } }))
 }

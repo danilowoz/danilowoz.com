@@ -16,7 +16,7 @@ const Projects: React.FC<{ data: PostsListProps[] }> = ({ data }) => {
       {featuresData.map((item) => {
         return (
           <article key={item.title} className={style.article}>
-            <Link type={item.type} href={item?.slug ?? ''}>
+            <Link type={item.type} href={item?.link ?? ''}>
               <figure className={style['article-figure']}>
                 <div>
                   <img src={item.cover} alt={item.title} />
@@ -45,7 +45,7 @@ const Projects: React.FC<{ data: PostsListProps[] }> = ({ data }) => {
         {restData.map((item) => {
           return (
             <article key={item.title} className={style['small-article']}>
-              <Link type={item.type} href={item?.slug ?? ''}>
+              <Link type={item.type} href={item?.link ?? ''}>
                 <h1>{item.title}</h1>
 
                 <div className={style.description}>
