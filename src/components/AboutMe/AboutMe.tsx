@@ -7,7 +7,7 @@ import { Box } from '../Box'
 
 const AboutMe: React.FC = () => {
   return (
-    <Box variant="dark" className={style['about-me']}>
+    <Box variant="dark" className={style['about-me']} id="about-me">
       <Content />
     </Box>
   )

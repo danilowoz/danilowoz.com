@@ -8,12 +8,14 @@ const Box: React.FC<{
   className?: string
   grid?: boolean
   variant?: 'light' | 'dark'
+  id?: string
 }> = ({
   as = 'section',
   children,
   className = '',
   grid = true,
   variant = 'light',
+  ...props
 }) => {
   const classNameComposed = `${variantCss[variant]} ${gridCss.common} ${
     grid ? gridCss.grid : ''
@@ -22,6 +24,7 @@ const Box: React.FC<{
   return createElement(as, {
     className: classNameComposed,
     children,
+    ...props,
   })
 }
 

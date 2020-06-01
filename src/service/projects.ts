@@ -17,6 +17,7 @@ type FrontMatterPost = {
   slug?: string
   type?: 'article' | 'github' | 'web'
   priority?: number
+  coverCredit?: string
 }
 
 export type PostsListProps = FrontMatterPost & {

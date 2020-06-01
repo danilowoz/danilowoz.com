@@ -1,3 +1,7 @@
+.divider {
+  border-top: 1px solid #ffffff40;
+}
+
 .about-me article > *:first-child,
 .about-me aside > *:first-child {
   margin-top: 0;

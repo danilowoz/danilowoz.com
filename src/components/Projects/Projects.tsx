@@ -12,7 +12,7 @@ const Projects: React.FC<{ data: PostsListProps[] }> = ({ data }) => {
   const restData = data.slice(NUMBER_FEATURES, data.length)
 
   return (
-    <div className={style.projects}>
+    <div className={style.projects} id="projects">
       {featuresData.map((item) => {
         return (
           <article key={item.title} className={style.article}>
