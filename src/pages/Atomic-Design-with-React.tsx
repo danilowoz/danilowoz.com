@@ -6,7 +6,7 @@ const Redirect = () => {
     <Head>
       <meta
         httpEquiv="refresh"
-        content="0; url=http://danilowoz.com/blog/atomic-design-with-react/"
+        content="0; url=https://danilowoz.com/blog/atomic-design-with-react"
       />
     </Head>
   )
