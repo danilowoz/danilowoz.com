@@ -17,7 +17,7 @@ const Footer = () => {
       <div className={style.divider} />
 
       <div className={style.title}>
-        <h1>Reach me at</h1>
+        <h1>Reach out to me at</h1>
 
         <p>
           <em>danilowoz@gmail.com</em>
