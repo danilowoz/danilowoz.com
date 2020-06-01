@@ -26,7 +26,7 @@ export const Link: React.FC<{
   if (type === 'article') {
     /* eslint-disable jsx-a11y/anchor-is-valid */
     return (
-      <NextLink href={href}>
+      <NextLink href="/blog/[slug]" as={href}>
         <a>{children}</a>
       </NextLink>
     )

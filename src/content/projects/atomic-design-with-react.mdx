@@ -6,7 +6,7 @@ export const metadata = {
     'How the Atomic Design methodology allowed me to create a great design system from scratch and made me a better developer.',
   date: '2018-01-08T19:28:06.529Z',
   categories: ['Design', 'Methodology', 'Storybook'],
-  cover: './images/atomic-design-with-react/asset-1.jpeg',
+  cover: '/images/atomic-design-with-react/asset-1.jpeg',
 }
 
 I have recently had the opportunity to work on a new product from scratch made in React and PWA with the well-crafted and componentized UI at Cheesecake. However, when we discussed with the whole team the best way to approach the development, we ended up having the same old problems that have happened in most past projects, such as:
@@ -20,7 +20,7 @@ I have recently had the opportunity to work on a new product from scratch made i
 - Very specific components to each pages;
   We’ve started to build the CSS architecture using the [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) methodology that organizes the style files on stacks from generics styles to the specifics ones, which helps you to scale large projects easily. But along with ITCSS, we were using CSS Modules to scope the components, so we noticed that component stack was getting huge and even the generic styles were being componentized and reused within other one.
   That was the moment in which we paused to rethink our architecture and how we could set the components in a more distributed and organized way. Then we found a methodology called [**Atomic Design**](http://bradfrost.com/blog/post/atomic-web-design/) that creates multiples stacks of components, with different hierarchies of complexity and dependence.
-  ![Atomic Design hierarchy](../images/atomic-design-with-react/asset-2.png)
+  ![Atomic Design hierarchy](/images/atomic-design-with-react/asset-2.png)
 
 ### What is Atomic Design?
 
@@ -29,28 +29,28 @@ The name Atomic Design comes from the idea of separating the components in atoms
 
 #### Atoms
 
-![Example of atomic component](../images/atomic-design-with-react/asset-3.png)
+![Example of atomic component](/images/atomic-design-with-react/asset-3.png)
 Atoms are the smallest possible components, such as buttons, titles, inputs or event color pallets, animations, and fonts. They can be applied on any context, globally or within other components and templates, besides having many states, such as this example of button: disabled, hover, different sizes, etc.
 
 #### Molecules
 
-![Example of molecule component](../images/atomic-design-with-react/asset-4.png)
+![Example of molecule component](/images/atomic-design-with-react/asset-4.png)
 They are the composition of one or more components of atoms. Here we begin to compose complex components and reuse some of those components. Molecules can have their own properties and create functionalities by using atoms, which don’t have any function or action by themselves.
 
 #### Organisms
 
-![Example of organisms component](../images/atomic-design-with-react/asset-5.png)
+![Example of organisms component](/images/atomic-design-with-react/asset-5.png)
 Organisms are the combination of molecules that work together or even with atoms that compose more elaborate interfaces. At this level, the components begin to have the final shape, but they are still ensured to be independent, portable and reusable enough to be reusable in any content.
 
 ### Templates
 
-![](../images/atomic-design-with-react/asset-6.png)
+![](/images/atomic-design-with-react/asset-6.png)
 
 In this state we stop composing components and begin to set their context. Moreover, the templates create relationships between the organisms and others components through positions, placements and patterns of the pages but it doesn’t have any style, color or component rendered. That’s why it looks like a wireframe.
 
 ### Pages
 
-![](../images/atomic-design-with-react/asset-7.png)
+![](/images/atomic-design-with-react/asset-7.png)
 
 Pages are the navigate parts of the application and it’s where the components are distributed in one specific template. The components get real content and they’re connected with the whole application. At this stage, we can test the efficiency of the design system to analyse if all the components are independent enough or if we need to split them in smaller parts.
 
@@ -78,19 +78,19 @@ To build a UI LIbrary we used an awesome tool called [Storybook](https://storybo
 
 With the Storybook installed the folder structure will look like this:
 
-![Structure folder](../images/atomic-design-with-react/asset-8.png)
+![Structure folder](/images/atomic-design-with-react/asset-8.png)
 
 Note that inside of the button component there is a file called ‘index.js’ which is the component itself, the ‘styles.css’ is the style that will be imported by CSS Modules (here we’ve used the BEM CSS inside the structure; I recommend reading the article ‘[CSS Architecture with ReactJS](https://cheesecakelabs.com/blog/css-architecture-reactjs/)’) and the ‘stories.js’ is the file that will import the component into the Storybook, which looks like this:
 
-![Storybook’s file](../images/atomic-design-with-react/asset-9.png)
+![Storybook’s file](/images/atomic-design-with-react/asset-9.png)
 
 Each ‘add ()’ function is a variation of the component and it is the best approach to describe each state individually rather than a single function, so it becomes easier to highlight and control each one of them. So if you describe all the component variations , the Storybook should look like this:
 
-![Storybook interface](../images/atomic-design-with-react/asset-10.png)
+![Storybook interface](/images/atomic-design-with-react/asset-10.png)
 
 And the coolest part of the Storybook is that you can add some ‘addons’, such as the [Storybook Info](https://github.com/storybooks/storybook/tree/master/addons/info), which does awesome things like: story source, props types, defaults values and which values are required or not.
 
-![Proptypes table](../images/atomic-design-with-react/asset-11.png)
+![Proptypes table](/images/atomic-design-with-react/asset-11.png)
 
 ### Conclusion
 
