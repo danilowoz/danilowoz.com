@@ -1,5 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
+import { GetStaticProps } from 'next'
 import { getPostsPaths, getPosts, PostsListProps } from 'service/projects'
 import { Footer } from 'components'
 import { NextSeo } from 'next-seo'
@@ -56,11 +57,11 @@ const BlogPostPage: React.FC<{
   )
 }
 
-export const getStaticProps = async ({ params }: any) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const posts = await getPosts()
-  const postsMetadata = posts.find((item) => item.slug === params.slug)
+  const postsMetadata = posts.find((item) => item.slug === params?.slug)
 
-  return { props: { filename: params.slug, metadata: postsMetadata } }
+  return { props: { filename: params?.slug, metadata: postsMetadata } }
 }
 
 export const getStaticPaths = async () => {
