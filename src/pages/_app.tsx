@@ -18,14 +18,14 @@ class MyApp extends App {
             url: content.url,
             title: content.title,
             description: content.description,
-            images: [
-              {
-                url: 'https://www.example.ie/og-image-01.jpg',
-                width: 800,
-                height: 600,
-                alt: 'Og Image Alt',
-              },
-            ],
+            // images: [
+            //   {
+            //     url: 'https://www.example.ie/og-image-01.jpg',
+            //     width: 800,
+            //     height: 600,
+            //     alt: 'Og Image Alt',
+            //   },
+            // ],
             // eslint-disable-next-line @typescript-eslint/camelcase
             site_name: content.title,
           }}
