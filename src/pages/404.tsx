@@ -15,8 +15,10 @@ const Redirect = () => {
     setPath(window.location.pathname.replace(/\//gm, ''))
   }, [])
 
-  if (!path) {
-    return null
+  if (!path || !routes[path]) {
+    return (
+      <meta httpEquiv="refresh" content={`0; url=https://danilowoz.com/`} />
+    )
   }
 
   return (

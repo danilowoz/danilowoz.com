@@ -13,6 +13,10 @@ p {
   font-size: 1em;
 }
 
+a {
+  color: var(--color-cta);
+}
+
 h1,
 h2,
 h3,
