@@ -22,7 +22,28 @@
   margin-top: 2em;
 }
 
+.post pre pre {
+  font-size: 1rem;
+  overflow: hidden;
+  overflow: auto;
+}
+
+.post aside {
+  margin-top: 5em;
+  border-top: 1px solid #eee;
+}
+
+.post aside a {
+  margin-right: 2em;
+}
+
 @media (min-width: 576px) {
+  .post pre {
+    margin-bottom: 2em;
+    margin-left: -2em;
+    margin-right: -2em;
+  }
+
   .post figure {
     margin-left: -3em;
     margin-right: -3em;

@@ -10,8 +10,6 @@ export const metadata = {
   coverCredit: 'Photo by Fred Jesus',
 }
 
-👉 Check out the [demo](https://gatsby-advanced-blog-system.danilowoz.now.sh/blog) and [source](https://github.com/danilowoz/gatsby-advanced-blog-system).
-
 ![Gatsbyjs](/images/advanced-blog-system-in-gatsby/asset-2.jpeg)
 
 ### What’s Gatsby.js?
@@ -56,7 +54,7 @@ After that, your project should look something like this:
 
 Now let’s take a look at how each `.md` file looks like, especially in the `frontmatter`:
 
-```
+```markdown
 ---
 title: My first blog post
 date: 2019-01-21
@@ -86,7 +84,7 @@ So that’s the basic structure of your blog post. Inside this file, you will wr
 
 First of all, we need to tell Gatsby where your content is and what it needs to do with these files. So let’s open the `gatsby-config.js` file and install a few plugins:
 
-```
+```js
 module.exports = {
   ...
   plugins: [
@@ -673,6 +671,13 @@ But remember that it is not a tool like Wordpress. It doesn’t have an infinity
 
 The solution I’ve just shown in this article, requires the person who will manage the content to have a minimal knowledge about `markdown` and version control (git). However, if it’s a required feature maybe [Prismic](https://prismic.io/) or [Netlify C](https://www.netlifycms.org/)MS could solve this problem, but I haven’t yet tried these tools within this workflow. If you already have, let me know your experience and your thoughts.
 
----
+<aside>
+  <h4>Check out the result of this article:</h4>
 
-👉 Check out the [demo](https://gatsby-advanced-blog-system.danilowoz.now.sh/blog) and [source](https://github.com/danilowoz/gatsby-advanced-blog-system). 🎉
+  <a href="https://gatsby-advanced-blog-system.danilowoz.now.sh/blog" target="_blank" rel="noreferrer">
+    Live preview
+  </a>
+  <a href="https://github.com/danilowoz/gatsby-advanced-blog-system" target="_blank" rel="noreferrer">
+    Codebase on Github
+  </a>
+</aside>
