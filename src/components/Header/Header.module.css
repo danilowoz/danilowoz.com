@@ -26,7 +26,7 @@
 .compactHeader h1 {
   font-size: 1rem;
   color: var(--color-heading);
-  margin: 0;
+  margin: 0 !important;
 }
 
 .compactHeader strong {
@@ -38,7 +38,7 @@
 }
 
 .compactHeader nav a {
-  margin-left: 0.6em;
+  margin-left: 1em;
   font-size: 1rem;
 }
 

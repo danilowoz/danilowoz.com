@@ -18,6 +18,7 @@ type FrontMatterPost = {
   type?: 'article' | 'github' | 'web'
   priority?: number
   coverCredit?: string
+  timeToRead?: string
 }
 
 export type PostsListProps = FrontMatterPost & {
@@ -107,7 +108,7 @@ export const getPosts = async () => {
         slug: fileNameCleaned,
         link:
           metadata?.type === 'article'
-            ? `blog/${fileNameCleaned}`
+            ? `/blog/${fileNameCleaned}`
             : metadata?.link,
       }
     })
@@ -139,4 +140,27 @@ export const getPostsPaths = async () => {
   return posts
     .filter(onlyPosts)
     .map((post) => ({ params: { slug: post?.slug } }))
+}
+
+/**
+ * Related posts based in a post
+ */
+export const getRelated = async (slug: string) => {
+  // Data
+  const posts = await getPosts()
+  const referPost = posts.find((e) => e.slug === slug)
+
+  // Helpers
+  const MAX = 3
+  const removeArticle = (e: string) => e !== 'Article'
+  const noRepeat = (e: PostsListProps) => e.slug !== slug
+
+  const fallBacks = posts.filter(noRepeat).slice(0, MAX)
+  const related = posts.filter(noRepeat).filter((p) => {
+    return p?.categories
+      ?.filter(removeArticle)
+      .some((r) => referPost?.categories?.filter(removeArticle)?.includes(r))
+  })
+
+  return [...related, ...fallBacks].slice(0, MAX)
 }

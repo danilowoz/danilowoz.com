@@ -7,14 +7,14 @@ import instagramSrc from './icons/logo-instagram.svg'
 import behanceSrc from './icons/logo-behance.svg'
 import style from './Footer.module.css'
 
-const Footer = () => {
+const Footer: React.FC<{ compact?: boolean }> = ({ compact }) => {
   const goToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
     <Box as="footer" variant="dark">
-      <div className={style.divider} />
+      {!compact && <div className={style.divider} />}
 
       <div className={style.title}>
         <h1>Reach out to me at</h1>

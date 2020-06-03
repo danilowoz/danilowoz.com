@@ -1,9 +1,14 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { GetStaticProps } from 'next'
-import { getPostsPaths, getPosts, PostsListProps } from 'service/projects'
-import { Footer } from 'components'
 import { NextSeo } from 'next-seo'
+import {
+  getPostsPaths,
+  getPosts,
+  PostsListProps,
+  getRelated,
+} from 'service/projects'
+import { Footer, Projects } from 'components'
 
 import style from 'components/BlogPost/BlogPost.module.css'
 import { HeaderCompact } from 'components/Header/HeaderCompact'
@@ -11,7 +16,8 @@ import { HeaderCompact } from 'components/Header/HeaderCompact'
 const BlogPostPage: React.FC<{
   filename: string
   metadata: PostsListProps
-}> = ({ filename, metadata }) => {
+  related: PostsListProps[]
+}> = ({ filename, metadata, related }) => {
   const Content = dynamic(() => import(`content/projects/${filename}.mdx`))
 
   return (
@@ -38,6 +44,9 @@ const BlogPostPage: React.FC<{
         <HeaderCompact />
         <article>
           <header>
+            <small>
+              {metadata.categories?.join(' - ')} · {metadata.timeToRead}
+            </small>
             <h1>{metadata.title}</h1>
             <h4>{metadata.tagline}</h4>
             <figure>
@@ -52,7 +61,9 @@ const BlogPostPage: React.FC<{
         </article>
       </div>
 
-      <Footer />
+      <Projects data={related} compact />
+
+      <Footer compact />
     </>
   )
 }
@@ -60,8 +71,9 @@ const BlogPostPage: React.FC<{
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const posts = await getPosts()
   const postsMetadata = posts.find((item) => item.slug === params?.slug)
+  const related = await getRelated(postsMetadata?.slug ?? '')
 
-  return { props: { filename: params?.slug, metadata: postsMetadata } }
+  return { props: { filename: params?.slug, metadata: postsMetadata, related } }
 }
 
 export const getStaticPaths = async () => {

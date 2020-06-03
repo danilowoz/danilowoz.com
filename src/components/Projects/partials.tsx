@@ -14,7 +14,7 @@ export const CallToAction: React.FC<{ type: PostsListProps['type'] }> = ({
   return (
     <span>
       {options[type ?? 'article']}
-      <img src="./arrow.svg" alt="arrow" />
+      <img src="/arrow.svg" alt="arrow" />
     </span>
   )
 }

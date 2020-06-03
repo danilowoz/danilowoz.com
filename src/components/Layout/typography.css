@@ -73,6 +73,13 @@ ul {
   margin-bottom: 1.4em;
 }
 
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  border: 1px solid #eee;
+}
+
 @media (min-width: 576px) {
   h1,
   h2,
