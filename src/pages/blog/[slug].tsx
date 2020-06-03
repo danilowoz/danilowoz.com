@@ -10,6 +10,7 @@ import {
 } from 'service/projects'
 import { Footer, Projects } from 'components'
 
+import content from 'content/base.json'
 import style from 'components/BlogPost/BlogPost.module.css'
 import { HeaderCompact } from 'components/Header/HeaderCompact'
 
@@ -26,8 +27,9 @@ const BlogPostPage: React.FC<{
         title={metadata.title}
         description={metadata.tagline}
         openGraph={{
+          url: `${content.url}${metadata.link}`,
           title: metadata.title,
-          description: metadata.tagline,
+          description: `${content.url}${metadata.tagline}`,
           images: [
             {
               url: metadata.cover ?? '',
