@@ -145,7 +145,7 @@ export const getPostsPaths = async () => {
 /**
  * Related posts based in a post
  */
-export const getRelated = async (slug: string) => {
+export const getRelated = async (slug?: string) => {
   // Data
   const posts = await getPosts()
   const referPost = posts.find((e) => e.slug === slug)

@@ -1,5 +1,4 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
 import {
@@ -13,13 +12,14 @@ import { Footer, Projects } from 'components'
 import content from 'content/base.json'
 import style from 'components/BlogPost/BlogPost.module.css'
 import { HeaderCompact } from 'components/Header/HeaderCompact'
+import blogPosts from 'content/blog'
 
 const BlogPostPage: React.FC<{
-  filename: string
+  filename: keyof typeof blogPosts
   metadata: PostsListProps
   related: PostsListProps[]
 }> = ({ filename, metadata, related }) => {
-  const Content = dynamic(() => import(`content/projects/${filename}.mdx`))
+  const Content = blogPosts[filename]
 
   return (
     <>
@@ -73,7 +73,7 @@ const BlogPostPage: React.FC<{
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const posts = await getPosts()
   const postsMetadata = posts.find((item) => item.slug === params?.slug)
-  const related = await getRelated(postsMetadata?.slug ?? '')
+  const related = await getRelated(postsMetadata?.slug)
 
   return { props: { filename: params?.slug, metadata: postsMetadata, related } }
 }

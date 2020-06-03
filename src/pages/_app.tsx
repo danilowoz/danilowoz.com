@@ -1,7 +1,7 @@
 import React from 'react'
 import { NextSeo } from 'next-seo'
-import { Layout } from 'components'
 import App from 'next/app'
+import { Layout } from 'components'
 
 import content from 'content/base.json'
 
