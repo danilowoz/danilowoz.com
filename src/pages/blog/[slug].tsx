@@ -1,6 +1,7 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
+import { useAmp } from 'next/amp'
 import {
   getPostsPaths,
   getPosts,
@@ -20,6 +21,7 @@ const BlogPostPage: React.FC<{
   related: PostsListProps[]
 }> = ({ filename, metadata, related }) => {
   const Content = blogPosts[filename]
+  const isAmp = useAmp()
 
   return (
     <>
@@ -51,21 +53,30 @@ const BlogPostPage: React.FC<{
             </small>
             <h1>{metadata.title}</h1>
             <h4>{metadata.tagline}</h4>
-            <figure>
-              <img src={metadata.cover} alt={metadata.title} />
-              <figcaption>
-                <small>{metadata.coverCredit}</small>
-              </figcaption>
-            </figure>
+            {isAmp ? (
+              <amp-img
+                src={metadata.cover}
+                alt={metadata.title}
+                layout="responsive"
+                height="2400"
+                width="1200"
+              />
+            ) : (
+              <figure>
+                <img src={metadata.cover} alt={metadata.title} />
+                <figcaption>
+                  <small>{metadata.coverCredit}</small>
+                </figcaption>
+              </figure>
+            )}
           </header>
 
           <Content />
         </article>
       </div>
 
-      <Projects data={related} compact />
-
-      <Footer compact />
+      {!isAmp && <Projects data={related} compact />}
+      {!isAmp && <Footer compact />}
     </>
   )
 }
@@ -83,5 +94,7 @@ export const getStaticPaths = async () => {
 
   return { paths, fallback: false }
 }
+
+export const config = { amp: 'hybrid' }
 
 export default BlogPostPage

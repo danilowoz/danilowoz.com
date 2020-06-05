@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/github'
+import { useAmp } from 'next/amp'
 
 import 'wipe.css'
 import './root.css'
@@ -38,7 +40,13 @@ const CodeBlock = ({
   )
 }
 
-const components = { code: CodeBlock } as any
+const Image = (props: any) => {
+  const isAmp = useAmp()
+
+  return isAmp ? <amp-img layout="responsive" {...props} /> : <img {...props} />
+}
+
+const components = { code: CodeBlock, img: Image } as any
 
 const Layout: React.FC = ({ children }) => (
   <MDXProvider components={components}>{children}</MDXProvider>
