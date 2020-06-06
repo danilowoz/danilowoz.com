@@ -97,7 +97,7 @@ const Footer: React.FC<{ compact?: boolean }> = ({ compact = false }) => {
   }
 
   return (
-    <Box as="footer" variant="dark">
+    <Box as="footer" variant="dark" id="contact">
       {!compact && <Divider />}
 
       <Title>

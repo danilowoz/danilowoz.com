@@ -12,7 +12,7 @@ export default createGlobalStyle`
 
   p {
     margin-bottom: 1.15rem;
-    color: var(--color-foreground);
+    color: rgb(var(--color-foreground));
     font-size: 1em;
   }
 
@@ -29,7 +29,7 @@ export default createGlobalStyle`
     font-weight: 400;
     line-height: 1.15;
     line-height: var(--font-line-height-base);
-    color: var(--color-foreground);
+    color: rgb(var(--color-foreground));
   }
 
   h1 {
@@ -58,7 +58,7 @@ export default createGlobalStyle`
   }
 
   strong {
-    color: var(--color-foreground);
+    color: rgb(var(--color-foreground));
     font-weight: 600;
   }
 

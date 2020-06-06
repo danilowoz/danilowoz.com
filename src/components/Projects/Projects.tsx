@@ -61,7 +61,7 @@ const Figure = styled.figure`
 
   * {
     margin: 0;
-    color: var(--color-background);
+    color: rgb(var(--color-background));
   }
 `
 
@@ -73,7 +73,7 @@ const hoverArticle = css`
       }
 
       p {
-        color: var(--color-foreground);
+        color: rgb(var(--color-foreground));
       }
     }
   }
@@ -121,7 +121,7 @@ const ArticleSmall = styled.article`
   h1 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--color-foreground);
+    color: rgb(var(--color-foreground));
   }
 
   p {

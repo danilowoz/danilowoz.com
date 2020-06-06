@@ -11,7 +11,7 @@ export const BlogPost = styled.div`
 
   h1 {
     margin-top: 0.5em;
-    color: var(--color-foreground);
+    color: rgb(ar(--color-foreground));
   }
 
   figure {

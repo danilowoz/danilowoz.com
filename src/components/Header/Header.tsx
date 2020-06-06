@@ -57,7 +57,7 @@ const Wrap = styled.header`
 
 const Header: React.FC = () => {
   return (
-    <Background as="header">
+    <Background>
       <Wrap>
         <Content />
       </Wrap>

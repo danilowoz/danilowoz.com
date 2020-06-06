@@ -14,8 +14,8 @@ export default createGlobalStyle`
     /**
    * Colors
    */
-    --color-background: #fff;
-    --color-foreground: #000;
+    --color-background: 255,255,255;
+    --color-foreground: 0,0,0;
     --color-haze: #767676;
     --color-heading: #959595;
     --color-cta: #015d8d;

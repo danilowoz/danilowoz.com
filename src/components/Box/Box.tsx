@@ -59,11 +59,12 @@ const variantStyle = css<{ variant?: 'light' | 'dark' }>`
   ${({ variant }) =>
     variant === 'dark' &&
     css`
-      background: var(--color-background);
-      --color-background: #000;
-      --color-foreground: #fff;
-      --color-heading: #fff;
+      background: rgb(var(--color-background));
+      --color-background: 0, 0, 0;
+      --color-foreground: 255, 255, 255;
+      --color-heading: #ffffff;
       --color-haze: #afafaf;
+      --color-cta: #ffffff;
     `}
 `
 

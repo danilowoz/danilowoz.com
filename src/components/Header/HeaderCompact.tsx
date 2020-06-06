@@ -24,7 +24,7 @@ const Header = styled.header`
   }
 
   strong {
-    color: var(--color-foreground);
+    color: rgb(var(--color-foreground));
   }
 
   span {
@@ -32,7 +32,7 @@ const Header = styled.header`
   }
 
   nav a {
-    margin-left: 1em;
+    margin-left: 2em;
     font-size: 1rem;
   }
 
@@ -43,9 +43,9 @@ const Header = styled.header`
   }
 `
 
-const HeaderCompact: React.FC = () => {
+const HeaderCompact: React.FC = (props) => {
   return (
-    <Header>
+    <Header {...props}>
       <Link href="/">
         <a href="/">
           <h1>
@@ -56,11 +56,15 @@ const HeaderCompact: React.FC = () => {
 
       <nav>
         <Link href="/#projects">
-          <a href="/#projects">Other projects</a>
+          <a href="/#projects">Projects</a>
         </Link>
 
         <Link href="/#about-me">
           <a href="/#about-me">About me</a>
+        </Link>
+
+        <Link href="/#contact">
+          <a href="/#contact">Contact</a>
         </Link>
       </nav>
     </Header>
