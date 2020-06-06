@@ -1,6 +1,6 @@
 import React from 'react'
 import { PostsListProps } from 'service/projects'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { CallToAction, Link, CustomSection } from './partials'
 import { Box } from '../Box'
@@ -12,16 +12,26 @@ const List = styled.section`
   align-items: center;
 `
 
+const Description = styled.div`
+  padding: 1rem;
+
+  p {
+    color: var(--color-haze);
+    transition: color 300ms ease;
+  }
+`
+
 const Figure = styled.figure`
   width: 100%;
   height: 0;
-
+  overflow: hidden;
   position: relative;
 
   div,
   img {
     width: 100%;
     height: 100%;
+    transition: transform 300ms ease;
   }
 
   div {
@@ -55,8 +65,24 @@ const Figure = styled.figure`
   }
 `
 
+const hoverArticle = css`
+  @media (hover: hover) {
+    &:hover {
+      img {
+        transform: scale(1.02);
+      }
+
+      p {
+        color: var(--color-foreground);
+      }
+    }
+  }
+`
+
 const Article = styled.article`
   width: 100%;
+
+  ${hoverArticle};
 
   @media (min-width: 576px) {
     width: calc(50% - 2em);
@@ -82,6 +108,8 @@ const Article = styled.article`
 `
 
 const ArticleSmall = styled.article`
+  ${hoverArticle};
+
   @media (min-width: 576px) {
     grid-column: span 3;
   }
@@ -95,13 +123,10 @@ const ArticleSmall = styled.article`
     font-weight: 600;
     color: var(--color-foreground);
   }
-`
-
-const Description = styled.div`
-  padding: 1rem;
 
   p {
     color: var(--color-haze);
+    transition: color 300ms ease;
   }
 `
 
@@ -122,6 +147,7 @@ const CallToActionWrapper = styled.div`
     margin-left: 0.5em;
     position: relative;
     top: 0.05em;
+    transition: transform 200ms ease;
   }
 `
 

@@ -37,8 +37,8 @@ const gridStyle = css`
   }
 
   @media (min-width: 576px) {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 4.8em;
+    padding-bottom: 4.8em;
 
     display: grid;
     grid-template-columns: repeat(var(--grid-column), 1fr);
@@ -46,21 +46,20 @@ const gridStyle = css`
 
     /* Removes extra margin */
     & + & {
-      margin-bottom: -10vh;
+      margin-bottom: -4.8em;
     }
 
     &:last-child:not(:only-child) {
-      padding-bottom: 10vh;
+      padding-bottom: 4.8em;
     }
   }
 `
 
 const variantStyle = css<{ variant?: 'light' | 'dark' }>`
-  background: var(--color-background);
-
   ${({ variant }) =>
     variant === 'dark' &&
     css`
+      background: var(--color-background);
       --color-background: #000;
       --color-foreground: #fff;
       --color-heading: #fff;

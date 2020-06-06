@@ -9,15 +9,15 @@ export default createGlobalStyle`
     --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
       Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol';
-    --font-line-height-base: 1.65;
+    --font-line-height-base: 1.7;
 
     /**
    * Colors
    */
     --color-background: #fff;
     --color-foreground: #000;
-    --color-heading: #929292;
-    --color-haze: #757575;
+    --color-haze: #767676;
+    --color-heading: #959595;
     --color-cta: #015d8d;
 
     /**
@@ -57,5 +57,6 @@ export default createGlobalStyle`
 
     width: 100%;
     max-width: var(--grid-width);
+
   }
 `
