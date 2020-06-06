@@ -8,11 +8,9 @@ import {
   PostsListProps,
   getRelated,
 } from 'service/projects'
-import { Footer, Projects } from 'components'
+import { Footer, Projects, BlogPost, HeaderCompact } from 'components'
 
 import content from 'content/base.json'
-import style from 'components/BlogPost/BlogPost.module.css'
-import { HeaderCompact } from 'components/Header/HeaderCompact'
 import blogPosts from 'content/blog'
 
 const BlogPostPage: React.FC<{
@@ -44,8 +42,9 @@ const BlogPostPage: React.FC<{
           site_name: metadata.title,
         }}
       />
-      <div className={style.post}>
-        <HeaderCompact />
+      <HeaderCompact />
+
+      <BlogPost>
         <article>
           <header>
             <small>
@@ -73,7 +72,7 @@ const BlogPostPage: React.FC<{
 
           <Content />
         </article>
-      </div>
+      </BlogPost>
 
       {!isAmp && <Projects data={related} compact />}
       {!isAmp && <Footer compact />}

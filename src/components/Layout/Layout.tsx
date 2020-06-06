@@ -5,9 +5,9 @@ import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/github'
 import { useAmp } from 'next/amp'
 
-import 'wipe.css'
-import './root.css'
-import './typography.css'
+import Reset from './reset'
+import Root from './root'
+import Typography from './typography'
 
 const CodeBlock = ({
   children,
@@ -43,13 +43,28 @@ const CodeBlock = ({
 const Image = (props: any) => {
   const isAmp = useAmp()
 
-  return isAmp ? <amp-img layout="responsive" {...props} /> : <img {...props} />
+  return isAmp ? (
+    <amp-img
+      layout="responsive"
+      src={props.src}
+      alt={props.alt}
+      height={props.height}
+      width={props.width}
+    />
+  ) : (
+    <img {...props} />
+  )
 }
 
 const components = { code: CodeBlock, img: Image } as any
 
 const Layout: React.FC = ({ children }) => (
-  <MDXProvider components={components}>{children}</MDXProvider>
+  <>
+    <Reset />
+    <Root />
+    <Typography />
+    <MDXProvider components={components}>{children}</MDXProvider>
+  </>
 )
 
 export { Layout }

@@ -1,9 +1,129 @@
 import React from 'react'
 import { PostsListProps } from 'service/projects'
+import styled from 'styled-components'
 
-import style from './Projects.module.css'
 import { CallToAction, Link, CustomSection } from './partials'
 import { Box } from '../Box'
+
+const List = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const Figure = styled.figure`
+  width: 100%;
+  height: 0;
+
+  position: relative;
+
+  div,
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  div {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  figcaption {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+    padding: 2rem 1rem 1rem;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  * {
+    margin: 0;
+    color: var(--color-background);
+  }
+`
+
+const Article = styled.article`
+  width: 100%;
+
+  @media (min-width: 576px) {
+    width: calc(50% - 2em);
+  }
+
+  @media (min-width: 769px) {
+    width: calc(
+      50% - (var(--grid-width) / var(--grid-column) - var(--grid-gutter)) / 2
+    );
+  }
+
+  a {
+    display: block;
+  }
+
+  &:nth-child(4n) ${Figure}, &:nth-child(4n + 1) ${Figure} {
+    padding-top: 60%;
+  }
+
+  &:nth-child(4n + 2) ${Figure}, &:nth-child(4n + 3) ${Figure} {
+    padding-top: 100%;
+  }
+`
+
+const ArticleSmall = styled.article`
+  @media (min-width: 576px) {
+    grid-column: span 3;
+  }
+
+  @media (min-width: 769px) {
+    grid-column: span 4;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-foreground);
+  }
+`
+
+const Description = styled.div`
+  padding: 1rem;
+
+  p {
+    color: var(--color-haze);
+  }
+`
+
+const CallToActionWrapper = styled.div`
+  &,
+  span {
+    color: var(--color-cta);
+    display: flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  span {
+    margin-right: 2em;
+  }
+
+  img {
+    margin-left: 0.5em;
+    position: relative;
+    top: 0.05em;
+  }
+`
 
 const NUMBER_FEATURES = 6
 
@@ -17,13 +137,13 @@ const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
     : data.slice(NUMBER_FEATURES, data.length)
 
   return (
-    <div className={style.projects} id="projects">
+    <List id="projects">
       {!compact &&
         featuresData.map((item) => {
           return (
-            <article key={item.title} className={style.article}>
+            <Article key={item.title}>
               <Link type={item.type} href={item?.link ?? ''}>
-                <figure className={style['article-figure']}>
+                <Figure>
                   <div>
                     <img src={item.cover} alt={item.title} />
                   </div>
@@ -32,42 +152,42 @@ const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
                     <small>{item.categories?.join(' - ')}</small>
                     <h2>{item.title}</h2>
                   </figcaption>
-                </figure>
+                </Figure>
 
-                <div className={style.description}>
+                <Description>
                   <p>{item.tagline}</p>
 
-                  <p className={style.cta}>
+                  <CallToActionWrapper>
                     <CustomSection type={item.type} link={item.link} />
                     <CallToAction type={item.type} />
-                  </p>
-                </div>
+                  </CallToActionWrapper>
+                </Description>
               </Link>
-            </article>
+            </Article>
           )
         })}
 
       <Box>
         {restData.map((item) => {
           return (
-            <article key={item.title} className={style['small-article']}>
+            <ArticleSmall key={item.title}>
               <Link type={item.type} href={item?.link ?? ''}>
                 <h1>{item.title}</h1>
 
-                <div className={style.description}>
+                <div>
                   <p>{item.tagline}</p>
 
-                  <p className={style.cta}>
-                    <CustomSection type={item.type} link={item.link} />
+                  <CallToActionWrapper>
+                    {/* <CustomSection type={item.type} link={item.link} /> */}
                     <CallToAction type={item.type} />
-                  </p>
+                  </CallToActionWrapper>
                 </div>
               </Link>
-            </article>
+            </ArticleSmall>
           )
         })}
       </Box>
-    </div>
+    </List>
   )
 }
 

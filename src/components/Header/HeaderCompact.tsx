@@ -1,13 +1,51 @@
 import React from 'react'
 import Link from 'next/link'
+import styled from 'styled-components'
 
 import base from 'content/base.json'
 
-import styles from './Header.module.css'
+const Header = styled.header`
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  max-width: 40rem;
+
+  padding: 1em 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4em;
+
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 1rem;
+    color: var(--color-heading);
+    margin: 0;
+  }
+
+  strong {
+    color: var(--color-foreground);
+  }
+
+  span {
+    display: none;
+  }
+
+  nav a {
+    margin-left: 1em;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 576px) {
+    span {
+      display: inline;
+    }
+  }
+`
 
 const HeaderCompact: React.FC = () => {
   return (
-    <header className={styles.compactHeader}>
+    <Header>
       <Link href="/">
         <a href="/">
           <h1>
@@ -25,7 +63,7 @@ const HeaderCompact: React.FC = () => {
           <a href="/#about-me">About me</a>
         </Link>
       </nav>
-    </header>
+    </Header>
   )
 }
 

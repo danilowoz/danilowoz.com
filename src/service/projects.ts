@@ -2,7 +2,6 @@
 import { createRequire } from 'module'
 import fs from 'fs'
 import path from 'path'
-import rimraf from 'rimraf'
 
 const mdx = require('@mdx-js/mdx')
 const babel = require('@babel/core')
@@ -115,8 +114,6 @@ export const getPosts = async () => {
 
   // Clean files
   const completedPosts = await Promise.all(posts)
-
-  rimraf(TEMP_DIR, {}, (err) => console.error(err))
 
   return completedPosts.sort((a, b) => {
     const dateA = new Date(a?.date ?? '').getTime()
