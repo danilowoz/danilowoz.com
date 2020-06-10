@@ -29,16 +29,19 @@ const Header = styled.header`
 
   span {
     display: none;
+
+    @media (min-width: 576px) {
+      display: inline;
+    }
   }
 
   nav a {
-    margin-left: 2em;
-    font-size: 1rem;
-  }
+    margin-left: 1.2em;
+    font-size: 0.8rem;
 
-  @media (min-width: 576px) {
-    span {
-      display: inline;
+    @media (min-width: 576px) {
+      margin-left: 2em;
+      font-size: 1rem;
     }
   }
 `

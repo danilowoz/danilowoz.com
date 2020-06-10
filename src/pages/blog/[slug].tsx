@@ -57,8 +57,8 @@ const BlogPostPage: React.FC<{
                 src={metadata.cover}
                 alt={metadata.title}
                 layout="responsive"
-                height="2400"
-                width="1200"
+                width="2400"
+                height="1200"
               />
             ) : (
               <figure>

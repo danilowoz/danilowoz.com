@@ -81,10 +81,12 @@ const hoverArticle = css`
 
 const Article = styled.article`
   width: 100%;
+  margin-bottom: 2em;
 
   ${hoverArticle};
 
   @media (min-width: 576px) {
+    margin-bottom: 0;
     width: calc(50% - 2em);
   }
 
