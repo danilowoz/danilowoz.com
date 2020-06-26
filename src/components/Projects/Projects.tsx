@@ -81,7 +81,10 @@ const hoverArticle = css`
 
 const Article = styled.article`
   width: 100%;
-  margin-bottom: 2em;
+
+  &::not(::last-of-type) {
+    margin-bottom: 2em;
+  }
 
   ${hoverArticle};
 

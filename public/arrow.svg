@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="12px" height="11px" viewBox="0 0 12 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="13px" height="11px" viewBox="0 0 13 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
-    <title>-&gt;</title>
+    <title>Path</title>
     <desc>Created with Sketch.</desc>
-    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Inter-Regular, Inter" font-size="16" font-weight="normal">
-        <g id="Desktop-HD" transform="translate(-276.000000, -1159.000000)" fill="#015D8D">
-            <g id="Group-3" transform="translate(250.000000, 726.000000)">
-                <g id="Group-2">
-                    <text id="-&gt;">
-                        <tspan x="24" y="444">-&gt;</tspan>
-                    </text>
-                </g>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-869.000000, -1262.000000)" fill="#015D8D" fill-rule="nonzero">
+            <g id="Group" transform="translate(760.000000, 737.000000)">
+                <polygon id="Path" points="116.49289 536 115.61789 535.136364 119.22016 531.534095 109.890623 531.534095 109.890623 530.284096 119.22016 530.284096 115.61789 526.693191 116.49289 525.818192 121.583794 530.909096"></polygon>
             </g>
         </g>
     </g>
