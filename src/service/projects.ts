@@ -28,7 +28,7 @@ export type PostsListProps = FrontMatterPost & {
  * Constantans
  */
 const PROJECTS_PATH = 'src/content/projects'
-const TEMP_DIR = path.resolve(`${PROJECTS_PATH}/_temp/`)
+const TEMP_DIR = path.resolve(`_temp`)
 
 /**
  * Receives a code string and a filename
@@ -41,7 +41,7 @@ const requireFromString = async (code: string, filename: string) => {
   // paths
   const cleanFilename = filename.replace('.mdx', '')
 
-  const tempPath = path.resolve(`${PROJECTS_PATH}/_temp/${cleanFilename}.js`)
+  const tempPath = path.resolve(TEMP_DIR, `${cleanFilename}.js`)
 
   // Create temp dir
   if (!fs.existsSync(TEMP_DIR)) {
@@ -142,7 +142,7 @@ export const getPostsPaths = async () => {
 /**
  * Related posts based in a post
  */
-export const getRelated = async (slug?: string) => {
+export const getRelated = async (slug?: string): Promise<PostsListProps[]> => {
   // Data
   const posts = await getPosts()
   const referPost = posts.find((e) => e.slug === slug)
