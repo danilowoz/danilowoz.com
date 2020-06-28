@@ -14,10 +14,17 @@ export const BlogPost = styled.div`
     color: rgb(ar(--color-foreground));
   }
 
+  img,
   figure {
     text-align: center;
+    max-width: auto;
 
     margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  figure img {
+    margin: 0;
   }
 
   pre pre {
@@ -38,13 +45,13 @@ export const BlogPost = styled.div`
   @media (min-width: 576px) {
     pre {
       margin-bottom: 2em;
-      margin-left: -2em;
-      margin-right: -2em;
+      margin-left: -3em;
+      margin-right: -3em;
     }
 
     figure {
-      margin-left: -3em;
-      margin-right: -3em;
+      margin-left: -4em;
+      margin-right: -4em;
     }
   }
 `

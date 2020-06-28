@@ -7,7 +7,7 @@ import base from 'content/base.json'
 const Header = styled.header`
   border-bottom: 1px solid #eee;
   width: 100%;
-  max-width: 40rem;
+  max-width: 50rem;
 
   padding: 1em 0;
   margin-left: auto;

@@ -18,8 +18,8 @@ const Header = styled.div<{ visibility: boolean }>`
   left: 0;
   right: 0;
   top: 0;
-  background: rgba(var(--color-background), 0.9);
-  backdrop-filter: blur(30px);
+  background: rgba(var(--color-background), 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
 
   border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
 
