@@ -32,7 +32,7 @@ const BlogPostPage: React.FC<{
           description: `${content.url}${metadata.tagline}`,
           images: [
             {
-              url: metadata.cover ?? '',
+              url: `${content.url}${metadata.cover ?? ''}`,
               width: 800,
               height: 600,
               alt: metadata.title,
