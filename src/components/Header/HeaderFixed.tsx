@@ -11,7 +11,9 @@ const HeaderCompactStyled = styled(HeaderCompact)`
   max-width: 100%;
 `
 
-const Header = styled.div<{ visibility: boolean }>`
+const Header = styled(({ visibility: _, ...props }) => <div {...props} />)<{
+  visibility: boolean
+}>`
   position: fixed;
   z-index: 9999;
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import NextLink from 'next/link'
 import { PostsListProps } from 'service/projects'
 
@@ -42,7 +42,7 @@ export const Link: React.FC<{
 const GithubStars: React.FC<{ link?: string }> = ({ link = '' }) => {
   const [stars, setStars] = useState<number>()
 
-  const getStars = async () => {
+  const getStars = useCallback(async () => {
     if (!link) {
       return
     }
@@ -57,11 +57,11 @@ const GithubStars: React.FC<{ link?: string }> = ({ link = '' }) => {
     } catch (err) {
       console.error(err)
     }
-  }
+  }, [link])
 
   useEffect(() => {
     getStars()
-  }, [])
+  }, [getStars])
 
   if (!stars) {
     return null
@@ -74,6 +74,7 @@ const GithubStars: React.FC<{ link?: string }> = ({ link = '' }) => {
         notation: 'compact',
         maximumFractionDigits: 1,
         compactDisplay: 'short',
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any).format(stars)}
     </span>
   )

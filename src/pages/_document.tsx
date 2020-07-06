@@ -7,7 +7,6 @@ import Document, {
   DocumentContext,
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import { Analytics } from 'service/analytics'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -35,11 +34,11 @@ class MyDocument extends Document {
       sheet.seal()
     }
   }
+
   render() {
     return (
       <Html lang="en">
         <Head />
-        <Analytics />
 
         <body>
           <Main />

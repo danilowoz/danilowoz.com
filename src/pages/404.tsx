@@ -6,6 +6,7 @@ const routes = {
   'Advanced-blog-system-in-Gatsby': 'blog/advanced-blog-system-in-gatsby',
   'CSS-Display-Grid-and-Sketch-Layout':
     'blog/css-display-grid-and-sketch-layout',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } as any
 
 const Redirect = () => {

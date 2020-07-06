@@ -8,6 +8,7 @@ declare namespace JSX {
   }
   interface IntrinsicElements {
     'amp-img': AmpImg
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     'amp-analytics': any
   }
 }
