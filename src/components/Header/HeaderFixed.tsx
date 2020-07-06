@@ -68,7 +68,7 @@ const HeaderFixed = () => {
   }, [])
 
   return (
-    <Box variant={variantDark ? 'dark' : 'light'}>
+    <Box variant={variantDark ? 'dark' : 'light'} style={{ padding: 0 }}>
       <Header visibility={visibility}>
         <Container>
           <HeaderCompactStyled />

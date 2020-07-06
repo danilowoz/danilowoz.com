@@ -42,6 +42,11 @@ const Wrap = styled.header`
   position: relative;
   z-index: 1;
 
+  h1 {
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+
   h4 {
     margin-top: 2.2em;
   }
