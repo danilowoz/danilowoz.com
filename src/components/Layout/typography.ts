@@ -33,8 +33,9 @@ export default createGlobalStyle`
   }
 
   h1 {
-    font-size: 1.728em;
+    font-size: 1.5em;
     color: var(--color-heading);
+    line-height: 1.4;
   }
 
   h2 {
