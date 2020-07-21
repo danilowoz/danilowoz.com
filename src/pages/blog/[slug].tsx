@@ -29,7 +29,7 @@ const BlogPostPage: React.FC<{
         openGraph={{
           url: `${content.url}${metadata.link}`,
           title: metadata.title,
-          description: `${content.url}${metadata.tagline}`,
+          description: metadata.tagline,
           images: [
             {
               url: `${content.url}${metadata.cover ?? ''}`,
