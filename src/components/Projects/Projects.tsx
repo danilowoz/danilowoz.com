@@ -156,7 +156,7 @@ const CallToActionWrapper = styled.div`
   }
 `
 
-const NUMBER_FEATURES = 6
+const NUMBER_FEATURES = 8
 
 const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
   data,
