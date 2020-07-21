@@ -38,8 +38,6 @@ const BlogPostPage: React.FC<{
               alt: metadata.title,
             },
           ],
-          // eslint-disable-next-line @typescript-eslint/camelcase
-          site_name: metadata.title,
         }}
       />
       <HeaderCompact />
