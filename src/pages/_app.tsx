@@ -12,26 +12,29 @@ class MyApp extends App {
     return (
       <>
         <NextSeo
-          title={content.title}
+          canonical={content.url}
+          title={content['short-title']}
           description={content.description}
           openGraph={{
             url: content.url,
             title: content.title,
+            type: 'blog',
             description: content.description,
-            // images: [
-            //   {
-            //     url: 'https://www.example.ie/og-image-01.jpg',
-            //     width: 800,
-            //     height: 600,
-            //     alt: 'Og Image Alt',
-            //   },
-            // ],
+            images: [
+              {
+                url: `${content.url}/share.jpg`,
+                width: 600,
+                height: 600,
+                alt: content.twitterHandle,
+              },
+            ],
             // eslint-disable-next-line @typescript-eslint/camelcase
-            site_name: content.title,
+            site_name: content['short-title'],
           }}
           twitter={{
-            handle: content.twitterHandle,
             cardType: 'summary_large_image',
+            handle: content.twitterHandle,
+            site: content['short-title'],
           }}
         />
         <Layout>

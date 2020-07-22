@@ -24,6 +24,7 @@ const BlogPostPage: React.FC<{
   return (
     <>
       <NextSeo
+        canonical={`${content.url}${metadata.link}`}
         title={metadata.title}
         description={metadata.tagline}
         openGraph={{

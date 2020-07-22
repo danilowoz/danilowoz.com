@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://danilowoz.com/</loc>
+  <lastmod>2020-07-21T11:57:22+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://danilowoz.com/blog/generating-typescript-types-and-react-hooks-based-on-graphql-endpoint</loc>
+  <lastmod>2020-07-21T11:57:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://danilowoz.com/blog/atomic-design-with-react</loc>
+  <lastmod>2020-07-21T11:57:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://danilowoz.com/blog/bringing-your-blockchain-business-to-react-native</loc>
+  <lastmod>2020-07-21T11:57:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://danilowoz.com/blog/advanced-blog-system-in-gatsby</loc>
+  <lastmod>2020-07-21T11:57:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://danilowoz.com/blog/css-display-grid-and-sketch-layout</loc>
+  <lastmod>2020-07-21T11:57:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
