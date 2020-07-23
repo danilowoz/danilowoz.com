@@ -1,4 +1,4 @@
-name: Deploy
+name: Testing and deploy
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - next
 
 jobs:
-  lint:
-    name: Deploy
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,19 +19,22 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          key: ${{ runner.os }}-npm-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: NPM Install
         run: npm ci
 
+      - name: Lint
+        run: npm run lint
+
       - name: Build
         run: npm run build
 
-      - name: Deploy
+      - name: Export
+        run: npm run export
+
+      - name: Deploy S3
+        if: success()
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
@@ -39,3 +42,4 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          SOURCE_DIR: out

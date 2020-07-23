@@ -108,7 +108,7 @@ export const getPosts = async () => {
         link:
           metadata?.type === 'article'
             ? `/blog/${fileNameCleaned}`
-            : metadata?.link,
+            : metadata?.link ?? '',
       }
     })
 
