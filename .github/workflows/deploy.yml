@@ -47,8 +47,6 @@ jobs:
       - name: Cloudfront invalidation
         if: success()
         uses: chetan/invalidate-cloudfront-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
         env:
           DISTRIBUTION: ${{ secrets.PRODUCTION_CLOUDFRONT }}
           PATHS: '/*'
