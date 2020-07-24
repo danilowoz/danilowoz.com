@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    {
+      "source": "/Atomic-Design-with-React",
+      "destination": "/blog/atomic-design-with-react"
+    },
+    {
+      "source": "/Advanced-blog-system-in-Gatsby",
+      "destination": "/blog/advanced-blog-system-in-gatsby"
+    },
+    {
+      "source": "/CSS-Display-Grid-and-Sketch-Layout",
+      "destination": "/blog/css-display-grid-and-sketch-layout"
+    },
+    {
+      "source": "/create-content-loader",
+      "destination": "https://create-content-loader.now.sh/"
+    }
+  ]
+}
