@@ -22,6 +22,14 @@
     {
       "source": "/create-content-loader/",
       "destination": "https://create-content-loader.now.sh/"
+    },
+    {
+      "source": "/react-content-loader/",
+      "destination": "https://create-content-loader.now.sh/"
+    },
+    {
+      "source": "/react-content-loader",
+      "destination": "https://create-content-loader.now.sh/"
     }
   ]
 }
