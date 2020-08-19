@@ -27,7 +27,6 @@ export default createGlobalStyle`
   h5 {
     margin: 2em 0 1.05em;
     font-weight: 400;
-    line-height: 1.15;
     line-height: var(--font-line-height-base);
     color: rgb(var(--color-foreground));
   }

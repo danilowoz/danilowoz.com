@@ -57,6 +57,6 @@ export default createGlobalStyle`
 
     width: 100%;
     max-width: var(--grid-width);
-
+    overflow-x: hidden;
   }
 `

@@ -2,6 +2,11 @@ import React, { useEffect, useState, useCallback } from 'react'
 import NextLink from 'next/link'
 import { PostsListProps } from 'service/projects'
 
+import arrowSrc from './icons/arrow.svg'
+import githubSrc from './icons/logo-github.svg'
+import newsSrc from './icons/news.svg'
+import externalSrc from './icons/external.svg'
+
 export const CallToAction: React.FC<{ type: PostsListProps['type'] }> = ({
   type,
 }) => {
@@ -11,10 +16,19 @@ export const CallToAction: React.FC<{ type: PostsListProps['type'] }> = ({
     article: 'Read more',
   }
 
+  const icons: Record<NonNullable<PostsListProps['type']>, string> = {
+    article: newsSrc,
+    github: githubSrc,
+    web: externalSrc,
+  }
+
   return (
     <span>
+      <span className="section-icon">
+        <img width="20" src={icons[type ?? 'article']} alt="arrow" />
+      </span>
       {options[type ?? 'article']}
-      <img src="/arrow.svg" alt="arrow" />
+      <img className="arrow-icon" src={arrowSrc} alt="arrow" />
     </span>
   )
 }

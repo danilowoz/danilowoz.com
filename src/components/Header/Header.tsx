@@ -44,6 +44,7 @@ const Wrap = styled.header`
 
   h1 {
     margin-top: 0;
+    font-size: 1.7em;
   }
 
   h4 {

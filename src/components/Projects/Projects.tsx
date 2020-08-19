@@ -38,6 +38,8 @@ const Figure = styled.figure`
     position: absolute;
     left: 0;
     top: 0;
+    border-radius: 0.3em;
+    overflow: hidden;
   }
 
   img {
@@ -47,11 +49,11 @@ const Figure = styled.figure`
   figcaption {
     background: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.7) 0%,
       rgba(0, 0, 0, 0) 100%
     );
-
-    padding: 2rem 1rem 1rem;
+    border-radius: 0.3em;
+    padding: 6rem 1rem 1rem;
 
     position: absolute;
     left: 0;
@@ -81,6 +83,7 @@ const hoverArticle = css`
 
 const Article = styled.article`
   width: 100%;
+  margin-bottom: 2em;
 
   &::not(::last-of-type) {
     margin-bottom: 2em;
@@ -94,9 +97,14 @@ const Article = styled.article`
   }
 
   @media (min-width: 769px) {
+    margin-bottom: 0;
     width: calc(
       50% - (var(--grid-width) / var(--grid-column) - var(--grid-gutter)) / 2
     );
+  }
+
+  h2 {
+    line-height: 1.4;
   }
 
   a {
@@ -148,10 +156,26 @@ const CallToActionWrapper = styled.div`
     margin-right: 2em;
   }
 
-  img {
+  .section-icon {
+    margin-right: 0.5em;
+    background: #015d8d11;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    border-radius: 100%;
+
+    img {
+      margin: auto;
+    }
+  }
+
+  .arrow-icon {
     margin-left: 0.5em;
-    position: relative;
     top: 0.05em;
+  }
+
+  img {
+    position: relative;
     transition: transform 200ms ease;
   }
 `
@@ -180,17 +204,17 @@ const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
                   </div>
 
                   <figcaption>
-                    <small>{item.categories?.join(' - ')}</small>
                     <h2>{item.title}</h2>
                   </figcaption>
+                  <img src={item.cover} alt={item.title} />
                 </Figure>
 
                 <Description>
                   <p>{item.tagline}</p>
 
                   <CallToActionWrapper>
-                    <CustomSection type={item.type} link={item.link} />
                     <CallToAction type={item.type} />
+                    <CustomSection type={item.type} link={item.link} />
                   </CallToActionWrapper>
                 </Description>
               </Link>
