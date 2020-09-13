@@ -3,7 +3,7 @@ const withPlugins = require('next-compose-plugins')
 const withMDX = require('@next/mdx')({ extension: /\.mdx?$/ })
 
 const config = {
-  pageExtensions: ['tsx', 'mdx'],
+  pageExtensions: ['tsx', 'ts', 'mdx'],
   devIndicators: { autoPrerender: false },
 }
 
