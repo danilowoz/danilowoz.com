@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { getPosts } from 'service/projects'
 import { Feed } from 'feed'
 
 import content from 'content/base.json'
@@ -20,17 +19,12 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
   articles.forEach((post) => {
     feed.addItem({
       title: post.title!,
-      id: post.link,
-      link: post.link!,
+      id: `${content.url}${post.link!}`,
+      link: `${content.url}${post.link!}`,
       description: post.tagline,
-      author: [
-        {
-          name: 'Danilo Woznica',
-          email: 'danilowoz@gmail.com',
-        },
-      ],
+      author: [{ name: 'Danilo Woznica' }],
       date: new Date(post.date!),
-      image: `${content.url}/${post.cover}`,
+      image: `${content.url}${post.cover}`,
     })
   })
 

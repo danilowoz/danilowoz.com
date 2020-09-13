@@ -116,6 +116,10 @@ export const getPosts = async () => {
             : metadata?.link ?? '',
       }
     })
+    .filter(async (post) => {
+      const data = await post
+      return data.slug
+    })
 
   // Clean files
   const completedPosts = await Promise.all(posts)

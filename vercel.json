@@ -8,6 +8,10 @@
       "destination": "/api/rss"
     },
     {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
+    },
+    {
       "source": "/Atomic-Design-with-React",
       "destination": "/blog/atomic-design-with-react"
     },
