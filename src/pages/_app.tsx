@@ -37,6 +37,7 @@ class MyApp extends App {
             site: content['short-title'],
           }}
         />
+
         <Layout>
           <Component {...pageProps} />
         </Layout>

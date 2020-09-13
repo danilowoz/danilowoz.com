@@ -38,7 +38,14 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="RSS for blog posts"
+            href="https://danilowoz.com/api/rss"
+          />
+        </Head>
 
         <body>
           <Main />
