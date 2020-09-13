@@ -4,6 +4,10 @@
   },
   "redirects": [
     {
+      "source": "/rss.xml",
+      "destination": "/api/rss"
+    },
+    {
       "source": "/Atomic-Design-with-React",
       "destination": "/blog/atomic-design-with-react"
     },

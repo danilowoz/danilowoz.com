@@ -93,6 +93,4 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-export const config = { amp: 'hybrid' }
-
 export default BlogPostPage

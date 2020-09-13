@@ -3,12 +3,9 @@ import { getPosts } from 'service/projects'
 import { Feed } from 'feed'
 
 import content from 'content/base.json'
+import posts from 'content/blog.json'
 
-export default async function feedFunc(
-  _req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const posts = await getPosts()
+export default async (_req: NextApiRequest, res: NextApiResponse) => {
   const articles = posts.filter((e) => e.type === 'article')
 
   const feed = new Feed({

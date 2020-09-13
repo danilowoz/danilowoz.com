@@ -29,6 +29,7 @@ export type PostsListProps = FrontMatterPost & {
  */
 const PROJECTS_PATH = 'src/content/projects'
 const TEMP_DIR = path.resolve(`_temp`)
+const DATA_JSON_PATH = path.join(process.cwd(), 'src/content/blog.json')
 
 /**
  * Receives a code string and a filename
@@ -85,6 +86,10 @@ const transformMdx = async (
   return module.metadata
 }
 
+const generateDataJson = (data: Object) => {
+  fs.writeFileSync(DATA_JSON_PATH, JSON.stringify(data))
+}
+
 /**
  * Get list of posts and returns the filename and slug
  */
@@ -115,7 +120,7 @@ export const getPosts = async () => {
   // Clean files
   const completedPosts = await Promise.all(posts)
 
-  return completedPosts.sort((a, b) => {
+  const data = completedPosts.sort((a, b) => {
     const dateA = new Date(a?.date ?? '').getTime()
     const dateB = new Date(b?.date ?? '').getTime()
 
@@ -125,6 +130,10 @@ export const getPosts = async () => {
 
     return (a?.priority ?? 0) - (b.priority ?? 0)
   })
+
+  generateDataJson(data)
+
+  return data
 }
 
 /**
