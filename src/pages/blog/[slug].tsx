@@ -9,6 +9,7 @@ import {
   getRelated,
 } from 'service/projects'
 import { Footer, Projects, BlogPost, HeaderCompact } from 'components'
+import { DiscussionEmbed } from 'disqus-react'
 
 import content from 'content/base.json'
 import blogPosts from 'content/blog'
@@ -72,6 +73,15 @@ const BlogPostPage: React.FC<{
           <Content />
         </article>
       </BlogPost>
+
+      <DiscussionEmbed
+        shortname="danilowoz"
+        config={{
+          url: `${content.url}${metadata.link}`,
+          identifier: `${content.url}${metadata.link}`,
+          title: metadata.title,
+        }}
+      />
 
       {!isAmp && <Projects data={related} compact />}
       {!isAmp && <Footer compact />}

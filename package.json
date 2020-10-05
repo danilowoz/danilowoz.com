@@ -21,8 +21,9 @@
   "dependencies": {
     "@mdx-js/loader": "1.6.4",
     "@next/mdx": "9.4.2",
-    "@types/styled-components": "^5.1.0",
+    "@types/styled-components": "5.1.0",
     "@zeit/next-css": "1.0.1",
+    "disqus-react": "^1.0.10",
     "feed": "^4.2.1",
     "next": "9.5.3",
     "next-images": "1.4.0",

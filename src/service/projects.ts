@@ -86,7 +86,7 @@ const transformMdx = async (
   return module.metadata
 }
 
-const generateDataJson = (data: Object) => {
+const generateDataJson = (data: Record<string, any>) => {
   fs.writeFileSync(DATA_JSON_PATH, JSON.stringify(data))
 }
 
