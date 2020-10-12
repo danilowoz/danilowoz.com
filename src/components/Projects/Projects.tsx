@@ -5,6 +5,18 @@ import styled, { css } from 'styled-components'
 import { CallToAction, Link, CustomSection } from './partials'
 import { Box } from '../Box'
 
+const TitleSeeMore = styled.h4`
+  margin-bottom: -2em;
+  border-bottom: 1px solid #eee;
+  display: block;
+  width: 100%;
+  padding-bottom: 0.5em;
+
+  @media (min-width: 576px) {
+    margin-bottom: -7em;
+  }
+`
+
 const List = styled.section`
   display: flex;
   flex-wrap: wrap;
@@ -222,6 +234,7 @@ const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
           )
         })}
 
+      {compact && <TitleSeeMore>See more</TitleSeeMore>}
       <Box>
         {restData.map((item) => {
           return (

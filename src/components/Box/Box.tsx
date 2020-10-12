@@ -20,6 +20,8 @@ const gridStyle = css`
   padding-left: calc(50vw - 50%);
   padding-right: calc(50vw - 50%);
 
+  min-width: 100%;
+
   & + & {
     margin-bottom: -4vh;
   }
