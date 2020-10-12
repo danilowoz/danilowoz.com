@@ -162,14 +162,14 @@ export const getRelated = async (slug?: string): Promise<PostsListProps[]> => {
 
   // Helpers
   const MAX = 3
-  const removeArticle = (e: string) => e !== 'Article'
+  const getArticles = (e: string) => e === 'Article'
   const noRepeat = (e: PostsListProps) => e.slug !== slug
 
   const fallBacks = posts.filter(noRepeat).slice(0, MAX)
   const related = posts.filter(noRepeat).filter((p) => {
     return p?.categories
-      ?.filter(removeArticle)
-      .some((r) => referPost?.categories?.filter(removeArticle)?.includes(r))
+      ?.filter(getArticles)
+      .some((r) => referPost?.categories?.filter(getArticles)?.includes(r))
   })
 
   return [...related, ...fallBacks].slice(0, MAX)
