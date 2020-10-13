@@ -78,8 +78,8 @@ export default createGlobalStyle`
 
   hr {
     display: block;
-    margin-top: 0.5em;
-    margin-bottom: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     border: 1px solid #eee;
   }
 

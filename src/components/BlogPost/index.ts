@@ -34,15 +34,6 @@ export const BlogPost = styled.div`
     overflow: auto;
   }
 
-  aside {
-    margin-top: 5em;
-    border-top: 1px solid #eee;
-  }
-
-  aside a {
-    margin-right: 2em;
-  }
-
   @media (min-width: 576px) {
     pre {
       margin-bottom: 2em;
