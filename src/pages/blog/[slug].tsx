@@ -1,7 +1,6 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
-import { useAmp } from 'next/amp'
 import {
   getPostsPaths,
   getPosts,
@@ -10,6 +9,7 @@ import {
 } from 'service/projects'
 import { Footer, Projects, BlogPost, HeaderCompact } from 'components'
 import { DiscussionEmbed } from 'disqus-react'
+import dayjs from 'dayjs'
 
 import content from 'content/base.json'
 import blogPosts from 'content/blog'
@@ -20,7 +20,6 @@ const BlogPostPage: React.FC<{
   related: PostsListProps[]
 }> = ({ filename, metadata, related }) => {
   const Content = blogPosts[filename]
-  const isAmp = useAmp()
 
   return (
     <>
@@ -48,26 +47,18 @@ const BlogPostPage: React.FC<{
         <article>
           <header>
             <small>
-              {metadata.categories?.join(' - ')} · {metadata.timeToRead}
+              {metadata.categories?.join(' - ')} · {metadata.timeToRead} ·{' '}
+              {dayjs(metadata?.date ?? '').format('MMM D, YYYY')}
             </small>
             <h1>{metadata.title}</h1>
             <h4>{metadata.tagline}</h4>
-            {isAmp ? (
-              <amp-img
-                src={metadata.cover}
-                alt={metadata.title}
-                layout="responsive"
-                width="2400"
-                height="1200"
-              />
-            ) : (
-              <figure>
-                <img src={metadata.cover} alt={metadata.title} />
-                <figcaption>
-                  <small>{metadata.coverCredit}</small>
-                </figcaption>
-              </figure>
-            )}
+
+            <figure>
+              <img src={metadata.cover} alt={metadata.title} />
+              <figcaption>
+                <small>{metadata.coverCredit}</small>
+              </figcaption>
+            </figure>
           </header>
 
           <Content />
@@ -83,8 +74,8 @@ const BlogPostPage: React.FC<{
         }}
       />
 
-      {!isAmp && <Projects data={related} compact />}
-      {!isAmp && <Footer compact />}
+      <Projects data={related} compact />
+      <Footer compact />
     </>
   )
 }

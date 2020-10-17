@@ -23,6 +23,7 @@
     "@next/mdx": "9.4.2",
     "@types/styled-components": "5.1.0",
     "@zeit/next-css": "1.0.1",
+    "dayjs": "^1.9.3",
     "disqus-react": "^1.0.10",
     "feed": "^4.2.1",
     "next": "9.5.4",

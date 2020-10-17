@@ -3,7 +3,6 @@ import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/oceanicNext'
-import { useAmp } from 'next/amp'
 
 const CodeBlock = ({
   children,
@@ -37,24 +36,7 @@ const CodeBlock = ({
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Image = (props: any) => {
-  const isAmp = useAmp()
-
-  return isAmp ? (
-    <amp-img
-      layout="responsive"
-      src={props.src}
-      alt={props.alt}
-      height={props.height}
-      width={props.width}
-    />
-  ) : (
-    <img {...props} />
-  )
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const components = { code: CodeBlock, img: Image } as any
+const components = { code: CodeBlock } as any
 
 const MDXContext: React.FC = ({ children }) => {
   return <MDXProvider components={components}>{children}</MDXProvider>

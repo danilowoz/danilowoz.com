@@ -11,8 +11,13 @@ export const BlogPost = styled.div`
 
   h1 {
     margin-top: 0.5em;
+    margin-bottom: 0.5em;
     color: rgb(ar(--color-foreground));
-    font-size: 2em;
+    font-size: 2.2em;
+
+    + h4 {
+      margin-top: 0;
+    }
   }
 
   img,
