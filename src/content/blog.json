@@ -43,6 +43,34 @@
     "link": "/blog/atomic-design-with-react"
   },
   {
+    "priority": 3,
+    "type": "web",
+    "link": "https://coverify.now.sh/",
+    "title": "Coverify: Design fresh album cover for your Spotify playlists ",
+    "tagline": "Coverify is a web tool to create yourself artwork, where you can apply different fonts, colors and a ton of images from Unsplash; and upload it directly on Spotify.",
+    "date": "2020-04-01T15:06:01.607Z",
+    "categories": ["Design tool", "Spotify API", "Album cover"],
+    "cover": "/images/coverify.jpg",
+    "filename": "coverify.mdx",
+    "path": "coverify",
+    "slug": "coverify"
+  },
+  {
+    "priority": 4,
+    "type": "article",
+    "title": "Beginner Guide: where to start testing in JavaScript",
+    "tagline": "A methodology or mental model for those who aim to start writing unit tests in Javascript, but still doesn't know where to start. This beginner guide will allow you to begin writing decent unit tests from a sane path.",
+    "date": "2020-17-10T19:28:06.529Z",
+    "categories": ["Article", "Methodology", "Testing"],
+    "cover": "/images/beginner-guide-where-to-start-testing-in-javascript/cover.jpg",
+    "coverCredit": "Photo by Fred Jesus",
+    "timeToRead": "5 min read",
+    "filename": "beginner-guide-where-to-start-testing-in-javascript.mdx",
+    "path": "beginner-guide-where-to-start-testing-in-javascript",
+    "slug": "beginner-guide-where-to-start-testing-in-javascript",
+    "link": "/blog/beginner-guide-where-to-start-testing-in-javascript"
+  },
+  {
     "priority": 4,
     "type": "article",
     "title": "Bringing your blockchain business to React Native",
@@ -56,19 +84,6 @@
     "path": "bringing-your-blockchain-business-to-react-native",
     "slug": "bringing-your-blockchain-business-to-react-native",
     "link": "/blog/bringing-your-blockchain-business-to-react-native"
-  },
-  {
-    "priority": 4,
-    "type": "web",
-    "link": "https://coverify.now.sh/",
-    "title": "Coverify: Design fresh album cover for your Spotify playlists ",
-    "tagline": "Coverify is a web tool to create yourself artwork, where you can apply different fonts, colors and a ton of images from Unsplash; and upload it directly on Spotify.",
-    "date": "2020-04-01T15:06:01.607Z",
-    "categories": ["Design tool", "Spotify API", "Album cover"],
-    "cover": "/images/coverify.jpg",
-    "filename": "coverify.mdx",
-    "path": "coverify",
-    "slug": "coverify"
   },
   {
     "priority": 6,
