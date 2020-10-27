@@ -9,7 +9,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
   const postsStr = articles.reduce((acc, post) => {
     return `${acc}
     <url>
-      <loc>${content.url}/${post.slug}</loc>
+      <loc>${content.url}/blog/${post.slug}</loc>
       <priority>1.00</priority>
     </url>
     `
