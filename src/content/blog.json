@@ -58,21 +58,6 @@
   {
     "priority": 4,
     "type": "article",
-    "title": "Beginner Guide: where to start testing in JavaScript",
-    "tagline": "A methodology or mental model for those who aim to start writing unit tests in Javascript, but still doesn't know where to start. This beginner guide will allow you to begin writing decent unit tests from a sane path.",
-    "date": "2020-17-10",
-    "categories": ["Article", "Methodology", "Testing"],
-    "cover": "/images/beginner-guide-where-to-start-testing-in-javascript/cover.jpg",
-    "coverCredit": "Photo by Fred Jesus",
-    "timeToRead": "5 min read",
-    "filename": "beginner-guide-where-to-start-testing-in-javascript.mdx",
-    "path": "beginner-guide-where-to-start-testing-in-javascript",
-    "slug": "beginner-guide-where-to-start-testing-in-javascript",
-    "link": "/blog/beginner-guide-where-to-start-testing-in-javascript"
-  },
-  {
-    "priority": 4,
-    "type": "article",
     "title": "Bringing your blockchain business to React Native",
     "tagline": "A humble perspective of what it was like to create a Crypto Currency wallet using React Native and its main challenges during the planning and the development stages.",
     "date": "2020-03-23T19:28:06.529Z",
@@ -84,6 +69,21 @@
     "path": "bringing-your-blockchain-business-to-react-native",
     "slug": "bringing-your-blockchain-business-to-react-native",
     "link": "/blog/bringing-your-blockchain-business-to-react-native"
+  },
+  {
+    "priority": 4,
+    "type": "article",
+    "title": "Beginner Guide: where to start testing in JavaScript",
+    "tagline": "A methodology or mental model for those who aim to start writing unit tests in Javascript, but still doesn't know where to start. This beginner guide will allow you to begin writing decent unit tests from a sane path.",
+    "date": "2020-10-17",
+    "categories": ["Article", "Methodology", "Testing"],
+    "cover": "/images/beginner-guide-where-to-start-testing-in-javascript/cover.jpg",
+    "coverCredit": "Photo by Fred Jesus",
+    "timeToRead": "5 min read",
+    "filename": "beginner-guide-where-to-start-testing-in-javascript.mdx",
+    "path": "beginner-guide-where-to-start-testing-in-javascript",
+    "slug": "beginner-guide-where-to-start-testing-in-javascript",
+    "link": "/blog/beginner-guide-where-to-start-testing-in-javascript"
   },
   {
     "priority": 6,

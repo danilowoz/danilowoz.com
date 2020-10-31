@@ -1,6 +1,8 @@
 import React from 'react'
-import { PostsListProps } from 'service/projects'
 import styled, { css } from 'styled-components'
+import Image from 'next/image'
+
+import { PostsListProps } from 'service/projects'
 
 import { CallToAction, Link, CustomSection } from './partials'
 import { Box } from '../Box'
@@ -212,13 +214,27 @@ const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
               <Link type={item.type} href={item?.link ?? ''}>
                 <Figure>
                   <div>
-                    <img src={item.cover} alt={item.title} />
+                    {item.cover && (
+                      <Image
+                        width="2400"
+                        height="1200"
+                        src={item.cover}
+                        alt={item.title}
+                      />
+                    )}
                   </div>
 
                   <figcaption>
                     <h2>{item.title}</h2>
                   </figcaption>
-                  <img src={item.cover} alt={item.title} />
+                  {item.cover && (
+                    <Image
+                      width="2400"
+                      height="1200"
+                      src={item.cover}
+                      alt={item.title}
+                    />
+                  )}
                 </Figure>
 
                 <Description>
