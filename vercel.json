@@ -12,7 +12,15 @@
       "destination": "/api/sitemap"
     },
     {
+      "source": "/beginner-guide-where-to-start-testing-in-javascript",
+      "destination": "/blog/beginner-guide-where-to-start-testing-in-javascript"
+    },
+    {
       "source": "/Atomic-Design-with-React",
+      "destination": "/blog/atomic-design-with-react"
+    },
+    {
+      "source": "/atomic-design-with-react",
       "destination": "/blog/atomic-design-with-react"
     },
     {
@@ -20,8 +28,24 @@
       "destination": "/blog/advanced-blog-system-in-gatsby"
     },
     {
+      "source": "/css-display-grid-and-sketch-layout",
+      "destination": "/blog/css-display-grid-and-sketch-layout"
+    },
+    {
       "source": "/CSS-Display-Grid-and-Sketch-Layout",
       "destination": "/blog/css-display-grid-and-sketch-layout"
+    },
+    {
+      "source": "/generating-typescript-types-and-react-hooks-based-on-graphql-endpoint",
+      "destination": "/blog/generating-typescript-types-and-react-hooks-based-on-graphql-endpoint"
+    },
+    {
+      "source": "/bringing-your-blockchain-business-to-react-native",
+      "destination": "/blog/bringing-your-blockchain-business-to-react-native"
+    },
+    {
+      "source": "/advanced-blog-system-in-gatsby",
+      "destination": "/blog/advanced-blog-system-in-gatsby"
     },
     {
       "source": "/create-content-loader",
