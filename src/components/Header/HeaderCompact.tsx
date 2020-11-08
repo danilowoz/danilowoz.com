@@ -52,7 +52,7 @@ const HeaderCompact: React.FC = (props) => {
       <Link href="/">
         <a href="/">
           <h1>
-            <strong>Danilo Woznica</strong> <span>- {base['short-title']}</span>
+            <strong>Danilo Woznica</strong> <span>- {base['role']}</span>
           </h1>
         </a>
       </Link>
