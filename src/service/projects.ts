@@ -129,10 +129,10 @@ export const getPosts = async () => {
     const dateB = new Date(b?.date ?? '').getTime()
 
     if (a.priority === b.priority) {
-      return dateA - dateB
+      return dateB - dateA
     }
 
-    return (a?.priority ?? 0) - (b.priority ?? 0)
+    return (a?.priority ?? 9999) - (b.priority ?? 9999)
   })
 
   generateDataJson(data)

@@ -73,6 +73,7 @@ const Figure = styled.figure`
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 9;
   }
 
   * {
@@ -194,7 +195,7 @@ const CallToActionWrapper = styled.div`
   }
 `
 
-const NUMBER_FEATURES = 8
+const NUMBER_FEATURES = 10
 
 const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
   data,
