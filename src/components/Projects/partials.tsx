@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import NextLink from 'next/link'
+
 import { PostsListProps } from 'service/projects'
 
 import arrowSrc from './icons/arrow.svg'
@@ -64,7 +65,7 @@ const GithubStars: React.FC<{ link?: string }> = ({ link = '' }) => {
     try {
       const repoName = link.replace('https://github.com/', '')
       const data = await fetch(`https://api.github.com/repos/${repoName}`)
-      /* eslint-disable @typescript-eslint/camelcase */
+
       const { stargazers_count } = await data.json()
 
       setStars(stargazers_count)

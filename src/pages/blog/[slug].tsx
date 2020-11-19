@@ -1,6 +1,9 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
+import { DiscussionEmbed } from 'disqus-react'
+import dayjs from 'dayjs'
+
 import {
   getPostsPaths,
   getPosts,
@@ -8,9 +11,6 @@ import {
   getRelated,
 } from 'service/projects'
 import { Footer, Projects, BlogPost, HeaderCompact } from 'components'
-import { DiscussionEmbed } from 'disqus-react'
-import dayjs from 'dayjs'
-
 import content from 'content/base.json'
 import blogPosts from 'content/blog'
 

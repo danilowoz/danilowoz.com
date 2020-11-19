@@ -1,5 +1,6 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
+
 import { getPosts, PostsListProps } from 'service/projects'
 import { Header, Footer, AboutMe, Projects, HeaderFixed } from 'components'
 
