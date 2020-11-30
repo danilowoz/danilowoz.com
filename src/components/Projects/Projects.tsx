@@ -155,6 +155,7 @@ const ArticleSmall = styled.article`
   p {
     color: var(--color-haze);
     transition: color 300ms ease;
+    line-height: 1.4;
   }
 `
 

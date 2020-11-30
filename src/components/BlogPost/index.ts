@@ -13,7 +13,8 @@ export const BlogPost = styled.div`
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     color: rgb(ar(--color-foreground));
-    font-size: 2.2em;
+    font-size: 2.6em;
+    line-height: 1.4;
 
     + h4 {
       margin-top: 0;
