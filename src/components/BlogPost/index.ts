@@ -9,6 +9,10 @@ export const BlogPost = styled.div`
 
   font-size: 1.125em;
 
+  a {
+    display: inline;
+  }
+
   h1 {
     margin-top: 0.5em;
     margin-bottom: 0.5em;

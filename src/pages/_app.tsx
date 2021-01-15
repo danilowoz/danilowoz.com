@@ -1,8 +1,8 @@
 import React from 'react'
 import { NextSeo } from 'next-seo'
 import App from 'next/app'
-import { Layout } from 'components'
 
+import { Layout } from 'components'
 import content from 'content/base.json'
 
 class MyApp extends App {
@@ -28,7 +28,6 @@ class MyApp extends App {
                 alt: content.twitterHandle,
               },
             ],
-            // eslint-disable-next-line @typescript-eslint/camelcase
             site_name: content['short-title'],
           }}
           twitter={{
