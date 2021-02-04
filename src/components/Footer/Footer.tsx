@@ -5,7 +5,6 @@ import { Box } from '../Box'
 import githubSrc from './icons/logo-github.svg'
 import twitterSrc from './icons/logo-twitter.svg'
 import instagramSrc from './icons/logo-instagram.svg'
-import behanceSrc from './icons/logo-behance.svg'
 
 const Social = styled.div`
   display: flex;
@@ -22,9 +21,9 @@ const Social = styled.div`
 
   a,
   img {
-    width: 2rem;
-    height: 2rem;
-    max-width: 2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    max-width: 1.6rem;
     display: inline-block;
   }
 
@@ -76,6 +75,10 @@ const Title = styled.div`
 
   @media (min-width: 769px) {
     grid-column: 1/6;
+  }
+
+  p {
+    margin: 0;
   }
 `
 
@@ -131,14 +134,6 @@ const Footer: React.FC<{ compact?: boolean }> = ({ compact = false }) => {
           rel="noreferrer"
         >
           <img src={instagramSrc} alt="Instagram" />
-        </a>
-
-        <a
-          href="https://www.behance.net/danilowoz"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={behanceSrc} alt="Behance" />
         </a>
       </Social>
     </Box>

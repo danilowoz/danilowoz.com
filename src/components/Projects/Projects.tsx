@@ -29,7 +29,13 @@ const List = styled.section`
 const Description = styled.div`
   padding: 1rem;
 
+  h2 {
+    line-height: 1.4;
+    margin: 0;
+  }
+
   p {
+    margin-top: 1em;
     color: var(--color-haze);
     transition: color 300ms ease;
   }
@@ -40,6 +46,11 @@ const Figure = styled.figure`
   height: 0;
   overflow: hidden;
   position: relative;
+
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02), 0 2.3px 2.5px rgba(0, 0, 0, 0.028),
+    0 4.4px 4.6px rgba(0, 0, 0, 0.035), 0 7.8px 8.3px rgba(0, 0, 0, 0.042),
+    0 14.6px 15.5px rgba(0, 0, 0, 0.05), 0 35px 37px rgba(0, 0, 0, 0.07);
+  border-radius: 0.3em;
 
   div,
   img {
@@ -52,28 +63,12 @@ const Figure = styled.figure`
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: 0.3em;
+
     overflow: hidden;
   }
 
   img {
     object-fit: cover;
-  }
-
-  figcaption {
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    border-radius: 0.3em;
-    padding: 6rem 1rem 1rem;
-
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9;
   }
 
   * {
@@ -116,10 +111,6 @@ const Article = styled.article`
     width: calc(
       50% - (var(--grid-width) / var(--grid-column) - var(--grid-gutter)) / 2
     );
-  }
-
-  h2 {
-    line-height: 1.4;
   }
 
   a {
@@ -226,9 +217,6 @@ const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
                     )}
                   </div>
 
-                  <figcaption>
-                    <h2>{item.title}</h2>
-                  </figcaption>
                   {item.cover && (
                     <Image
                       width="2400"
@@ -240,6 +228,7 @@ const Projects: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
                 </Figure>
 
                 <Description>
+                  <h2>{item.title}</h2>
                   <p>{item.tagline}</p>
 
                   <CallToActionWrapper>
