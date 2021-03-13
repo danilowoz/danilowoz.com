@@ -11,11 +11,10 @@ type FrontMatterPost = {
   cover?: string
   date?: string
   tagline?: string
-  title?: string
+  title: string
   link?: string
   slug?: string
   type?: 'article' | 'github' | 'web'
-  priority?: number
   coverCredit?: string
   timeToRead?: string
 }
@@ -128,26 +127,31 @@ export const getPosts = async () => {
     const dateA = new Date(a?.date ?? '').getTime()
     const dateB = new Date(b?.date ?? '').getTime()
 
-    if (a.priority === b.priority) {
-      return dateB - dateA
-    }
-
-    return (a?.priority ?? 9999) - (b.priority ?? 9999)
+    return dateB - dateA
   })
 
   generateDataJson(data)
 
-  return data
+  return data.reduce<Record<'blogPosts' | 'projects', PostsListProps[]>>(
+    (acc, curr) => {
+      if (curr.type === 'article') {
+        return { ...acc, blogPosts: [...acc.blogPosts, curr] }
+      } else {
+        return { ...acc, projects: [...acc.projects, curr] }
+      }
+    },
+    { blogPosts: [], projects: [] }
+  )
 }
 
 /**
  * Returns the path of posts
  */
 export const getPostsPaths = async () => {
-  const posts = await getPosts()
+  const { blogPosts } = await getPosts()
   const onlyPosts = (e: PostsListProps) => e.type === 'article'
 
-  return posts
+  return blogPosts
     .filter(onlyPosts)
     .map((post) => ({ params: { slug: post?.slug } }))
 }
@@ -157,16 +161,16 @@ export const getPostsPaths = async () => {
  */
 export const getRelated = async (slug?: string): Promise<PostsListProps[]> => {
   // Data
-  const posts = await getPosts()
-  const referPost = posts.find((e) => e.slug === slug)
+  const { blogPosts } = await getPosts()
+  const referPost = blogPosts.find((e) => e.slug === slug)
 
   // Helpers
   const MAX = 3
   const getArticles = (e: string) => e === 'Article'
   const noRepeat = (e: PostsListProps) => e.slug !== slug
 
-  const fallBacks = posts.filter(noRepeat).slice(0, MAX)
-  const related = posts.filter(noRepeat).filter((p) => {
+  const fallBacks = blogPosts.filter(noRepeat).slice(0, MAX)
+  const related = blogPosts.filter(noRepeat).filter((p) => {
     return p?.categories
       ?.filter(getArticles)
       .some((r) => referPost?.categories?.filter(getArticles)?.includes(r))

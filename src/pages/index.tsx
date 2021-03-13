@@ -2,16 +2,20 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 
 import { getPosts, PostsListProps } from 'service/projects'
-import { Header, Footer, AboutMe, Projects, HeaderFixed } from 'components'
+import { Header, Footer, AboutMe, BlogPosts, HeaderFixed } from 'components'
+import { Projects } from 'components/Projects/Projects'
 
-const IndexPage: React.FC<{ posts: PostsListProps[] }> = ({ posts }) => {
+const IndexPage: React.FC<{
+  posts: Record<'blogPosts' | 'projects', PostsListProps[]>
+}> = ({ posts }) => {
   return (
     <>
       <Header />
       <HeaderFixed />
 
       <main>
-        <Projects data={posts} />
+        <BlogPosts data={posts.blogPosts} />
+        <Projects data={posts.projects} />
         <AboutMe />
       </main>
 
