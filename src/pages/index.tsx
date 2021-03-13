@@ -10,8 +10,8 @@ const IndexPage: React.FC<{
 }> = ({ posts }) => {
   return (
     <>
-      <Header />
       <HeaderFixed />
+      <Header />
 
       <main>
         <BlogPosts data={posts.blogPosts} />

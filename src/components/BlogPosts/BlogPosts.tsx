@@ -29,6 +29,7 @@ const List = styled.section`
 
 const Description = styled.div`
   padding: 1rem;
+  padding-top: 2rem;
 
   h2 {
     line-height: 1.4;
@@ -49,8 +50,8 @@ const Figure = styled.figure`
   position: relative;
 
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02), 0 2.3px 2.5px rgba(0, 0, 0, 0.028),
-    0 4.4px 4.6px rgba(0, 0, 0, 0.035), 0 7.8px 8.3px rgba(0, 0, 0, 0.042),
-    0 14.6px 15.5px rgba(0, 0, 0, 0.05), 0 35px 37px rgba(0, 0, 0, 0.07);
+    0 4.4px 4.6px rgba(0, 0, 0, 0.035), 0 7.8px 8.3px rgba(0, 0, 0, 0.03),
+    0 14.6px 15.5px rgba(0, 0, 0, 0.05), 0 35px 37px rgba(0, 0, 0, 0.01);
   border-radius: 0.3em;
 
   div,
@@ -78,6 +79,19 @@ const Figure = styled.figure`
   }
 `
 
+const ShadowImage = styled.div`
+  position: absolute;
+  left: 0.4em;
+  right: 0.4em;
+  top: 1em;
+  filter: blur(20px);
+  opacity: 0.8;
+
+  ${Figure} {
+    box-shadow: none;
+  }
+`
+
 const hoverArticle = css`
   @media (hover: hover) {
     &:hover {
@@ -95,6 +109,7 @@ const hoverArticle = css`
 const Article = styled.article`
   width: 100%;
   margin-bottom: 2em;
+  position: relative;
 
   &::not(::last-of-type) {
     margin-bottom: 2em;
@@ -189,8 +204,8 @@ const BlogPosts: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
           return (
             <Article key={item.title}>
               <Link type={item.type} href={item?.link ?? ''}>
-                <Figure>
-                  <div>
+                <ShadowImage>
+                  <Figure>
                     {item.cover && (
                       <Image
                         width="2400"
@@ -199,8 +214,10 @@ const BlogPosts: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
                         alt={item.title}
                       />
                     )}
-                  </div>
+                  </Figure>
+                </ShadowImage>
 
+                <Figure>
                   {item.cover && (
                     <Image
                       width="2400"

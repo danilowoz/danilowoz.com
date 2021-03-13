@@ -22,10 +22,6 @@ const gridStyle = css`
 
   min-width: 100%;
 
-  & + & {
-    margin-bottom: -4vh;
-  }
-
   /* Removes extra container */
   & & {
     padding-right: 0;
@@ -45,11 +41,6 @@ const gridStyle = css`
     display: grid;
     grid-template-columns: repeat(var(--grid-column), 1fr);
     grid-column-gap: var(--grid-gutter);
-
-    /* Removes extra margin */
-    & + & {
-      margin-bottom: -4.8em;
-    }
 
     &:last-child:not(:only-child) {
       padding-bottom: 4.8em;

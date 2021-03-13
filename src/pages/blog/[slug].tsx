@@ -10,7 +10,7 @@ import {
   PostsListProps,
   getRelated,
 } from 'service/projects'
-import { Footer, Projects, BlogPost, HeaderCompact } from 'components'
+import { Footer, BlogPost, BlogPosts, HeaderCompact } from 'components'
 import content from 'content/base.json'
 import blogPosts from 'content/blog'
 
@@ -74,7 +74,7 @@ const BlogPostPage: React.FC<{
         }}
       />
 
-      <Projects data={related} compact />
+      <BlogPosts data={related} compact />
       <Footer compact />
     </>
   )
@@ -82,7 +82,9 @@ const BlogPostPage: React.FC<{
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const posts = await getPosts()
-  const postsMetadata = posts.find((item) => item.slug === params?.slug)
+  const postsMetadata = posts.blogPosts.find(
+    (item) => item.slug === params?.slug
+  )
   const related = await getRelated(postsMetadata?.slug)
 
   return { props: { filename: params?.slug, metadata: postsMetadata, related } }

@@ -11,7 +11,7 @@ type FrontMatterPost = {
   cover?: string
   date?: string
   tagline?: string
-  title: string
+  title?: string
   link?: string
   slug?: string
   type?: 'article' | 'github' | 'web'
