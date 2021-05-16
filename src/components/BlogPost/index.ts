@@ -28,10 +28,24 @@ export const BlogPost = styled.div`
   img,
   figure {
     text-align: center;
-    max-width: auto;
 
     margin-top: 2em;
     margin-bottom: 2em;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  @media (min-width: 576px) {
+    video {
+      width: calc(100% + 20em);
+
+      margin-left: -10em;
+      margin-right: -10em;
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
   }
 
   figure img {
