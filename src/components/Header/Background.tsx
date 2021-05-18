@@ -49,7 +49,7 @@ const Background: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 })
 
-  const renderCanvas = useCallback((rangeX: number, rangeY: number) => {
+  const renderCanvas = useCallback(() => {
     const canvas = canvasRef.current
     const context = canvas?.getContext('2d')
 
@@ -65,8 +65,8 @@ const Background: React.FC = () => {
     arrayLength.forEach((_, col) => {
       arrayLength.forEach((_, row) => {
         const seed = simplex.noise2D(
-          (col * DISTANCE) / (canvasSize / 1.5) - rangeY / canvasSize,
-          (row * DISTANCE) / (canvasSize / 1.5) - rangeX / canvasSize
+          (col * DISTANCE) / (canvasSize / 1.5) - Math.random() / canvasSize,
+          (row * DISTANCE) / (canvasSize / 1.5) - Math.random() / canvasSize
         )
 
         context.restore()
@@ -93,19 +93,8 @@ const Background: React.FC = () => {
     })
 
     return
-  }, [])
-
-  useEffect(() => {
-    const callback = (event: PointerEventInit) =>
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      renderCanvas(event.clientX!, event.clientY!)
-
-    document.addEventListener('mousemove', callback)
-
-    return () => {
-      document.removeEventListener('mousemove', callback)
-    }
-  }, [renderCanvas])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [canvasRef.current])
 
   useEffect(() => {
     const setWindowSize = () =>
@@ -113,6 +102,7 @@ const Background: React.FC = () => {
         width: window.innerWidth,
         height: window.innerHeight / 2,
       })
+
     setWindowSize()
 
     document.addEventListener('resize', setWindowSize)
@@ -120,7 +110,11 @@ const Background: React.FC = () => {
     return () => {
       document.removeEventListener('resize', setWindowSize)
     }
-  }, [])
+  }, [renderCanvas])
+
+  useEffect(() => {
+    renderCanvas()
+  }, [renderCanvas])
 
   return (
     <Wrapper style={{ height: canvasSize.height }}>
