@@ -4,7 +4,6 @@ const common = css`
   @media (min-width: 576px) {
     grid-column: 1/7;
   }
-
   @media (min-width: 769px) {
     grid-column: 1/13;
   }
