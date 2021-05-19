@@ -33,7 +33,7 @@ export default createGlobalStyle`
 
   h1 {
     font-size: 1.5em;
-    color: var(--color-heading);
+    color: var(--color-grey-2);
     line-height: 1.4;
   }
 
@@ -63,7 +63,7 @@ export default createGlobalStyle`
   }
 
   em {
-    color: var(--color-haze);
+    color: var(--color-grey-1);
     font-style: normal;
   }
 

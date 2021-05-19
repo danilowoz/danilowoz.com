@@ -6,7 +6,6 @@ import NextLink from 'next/link'
 import { PostsListProps } from 'service/projects'
 
 import { Box } from '../Box'
-import arrowSrc from '../../icons/arrow.svg'
 
 const TitleSeeMore = styled.h4`
   margin-bottom: -2em;
@@ -34,11 +33,15 @@ const Description = styled.div`
   h2 {
     line-height: 1.4;
     margin: 0;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: var(--color-grey-2);
+    font-size: 2em;
   }
 
   p {
     margin-top: 1em;
-    color: var(--color-haze);
+    color: var(--color-grey-1);
     transition: color 300ms ease;
   }
 `
@@ -160,7 +163,7 @@ const ArticleSmall = styled.article`
   }
 
   p {
-    color: var(--color-haze);
+    color: var(--color-grey-1);
     transition: color 300ms ease;
     line-height: 1.4;
   }
@@ -173,11 +176,6 @@ const CallToActionWrapper = styled.div`
     display: flex;
     align-items: center;
     line-height: 1;
-  }
-
-  .arrow-icon {
-    margin-left: 0.5em;
-    top: 0.05em;
   }
 
   img {
@@ -234,7 +232,7 @@ const BlogPosts: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
 
                   <CallToActionWrapper>
                     Read more
-                    <img className="arrow-icon" src={arrowSrc} alt="arrow" />
+                    {` ->`}
                   </CallToActionWrapper>
                 </Description>
               </Link>
@@ -257,11 +255,7 @@ const BlogPosts: React.FC<{ data: PostsListProps[]; compact?: boolean }> = ({
                     <CallToActionWrapper>
                       <span>
                         Read more
-                        <img
-                          className="arrow-icon"
-                          src={arrowSrc}
-                          alt="arrow"
-                        />
+                        {` ->`}
                       </span>
                     </CallToActionWrapper>
                   </div>

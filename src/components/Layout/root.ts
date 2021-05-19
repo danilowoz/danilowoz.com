@@ -6,7 +6,7 @@ export default createGlobalStyle`
    * Typography config
    */
     --font-size-base: 16px;
-    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    --font-family-base: "Inter", BlinkMacSystemFont, 'Segoe UI', Roboto,
       Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol';
     --font-line-height-base: 1.7;
@@ -16,9 +16,10 @@ export default createGlobalStyle`
    */
     --color-background: 255,255,255;
     --color-foreground: 0,0,0;
-    --color-haze: #767676;
-    --color-heading: #959595;
-    --color-cta: #015d8d;
+    --color-main-heading: hsl(201, 10%, 60%);
+    --color-grey-1: hsl(201, 20%, 45%);
+    --color-grey-2: hsl(201, 30%, 20%);
+    --color-cta: hsl(201, 100%, 35%);
 
     /**
    * Grid config

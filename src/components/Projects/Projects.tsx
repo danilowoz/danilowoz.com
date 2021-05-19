@@ -3,8 +3,6 @@ import styled from 'styled-components'
 
 import { PostsListProps } from 'service/projects'
 
-import arrowSrc from '../../icons/arrow.svg'
-
 const Wrapper = styled.div`
   @media (min-width: 576px) {
     margin: 8em 0 6em;
@@ -19,17 +17,17 @@ const Item = styled.a`
 
   h3 {
     margin: 0.4em 0;
+    color: var(--color-grey-2);
   }
 
   p {
-    width: 100%;
-    color: var(--color-haze);
+    max-width: 99%;
+    color: var(--color-grey-1);
     transition: color 300ms ease;
   }
 
-  img {
-    margin-right: 1em;
-    transition: margin 0.3s ease;
+  .arrow {
+    white-space: nowrap;
   }
 
   &:hover {
@@ -53,7 +51,7 @@ const Projects: React.FC<{ data: PostsListProps[] }> = ({ data }) => {
               <h3>{item.title}</h3>
               <p>{item.tagline}</p>
             </div>
-            <img src={arrowSrc} alt="Go to" />
+            <span className="arrow">{` ->`}</span>
           </Item>
         )
       })}

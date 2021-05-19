@@ -31,6 +31,8 @@ export const BlogPost = styled.div`
 
     margin-top: 2em;
     margin-bottom: 2em;
+
+    border-radius: 0.3em;
   }
 
   video {
@@ -45,6 +47,7 @@ export const BlogPost = styled.div`
       margin-right: -10em;
       margin-top: 2em;
       margin-bottom: 2em;
+      border-radius: 0.3em;
     }
   }
 
@@ -56,6 +59,7 @@ export const BlogPost = styled.div`
     font-size: 1rem;
     overflow: hidden;
     overflow: auto;
+    border-radius: 0.3em;
   }
 
   @media (min-width: 576px) {

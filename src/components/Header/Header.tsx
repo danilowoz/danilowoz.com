@@ -7,13 +7,14 @@ import { Box } from '../Box'
 import { Background } from './Background'
 
 const Wrap = styled.div`
-  color: var(--color-haze);
+  color: var(--color-main-heading);
   position: relative;
   z-index: 1;
 
   h1 {
     margin-top: 0;
-    font-size: 1.7em;
+    font-size: 1.6em;
+    color: var(--color-main-heading);
   }
 
   h4 {

@@ -54,8 +54,8 @@ const variantStyle = css<{ variant?: 'light' | 'dark' }>`
       background: rgb(var(--color-background));
       --color-background: 0, 0, 0;
       --color-foreground: 255, 255, 255;
-      --color-heading: #ffffff;
-      --color-haze: #afafaf;
+      --color-grey-2: #ffffff;
+      --color-grey-1: #afafaf;
       --color-cta: #ffffff;
     `}
 `

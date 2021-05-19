@@ -19,7 +19,7 @@ const Header = styled.header`
 
   h1 {
     font-size: 1rem;
-    color: var(--color-haze);
+    color: var(--color-grey-1);
     margin: 0;
   }
 

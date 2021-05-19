@@ -45,6 +45,11 @@ class MyDocument extends Document {
             title="RSS for blog posts"
             href="https://danilowoz.com/rss"
           />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+            rel="stylesheet"
+          />
         </Head>
 
         <body>

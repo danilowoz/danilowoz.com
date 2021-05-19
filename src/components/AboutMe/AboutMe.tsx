@@ -15,7 +15,7 @@ const Wrapper = styled(Box)`
     padding-top: 1.15rem;
 
     p {
-      color: var(--color-haze);
+      color: var(--color-grey-1);
     }
   }
 
