@@ -33,7 +33,7 @@ html {
  */
 
 body {
-  font-size: 16px; /* 1 */
+  font-size: 15px; /* 1 */
   -moz-osx-font-smoothing: grayscale; /* 2 */
   -webkit-font-smoothing: antialiased; /* 2 */
 }

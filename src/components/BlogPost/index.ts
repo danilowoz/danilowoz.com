@@ -16,9 +16,15 @@ export const BlogPost = styled.div`
   h1 {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    color: rgb(ar(--color-foreground));
-    font-size: 2.6em;
-    line-height: 1.4;
+    color: rgb(var(--color-foreground));
+
+    line-height: 1.2;
+    font-size: 1.8em;
+
+    @media (min-width: 576px) {
+      line-height: 1.4;
+      font-size: 2.6em;
+    }
 
     + h4 {
       margin-top: 0;

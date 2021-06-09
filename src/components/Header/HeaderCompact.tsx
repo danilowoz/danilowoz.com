@@ -12,7 +12,11 @@ const Header = styled.header`
   padding: 1em 0;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
+
+  @media (min-width: 576px) {
+    margin-bottom: 4em;
+  }
 
   display: flex;
   justify-content: space-between;
