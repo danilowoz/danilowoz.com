@@ -80,4 +80,24 @@ export const BlogPost = styled.div`
       margin-right: -4em;
     }
   }
+
+  table td {
+    border-bottom: 1px solid #eee;
+    padding: 1em;
+  }
+
+  table th {
+    border-bottom: 2px solid #eee;
+    padding: 1em;
+  }
+
+  table code {
+    background: #eee;
+    padding: 0.2em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    border-radius: 0.2em;
+    font-size: 14px;
+    white-space: nowrap;
+  }
 `
