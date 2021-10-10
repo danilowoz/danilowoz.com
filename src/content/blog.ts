@@ -5,8 +5,10 @@ import typesGraphql from './projects/generating-typescript-types-and-react-hooks
 import beginnerTest from './projects/beginner-guide-where-to-start-testing-in-javascript.mdx'
 import openSource from './projects/four-lessons-i-learned-from-maintaining-a-10k-stars-project-on-github.mdx'
 import codeEditor from './projects/react-code-editor.mdx'
+import spatial from './projects/spatial-keyboard-navigation.mdx'
 
 export default {
+  'spatial-keyboard-navigation': spatial,
   'react-code-editor': codeEditor,
   'atomic-design-with-react': atomicDesign,
   'bringing-your-blockchain-business-to-react-native': blockChain,

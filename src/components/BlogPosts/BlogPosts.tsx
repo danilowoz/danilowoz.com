@@ -141,7 +141,7 @@ const Article = styled.article`
   }
 
   &:nth-child(4n + 2) ${Figure}, &:nth-child(4n + 3) ${Figure} {
-    padding-top: 100%;
+    padding-top: 80%;
   }
 `
 
