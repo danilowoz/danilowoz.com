@@ -81,6 +81,11 @@ export const BlogPost = styled.div`
     }
   }
 
+  .table-wrap {
+    width: 100%;
+    overflow: auto;
+  }
+
   table td {
     border-bottom: 1px solid #eee;
     padding: 1em;
