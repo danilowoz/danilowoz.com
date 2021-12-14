@@ -3,7 +3,7 @@ import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 
 const {
-  content: { title, date, tagline, timeToRead },
+  content: { title, date, tagline, timeToRead, cover, type },
 } = Astro.props;
 
 const formatDate = (string) => {
@@ -33,8 +33,14 @@ const formatDate = (string) => {
             <span class="surface-2">—</span>
             {timeToRead}
           </p>
-          <h1 class="type_main">{title}</h1>
+          <h1 class={`type_main ${type}`}>{title}</h1>
         </div>
+
+        {cover && (
+          <figure class="cover">
+            <img src={cover} alt={title} />
+          </figure>
+        )}
       </header>
 
       <div class="type_content content">
@@ -47,6 +53,10 @@ const formatDate = (string) => {
 </html>
 
 <style lang="scss" global>
+  body {
+    overflow-x: hidden;
+  }
+
   .container-post {
     max-width: calc(var(--unit) * 41);
 
@@ -74,13 +84,58 @@ const formatDate = (string) => {
     aspect-ratio: 1.6;
     display: flex;
     align-items: center;
+    position: relative;
 
     @media screen and (min-width: 800px) {
       padding-right: 20%;
     }
 
+    .type_main {
+      &:before {
+        content: "";
+        position: absolute;
+
+        background-image: url("/assets/paragraph.png");
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+
+        top: calc(var(--unit) * 0.25);
+        left: calc(var(--unit) * -3);
+        width: calc(var(--unit) * 2);
+        height: calc(var(--unit) * 2);
+      }
+
+      &.experiments:before {
+        background-image: url("/assets/diferent.png");
+      }
+    }
+
     .type_footnote {
       margin-bottom: var(--unit);
+    }
+  }
+
+  .cover {
+    width: 40%;
+    margin-right: calc(var(--unit) * -4);
+    margin-left: calc(var(--unit) * 2);
+
+    @media screen and (min-width: 800px) {
+      width: auto;
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+
+      @media screen and (min-width: 800px) {
+        width: auto;
+        position: absolute;
+        top: calc(var(--unit) * -8);
+        height: calc(100% + calc(var(--unit) * 8));
+        margin-left: calc(var(--unit) * 6);
+      }
     }
   }
 

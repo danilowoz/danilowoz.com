@@ -5,6 +5,7 @@ title: Spatial keyboard navigation
 tagline: A visual hierarchy approach to navigate through selectable elements on a page.
 date: 2021-10-10T15:06:01.607Z
 timeToRead: 2 min read
+cover: /images/spatial/cover.png
 ---
 
 Check out the result of this article in the [GitHub](https://github.com/danilowoz/spatial-keyboard-navigation) or see the [preview](https://spatial-keyboard-navigation.vercel.app/).
