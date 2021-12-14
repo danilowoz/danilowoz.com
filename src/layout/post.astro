@@ -1,0 +1,188 @@
+---
+import MainHead from "../components/MainHead.astro";
+import Footer from "../components/Footer.astro";
+
+const {
+  content: { title, date, tagline, timeToRead },
+} = Astro.props;
+
+const formatDate = (string) => {
+  const date = new Date(string);
+
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
+---
+
+<html lang="en">
+  <head>
+    <MainHead {title} description={tagline} />
+  </head>
+
+  <body>
+    <article class="container-post">
+      <a href="/" class="type_headline backlink">&#8592; Homepage</a>
+      <header class="header">
+        <div>
+          <p class="type_footnote">
+            Danilo Woznica,
+            {formatDate(date)}
+            <span class="surface-2">—</span>
+            {timeToRead}
+          </p>
+          <h1 class="type_main">{title}</h1>
+        </div>
+      </header>
+
+      <div class="type_content content">
+        <slot />
+      </div>
+
+      <Footer />
+    </article>
+  </body>
+</html>
+
+<style lang="scss" global>
+  .container-post {
+    max-width: calc(var(--unit) * 41);
+
+    padding-left: var(--unit);
+    padding-right: var(--unit);
+
+    padding-top: calc(var(--unit) * 1);
+    padding-bottom: calc(var(--unit) * 1);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 800px) {
+      padding-top: calc(var(--unit) * 8);
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .backlink {
+      margin-left: calc(var(--unit) * -1);
+    }
+  }
+
+  .header {
+    aspect-ratio: 1.6;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 800px) {
+      padding-right: 20%;
+    }
+
+    .type_footnote {
+      margin-bottom: var(--unit);
+    }
+  }
+
+  .content {
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-size: var(--text-size-base);
+      font-weight: 500;
+      color: var(--surface-0);
+      margin-top: calc(var(--unit) * 2);
+    }
+
+    h2 {
+      font-size: var(--text-size-large);
+    }
+
+    strong {
+      font-weight: 500;
+      color: var(--surface-0);
+    }
+
+    ol,
+    ul {
+      padding-left: calc(var(--unit) * 2);
+      margin-bottom: var(--unit);
+    }
+
+    ol {
+      list-style: decimal;
+    }
+
+    li {
+      list-style: disc;
+    }
+
+    ol li {
+      list-style: decimal;
+    }
+
+    video,
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--color-brand);
+    }
+
+    --color-text: #24292e;
+    --color-background: #ffffff;
+    --token-constant: #6f42c1;
+    --token-string: #032f62;
+    --token-comment: #6a737d;
+    --token-keyword: #d73a49;
+    --token-parameter: #005cc5;
+    --token-function: #6f42c1;
+    --token-string-expression: #a3be8c;
+    --token-punctuation: #24292e;
+    --token-link: #22863a;
+
+    pre {
+      padding: var(--unit);
+      border: 1px solid var(--surface-3);
+      border-radius: calc(var(--unit) * 0.5);
+      margin-bottom: var(--unit);
+      font-size: 14px;
+      line-height: 1.4;
+      overflow: auto;
+
+      background: var(--color-background);
+      color: var(--color-text);
+
+      .constant {
+        color: var(--token-constant);
+      }
+      .string {
+        color: var(--token-string);
+      }
+      .comment {
+        color: var(--token-comment);
+      }
+      .keyword {
+        color: var(--token-keyword);
+      }
+      .parameter {
+        color: var(--token-parameter);
+      }
+      .function {
+        color: var(--token-function);
+      }
+      .string-expression {
+        color: var(--token-string-expression);
+      }
+      .punctuation {
+        color: var(--token-punctuation);
+      }
+      .link {
+        color: var(--token-link);
+      }
+    }
+  }
+</style>

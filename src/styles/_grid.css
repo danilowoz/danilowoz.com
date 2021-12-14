@@ -1,0 +1,22 @@
+.container {
+  max-width: calc(var(--unit) * 60);
+
+  padding-left: calc(var(--unit) * 2);
+  padding-right: var(--unit);
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    padding-left: var(--unit);
+  }
+
+  .grid {
+    display: grid;
+    grid-gap: var(--unit);
+
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

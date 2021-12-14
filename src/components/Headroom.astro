@@ -1,0 +1,68 @@
+<div class="headroom">
+  <div>
+    <a class="type_headline" href="#writing">Writing</a>
+    <a class="type_headline" href="#experiments">Experiments</a>
+    <a class="type_headline" href="#projects">Projects</a>
+    <a class="type_headline" href="#about-me">About me</a>
+  </div>
+</div>
+
+<style lang="scss">
+  .headroom {
+    display: none;
+    @media screen and (min-width: 800px) {
+      display: block;
+    }
+
+    --height: calc(var(--unit) * 3);
+
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 30%,
+      rgba(255, 255, 255, 0.6) 100%
+    );
+
+    position: sticky;
+    top: 0;
+
+    height: calc(var(--height) * 1.6);
+    margin-top: calc(var(--height) * -2);
+    margin-bottom: calc(var(--height) * -3);
+
+    z-index: 9;
+
+    grid-column: 2/4;
+
+    div {
+      background: #fff;
+      border: 1px solid var(--surface-3);
+      border-radius: calc(var(--unit) * 0.5);
+
+      position: sticky;
+      top: calc(var(--height) * 2);
+
+      height: var(--height);
+
+      display: flex;
+      align-items: center;
+
+      overflow: scroll;
+      white-space: nowrap;
+
+      &:hover a {
+        opacity: 0.4;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    a {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      transition: opacity var(--transition);
+      color: var(--surface-0);
+    }
+  }
+</style>

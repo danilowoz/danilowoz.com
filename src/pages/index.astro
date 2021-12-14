@@ -1,0 +1,59 @@
+---
+import Hero from "../components/Hero.astro";
+import Headroom from "../components/Headroom.astro";
+import Section from "../components/Section.astro";
+import About from "../components/About.astro";
+import Footer from "../components/Footer.astro";
+import MainHead from "../components/MainHead.astro";
+
+const allData = Astro.fetchContent("./blog/*.md").sort((a, b) => {
+  const dateA = new Date(a?.date ?? "").getTime();
+  const dateB = new Date(b?.date ?? "").getTime();
+
+  return dateB - dateA;
+});
+
+const projects = Astro.fetchContent("../content/*.md").sort((a, b) => {
+  const dateA = new Date(a?.date ?? "").getTime();
+  const dateB = new Date(b?.date ?? "").getTime();
+
+  return dateB - dateA;
+});
+
+const articles = allData.filter(({ type }) => type === "article");
+const experiments = allData.filter(({ type }) => type === "experiments");
+---
+
+<html lang="en">
+  <head>
+    <MainHead />
+  </head>
+
+  <body>
+    <main class="container grid">
+      <Hero />
+      <Headroom />
+
+      <Section title="Writing" data={articles} />
+      <Section title="Experiments" data={experiments} vertical />
+      <Section title="Projects" data={projects} />
+
+      <About />
+
+      <Footer />
+    </main>
+  </body>
+</html>
+
+<style lang="scss">
+  .grid {
+    padding-top: calc(var(--unit) * 1);
+    padding-bottom: calc(var(--unit) * 1);
+  }
+
+  @media screen and (min-width: 800px) {
+    .grid {
+      padding-top: calc(var(--unit) * 8);
+    }
+  }
+</style>

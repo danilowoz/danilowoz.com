@@ -1,0 +1,35 @@
+---
+import content from "../content";
+
+const { title, description } = Astro.props;
+---
+
+<title>{title ? `${title} | ` : ""}Danilo Woznica</title>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href={Astro.resolve("../styles/global.css")}
+/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+
+<meta name="description" content={description || content.seo.description} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={content.seo.site} />
+<meta name="twitter:creator" content="@danilowoz" />
+
+<meta property="og:url" content="https://danilowoz.com" />
+<meta property="og:type" content="blog" />
+<meta property="og:title" content={content.seo.site} />
+<meta property="og:description" content={description || content.seo.description}
+/>
+<meta property="og:image" content="https://danilowoz.com/share.png" />
+<meta property="og:image:alt" content="@danilowoz" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="315" />
+<meta property="og:site_name" content={content.seo.site} />
+
+<link rel="canonical" href="https://danilowoz.com" />

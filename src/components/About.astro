@@ -1,0 +1,94 @@
+<section class="section" id="about-me">
+  <article>
+    <h2 class="type_main">About me</h2>
+
+    <div class="type_content">
+      <p>
+        I wasn’t always a developer, and honestly, I don’t know how I became
+        one. But for a long time - to be exact since 2012 - I’m here doing my
+        best, not just building applications, but solving real problems. My
+        degree is in Design, and I’ve always been excited about the true meaning
+        of Design, which is to deliver functional products through a deep and
+        meaningful experience.
+      </p>
+
+      <p>
+        My first experience with development was implementing my own layouts in
+        the oldest fashioned way possible - HTML, CSS, and jQuery. Then I saw an
+        opportunity to do something better than I was used to seeing on the web.
+        From that moment on, I went through a couple of digital agencies where I
+        improved my hard skills a lot, thanks to fantastic people I had the
+        chance to meet.
+      </p>
+
+      <p>
+        After spending some time on a new challenge and working with a huge
+        product that influenced thousands of people a day, I realized the real
+        impact of my job in development and that I need to always push myself.
+        As a result of this and many interactions with the development
+        community, I’ve begun writing open-source projects, which gave me a lot
+        of opportunities, from working with many awesome people from all around
+        the world to getting a new position abroad.
+      </p>
+
+      <p>
+        Therefore, the main lesson so far is that the more I share knowledge and
+        teach my colleagues, the more I see that my learning journey is far from
+        over.
+      </p>
+    </div>
+  </article>
+</section>
+
+<style lang="scss">
+  .section {
+    grid-column: 2/4;
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+
+  .type_main {
+    margin-bottom: calc(var(--unit) * 2);
+  }
+
+  .section:before,
+  .type_main:before {
+    content: "";
+    display: block;
+
+    position: sticky;
+
+    top: calc(var(--unit) * 1);
+    margin-bottom: calc(var(--unit) * -1.8);
+    margin-left: calc(var(--unit) * -1.2);
+    width: calc(var(--unit) * 2);
+    height: calc(var(--unit) * 2);
+
+    background-image: url("/assets/semicol.png");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+
+  .section:before {
+    @media screen and (min-width: 800px) {
+      display: none;
+    }
+  }
+
+  .type_main:before {
+    display: none;
+
+    @media screen and (min-width: 800px) {
+      position: absolute;
+      display: block;
+      background-position: right center;
+
+      margin: 0;
+
+      top: calc(var(--unit) * 0.2);
+      left: calc(var(--unit) * -3);
+      width: calc(var(--unit) * 2);
+      height: calc(var(--unit) * 2);
+    }
+  }
+</style>

@@ -1,37 +1,16 @@
-# danilowoz
+# Astro
 
-Next project generated using [significa-start](https://github.com/Significa/significa-start)
+## 🧞 Commands
 
-## Install dependencies
+All commands are run from the root of the project, from a terminal:
 
-```
-npm install
-```
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server at `localhost:3000`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
 
-## Run project
+## 👀 Want to learn more?
 
-```
-npm run dev
-```
-
-## Build project
-
-```
-npm run build
-```
-
-## Run build
-
-```
-npm run start
-```
-
-## Static type checking
-
-```
-npm run validate
-```
-
----
-
-<br /><a href="https://significa.co"><img src="https://user-images.githubusercontent.com/4838076/70076649-20d29b00-15f7-11ea-9379-e2fa1889a525.png" alt="logo" width="300px"></a>
+Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).

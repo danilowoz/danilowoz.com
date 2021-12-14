@@ -1,1 +1,0 @@
-export { BlogPosts } from './BlogPosts'

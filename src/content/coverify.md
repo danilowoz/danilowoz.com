@@ -1,0 +1,7 @@
+---
+type: project
+link: https://coverify.now.sh/
+title: getcoverify.com
+tagline: Coverify is a web tool to create yourself artwork, where you can apply different fonts, colors and a ton of images from Unsplash; and upload it directly on Spotify.
+date: 2020-04-01T15:06:01.607Z
+---

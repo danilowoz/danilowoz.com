@@ -1,0 +1,47 @@
+---
+import Social from "./Social.astro";
+---
+
+<footer class="footer grid">
+  <p class="surface-2">Danilo Woznica</p>
+
+  <div class="hero_social surface-2">
+    <Social />
+  </div>
+</footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112414056-1"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-112414056-1");
+</script>
+
+<style>
+  .footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: calc(var(--unit) * 3);
+    padding-bottom: calc(var(--unit) * 1);
+  }
+
+  @media screen and (min-width: 800px) {
+    .footer {
+      display: grid;
+      grid-column: 1/4;
+      padding-top: calc(var(--unit) * 6);
+    }
+  }
+
+  .hero_social {
+    display: flex;
+    align-items: center;
+    grid-column: 2/4;
+  }
+</style>

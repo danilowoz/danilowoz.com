@@ -1,7 +1,0 @@
-export { AboutMe } from './AboutMe'
-export { BlogPost } from './BlogPost'
-export { Box } from './Box'
-export { Footer } from './Footer'
-export { Header, HeaderCompact, HeaderFixed } from './Header'
-export { Layout } from './Layout'
-export { BlogPosts } from './BlogPosts'
