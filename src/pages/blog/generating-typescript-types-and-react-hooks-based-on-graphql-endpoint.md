@@ -5,6 +5,7 @@ title: How to use React Hooks on Code Generator GraphQL
 tagline: Autogenerate Typescript types and custom React hooks in React applications with GraphQL Code Generator.
 date: 2020-03-23T19:28:06.529Z
 timeToRead: 3 min read
+cover: /images/generating-typescript-types-and-react-hooks-based-on-graphql-endpoint/cover.png
 ---
 
 Nowadays, developing ReactJS with TypeScript gives us a solid way to write applications: it adds the advantage of type-safety, component auto-documentation, error handling, and accurate autocomplete in the editor code. However, it still requires a considerable effort to write types and keep them maintainable. Moreover, when the data provider is a GraphQL server, it makes you feel like you're doing a useless job, given the server already has its own schemas for types. Seem redundant, right?
