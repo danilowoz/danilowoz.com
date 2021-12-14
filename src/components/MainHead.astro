@@ -2,6 +2,7 @@
 import content from "../content";
 
 const { title, description } = Astro.props;
+const canonical = Astro.request.canonicalURL.href;
 ---
 
 <title>{title ? `${title} | ` : ""}Danilo Woznica</title>
@@ -21,7 +22,7 @@ const { title, description } = Astro.props;
 <meta name="twitter:site" content={content.seo.site} />
 <meta name="twitter:creator" content="@danilowoz" />
 
-<meta property="og:url" content="https://danilowoz.com" />
+<meta property="og:url" content={canonical} />
 <meta property="og:type" content="blog" />
 <meta property="og:title" content={content.seo.site} />
 <meta property="og:description" content={description || content.seo.description}
@@ -32,4 +33,4 @@ const { title, description } = Astro.props;
 <meta property="og:image:height" content="315" />
 <meta property="og:site_name" content={content.seo.site} />
 
-<link rel="canonical" href="https://danilowoz.com" />
+<link rel="canonical" href={canonical} />
