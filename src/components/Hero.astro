@@ -68,6 +68,10 @@ import content from "../content";
       grid-column: 1/4;
       aspect-ratio: 1.6;
       margin-bottom: 0;
+
+      @supports not (aspect-ratio) {
+        height: 500px;
+      }
     }
 
     .type_main {

@@ -81,13 +81,19 @@ const formatDate = (string) => {
   }
 
   .header {
-    aspect-ratio: 1.6;
     display: flex;
     align-items: center;
     position: relative;
+    aspect-ratio: 1.6;
+
+    @supports not (aspect-ratio) {
+      height: 500px;
+    }
 
     @media screen and (min-width: 800px) {
-      padding-right: 20%;
+      > div {
+        width: 70%;
+      }
     }
 
     .type_main {
