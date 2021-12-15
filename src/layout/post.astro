@@ -187,6 +187,23 @@ const formatDate = (string) => {
       color: var(--color-brand);
     }
 
+    table td {
+      border-bottom: 1px solid var(--surface-3);
+      padding: calc(var(--unit) * 0.4);
+    }
+
+    table th {
+      border-bottom: 1px solid var(--surface-1);
+      padding: calc(var(--unit) * 0.4);
+    }
+
+    table code {
+      background: var(--surface-3);
+      color: var(--surface-1);
+      padding: calc(var(--unit) * 0.2);
+      white-space: nowrap;
+    }
+
     --color-text: #24292e;
     --color-background: #ffffff;
     --token-constant: #6f42c1;
