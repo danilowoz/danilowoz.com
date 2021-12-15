@@ -84,10 +84,13 @@ const formatDate = (string) => {
     display: flex;
     align-items: center;
     position: relative;
-    aspect-ratio: 1.6;
 
     @supports not (aspect-ratio) {
-      height: 500px;
+      height: 390px;
+    }
+    @supports (aspect-ratio) {
+      aspect-ratio: 1.6;
+      height: auto;
     }
 
     @media screen and (min-width: 800px) {
