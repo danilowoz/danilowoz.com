@@ -1,8 +1,8 @@
 ---
 layout: ../../layout/post.astro
 type: article
-title: Bringing your blockchain business to React Native
-tagline: A humble perspective of what it was like to create a Crypto Currency wallet using React Native and its main challenges during the planning and the development stages.
+title: Blockchain and React Native applications
+tagline: A humble perspective of what it was like to create a Crypto Currency wallet using React Native.
 date: 2020-07-21
 timeToRead: 8 min read
 cover: /images/bringing-your-blockchain-business-to-react-native/cover.png

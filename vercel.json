@@ -4,6 +4,18 @@
   },
   "redirects": [
     {
+      "source": "/blog/four-lessons-i-learned-from-maintaining-a-10k-stars-project-on-github",
+      "destination": "/blog/blockchain-and-react-native-apps"
+    },
+    {
+      "source": "/blog/bringing-your-blockchain-business-to-react-native",
+      "destination": "/blog/potential-benefits-and-challenges-on-open-source-projects"
+    },
+    {
+      "source": "/blog/beginner-guide-where-to-start-testing-in-javascript",
+      "destination": "/blog/where-to-start-testing-in-javascript"
+    },
+    {
       "source": "/beginner-guide-where-to-start-testing-in-javascript",
       "destination": "/blog/beginner-guide-where-to-start-testing-in-javascript"
     },

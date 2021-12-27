@@ -1,8 +1,8 @@
 ---
 layout: ../../layout/post.astro
 type: article
-title: "Beginner Guide: where to start testing in JavaScript"
-tagline: A methodology or mental model for those who aim to start writing unit tests in Javascript, but still doesn't know where to start. This beginner guide will allow you to begin writing decent unit tests from a sane path.
+title: Where to start testing in JavaScript
+tagline: A methodology or mental model for those who aim to start writing unit tests in JavaScript, but still don't know where to start.
 date: 2020-10-17
 timeToRead: 5 min read
 cover: /images/beginner-guide-where-to-start-testing-in-javascript/cover.png

@@ -14,10 +14,13 @@ const allData = Astro.fetchContent("./blog/*.md").sort((a, b) => {
 });
 
 const projects = Astro.fetchContent("../content/*.md").sort((a, b) => {
-  const dateA = new Date(a?.date ?? "").getTime();
-  const dateB = new Date(b?.date ?? "").getTime();
-
-  return dateB - dateA;
+  if (a.order < b.order) {
+    return -1;
+  }
+  if (a.order > b.order) {
+    return 1;
+  }
+  return 0;
 });
 
 const articles = allData.filter(({ type }) => type === "article");
