@@ -1,8 +1,8 @@
 ---
 layout: ../../layout/post.astro
 type: article
-title: Potential benefits and challenges on open-source projects
-tagline: An open-source, which I maintain, has reached a new milestone on GitHub, but the stars don't really matter, but the lessons I learned do.
+title: Benefits and potential challenges on open-source projects
+tagline: An open-source, which I maintain, has reached a new milestone on GitHub, but the stars don't really matter, the lessons I learned do.
 date: 2020-11-19T13:00:43.958Z
 timeToRead: 4 min read
 cover: /images/open-source/cover.png

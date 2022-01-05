@@ -2,7 +2,7 @@
 layout: ../../layout/post.astro
 type: article
 title: Atomic Design and ReactJS
-tagline: How the Atomic Design methodology allowed me to create a great design system from scratch and made me a better developer.
+tagline: How the Atomic Design methodology can create a great design system from scratch and make better developers.
 date: 2018-08-01
 timeToRead: 5 min read
 mostRead: true

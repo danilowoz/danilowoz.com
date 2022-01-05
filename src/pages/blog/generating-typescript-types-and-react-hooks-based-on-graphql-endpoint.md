@@ -2,7 +2,7 @@
 layout: ../../layout/post.astro
 type: article
 title: How to use React Hooks on Code Generator GraphQL
-tagline: Autogenerate Typescript types and custom React hooks in React applications with GraphQL Code Generator.
+tagline: How to autogenerate TypeScript types and custom React hooks in React applications with GraphQL Code Generator.
 date: 2020-03-23T19:28:06.529Z
 timeToRead: 3 min read
 cover: /images/generating-typescript-types-and-react-hooks-based-on-graphql-endpoint/cover.png

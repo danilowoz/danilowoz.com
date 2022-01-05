@@ -2,7 +2,7 @@
 layout: ../../layout/post.astro
 type: article
 title: Blockchain and React Native applications
-tagline: A humble perspective of what it was like to create a Crypto Currency wallet using React Native.
+tagline: A perspective of what it was like to create a Crypto Currency wallet using React Native.
 date: 2020-07-21
 timeToRead: 8 min read
 cover: /images/bringing-your-blockchain-business-to-react-native/cover.png
@@ -82,13 +82,13 @@ There isn't a shortcut when it comes to developing React Native Apps in the bloc
 
 However, there are some points we've learned with this experience which we can recommend for you to take a look at:
 
-- **Codebase reliability:** make sure the codebase is type-safe, has great test coverage, handles errors properly, and is built on top of an architecture prepared to be scaled. Languages like Typescript or a tool like Flow will definitely help you on this path;
+-   **Codebase reliability:** make sure the codebase is type-safe, has great test coverage, handles errors properly, and is built on top of an architecture prepared to be scaled. Languages like Typescript or a tool like Flow will definitely help you on this path;
 
-- **Security-driven development:** keep all dependencies up-to-date. More often than not, security issues are identified and to tackle that, new package versions are released. Also, have a careful, thorough look at each package or library before settling for a specific one: see Open and Closed issues, how many projects are using it, who else is using it too, which dependencies are being made use of, and so forth.
+-   **Security-driven development:** keep all dependencies up-to-date. More often than not, security issues are identified and to tackle that, new package versions are released. Also, have a careful, thorough look at each package or library before settling for a specific one: see Open and Closed issues, how many projects are using it, who else is using it too, which dependencies are being made use of, and so forth.
 
-- **Try. Start small, aim big:** on the very first stage, take enough time to learn more about blockchain and how to implement it. There's a lot of content available out there, make sure you know where to start your research and, above all, what to search for. Don't hold back on moving on if you feel like so. Learning will come from the mistakes you make. Nevertheless, start small, aim big. Start with some small code samples to try out some basic concepts before moving on to the hardcore stuff.
+-   **Try. Start small, aim big:** on the very first stage, take enough time to learn more about blockchain and how to implement it. There's a lot of content available out there, make sure you know where to start your research and, above all, what to search for. Don't hold back on moving on if you feel like so. Learning will come from the mistakes you make. Nevertheless, start small, aim big. Start with some small code samples to try out some basic concepts before moving on to the hardcore stuff.
 
-- **Open-source, open mindset:** Share your code with the community and ask for feedback. Let more experienced developers help you out. You may be or you may become more experienced than others, and for this matter, spread your knowledge, help them as well. Write articles, open-source your code, help other people grow. There are still a whole lot of unanswered topics when it comes to blockchain - jump-start discussions, call blockchain experts, make sure you're on the right path to help make sure others are on the right path.
+-   **Open-source, open mindset:** Share your code with the community and ask for feedback. Let more experienced developers help you out. You may be or you may become more experienced than others, and for this matter, spread your knowledge, help them as well. Write articles, open-source your code, help other people grow. There are still a whole lot of unanswered topics when it comes to blockchain - jump-start discussions, call blockchain experts, make sure you're on the right path to help make sure others are on the right path.
 
 Bottom line, we faced a bunch of problems while developing a Cryptocurrency App in the Blockchain using React Native. It had its ups and downs, but in the end, it was extremely rewarding. We've learned a lot with our own mistakes, we spent hours figuring out one single deployment, but in the end, the whole thing got sorted. We hope we're paving the way for those who follow.
 
