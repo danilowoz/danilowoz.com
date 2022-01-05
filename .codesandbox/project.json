@@ -1,0 +1,24 @@
+{
+  "previews": {
+    "3000": {
+      "name": "Application",
+      "command": "yarn start"
+    }
+  },
+  "tasks": {
+    "setup": {
+      "name": "Install Dependencies",
+      "command": "yarn"
+    },
+    "start": {
+      "name": "Start Application",
+      "command": "yarn start"
+    }
+  },
+  "setupTasks": [
+    {
+      "name": "Installing Dependencies",
+      "command": "yarn install"
+    }
+  ]
+}

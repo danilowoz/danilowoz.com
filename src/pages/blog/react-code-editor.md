@@ -2,7 +2,7 @@
 layout: ../../layout/post.astro
 type: experiments
 title: A React code editor
-tagline: How a code editor for beginner developers focused on ReactJS might look.
+tagline: What a code editor for beginner developers focused on ReactJS might look like.
 date: 2021-04-16T15:06:01.607Z
 timeToRead: 2 min read
 cover: /images/code-editor/cover.png
