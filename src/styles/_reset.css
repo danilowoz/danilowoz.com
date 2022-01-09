@@ -9,6 +9,10 @@ body {
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: rgba(255, 225, 0, 0.3);
+}
+
 li {
   list-style: none;
 }
