@@ -44,7 +44,7 @@ const experiments = allData.filter(({ type }) => type === "experiments");
       <Section title="Experiments" data={experiments} vertical />
       <Section title="Projects" data={projects} />
 
-      <About />
+      <!-- <About /> -->
 
       <Footer />
     </main>
@@ -72,6 +72,11 @@ const experiments = allData.filter(({ type }) => type === "experiments");
     transition: all var(--transition);
     cursor: pointer;
 
+    display: none;
+    @media screen and (min-width: 800px) {
+      display: block;
+    }
+
     &:hover {
       opacity: 1;
 
@@ -90,6 +95,11 @@ const experiments = allData.filter(({ type }) => type === "experiments");
       right: 0em;
       transform: rotate(90deg);
       opacity: 0.7;
+
+      display: none;
+      @media screen and (min-width: 800px) {
+        display: block;
+      }
     }
   }
 
