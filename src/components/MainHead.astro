@@ -1,7 +1,7 @@
 ---
 import content from "../content";
 
-const { title, description } = Astro.props;
+const { title, description, image = true } = Astro.props;
 const canonical = Astro.request.canonicalURL.href;
 ---
 
@@ -27,7 +27,9 @@ const canonical = Astro.request.canonicalURL.href;
 <meta property="og:title" content={content.seo.site} />
 <meta property="og:description" content={description || content.seo.description}
 />
-<meta property="og:image" content="https://danilowoz.com/share-new.png" />
+{image && (
+  <meta property="og:image" content="https://danilowoz.com/share-new.png" />
+)}
 <meta property="og:image:alt" content="@danilowoz" />
 <meta property="og:image:width" content="600" />
 <meta property="og:image:height" content="315" />
