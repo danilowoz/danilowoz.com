@@ -13,5 +13,8 @@
     "astro": "^1.1.1",
     "prettier-plugin-astro": "^0.5.3",
     "sass": "^1.45.0"
+  },
+  "dependencies": {
+    "astro-robots-txt": "^0.3.8"
   }
 }
