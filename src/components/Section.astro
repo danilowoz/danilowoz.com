@@ -10,6 +10,7 @@ const formatDate = (string) => {
     day: "numeric",
   });
 };
+
 ---
 
 <section class={`section grid ${title.toLowerCase()}`} id={title.toLowerCase()}>
@@ -21,14 +22,15 @@ const formatDate = (string) => {
 
   <ul class={`list ${vertical ? "list__vertical" : "list__horizontal"}`}>
     {data?.map((item) => {
-      const external = /https/.test(item.link);
-      const github = /github/.test(item.link);
+    console.log(item)
+      const external = /https/.test(item.frontmatter.link);
+      const github = /github/.test(item.frontmatter.link);
 
       const renderCallToAction = () => {
         if (github) return "See on GitHub";
         if (external) return "Access website";
 
-        return `${formatDate(item.date)}`;
+        return `${formatDate(item.frontmatter.date)}`;
       };
 
       return (
@@ -39,10 +41,10 @@ const formatDate = (string) => {
           >
             <article class="list-article">
               <h1 class={`type_headline`}>
-                {item.title}{" "}
-                {item.mostRead && <span class="type_footnote">Most read</span>}
+                {item.frontmatter.title}{" "}
+                {item.frontmatter.mostRead && <span class="type_footnote">Most read</span>}
               </h1>
-              <p class="surface-1">{item.tagline}</p>
+              <p class="surface-1">{item.frontmatter.tagline}</p>
               <p class="type_footnote">{renderCallToAction()}</p>
             </article>
           </a>
