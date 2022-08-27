@@ -10,7 +10,6 @@ const formatDate = (string) => {
     day: "numeric",
   });
 };
-
 ---
 
 <section class={`section grid ${title.toLowerCase()}`} id={title.toLowerCase()}>
@@ -21,36 +20,39 @@ const formatDate = (string) => {
   </div>
 
   <ul class={`list ${vertical ? "list__vertical" : "list__horizontal"}`}>
-    {data?.map((item) => {
-    console.log(item)
-      const external = /https/.test(item.frontmatter.link);
-      const github = /github/.test(item.frontmatter.link);
+    {
+      data?.map((item) => {
+        const external = /https/.test(item.frontmatter.link);
+        const github = /github/.test(item.frontmatter.link);
 
-      const renderCallToAction = () => {
-        if (github) return "See on GitHub";
-        if (external) return "Access website";
+        const renderCallToAction = () => {
+          if (github) return "See on GitHub";
+          if (external) return "Access website";
 
-        return `${formatDate(item.frontmatter.date)}`;
-      };
+          return `${formatDate(item.frontmatter.date)}`;
+        };
 
-      return (
-        <li class="list-item">
-          <a
-            href={item.link ?? item.url}
-            {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
-          >
-            <article class="list-article">
-              <h1 class={`type_headline`}>
-                {item.frontmatter.title}{" "}
-                {item.frontmatter.mostRead && <span class="type_footnote">Most read</span>}
-              </h1>
-              <p class="surface-1">{item.frontmatter.tagline}</p>
-              <p class="type_footnote">{renderCallToAction()}</p>
-            </article>
-          </a>
-        </li>
-      );
-    })}
+        return (
+          <li class="list-item">
+            <a
+              href={item.frontmatter.link ?? item.url}
+              {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
+            >
+              <article class="list-article">
+                <h1 class={`type_headline`}>
+                  {item.frontmatter.title}{" "}
+                  {item.frontmatter.mostRead && (
+                    <span class="type_footnote">Most read</span>
+                  )}
+                </h1>
+                <p class="surface-1">{item.frontmatter.tagline}</p>
+                <p class="type_footnote">{renderCallToAction()}</p>
+              </article>
+            </a>
+          </li>
+        );
+      })
+    }
   </ul>
 </section>
 
@@ -126,11 +128,11 @@ const formatDate = (string) => {
     .type_main {
       grid-column: 1/2;
       margin: 0;
-    }
 
-    .sticky {
-      position: sticky;
-      top: calc(var(--unit) * 2);
+      &.sticky {
+        position: sticky;
+        top: calc(var(--unit) * 2);
+      }
     }
   }
 

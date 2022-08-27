@@ -23,251 +23,253 @@ const formatDate = (string) => {
   </head>
 
   <body>
-    <article class="container-post">
-      <a href="/" class="type_headline backlink">&#8592; Homepage</a>
-      <header class="header">
-        <div>
-          <p class="type_footnote">
-            Danilo Woznica,
-            {formatDate(date)}
-            <span class="surface-2">—</span>
-            {timeToRead}
-          </p>
-          <h1 class={`type_main ${type}`}>{title}</h1>
+    <div class="overflow">
+      <article class="container-post">
+        <a href="/" class="type_headline backlink">&#8592; Homepage</a>
+        <header class="header">
+          <div>
+            <p class="type_footnote">
+              Danilo Woznica,
+              {formatDate(date)}
+              <span class="surface-2">—</span>
+              {timeToRead}
+            </p>
+            <h1 class={`type_main ${type}`}>{title}</h1>
+          </div>
+
+          {
+            cover && (
+              <figure class="cover">
+                <img src={cover} alt={title} />
+              </figure>
+            )
+          }
+        </header>
+
+        <div class="type_content content">
+          <slot />
         </div>
 
-        {cover && (
-          <figure class="cover">
-            <img src={cover} alt={title} />
-          </figure>
-        )}
-      </header>
+        <Footer />
+      </article>
+    </div>
+    <style lang="scss" global>
+      .overflow {
+        width: 100vw;
+        overflow-x: hidden;
+      }
 
-      <div class="type_content content">
-        <slot />
-      </div>
+      .container-post {
+        max-width: calc(var(--unit) * 41);
 
-      <Footer />
-    </article>
+        padding-left: var(--unit);
+        padding-right: var(--unit);
+
+        padding-top: calc(var(--unit) * 1);
+        padding-bottom: calc(var(--unit) * 1);
+
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (min-width: 800px) {
+          padding-top: calc(var(--unit) * 8);
+        }
+      }
+
+      @media screen and (min-width: 800px) {
+        .backlink {
+          margin-left: calc(var(--unit) * -1);
+        }
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        @supports not (aspect-ratio: 1.6) {
+          height: 390px;
+        }
+
+        @supports (aspect-ratio: 1.6) {
+          aspect-ratio: 1.6;
+          height: auto;
+        }
+
+        > div {
+          margin-top: calc(var(--unit) * 2);
+          margin-bottom: calc(var(--unit) * 4);
+
+          @media screen and (min-width: 800px) {
+            margin: 0;
+            width: 70%;
+          }
+        }
+
+        .type_main {
+          &:before {
+            content: "";
+            position: absolute;
+
+            background-image: url("/assets/paragraph.png");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+
+            top: calc(var(--unit) * 0.25);
+            left: calc(var(--unit) * -3);
+            width: calc(var(--unit) * 2);
+            height: calc(var(--unit) * 2);
+          }
+
+          &.experiments:before {
+            background-image: url("/assets/diferent.png");
+          }
+        }
+
+        .type_footnote {
+          margin-bottom: var(--unit);
+        }
+      }
+
+      .cover {
+        height: 100%;
+        width: 30%;
+
+        @media screen and (min-width: 800px) {
+          width: 40%;
+          height: auto;
+          margin: 0;
+        }
+
+        img {
+          height: 100%;
+          margin-right: -30%;
+
+          @media screen and (min-width: 800px) {
+            height: auto;
+            position: absolute;
+            top: calc(var(--unit) * -8);
+            height: calc(100% + calc(var(--unit) * 8));
+            margin-left: calc(var(--unit) * 6);
+            margin-right: 0;
+          }
+        }
+      }
+
+      .content {
+        h2,
+        h3,
+        h4,
+        h5 {
+          font-size: var(--text-size-base);
+          font-weight: 500;
+          color: var(--surface-0);
+          margin-top: calc(var(--unit) * 2);
+        }
+
+        h2 {
+          font-size: var(--text-size-large);
+        }
+
+        ol,
+        ul {
+          padding-left: calc(var(--unit) * 2);
+          margin-bottom: var(--unit);
+        }
+
+        ol {
+          list-style: decimal;
+        }
+
+        li {
+          list-style: disc;
+        }
+
+        ol li {
+          list-style: decimal;
+        }
+
+        video,
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        a {
+          color: var(--color-brand);
+        }
+
+        table td {
+          border-bottom: 1px solid var(--surface-3);
+          padding: calc(var(--unit) * 0.4);
+        }
+
+        table th {
+          border-bottom: 1px solid var(--surface-1);
+          padding: calc(var(--unit) * 0.4);
+        }
+
+        table code {
+          background: var(--surface-3);
+          color: var(--surface-1);
+          padding: calc(var(--unit) * 0.2);
+          white-space: nowrap;
+        }
+
+        --color-text: var(--surface-0);
+        --color-background: #ffffff;
+        --token-constant: var(--color-brand);
+        --token-string: var(--surface-0);
+        --token-comment: #6a737d;
+        --token-keyword: var(--color-brand);
+        --token-parameter: var(--color-brand);
+        --token-function: var(--color-brand);
+        --token-string-expression: #a3be8c;
+        --token-punctuation: var(--surface-2);
+        --token-link: #22863a;
+
+        pre {
+          padding: var(--unit);
+          border: 1px solid var(--surface-3);
+          border-radius: calc(var(--unit) * 0.5);
+          margin-bottom: var(--unit);
+          font-size: 14px;
+          line-height: 1.4;
+          overflow: auto;
+
+          background: var(--color-background);
+          color: var(--color-text);
+
+          .constant {
+            color: var(--token-constant);
+          }
+          .string {
+            color: var(--token-string);
+          }
+          .comment {
+            color: var(--token-comment);
+          }
+          .keyword {
+            color: var(--token-keyword);
+          }
+          .parameter {
+            color: var(--token-parameter);
+          }
+          .function {
+            color: var(--token-function);
+          }
+          .string-expression {
+            color: var(--token-string-expression);
+          }
+          .punctuation {
+            color: var(--token-punctuation);
+          }
+          .link {
+            color: var(--token-link);
+          }
+        }
+      }
+    </style>
   </body>
 </html>
-
-<style lang="scss" global>
-  html,
-  body {
-    overflow-x: hidden;
-    width: 100vw;
-  }
-
-  .container-post {
-    max-width: calc(var(--unit) * 41);
-
-    padding-left: var(--unit);
-    padding-right: var(--unit);
-
-    padding-top: calc(var(--unit) * 1);
-    padding-bottom: calc(var(--unit) * 1);
-
-    margin-left: auto;
-    margin-right: auto;
-
-    @media screen and (min-width: 800px) {
-      padding-top: calc(var(--unit) * 8);
-    }
-  }
-
-  @media screen and (min-width: 800px) {
-    .backlink {
-      margin-left: calc(var(--unit) * -1);
-    }
-  }
-
-  .header {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    @supports not (aspect-ratio: 1.6) {
-      height: 390px;
-    }
-
-    @supports (aspect-ratio: 1.6) {
-      aspect-ratio: 1.6;
-      height: auto;
-    }
-
-    > div {
-      margin-top: calc(var(--unit) * 2);
-      margin-bottom: calc(var(--unit) * 4);
-
-      @media screen and (min-width: 800px) {
-        margin: 0;
-        width: 70%;
-      }
-    }
-
-    .type_main {
-      &:before {
-        content: "";
-        position: absolute;
-
-        background-image: url("/assets/paragraph.png");
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: center;
-
-        top: calc(var(--unit) * 0.25);
-        left: calc(var(--unit) * -3);
-        width: calc(var(--unit) * 2);
-        height: calc(var(--unit) * 2);
-      }
-
-      &.experiments:before {
-        background-image: url("/assets/diferent.png");
-      }
-    }
-
-    .type_footnote {
-      margin-bottom: var(--unit);
-    }
-  }
-
-  .cover {
-    height: 100%;
-    width: 30%;
-
-    @media screen and (min-width: 800px) {
-      width: 40%;
-      height: auto;
-      margin: 0;
-    }
-
-    img {
-      height: 100%;
-      margin-right: -30%;
-
-      @media screen and (min-width: 800px) {
-        height: auto;
-        position: absolute;
-        top: calc(var(--unit) * -8);
-        height: calc(100% + calc(var(--unit) * 8));
-        margin-left: calc(var(--unit) * 6);
-        margin-right: 0;
-      }
-    }
-  }
-
-  .content {
-    h2,
-    h3,
-    h4,
-    h5 {
-      font-size: var(--text-size-base);
-      font-weight: 500;
-      color: var(--surface-0);
-      margin-top: calc(var(--unit) * 2);
-    }
-
-    h2 {
-      font-size: var(--text-size-large);
-    }
-
-    ol,
-    ul {
-      padding-left: calc(var(--unit) * 2);
-      margin-bottom: var(--unit);
-    }
-
-    ol {
-      list-style: decimal;
-    }
-
-    li {
-      list-style: disc;
-    }
-
-    ol li {
-      list-style: decimal;
-    }
-
-    video,
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    a {
-      color: var(--color-brand);
-    }
-
-    table td {
-      border-bottom: 1px solid var(--surface-3);
-      padding: calc(var(--unit) * 0.4);
-    }
-
-    table th {
-      border-bottom: 1px solid var(--surface-1);
-      padding: calc(var(--unit) * 0.4);
-    }
-
-    table code {
-      background: var(--surface-3);
-      color: var(--surface-1);
-      padding: calc(var(--unit) * 0.2);
-      white-space: nowrap;
-    }
-
-    --color-text: var(--surface-0);
-    --color-background: #ffffff;
-    --token-constant: var(--color-brand);
-    --token-string: var(--surface-0);
-    --token-comment: #6a737d;
-    --token-keyword: var(--color-brand);
-    --token-parameter: var(--color-brand);
-    --token-function: var(--color-brand);
-    --token-string-expression: #a3be8c;
-    --token-punctuation: var(--surface-2);
-    --token-link: #22863a;
-
-    pre {
-      padding: var(--unit);
-      border: 1px solid var(--surface-3);
-      border-radius: calc(var(--unit) * 0.5);
-      margin-bottom: var(--unit);
-      font-size: 14px;
-      line-height: 1.4;
-      overflow: auto;
-
-      background: var(--color-background);
-      color: var(--color-text);
-
-      .constant {
-        color: var(--token-constant);
-      }
-      .string {
-        color: var(--token-string);
-      }
-      .comment {
-        color: var(--token-comment);
-      }
-      .keyword {
-        color: var(--token-keyword);
-      }
-      .parameter {
-        color: var(--token-parameter);
-      }
-      .function {
-        color: var(--token-function);
-      }
-      .string-expression {
-        color: var(--token-string-expression);
-      }
-      .punctuation {
-        color: var(--token-punctuation);
-      }
-      .link {
-        color: var(--token-link);
-      }
-    }
-  }
-</style>
