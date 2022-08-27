@@ -6,5 +6,9 @@ export default defineConfig({
   experimental: {
     integrations: true,
   },
-  integrations: [robotsTxt()],
+  integrations: [
+    robotsTxt({
+      sitemap: false,
+    }),
+  ],
 });
