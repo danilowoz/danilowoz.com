@@ -3,7 +3,7 @@ layout: ../../layout/post.astro
 type: article
 title: "My code principles: more human abstractions than coding rules"
 tagline: I believe everyone has their very own relationship with code and how to approach some problems, and these are my own.
-date: 2021-08-31T19:28:06.529Z
+date: 2022-08-31T19:28:06.529Z
 timeToRead: 5 min read
 cover: /images/principles/cover.png
 ---
@@ -29,7 +29,7 @@ In most cases, the implementation could not be pixel-perfect or made using the l
 If I look at the bigger picture holistically, I can understand the key points to achieve the main goal of a task, and sometimes it's not just delivering it to production. Hopefully, design has a ton of methods that guides us to embrace the problem, and at the end of the day, that's what matters: it’s the problem that needs to be solved, not a solution that needs to be implemented.
 
 
-> "Fall in love with the problem, not with the solution." <span>― Marty Cagan</span>
+> "Fall in love with the problem,<br/> not with the solution." <span>― Marty Cagan</span>
 
 ## Development experience
 
