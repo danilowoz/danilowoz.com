@@ -2,9 +2,10 @@
 layout: ../../layout/post.astro
 type: article
 title: "My code principles: more human abstractions than coding rules"
-tagline: Autogenerating TypeScript types and custom React hooks in React applications with GraphQL Code Generator.
+tagline: I believe everyone has their very own relationship with code and how to approach some problems, and these are my own.
 date: 2021-08-30T19:28:06.529Z
 timeToRead: 5 min read
+cover: /images/principles/cover.png
 ---
 
 Over my career, I have learned many code principles such as KISS, DRY, SOLID, etc. But recently, I've been thinking about how often I use them when planning a new feature or working on a piece of code in my day-to-day. I mean, I know these principles are there. But they are mostly implicit and not objective actions. So this made me wonder, what really drives me when I'm coding? 
