@@ -4,88 +4,88 @@ import content from "../content";
 ---
 
 <header class="hero">
-  <div class="grid">
-    <h1 class="type_main">
-      {content.hero.title}
-      <span class="surface-2">{content.hero.headline}</span>
-    </h1>
+	<div class="grid">
+		<h1 class="type_main">
+			{content.hero.title}
+			<span class="surface-2">{content.hero.headline}</span>
+		</h1>
 
-    <h2 class="type_sub">Danilo Woznica</h2>
+		<h2 class="type_sub">Danilo Woznica</h2>
 
-    <div class="hero_social">
-      <Social />
-    </div>
-  </div>
+		<div class="hero_social">
+			<Social />
+		</div>
+	</div>
 </header>
 
 <style lang="scss">
-  .hero {
-    margin-bottom: 33%;
-    background: white;
-    position: relative;
-    z-index: 99;
-  }
+	.hero {
+		margin-bottom: 33%;
+		background: var(--background);
+		position: relative;
+		z-index: 99;
+	}
 
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+	.grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 
-  .type_main {
-    margin-bottom: 3rem;
-  }
+	.type_main {
+		margin-bottom: 3rem;
+	}
 
-  .type_main:before {
-    content: "";
-    position: absolute;
-    background: url("/assets/quoting.png") center center;
-    background-size: cover;
+	.type_main:before {
+		content: "";
+		position: absolute;
+		background: url("/assets/quoting.png") center center;
+		background-size: cover;
 
-    width: calc(var(--unit) * 1);
-    height: calc(var(--unit) * 1);
-    left: calc(var(--unit) * -1.4);
+		width: calc(var(--unit) * 1);
+		height: calc(var(--unit) * 1);
+		left: calc(var(--unit) * -1.4);
 
-    @media screen and (min-width: 800px) {
-      width: calc(var(--unit) * 1.5);
-      height: calc(var(--unit) * 1.5);
-      left: calc(var(--unit) * -2.5);
-    }
-  }
+		@media screen and (min-width: 800px) {
+			width: calc(var(--unit) * 1.5);
+			height: calc(var(--unit) * 1.5);
+			left: calc(var(--unit) * -2.5);
+		}
+	}
 
-  .hero_social {
-    display: flex;
-    align-items: center;
-    color: var(--surface-1);
-  }
+	.hero_social {
+		display: flex;
+		align-items: center;
+		color: var(--surface-1);
+	}
 
-  @media screen and (min-width: 800px) {
-    .grid {
-      display: grid;
-    }
+	@media screen and (min-width: 800px) {
+		.grid {
+			display: grid;
+		}
 
-    .hero {
-      grid-column: 1/4;
+		.hero {
+			grid-column: 1/4;
 
-      margin-bottom: 0;
+			margin-bottom: 0;
 
-      @supports not (aspect-ratio) {
-        height: 500px;
-      }
+			@supports not (aspect-ratio) {
+				height: 500px;
+			}
 
-      @supports (aspect-ratio) {
-        aspect-ratio: 1.6;
-        height: auto;
-      }
-    }
+			@supports (aspect-ratio) {
+				aspect-ratio: 1.6;
+				height: auto;
+			}
+		}
 
-    .type_main {
-      grid-column: 1/3;
-      margin-right: calc(var(--unit) * -3);
-    }
+		.type_main {
+			grid-column: 1/3;
+			margin-right: calc(var(--unit) * -3);
+		}
 
-    .type_sub {
-      grid-column: 1/2;
-    }
-  }
+		.type_sub {
+			grid-column: 1/2;
+		}
+	}
 </style>

@@ -42,17 +42,22 @@ const experiments = allData.filter(
     <input class="debug" type="checkbox" id="debug" />
     <label for="debug" class="type_footnote">Debug</label>
 
-    <main class="container grid">
-      <Hero />
-      <Headroom />
+    <input class="mode" type="checkbox" id="mode" />
+    <label for="mode" class="type_footnote">Dark mode</label>
 
-      <Section title="Writing" data={articles} />
-      <Section title="Experiments" data={experiments} vertical />
-      <Section title="Projects" data={projects} />
+    <main>
+      <div class="container grid">
+        <Hero />
+        <Headroom />
 
-      <About />
+        <Section title="Writing" data={articles} />
+        <Section title="Experiments" data={experiments} vertical />
+        <Section title="Projects" data={projects} />
 
-      <Footer />
+        <About />
+
+        <Footer />
+      </div>
     </main>
     <style lang="scss">
       .grid {
@@ -66,44 +71,19 @@ const experiments = allData.filter(
         }
       }
 
+      .mode:checked {
+        ~ main {
+          --surface-0: rgba(253, 253, 255, 0.93);
+          --surface-1: rgba(247, 245, 255, 0.616);
+          --surface-2: rgba(240, 238, 255, 0.48);
+          --surface-3: rgba(238, 236, 255, 0.416);
+          --background: rgb(22, 22, 24);
+          --highlight: #4e7bff29;
+          --color-brand: #4e7bff;
+        }
+      }
+
       .debug {
-        position: fixed;
-        top: 1em;
-        right: 1em;
-        opacity: 0;
-
-        transition: all var(--transition);
-        cursor: pointer;
-
-        display: none;
-        @media screen and (min-width: 800px) {
-          display: block;
-        }
-
-        &:hover {
-          opacity: 1;
-
-          + label {
-            opacity: 1;
-            top: 3.6em;
-          }
-        }
-
-        + label {
-          transition: all var(--transition);
-          cursor: pointer;
-
-          position: fixed;
-          top: 2em;
-          right: 0em;
-          transform: rotate(90deg);
-          opacity: 0.7;
-
-          display: none;
-          @media screen and (min-width: 800px) {
-            display: block;
-          }
-        }
       }
 
       .debug:checked {

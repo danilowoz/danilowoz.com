@@ -9,16 +9,6 @@ body {
   box-sizing: border-box;
 }
 
-*::selection {
-  background-color: rgba(255, 225, 0, 0.3);
-}
-
-strong {
-  font-weight: normal;
-  background-color: rgba(255, 225, 0, 0.3);
-  color: inherit;
-}
-
 li {
   list-style: none;
 }
