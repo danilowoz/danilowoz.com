@@ -61,10 +61,15 @@ import content from "../content";
   }
 
   .hero_img {
-    position: absolute;
-    height: 100%;
-    top: calc(var(--unit) * -6);
-    right: calc(var(--unit) * -12);
+    display: none;
+
+    @media screen and (min-width: 800px) {
+      display: block;
+      position: absolute;
+      height: 100%;
+      top: calc(var(--unit) * -6);
+      right: calc(var(--unit) * -12);
+    }
   }
 
   @media screen and (min-width: 800px) {
