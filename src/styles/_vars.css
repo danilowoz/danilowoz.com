@@ -31,6 +31,18 @@ main {
   background: var(--background);
 }
 
+@media (prefers-color-scheme: dark) {
+  main {
+    --surface-0: rgba(253, 253, 255, 0.93);
+    --surface-1: rgba(247, 245, 255, 0.616);
+    --surface-2: rgba(240, 238, 255, 0.48);
+    --surface-3: rgba(238, 236, 255, 0.416);
+    --background: rgb(22, 22, 24);
+    --highlight: #4e7bff29;
+    --color-brand: #4e7bff;
+  }
+}
+
 @media screen and (min-width: 800px) {
   main {
     --text-size-xlarge: calc(var(--unit) * 2);

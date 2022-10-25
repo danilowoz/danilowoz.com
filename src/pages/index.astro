@@ -39,12 +39,6 @@ const experiments = allData.filter(
   </head>
 
   <body>
-    <input class="debug" type="checkbox" id="debug" />
-    <label for="debug" class="type_footnote">Debug</label>
-
-    <input class="mode" type="checkbox" id="mode" />
-    <label for="mode" class="type_footnote">Dark mode</label>
-
     <main>
       <div class="container grid">
         <Hero />
@@ -68,18 +62,6 @@ const experiments = allData.filter(
       @media screen and (min-width: 800px) {
         .grid {
           padding-top: calc(var(--unit) * 8);
-        }
-      }
-
-      .mode:checked {
-        ~ main {
-          --surface-0: rgba(253, 253, 255, 0.93);
-          --surface-1: rgba(247, 245, 255, 0.616);
-          --surface-2: rgba(240, 238, 255, 0.48);
-          --surface-3: rgba(238, 236, 255, 0.416);
-          --background: rgb(22, 22, 24);
-          --highlight: #4e7bff29;
-          --color-brand: #4e7bff;
         }
       }
 
