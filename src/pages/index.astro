@@ -1,6 +1,5 @@
 ---
 import Hero from "../components/Hero.astro";
-import Headroom from "../components/Headroom.astro";
 import Section from "../components/Section.astro";
 import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
@@ -44,7 +43,6 @@ const experiments = allData.filter(
 
     <main class="container grid">
       <Hero />
-      <Headroom />
 
       <Section title="Writing" data={articles} />
       <Section title="Experiments" data={experiments} vertical />
