@@ -1,4 +1,7 @@
-<section class="section" id="about-me">
+<section class="section grid" id="about-me">
+  <div class="about_img">
+    <img src="/images/cover.png" />
+  </div>
   <article>
     <h2 class="type_main">About me</h2>
 
@@ -47,10 +50,28 @@
 </section>
 
 <style lang="scss">
+  .about_img {
+    display: none;
+    @media screen and (min-width: 800px) {
+      display: block;
+      grid-column: 1/2;
+
+      img {
+        width: 100%;
+        margin-left: calc(-4 * var(--unit));
+      }
+    }
+  }
+
   .section {
-    grid-column: 2/4;
+    grid-column: 1/4;
     padding-top: 15%;
     padding-bottom: 15%;
+    position: relative;
+  }
+
+  article {
+    grid-column: 2/4;
   }
 
   .type_main {
