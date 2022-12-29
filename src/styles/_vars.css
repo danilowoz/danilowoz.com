@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Domine&family=Inter:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Inter:wght@400;500&display=swap");
 
 :root {
   /* Spacing */
@@ -18,7 +18,7 @@
   --text-size-small: calc(var(--unit) * 0.75);
 
   /* Font-family */
-  --serif: "Domine", serif;
+  --serif: "Merriweather", serif;
   --sans-serif: "Inter", sans-serif;
 
   /* Misc */

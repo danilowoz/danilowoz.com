@@ -7,6 +7,7 @@ date: 2018-08-01
 timeToRead: 5 min read
 mostRead: true
 cover: /images/atomic-design-with-react/cover.png
+tag: Most read
 ---
 
 I have recently had the opportunity to work on a new product from scratch made in React and PWA with the well-crafted and componentized UI at Cheesecake. However, when we discussed with the whole team the best way to approach the development, we ended up having the same old problems that have happened in most past projects, such as:

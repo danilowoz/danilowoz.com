@@ -41,8 +41,8 @@ const formatDate = (string) => {
               <article class="list-article">
                 <h1 class={`type_headline`}>
                   {item.frontmatter.title}{" "}
-                  {item.frontmatter.mostRead && (
-                    <span class="type_footnote">Most read</span>
+                  {item.frontmatter.tag && (
+                    <span class="type_footnote">{item.frontmatter.tag}</span>
                   )}
                 </h1>
                 <p class="surface-1">{item.frontmatter.tagline}</p>
