@@ -1,91 +1,91 @@
 <div class="ruler">
-	<div class="container">
-		<div class="ruler__item" style="--ruler-alpha: .15"></div>
-		<div class="ruler__item" style="--ruler-alpha: .1"></div>
-		<div class="ruler__item" style="--ruler-alpha: .05"></div>
-		<div class="ruler__item" style="--ruler-alpha: .03"></div>
-	</div>
+  <div class="container">
+    <div class="ruler__item" style="--ruler-alpha: .13"></div>
+    <div class="ruler__item" style="--ruler-alpha: .1"></div>
+    <div class="ruler__item" style="--ruler-alpha: .05"></div>
+    <div class="ruler__item" style="--ruler-alpha: .03"></div>
+  </div>
 </div>
 
 <style lang="scss">
-	@media screen and (min-width: 800px) {
-		body:before {
-			content: "";
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: calc(var(--unit) * 6);
-			height: 1px;
-			background: linear-gradient(
-				90deg,
-				rgba(0, 0, 0, 0.15),
-				rgba(0, 0, 0, 0.15) 50%,
-				transparent 0,
-				transparent
-			);
-			background-size: 10px 1px;
-		}
+  @media screen and (min-width: 800px) {
+    body:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(var(--unit) * 6);
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 50%,
+        transparent 0,
+        transparent
+      );
+      background-size: 7px 1px;
+    }
 
-		body:after {
-			content: "";
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: calc(var(--unit) * 6);
-			height: 1px;
+    body:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(var(--unit) * 6);
+      height: 1px;
 
-			background: linear-gradient(
-				90deg,
-				transparent,
-				white 100%,
-				transparent 0,
-				transparent
-			);
-		}
+      background: linear-gradient(
+        90deg,
+        transparent,
+        white 100%,
+        transparent 0,
+        transparent
+      );
+    }
 
-		.ruler {
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			pointer-events: none;
-			z-index: 0;
-		}
+    .ruler {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-		.ruler .container {
-			position: absolute;
-			inset: calc(-4 * var(--unit));
-			max-width: calc(var(--unit) * 67);
-			display: flex;
-			justify-content: space-between;
-		}
+    .ruler .container {
+      position: absolute;
+      inset: calc(-4 * var(--unit));
+      max-width: calc(var(--unit) * 67);
+      display: flex;
+      justify-content: space-between;
+    }
 
-		.ruler__item {
-			width: 1px;
-			background: linear-gradient(
-				180deg,
-				rgba(0, 0, 0, var(--ruler-alpha)),
-				rgba(0, 0, 0, var(--ruler-alpha)) 50%,
-				transparent 0,
-				transparent
-			);
-			background-size: 1px 10px;
-			position: relative;
-		}
+    .ruler__item {
+      width: 1px;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, var(--ruler-alpha)),
+        rgba(0, 0, 0, var(--ruler-alpha)) 50%,
+        transparent 0,
+        transparent
+      );
+      background-size: 1px 7px;
+      position: relative;
+    }
 
-		.ruler__item:after {
-			content: "";
-			position: absolute;
-			inset: 0;
+    .ruler__item:after {
+      content: "";
+      position: absolute;
+      inset: 0;
 
-			background: linear-gradient(
-				180deg,
-				transparent,
-				rgba(255, 255, 255, 0.8) 100%,
-				transparent 0,
-				transparent
-			);
-		}
-	}
+      background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(255, 255, 255, 0.8) 100%,
+        transparent 0,
+        transparent
+      );
+    }
+  }
 </style>
