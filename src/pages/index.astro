@@ -4,7 +4,6 @@ import Section from "../components/Section.astro";
 import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
 import MainHead from "../components/MainHead.astro";
-import Ruler from "../components/Ruler.astro";
 
 const blogsMd = await Astro.glob("./blog/*.md");
 const allData = blogsMd.sort((a, b) => {
@@ -41,8 +40,6 @@ const experiments = allData.filter(
   <body>
     <main class="container grid">
       <Hero />
-
-      <Ruler />
 
       <Section title="Writing" data={articles} />
       <Section title="Experiments" data={experiments} vertical />
