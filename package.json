@@ -10,7 +10,7 @@
     "format": "yarn prettier -w ."
   },
   "devDependencies": {
-    "astro": "^1.1.1",
+    "astro": "^2.6.5",
     "prettier-plugin-astro": "^0.5.3",
     "sass": "^1.45.0"
   },
