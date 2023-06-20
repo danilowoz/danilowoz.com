@@ -6,12 +6,14 @@ import Footer from "../components/Footer.astro";
 import MainHead from "../components/MainHead.astro";
 
 const blogsMd = await Astro.glob("./blog/*.md");
-const allData = blogsMd.sort((a, b) => {
-  const dateA = new Date(a?.frontmatter.date ?? "").getTime();
-  const dateB = new Date(b?.frontmatter.date ?? "").getTime();
+const allData = blogsMd
+  .sort((a, b) => {
+    const dateA = new Date(a?.frontmatter.date ?? "").getTime();
+    const dateB = new Date(b?.frontmatter.date ?? "").getTime();
 
-  return dateB - dateA;
-});
+    return dateB - dateA;
+  })
+  .filter((item) => item.frontmatter.enabled !== false);
 
 const contentMd = await Astro.glob("../content/*.md");
 const projects = contentMd.sort((a, b) => {
