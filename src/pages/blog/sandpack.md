@@ -21,7 +21,17 @@ Never would I have imagined getting the chance to contribute to the long-awaited
 
 React team challenged us to provide a browser-based playground (sandboxes) for the React.js documentation and ensure these sandboxes are accessible not just for everyone but everywhere. The goal was to use these sandboxes to demonstrate React APIs, create internal challenges to be solved by users, promote best practices, and ultimately educate users on how to code using React.
 
-So, **we joined forces to give everyone in the world the same chance to learn React in a reliable and educative environment for free.** For this task, our team revived an internal project and designed Sandpack, which is a portable CodeSandbox version that could be embedded in any external website.
+<figure>
+    <img
+        src="/images/sandpack/react-dev.png"
+        alt="Example of a sandbox on react.dev"
+        width="1277"
+        height="714"
+    />
+    <figcaption>Example of a Sandpack sandbox on react.dev</figcaption>
+</figure>
+
+So, **we joined forces to give everyone in the world the same chance to learn React in a reliable and educative environment for free.** For this task, our team revived an internal project and designed [Sandpack](https://sandpack.codesandbox.io/docs), which is a portable [CodeSandbox](https://codesandbox.io/) version that could be embedded in any external website.
 
 Sandpack implements many innovative strategies to build the best React playground to achieve it. At the same time, we keep everything open-source to be used by anyone, making it possible to leverage this collective effort to be used on other use cases, such as articles, tutorials, documentation, etc., making Sandpack even more exciting.
 
@@ -29,7 +39,7 @@ While we encountered various technical and design challenges along the way, many
 
 ### Bring a familiar editing experience
 
-Monaco is a great editor. It powers VS Code and introduces many essential features that we can't live without today. However, before choosing it for Sandpack, we carefully considered the audience, limitations, and requirements. After identifying some tradeoffs, we ultimately opted for CodeMirror, a code editor that's modular and extensible. Here are some reasons why we made this decision:
+Monaco is a great editor. It powers VS Code and introduces many essential features that we can't live without today. However, before choosing it for Sandpack, we carefully considered the audience, limitations, and requirements. After identifying some tradeoffs, we ultimately opted for [CodeMirror](https://codemirror.net/), a code editor that's modular and extensible. Here are some reasons why we made this decision:
 
 - Mobile support: Monaco doesn't have great mobile support, which is crucial for Sandpack to deliver a consistent experience throughout all devices. Plus, CodeMirror works well with screen readers and keyboard-only users.
 - Final bundle size: CodeMirror provides an easy way to load only the modules/extensions we want, allowing us to lazy-load and code-split the code editor component. Meanwhile, Monaco is quite a heavy package for this task.
