@@ -26,7 +26,7 @@ const formatDate = (string) => {
     <div class="overflow">
       <article class="container-post">
         <a href="/" class="type_headline backlink">&#8592; Homepage</a>
-        <header class="header">
+        <header class={`header ${cover ? "" : "header__noimage"}`}>
           <div>
             <p class="type_footnote">
               Danilo Woznica,
@@ -104,6 +104,10 @@ const formatDate = (string) => {
             margin: 0;
             width: 70%;
           }
+        }
+
+        &.header__noimage > div {
+          width: 100%;
         }
 
         .type_main {
@@ -215,6 +219,28 @@ const formatDate = (string) => {
           color: var(--surface-1);
           padding: calc(var(--unit) * 0.2);
           white-space: nowrap;
+        }
+
+        figure img {
+          border: 1px solid var(--surface-3);
+        }
+
+        @media screen and (min-width: 800px) {
+          figure.large img {
+            margin: 0 -10vw;
+            max-width: none;
+            width: calc(100% + 20vw);
+          }
+        }
+
+        figcaption {
+          text-align: center;
+          font-size: var(--text-size-small);
+          margin-bottom: var(--unit);
+        }
+
+        .footnotes p {
+          margin-bottom: 0;
         }
 
         blockquote {
