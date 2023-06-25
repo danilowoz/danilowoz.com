@@ -2,7 +2,7 @@
 import content from "../content";
 import "../styles/global.css";
 
-const { title, description, url } = Astro.props;
+const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
