@@ -25,7 +25,9 @@ const formatDate = (string) => {
   <body>
     <div class="overflow">
       <article class="container-post">
-        <a href="/" class="type_headline backlink">&#8592; Homepage</a>
+        <a href="/" class="type_headline backlink"
+          ><span>&#8592;</span> Homepage</a
+        >
         <header class={`header ${cover ? "" : "header__noimage"}`}>
           <div>
             <p class="type_footnote">
@@ -74,6 +76,15 @@ const formatDate = (string) => {
         @media screen and (min-width: 800px) {
           padding-top: calc(var(--unit) * 8);
         }
+      }
+
+      .backlink span {
+        transition: transform var(--transition);
+      }
+
+      .backlink:hover span {
+        display: inline-block;
+        transform: translateX(calc(var(--unit) * -0.2));
       }
 
       @media screen and (min-width: 800px) {
