@@ -38,7 +38,7 @@ import content from "../content";
   .type_main:before {
     content: "";
     position: absolute;
-    background: url("/assets/quoting.png") center center;
+    background: url("/assets/cursor.png") center center;
     background-size: cover;
 
     width: calc(var(--unit) * 1);
@@ -56,6 +56,18 @@ import content from "../content";
     display: flex;
     align-items: center;
     color: var(--surface-1);
+  }
+
+  .hero_img {
+    display: none;
+
+    @media screen and (min-width: 800px) {
+      display: block;
+      position: absolute;
+      height: 100%;
+      top: calc(var(--unit) * -6);
+      right: calc(var(--unit) * -12);
+    }
   }
 
   @media screen and (min-width: 800px) {
