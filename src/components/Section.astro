@@ -229,7 +229,7 @@ const formatDate = (string) => {
           height: var(--height);
         }
 
-        @for $i from 2 through 10 {
+        @for $i from 2 through 6 {
           &:nth-child(#{$i}):hover ~ .list-item:last-child:before {
             // times of card's height + times of card's padding - padding;
             --y: calc(
