@@ -43,6 +43,7 @@ const formatDate = (string) => {
             cover && (
               <figure class="cover">
                 <img src={cover} alt={title} />
+                <img src={cover} alt={title} />
               </figure>
             )
           }
@@ -172,6 +173,10 @@ const formatDate = (string) => {
 
           @media (prefers-color-scheme: dark) {
             mix-blend-mode: color-burn;
+
+            &:first-child {
+              mix-blend-mode: saturation;
+            }
           }
         }
       }
