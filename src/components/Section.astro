@@ -217,24 +217,25 @@ const formatDate = (string) => {
 
     .list__horizontal {
       --height: calc(var(--unit) * 8.4);
+      --y: 0;
 
       .list-item {
         &:last-child:before {
           left: calc(var(--unit) * -1);
           right: calc(var(--unit) * -1);
-          top: 0;
+          top: var(--y);
 
           margin: calc(var(--unit) * -1) 0;
           height: var(--height);
         }
 
-        @for $i from 2 through 10 {
+        @for $i from 2 through 6 {
           &:nth-child(#{$i}):hover ~ .list-item:last-child:before {
             // times of card's height + times of card's padding - padding;
-            top: calc(
-              (var(--height) * ($i - 1)) +
-                (var(--unit) * 3 * ($i - 1)) -
-                (var(--unit) * 2 * ($i - 1))
+            --y: calc(
+              (var(--height) * (#{$i} - 1)) +
+                (var(--unit) * 3 * (#{$i} - 1)) -
+                (var(--unit) * 2 * (#{$i} - 1))
             );
           }
         }
