@@ -34,7 +34,7 @@ That said, putting all selectable elements in a visual hierarchy structure and u
 
 This approach makes it easier and faster to navigate through the selectable elements, plus it doesn't introduce any new aspects and it doesn't require any new learnings from the users.
 
-**The memory journey**
+## The memory journey 
 
 However, to make navigation even faster and make it even easier to memorize the "paths" the users take on the page, we need to picture that these selectable items belong to a group of items, or that there are "paths" to get to them. These issues lead to the following concepts:
 
@@ -86,14 +86,10 @@ const Sidebar = () => {
 };
 ```
 
-### Reference
-
-[Zeh Fernandes](https://twitter.com/zehf)
-
-[https://en.wikipedia.org/wiki/Method_of_loci](https://en.wikipedia.org/wiki/Method_of_loci)
-
 ---
 
 Check out the result of this article in the [GitHub](https://github.com/danilowoz/spatial-keyboard-navigation) or see the [preview](https://spatial-keyboard-navigation.vercel.app/).
 
 ---
+
+Thanks to [Zeh Fernandes](https://twitter.com/zehf) for all support.
