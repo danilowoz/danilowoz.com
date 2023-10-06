@@ -1,4 +1,4 @@
-# Astro
+# Astro123
 
 ## 🧞 Commands
 
