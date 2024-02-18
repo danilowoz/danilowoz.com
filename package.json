@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "yarn prettier -w ."
+    "format": "pnpm prettier -w ."
   },
   "devDependencies": {
     "astro": "^2.6.5",

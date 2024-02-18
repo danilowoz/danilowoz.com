@@ -1,9 +1,11 @@
 ---
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
+import Cards from "../components/Cards.astro";
 import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
 import MainHead from "../components/MainHead.astro";
+import List from "../components/List.astro"
 
 const blogsMd = await Astro.glob("./blog/*.md");
 const contentMd = await Astro.glob("../content/*.md");
@@ -35,8 +37,13 @@ const articles = content.filter(
     <main class="container grid">
       <Hero />
 
-      <Section title="Writing" data={articles} />
-      <Section title="Projects" data={projects} />
+      <Section title="Writing">
+      <List data={articles}  />
+      </Section>
+      <Section title="Projects">
+      <Cards data={projects} />
+      </Section>
+      
 
       <About />
 
