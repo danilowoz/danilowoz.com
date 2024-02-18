@@ -6,7 +6,9 @@ import Footer from "../components/Footer.astro";
 import MainHead from "../components/MainHead.astro";
 
 const blogsMd = await Astro.glob("./blog/*.md");
-const allData = blogsMd
+const contentMd = await Astro.glob("../content/*.md");
+
+const content = [...blogsMd,...contentMd]
   .sort((a, b) => {
     const dateA = new Date(a?.frontmatter.date ?? "").getTime();
     const dateB = new Date(b?.frontmatter.date ?? "").getTime();
@@ -15,19 +17,12 @@ const allData = blogsMd
   })
   .filter((item) => item.frontmatter.enabled !== false);
 
-const contentMd = await Astro.glob("../content/*.md");
-const projects = contentMd.sort((a, b) => {
-  const dateA = new Date(a?.frontmatter.date ?? "").getTime();
-  const dateB = new Date(b?.frontmatter.date ?? "").getTime();
-
-  return dateB - dateA;
-});
-
-const articles = allData.filter(
-  ({ frontmatter }) => frontmatter.type === "article"
+const projects = content.filter(
+  ({ frontmatter }) => frontmatter.type === "project"
 );
-const experiments = allData.filter(
-  ({ frontmatter }) => frontmatter.type === "experiments"
+
+const articles = content.filter(
+  ({ frontmatter }) => frontmatter.type === "article"
 );
 ---
 
@@ -41,7 +36,6 @@ const experiments = allData.filter(
       <Hero />
 
       <Section title="Writing" data={articles} />
-      <Section title="Experiments" data={experiments} vertical />
       <Section title="Projects" data={projects} />
 
       <About />

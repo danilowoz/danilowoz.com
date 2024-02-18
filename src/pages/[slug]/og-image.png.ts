@@ -46,7 +46,11 @@ export const get: APIRoute = async function get({ params, request, props }) {
           {
             type: "div",
             props: {
-              style: { fontSize: 64, width: "100%", fontFamily: "Merriweather" },
+              style: {
+                fontSize: 64,
+                width: "100%",
+                fontFamily: "Merriweather",
+              },
               children: props.title,
             },
           },
@@ -65,7 +69,13 @@ export const get: APIRoute = async function get({ params, request, props }) {
           {
             type: "div",
             props: {
-              style: { color: "rgb(83, 83, 83)", width: "100%", position: "absolute", bottom: "2em", left: "4em" },
+              style: {
+                color: "rgb(83, 83, 83)",
+                width: "100%",
+                position: "absolute",
+                bottom: "2em",
+                left: "4em",
+              },
               children: "danilowoz.com",
             },
           },

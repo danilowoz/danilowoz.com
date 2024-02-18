@@ -1,6 +1,6 @@
 ---
 layout: ../../layout/post.astro
-type: experiments
+type: project
 title: A React code editor
 tagline: What a code editor for beginner developers focused on ReactJS might look like.
 date: 2021-04-16T15:06:01.607Z

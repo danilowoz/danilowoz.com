@@ -1,6 +1,6 @@
 ---
 layout: ../../layout/post.astro
-type: experiments
+type: project
 title: Spatial keyboard navigation
 tagline: A visual hierarchy approach to navigate through selectable elements on a page.
 date: 2021-10-10T15:06:01.607Z
@@ -34,7 +34,7 @@ That said, putting all selectable elements in a visual hierarchy structure and u
 
 This approach makes it easier and faster to navigate through the selectable elements, plus it doesn't introduce any new aspects and it doesn't require any new learnings from the users.
 
-## The memory journey 
+## The memory journey
 
 However, to make navigation even faster and make it even easier to memorize the "paths" the users take on the page, we need to picture that these selectable items belong to a group of items, or that there are "paths" to get to them. These issues lead to the following concepts:
 
