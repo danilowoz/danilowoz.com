@@ -1,5 +1,5 @@
 ---
-const {  data } = Astro.props;
+const { data } = Astro.props;
 
 const formatDate = (string) => {
   const date = new Date(string);
@@ -11,50 +11,48 @@ const formatDate = (string) => {
   });
 };
 ---
+
 <ul class={`list list__horizontal`}>
-    {
-      data?.map((item) => {
-        const external = /https/.test(item.frontmatter.link);
-        const github = /github/.test(item.frontmatter.link);
+  {
+    data?.map((item) => {
+      const external = /https/.test(item.frontmatter.link);
+      const github = /github/.test(item.frontmatter.link);
 
-        const renderCallToAction = () => {
-          if (github) return "See on GitHub";
-          if (external) return "Access website";
+      const renderCallToAction = () => {
+        if (github) return "See on GitHub";
+        if (external) return "Access website";
 
-          return `${formatDate(item.frontmatter.date)}`;
-        };
+        return `${formatDate(item.frontmatter.date)}`;
+      };
 
-        return (
-          <li class="list-item">
-            <a
-              href={item.frontmatter.link ?? item.url}
-              {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
-            >
-              <article class="list-article">
-                <h1 class={`type_headline`}>
-                  {item.frontmatter.title}{" "}
-                  {/*item.frontmatter.tag && (
+      return (
+        <li class="list-item">
+          <a
+            href={item.frontmatter.link ?? item.url}
+            {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
+          >
+            <article class="list-article">
+              <h1 class={`type_headline`}>
+                {item.frontmatter.title}{" "}
+                {/*item.frontmatter.tag && (
                     <span class="type_footnote">{item.frontmatter.tag}</span>
                   ) */}
-                </h1>
-                <p class="surface-1">{item.frontmatter.tagline}</p>
-                <p class="type_footnote">{renderCallToAction()}</p>
-              </article>
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+              </h1>
+              <p class="surface-1">{item.frontmatter.tagline}</p>
+              <p class="type_footnote">{renderCallToAction()}</p>
+            </article>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
 
-  <style lang="scss">
- 
-
+<style lang="scss">
   /**
    * List
    */
   .list {
-
     a {
       display: block;
       transition: color var(--transition);
@@ -74,9 +72,6 @@ const formatDate = (string) => {
       margin-left: var(--unit);
       color: var(--color-brand);
     }
-
-    
-    
   }
 
   .list-item:not(:last-child) .list-article {
@@ -152,7 +147,5 @@ const formatDate = (string) => {
         }
       }
     }
-
-    
   }
 </style>

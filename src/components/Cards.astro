@@ -1,5 +1,5 @@
 ---
-const {  data } = Astro.props;
+const { data } = Astro.props;
 
 const formatDate = (string) => {
   const date = new Date(string);
@@ -12,47 +12,45 @@ const formatDate = (string) => {
 };
 ---
 
-  <ul class="cards">
-    {
-      data?.map((item) => {
-        const external = /https/.test(item.frontmatter.link);
-        const github = /github/.test(item.frontmatter.link);
+<ul class="cards">
+  {
+    data?.map((item) => {
+      const external = /https/.test(item.frontmatter.link);
+      const github = /github/.test(item.frontmatter.link);
 
-        const renderCallToAction = () => {
-          if (github) return "See on GitHub";
-          if (external) return "Access website";
+      const renderCallToAction = () => {
+        if (github) return "See on GitHub";
+        if (external) return "Access website";
 
-          return `${formatDate(item.frontmatter.date)}`;
-        };
+        return `${formatDate(item.frontmatter.date)}`;
+      };
 
-        return (
-          <li class="card-item">
-            <a
-              href={item.frontmatter.link ?? item.url}
-              {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
-            >
-              <article class="list-article">
-                <h1 class={`type_headline`}>
-                  {item.frontmatter.title}{" "}
-                  {item.frontmatter.tag && (
-                    <span class="type_footnote">{item.frontmatter.tag}</span>
-                  ) }
-                </h1>
-                <p class="surface-1">{item.frontmatter.tagline}</p>
-                <p class="type_footnote">{renderCallToAction()}</p>
-              </article>
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
-
+      return (
+        <li class="card-item">
+          <a
+            href={item.frontmatter.link ?? item.url}
+            {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
+          >
+            <article class="list-article">
+              <h1 class={`type_headline`}>
+                {item.frontmatter.title}{" "}
+                {item.frontmatter.tag && (
+                  <span class="type_footnote">{item.frontmatter.tag}</span>
+                )}
+              </h1>
+              <p class="surface-1">{item.frontmatter.tagline}</p>
+              <p class="type_footnote">{renderCallToAction()}</p>
+            </article>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
 
 <style lang="scss">
- 
   .cards {
-    display : grid;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: calc(var(--unit) * 2);
   }

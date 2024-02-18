@@ -7,12 +7,10 @@ const { title } = Astro.props;
     <h2 class={`type_main ${title.toLowerCase()} sticky`}>
       {title}
     </h2>
-
-    
   </div>
 
-<div class="section-content">
-  <slot />
+  <div class="section-content">
+    <slot />
   </div>
 </section>
 
@@ -98,8 +96,7 @@ const { title } = Astro.props;
   }
 
   .section-content {
-     position: relative;
+    position: relative;
     grid-column: 2/4;
   }
-
 </style>
