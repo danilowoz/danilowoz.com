@@ -19,9 +19,9 @@ const content = [...blogsMd, ...contentMd]
   })
   .filter((item) => item.frontmatter.enabled !== false);
 
-const projects = content.filter(
-  ({ frontmatter }) => frontmatter.type === "project"
-);
+const projects = content
+  .filter(({ frontmatter }) => frontmatter.type === "project")
+  .sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 
 const articles = content.filter(
   ({ frontmatter }) => frontmatter.type === "article"

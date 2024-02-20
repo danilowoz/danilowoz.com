@@ -6,6 +6,7 @@ tagline: A visual hierarchy approach to navigate through selectable elements on 
 date: 2021-10-10T15:06:01.607Z
 timeToRead: 2 min read
 cover: /images/spatial/cover.png
+order: 999999
 ---
 
 Check out the result of this article in the [GitHub](https://github.com/danilowoz/spatial-keyboard-navigation) or see the [preview](https://spatial-keyboard-navigation.vercel.app/).
