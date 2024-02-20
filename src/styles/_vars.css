@@ -1,11 +1,12 @@
 :root {
   /* Spacing */
   --unit: 1rem;
+  --body-gap: calc(var(--unit) * 8);
 
   /* Colors */
   --surface-0: #202020;
-  --surface-1: #838383;
-  --surface-2: #8d8d8d;
+  --surface-1: #646464;
+  --surface-2: #838383;
   --surface-3: #e8e8e8; /* Border */
   --surface-4: #f9f9f9; /* Low background */
   --color-brand: #003dee;

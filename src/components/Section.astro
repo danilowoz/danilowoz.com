@@ -17,12 +17,12 @@ const { title } = Astro.props;
 <style lang="scss">
   .section {
     grid-column: 1/4;
-    padding-bottom: 15%;
-    padding-top: 15%;
+    padding-bottom: var(--body-gap);
+    padding-top: var(--body-gap);
     position: relative;
 
     &:first-of-type {
-      margin-top: -15%;
+      margin-top: calc(var(--body-gap) * -1);
     }
   }
 
