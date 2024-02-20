@@ -32,12 +32,7 @@ const formatDate = (string) => {
             {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
           >
             <article class="list-article">
-              <h1 class={`type_headline`}>
-                {item.frontmatter.title}{" "}
-                {/*item.frontmatter.tag && (
-                    <span class="type_footnote">{item.frontmatter.tag}</span>
-                  ) */}
-              </h1>
+              <h1 class={`type_headline`}>{item.frontmatter.title} </h1>
               <p class="surface-1">{item.frontmatter.tagline}</p>
               <p class="type_footnote">{renderCallToAction()}</p>
             </article>
@@ -105,15 +100,13 @@ const formatDate = (string) => {
 
         background: var(--surface-2);
         opacity: 0;
-        border-radius: calc(var(--unit) * 0.4);
+        border-radius: var(--radius);
 
         transform: scale(1.04);
 
         pointer-events: none;
         transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
         border: 1px solid var(--surface-0);
-
-        box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
       }
     }
 

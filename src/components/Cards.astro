@@ -31,15 +31,18 @@ const formatDate = (string) => {
             href={item.frontmatter.link ?? item.url}
             {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
           >
-            <article class="list-article">
-              <h1 class={`type_headline`}>
-                {item.frontmatter.title}{" "}
-                {item.frontmatter.tag && (
-                  <span class="type_footnote">{item.frontmatter.tag}</span>
-                )}
-              </h1>
-              <p class="surface-1">{item.frontmatter.tagline}</p>
-              <p class="type_footnote">{renderCallToAction()}</p>
+            <article>
+              <div class="card-figure" />
+              <div class="card-content">
+                <h1 class={`type_headline`}>
+                  {item.frontmatter.title}{" "}
+                  {item.frontmatter.tag && (
+                    <span class="type_footnote">{item.frontmatter.tag}</span>
+                  )}
+                </h1>
+                <p class="surface-1">{item.frontmatter.tagline}</p>
+                <p class="type_footnote color-brand">{renderCallToAction()}</p>
+              </div>
             </article>
           </a>
         </li>
@@ -56,5 +59,26 @@ const formatDate = (string) => {
   }
 
   .card-item {
+    border: 1px solid var(--surface-3);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .card-figure {
+    width: 100%;
+    padding-bottom: 60%;
+    background: var(--surface-4);
+
+    background-image: radial-gradient(#e0e0e0 1px, transparent 0);
+    background-size: calc(100% / 10) calc(100% / 6);
+    border-bottom: 1px solid var(--surface-3);
+  }
+
+  .card-content {
+    padding: calc(var(--unit) * 1);
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--unit) * 1);
   }
 </style>
