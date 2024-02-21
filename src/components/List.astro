@@ -53,7 +53,6 @@ const formatDate = (string) => {
       transition: color var(--transition);
 
       * {
-        display: block;
         transition: color var(--transition);
       }
 
@@ -77,8 +76,10 @@ const formatDate = (string) => {
     }
   }
 
-  .list-article > *:not(:last-child) {
-    margin-bottom: calc(var(--unit) * 0.5);
+  .list-article {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--unit) * 0.5);
   }
 
   /**
