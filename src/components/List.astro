@@ -88,8 +88,10 @@ const formatDate = (string) => {
     .list-item {
       &:hover ~ &:last-child:before,
       &:hover:last-child:before {
-        opacity: 0.05;
+        opacity: 1;
+
         transform: scale(1);
+        filter: blur(0px);
       }
 
       &:last-child:before {
@@ -97,16 +99,18 @@ const formatDate = (string) => {
         display: block;
 
         position: absolute;
+        z-index: -1;
 
-        background: var(--surface-2);
+        background: var(--surface-4);
         opacity: 0;
         border-radius: var(--radius);
 
         transform: scale(1.04);
+        filter: blur(10px);
 
         pointer-events: none;
         transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-        border: 1px solid var(--surface-0);
+        border: 1px solid var(--surface-3);
       }
     }
 

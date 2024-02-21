@@ -6,6 +6,7 @@ tagline: What a code editor for beginner developers focused on ReactJS might loo
 date: 2021-04-16T15:06:01.607Z
 timeToRead: 2 min read
 cover: /images/code-editor/cover.png
+# image: /images/code-editor.png
 order: 999
 ---
 

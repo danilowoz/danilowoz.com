@@ -1,15 +1,5 @@
 ---
 const { data } = Astro.props;
-
-const formatDate = (string) => {
-  const date = new Date(string);
-
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-};
 ---
 
 <ul class="cards">
@@ -51,7 +41,11 @@ const formatDate = (string) => {
             {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
           >
             <article>
-              <div class="card-figure" />
+              {item.frontmatter.image && (
+                <div class="card-figure">
+                  <img src={item.frontmatter.image} />
+                </div>
+              )}
               <div class="card-content">
                 <h1 class={`type_headline`}>
                   {item.frontmatter.title}{" "}
@@ -74,25 +68,134 @@ const formatDate = (string) => {
 
 <style lang="scss">
   .cards {
+    --gap: calc(var(--unit) * 2);
+    --height: 354px;
+    --width: 290px;
+
+    --y: 0;
+    --x1: -1px;
+    --x2: calc(var(--width) + var(--gap));
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: calc(var(--unit) * 2);
+    gap: var(--gap);
+    position: relative;
+
+    @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .card-item {
-    border: 1px solid var(--surface-3);
     border-radius: var(--radius);
     overflow: hidden;
+    border: 1px solid transparent;
+    transition: border var(--transition);
+
+    * {
+      display: block;
+      transition: color var(--transition);
+    }
+
+    &:hover {
+      > *:not(.color-brand) {
+        color: var(--surface-0);
+      }
+    }
+
+    /**
+      * Hover
+      */
+    @media screen and (min-width: 1000px) {
+      height: var(--height);
+      width: var(--width);
+
+      &:last-child:before {
+        left: var(--x1);
+        right: var(--x2);
+        top: var(--y);
+
+        height: var(--height);
+      }
+
+      &:hover ~ &:last-child:before,
+      &:hover:last-child:before {
+        opacity: 1;
+
+        transform: scale(1);
+        filter: blur(0px);
+      }
+
+      &:last-child:before {
+        content: "";
+        display: block;
+
+        position: absolute;
+        z-index: -1;
+
+        background: var(--surface-4);
+        border-radius: var(--radius);
+
+        opacity: 0;
+        transform: scale(1.04);
+        filter: blur(10px);
+
+        pointer-events: none;
+        transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+        border: 1px solid var(--surface-3);
+      }
+
+      --columns: 2;
+
+      // Left column
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}):hover ~ .card-item:last-child:before {
+          --multiplier: calc(#{$i} - 1);
+
+          --gap-distance: calc(
+            (var(--gap) / var(--columns)) * var(--multiplier)
+          );
+          --height-distance: calc(
+            (var(--height) / var(--columns)) * var(--multiplier)
+          );
+
+          --y: calc(var(--height-distance) + var(--gap-distance));
+        }
+      }
+
+      // Right column
+      @for $i from 2 through 4 {
+        &:nth-child(#{$i}):nth-child(even):hover
+          ~ .card-item:last-child:before {
+          --multiplier: calc(#{$i} - 2);
+
+          --x1: calc(var(--width) + var(--gap) - 1px);
+          --x2: 0;
+        }
+      }
+
+      &:last-child:hover:before {
+        top: calc(100% - var(--height) + var(--unit) * 2);
+      }
+    }
   }
 
   .card-figure {
     width: 100%;
-    padding-bottom: 60%;
-    background: var(--surface-4);
+    aspect-ratio: 1.6;
+    position: relative;
+    border-radius: var(--radius);
 
-    background-image: radial-gradient(#e0e0e0 1px, transparent 0);
+    background: var(--surface-4);
+    background-image: radial-gradient(#d1d0d0 1px, transparent 0);
     background-size: calc(100% / 10) calc(100% / 6);
-    border-bottom: 1px solid var(--surface-3);
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius);
+    }
   }
 
   .card-content {
