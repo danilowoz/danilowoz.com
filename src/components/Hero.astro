@@ -80,29 +80,30 @@ import content from "../content";
   }
 
   .icon {
-    animation: 1s 3s travel ease forwards;
-
-    @keyframes travel {
-      0% {
-        transform: translateY(0);
-      }
-
-      100% {
-        transform: translateY(80px) translateX(394px);
-      }
-    }
-
     display: block;
     width: calc(var(--unit) * 1);
     height: calc(var(--unit) * 1);
     left: calc(var(--unit) * -1.4);
+
+    @media screen and (min-width: 1000px) {
+      animation: 1s 3s travel ease forwards;
+
+      @keyframes travel {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(80px) translateX(394px);
+        }
+      }
+    }
 
     span {
       content: "";
       position: absolute;
       background: url("/assets/cursor.png") center center;
       background-size: cover;
-      animation: 10s float ease infinite;
 
       width: calc(var(--unit) * 1);
       height: calc(var(--unit) * 1);
@@ -114,43 +115,48 @@ import content from "../content";
         left: calc(var(--unit) * -2.5);
       }
 
-      @keyframes float {
-        0% {
-          transform: rotate(0deg) translateX(0px) rotate(0deg);
+      @media screen and (min-width: 1000px) {
+        animation: 10s float ease infinite;
+        @keyframes float {
+          0% {
+            transform: rotate(0deg) translateX(0px) rotate(0deg);
+          }
+          50% {
+            transform: rotate(-180deg) translateX(10px) rotate(180deg);
+          }
+          100% {
+            transform: rotate(0deg) translateX(0px) rotate(0deg);
+          }
         }
-        50% {
-          transform: rotate(-180deg) translateX(10px) rotate(180deg);
+      }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .type-animated {
+      @for $i from 0 through 13 {
+        &:nth-child(#{$i}) {
+          animation: 0s #{3 + ($i/20)}s select ease forwards;
         }
+      }
+
+      @for $i from 13 through 34 {
+        &:nth-child(#{$i}) {
+          animation: 0s 3.65s select ease forwards;
+        }
+      }
+
+      @for $i from 34 through 57 {
+        &:nth-child(#{$i}) {
+          animation: 0s #{3.65 + (($i - 34) / 200)}s select ease forwards;
+        }
+      }
+
+      @keyframes select {
         100% {
-          transform: rotate(0deg) translateX(0px) rotate(0deg);
+          background-color: rgba(255, 225, 0, 0.3);
         }
       }
-    }
-  }
-
-  .type-animated {
-    @for $i from 0 through 13 {
-      &:nth-child(#{$i}) {
-        animation: 0s #{3 + ($i/20)}s select ease forwards;
-      }
-    }
-
-    @for $i from 13 through 34 {
-      &:nth-child(#{$i}) {
-        animation: 0s 3.65s select ease forwards;
-      }
-    }
-
-    @for $i from 34 through 57 {
-      &:nth-child(#{$i}) {
-        animation: 0s #{3.65 + (($i - 34) / 200)}s select ease forwards;
-      }
-    }
-  }
-
-  @keyframes select {
-    100% {
-      background-color: rgba(255, 225, 0, 0.3);
     }
   }
 </style>
