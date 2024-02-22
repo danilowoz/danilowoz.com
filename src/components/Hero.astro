@@ -6,7 +6,12 @@ import content from "../content";
 <header class="hero">
   <div class="grid">
     <h1 class="type_main">
-      {content.hero.title}
+      <span class="icon"><span></span></span>
+      {
+        content.hero.title
+          .split("")
+          .map((c) => <span class="type-animated">{c}</span>)
+      }
       <span class="surface-2">{content.hero.headline}</span>
     </h1>
 
@@ -35,23 +40,6 @@ import content from "../content";
     margin-bottom: 3rem;
   }
 
-  .type_main:before {
-    content: "";
-    position: absolute;
-    background: url("/assets/cursor.png") center center;
-    background-size: cover;
-
-    width: calc(var(--unit) * 1);
-    height: calc(var(--unit) * 1);
-    left: calc(var(--unit) * -1.4);
-
-    @media screen and (min-width: 800px) {
-      width: calc(var(--unit) * 1.5);
-      height: calc(var(--unit) * 1.5);
-      left: calc(var(--unit) * -2.5);
-    }
-  }
-
   .hero_social {
     display: flex;
     align-items: center;
@@ -77,17 +65,8 @@ import content from "../content";
 
     .hero {
       grid-column: 1/4;
-
       margin-bottom: 0;
-
-      @supports not (aspect-ratio) {
-        height: 500px;
-      }
-
-      @supports (aspect-ratio) {
-        aspect-ratio: 1.6;
-        height: auto;
-      }
+      aspect-ratio: 1.6;
     }
 
     .type_main {
@@ -97,6 +76,87 @@ import content from "../content";
 
     .type_sub {
       grid-column: 1/2;
+    }
+  }
+
+  .icon {
+    display: block;
+    width: calc(var(--unit) * 1);
+    height: calc(var(--unit) * 1);
+    left: calc(var(--unit) * -1.4);
+
+    @media screen and (min-width: 1000px) {
+      animation: 1s 3s travel ease forwards;
+
+      @keyframes travel {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(80px) translateX(394px);
+        }
+      }
+    }
+
+    span {
+      content: "";
+      position: absolute;
+      background: url("/assets/cursor.png") center center;
+      background-size: cover;
+
+      width: calc(var(--unit) * 1);
+      height: calc(var(--unit) * 1);
+      left: calc(var(--unit) * -1.4);
+
+      @media screen and (min-width: 800px) {
+        width: calc(var(--unit) * 1.5);
+        height: calc(var(--unit) * 1.5);
+        left: calc(var(--unit) * -2.5);
+      }
+
+      @media screen and (min-width: 1000px) {
+        animation: 10s float ease infinite;
+        @keyframes float {
+          0% {
+            transform: rotate(0deg) translateX(0px) rotate(0deg);
+          }
+          50% {
+            transform: rotate(-180deg) translateX(10px) rotate(180deg);
+          }
+          100% {
+            transform: rotate(0deg) translateX(0px) rotate(0deg);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .type-animated {
+      @for $i from 0 through 13 {
+        &:nth-child(#{$i}) {
+          animation: 0s #{3 + ($i/20)}s select ease forwards;
+        }
+      }
+
+      @for $i from 13 through 34 {
+        &:nth-child(#{$i}) {
+          animation: 0s 3.65s select ease forwards;
+        }
+      }
+
+      @for $i from 34 through 57 {
+        &:nth-child(#{$i}) {
+          animation: 0s #{3.65 + (($i - 34) / 200)}s select ease forwards;
+        }
+      }
+
+      @keyframes select {
+        100% {
+          background-color: rgba(255, 225, 0, 0.3);
+        }
+      }
     }
   }
 </style>

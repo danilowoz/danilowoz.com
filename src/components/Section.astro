@@ -1,70 +1,28 @@
 ---
-const { title, data, vertical } = Astro.props;
-
-const formatDate = (string) => {
-  const date = new Date(string);
-
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-};
+const { title } = Astro.props;
 ---
 
 <section class={`section grid ${title.toLowerCase()}`} id={title.toLowerCase()}>
   <div>
-    <h2 class={`type_main ${title.toLowerCase()} ${vertical ? "" : "sticky"}`}>
+    <h2 class={`type_main ${title.toLowerCase()} sticky`}>
       {title}
     </h2>
   </div>
 
-  <ul class={`list ${vertical ? "list__vertical" : "list__horizontal"}`}>
-    {
-      data?.map((item) => {
-        const external = /https/.test(item.frontmatter.link);
-        const github = /github/.test(item.frontmatter.link);
-
-        const renderCallToAction = () => {
-          if (github) return "See on GitHub";
-          if (external) return "Access website";
-
-          return `${formatDate(item.frontmatter.date)}`;
-        };
-
-        return (
-          <li class="list-item">
-            <a
-              href={item.frontmatter.link ?? item.url}
-              {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
-            >
-              <article class="list-article">
-                <h1 class={`type_headline`}>
-                  {item.frontmatter.title}{" "}
-                  {/*item.frontmatter.tag && (
-                    <span class="type_footnote">{item.frontmatter.tag}</span>
-                  ) */}
-                </h1>
-                <p class="surface-1">{item.frontmatter.tagline}</p>
-                <p class="type_footnote">{renderCallToAction()}</p>
-              </article>
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+  <div class="section-content">
+    <slot />
+  </div>
 </section>
 
 <style lang="scss">
   .section {
     grid-column: 1/4;
-    padding-bottom: 15%;
-    padding-top: 15%;
+    padding-bottom: var(--body-gap);
+    padding-top: var(--body-gap);
     position: relative;
 
     &:first-of-type {
-      margin-top: -15%;
+      margin-top: calc(var(--body-gap) * -1);
     }
   }
 
@@ -137,147 +95,8 @@ const formatDate = (string) => {
     }
   }
 
-  /**
-   * List
-   */
-  .list {
+  .section-content {
     position: relative;
     grid-column: 2/4;
-
-    a {
-      display: block;
-      transition: color var(--transition);
-
-      * {
-        display: block;
-        transition: color var(--transition);
-      }
-
-      &:hover * {
-        color: var(--surface-0);
-      }
-    }
-
-    .type_headline span {
-      display: inline-block;
-      margin-left: var(--unit);
-      color: var(--color-brand);
-    }
-
-    @media screen and (min-width: 800px) {
-      &.list__vertical {
-        display: flex;
-        gap: calc(var(--unit) * 4);
-      }
-    }
-  }
-
-  .list-item:not(:last-child) .list-article {
-    padding-bottom: calc(var(--unit) * 2);
-
-    @media screen and (min-width: 800px) {
-      padding-bottom: calc(var(--unit) * 3);
-    }
-  }
-
-  .list-article > *:not(:last-child) {
-    margin-bottom: calc(var(--unit) * 0.5);
-  }
-
-  /**
-   * Hover
-   */
-  @media screen and (min-width: 1000px) {
-    .list-item {
-      &:hover ~ &:last-child:before,
-      &:hover:last-child:before {
-        opacity: 0.05;
-        transform: scale(1);
-      }
-
-      &:last-child:before {
-        content: "";
-        display: block;
-
-        position: absolute;
-
-        background: var(--surface-2);
-        opacity: 0;
-        border-radius: calc(var(--unit) * 0.4);
-
-        transform: scale(1.04);
-
-        pointer-events: none;
-        transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-        border: 1px solid var(--surface-0);
-
-        box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
-      }
-    }
-
-    .list__horizontal {
-      --height: calc(var(--unit) * 8.4);
-      --y: 0;
-
-      .list-item {
-        &:last-child:before {
-          left: calc(var(--unit) * -1);
-          right: calc(var(--unit) * -1);
-          top: var(--y);
-
-          margin: calc(var(--unit) * -1) 0;
-          height: var(--height);
-        }
-
-        @for $i from 2 through 6 {
-          &:nth-child(#{$i}):hover ~ .list-item:last-child:before {
-            // times of card's height + times of card's padding - padding;
-            --y: calc(
-              (var(--height) * (#{$i} - 1)) +
-                (var(--unit) * 3 * (#{$i} - 1)) -
-                (var(--unit) * 2 * (#{$i} - 1))
-            );
-          }
-        }
-
-        &:last-child:hover:before {
-          top: calc(100% - var(--height) + var(--unit) * 2);
-        }
-      }
-    }
-
-    .list__vertical {
-      --width: calc(var(--unit) * 19);
-
-      .list-item {
-        .list-article {
-          padding-bottom: 0;
-        }
-
-        &:last-child:before {
-          top: calc(var(--unit) * -1);
-          bottom: calc(var(--unit) * -1);
-          left: 0;
-
-          margin: 0 calc(var(--unit) * -1);
-          width: var(--width);
-        }
-
-        @for $i from 2 through 10 {
-          &:nth-child(#{$i}):hover ~ .list-item:last-child:before {
-            // times of card's width + times of card's padding - padding;
-            left: calc(
-              (var(--width) * ($i - 1)) +
-                (var(--unit) * 3 * ($i - 1)) -
-                (var(--unit) * 2 * ($i - 1))
-            );
-          }
-        }
-
-        &:last-child:hover:before {
-          left: calc(100% - var(--width) + var(--unit) * 2);
-        }
-      }
-    }
   }
 </style>

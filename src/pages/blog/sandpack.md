@@ -12,7 +12,7 @@ tag: Learning
 
 From a particular moment in my career, React.js started becoming omnipresent in the front-end community. Seeing so much innovation in the open-source community cultivated a strong desire in me to contribute to something real with a positive impact. Something that could last and possibly make the world a bit fairer.
 
-This internal force manifested in impulsive actions and made me go beyond to pursue my goals. Maybe unconsciously, I knew when I joined the CodeSandbox team that its values (to be accessible, collaborative, and empowering) could give me the chance to achieve this goal in my career. 
+This internal force manifested in impulsive actions and made me go beyond to pursue my goals. Maybe unconsciously, I knew when I joined the CodeSandbox team that its values (to be accessible, collaborative, and empowering) could give me the chance to achieve this goal in my career.
 
 Never would I have imagined getting the chance to contribute to the long-awaited new React.js documentation, which may be the hugest thing I've done in the open-source space[^1]. So, I couldn't have been more motivated when CodeSandbox set this challenge for me and the team.
 
@@ -49,6 +49,7 @@ Monaco is a great editor. It powers VS Code and introduces many essential featur
 The first Sandpack version was based on the bundler used by CodeSandbox.io. However, it included many unnecessary features for this new React.js sandbox, including postCSS integration, support for other frameworks, outdated Babel plugins, etc.
 
 That is why the team came up with a new solution built from scratch shaped to be modularized and only load, transpile and evaluate what the sandbox would use. This resulted in a more streamlined and faster solution. So to get to know this solution, let's break it down into two main components:
+
 - Sandpack CDN [^2]: With a custom CDN we could skip the transpiling step for dependencies by caching them in a custom-built solution. Plus, it optimizes npm modules for browsers by keeping the full registry on disk and serving them in a msgpack bundle to clients. Its speedy resolver uses the in-memory/on-disk npm registry.
 - Sandpack Bundler [^3]: To start, it uses fewer resources by avoiding fetching unnecessary files. Moreover, it's significantly faster, primarily due to a new architecture that allows it to lazily load framework support, but also because it introduces support to the latest transpiler version, and removes many bottlenecks observed on the previous bundler.
 
@@ -62,7 +63,7 @@ We understood that console is still the most friendly way to debug code and intr
 
 The release of the new React hooks API also brought along a set of ESLint rules. So, an integration between sandboxes and linting the current code was fundamental to providing a stable and safe environment for learning. Fortunately, we could run ESLint on the client side. This made it possible to execute a set of rules and build a custom plugin on CodeMirror to highlight any errors right on the code editor.
 
-## Wrap up 
+## Wrap up
 
 I have had the experience of building many projects throughout my career. Unfortunately, a few of them haven't gone into production, and I struggled to feel invested in them. This less-than-ideal situation is one that many developers are familiar with. However, it might be different when it comes to the open-source world, where contributing to projects implies sharing the project's values and doing everything you can for it to work out.
 
@@ -71,6 +72,7 @@ I can get that the money matters. You can't pay bills with open-source stars or 
 During this journey: **as a developer, I’ve learned I'm not an impostor; as a designer, I understand that the front-end area seeks more user-oriented projects; as an open-source maintainer, I realize I can contribute to big projects; and as a person, I took a step.**
 
 ## Thanks to
+
 [Alex](https://twitter.com/alexnmoldovan), [Ives](https://twitter.com/CompuIves), [Jasper](https://twitter.com/JasperDeMoor), and the whole CodeSandbox team.
 
 [^1]: [React.dev: docs contributors](https://react.dev/community/docs-contributors)

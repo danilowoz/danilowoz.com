@@ -1,11 +1,13 @@
 ---
 layout: ../../layout/post.astro
-type: experiments
+type: project
 title: A React code editor
 tagline: What a code editor for beginner developers focused on ReactJS might look like.
 date: 2021-04-16T15:06:01.607Z
 timeToRead: 2 min read
 cover: /images/code-editor/cover.png
+# image: /images/code-editor.png
+order: 999
 ---
 
 Have we already exhausted the possibilities of how we interact with our favorite code editor? Have we got so used to how we code to achieve a certain goal we can no longer see any way to involve it?

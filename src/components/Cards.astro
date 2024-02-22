@@ -1,0 +1,199 @@
+---
+const { data } = Astro.props;
+---
+
+<script>
+  const container: HTMLDivElement = document.querySelector(".cards");
+  const cards = document.querySelectorAll(".card-item");
+  const hoverElement = document.querySelector(".card-item__hover");
+
+  if (container && cards) {
+    function onHover(event: MouseEvent) {
+      const target = event.target as unknown as HTMLLIElement;
+      const { height, width } = target.getBoundingClientRect();
+      container.style.setProperty("--height", height + "px");
+      container.style.setProperty("--width", width + 1 + "px");
+      container.style.setProperty("--x", target.offsetLeft - 1 + "px");
+      container.style.setProperty("--y", target.offsetTop + "px");
+
+      hoverElement.classList.add("active");
+    }
+
+    cards.forEach((element: HTMLDivElement) => {
+      element.addEventListener("mouseenter", onHover);
+    });
+
+    container.addEventListener("mouseleave", () => {
+      hoverElement.classList.remove("active");
+    });
+  }
+</script>
+
+<ul class="cards">
+  {
+    data?.map((item) => {
+      const external = /https/.test(item.frontmatter.link);
+      const github = /github/.test(item.frontmatter.link);
+
+      const renderCallToAction = () => {
+        if (github) return "Go to GitHub";
+        if (external)
+          return (
+            <>
+              <span>Access</span>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </>
+          );
+
+        return "Read more";
+      };
+
+      return (
+        <li class="card-item">
+          <a
+            href={item.frontmatter.link ?? item.url}
+            {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
+          >
+            <article>
+              {item.frontmatter.image && (
+                <div class="card-figure">
+                  <img src={item.frontmatter.image} />
+                </div>
+              )}
+              <div class="card-content">
+                <h1 class={`type_headline`}>
+                  {item.frontmatter.title}{" "}
+                  {item.frontmatter.tag && (
+                    <span class="type_footnote">{item.frontmatter.tag}</span>
+                  )}
+                </h1>
+                <p class="surface-1">{item.frontmatter.tagline}</p>
+                <p class="card-cta type_footnote color-brand">
+                  {renderCallToAction()}
+                </p>
+              </div>
+            </article>
+          </a>
+        </li>
+      );
+    })
+  }
+
+  <div class="card-item__hover"></div>
+</ul>
+
+<style lang="scss">
+  .cards {
+    --gap: calc(var(--unit) * 2);
+
+    display: grid;
+    gap: var(--gap);
+    position: relative;
+
+    @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .card-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: border var(--transition);
+
+    * {
+      display: block;
+      transition: color var(--transition);
+    }
+
+    &:hover {
+      > *:not(.color-brand) {
+        color: var(--surface-0);
+      }
+    }
+  }
+
+  /**
+      * Hover
+      */
+  @media screen and (min-width: 1000px) {
+    .card-item__hover {
+      height: var(--height);
+      width: var(--width);
+
+      position: absolute;
+      z-index: -1;
+      left: var(--x);
+      top: var(--y);
+
+      background: var(--surface-4);
+      border-radius: var(--radius);
+
+      opacity: 0;
+      transform: scale(1.04);
+      filter: blur(10px);
+
+      pointer-events: none;
+      transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+      border: 1px solid var(--surface-3);
+
+      &.active {
+        opacity: 1;
+
+        transform: scale(1);
+        filter: blur(0px);
+      }
+    }
+  }
+
+  .card-figure {
+    width: 100%;
+    aspect-ratio: 1.6;
+    position: relative;
+    border-radius: var(--radius);
+
+    background: var(--surface-4);
+    background-image: radial-gradient(#d1d0d0 1px, transparent 0);
+    background-size: calc(100% / 10) calc(100% / 6);
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius);
+    }
+  }
+
+  .card-content {
+    padding: calc(var(--unit) * 1);
+    text-wrap: balance;
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--unit) * 0.5);
+  }
+
+  .card-cta {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    svg {
+      width: 1em;
+    }
+  }
+</style>
