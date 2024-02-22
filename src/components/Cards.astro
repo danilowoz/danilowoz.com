@@ -2,6 +2,33 @@
 const { data } = Astro.props;
 ---
 
+<script>
+  const container: HTMLDivElement = document.querySelector(".cards");
+  const cards = document.querySelectorAll(".card-item");
+  const hoverElement = document.querySelector(".card-item__hover");
+
+  if (container && cards) {
+    function onHover(event: MouseEvent) {
+      const target = event.target as unknown as HTMLLIElement;
+      const { height, width } = target.getBoundingClientRect();
+      container.style.setProperty("--height", height + "px");
+      container.style.setProperty("--width", width + "px");
+      container.style.setProperty("--x", target.offsetLeft + "px");
+      container.style.setProperty("--y", target.offsetTop + "px");
+
+      hoverElement.classList.add("active");
+    }
+
+    cards.forEach((element: HTMLDivElement) => {
+      element.addEventListener("mouseenter", onHover);
+    });
+
+    container.addEventListener("mouseleave", () => {
+      hoverElement.classList.remove("active");
+    });
+  }
+</script>
+
 <ul class="cards">
   {
     data?.map((item) => {
@@ -64,17 +91,13 @@ const { data } = Astro.props;
       );
     })
   }
+
+  <div class="card-item__hover"></div>
 </ul>
 
 <style lang="scss">
   .cards {
     --gap: calc(var(--unit) * 2);
-    --height: 338px;
-    --width: 290px;
-
-    --y: 0;
-    --x1: -1px;
-    --x2: calc(var(--width) + var(--gap));
 
     display: grid;
     gap: var(--gap);
@@ -101,80 +124,37 @@ const { data } = Astro.props;
         color: var(--surface-0);
       }
     }
+  }
 
-    /**
+  /**
       * Hover
       */
-    @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1000px) {
+    .card-item__hover {
       height: var(--height);
       width: var(--width);
 
-      &:last-child:before {
-        left: var(--x1);
-        right: var(--x2);
-        top: var(--y);
+      position: absolute;
+      z-index: -1;
+      left: var(--x);
+      top: var(--y);
 
-        height: var(--height);
-      }
+      background: var(--surface-4);
+      border-radius: var(--radius);
 
-      &:hover ~ &:last-child:before,
-      &:hover:last-child:before {
+      opacity: 0;
+      transform: scale(1.04);
+      filter: blur(10px);
+
+      pointer-events: none;
+      transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+      border: 1px solid var(--surface-3);
+
+      &.active {
         opacity: 1;
 
         transform: scale(1);
         filter: blur(0px);
-      }
-
-      &:last-child:before {
-        content: "";
-        display: block;
-
-        position: absolute;
-        z-index: -1;
-
-        background: var(--surface-4);
-        border-radius: var(--radius);
-
-        opacity: 0;
-        transform: scale(1.04);
-        filter: blur(10px);
-
-        pointer-events: none;
-        transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-        border: 1px solid var(--surface-3);
-      }
-
-      --columns: 2;
-
-      // Left column
-      @for $i from 1 through 6 {
-        &:nth-child(#{$i}):hover ~ .card-item:last-child:before {
-          --multiplier: calc(#{$i} - 1);
-
-          --gap-distance: calc(
-            (var(--gap) / var(--columns)) * var(--multiplier)
-          );
-          --height-distance: calc(
-            (var(--height) / var(--columns)) * var(--multiplier)
-          );
-
-          --y: calc(var(--height-distance) + var(--gap-distance));
-        }
-      }
-
-      // Right column
-      @for $i from 2 through 4 {
-        &:nth-child(#{$i}):nth-child(even):hover
-          ~ .card-item:last-child:before {
-          --multiplier: calc(#{$i} - 2);
-
-          --x1: calc(var(--width) + var(--gap) - 1px);
-          --x2: 0;
-        }
-      }
-
-      &:last-child:hover:before {
-        top: calc(100% - var(--height) + var(--unit) * 2);
       }
     }
   }
