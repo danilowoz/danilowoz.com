@@ -12,8 +12,8 @@ const { data } = Astro.props;
       const target = event.target as unknown as HTMLLIElement;
       const { height, width } = target.getBoundingClientRect();
       container.style.setProperty("--height", height + "px");
-      container.style.setProperty("--width", width + "px");
-      container.style.setProperty("--x", target.offsetLeft + "px");
+      container.style.setProperty("--width", width + 1 + "px");
+      container.style.setProperty("--x", target.offsetLeft - 1 + "px");
       container.style.setProperty("--y", target.offsetTop + "px");
 
       hoverElement.classList.add("active");
