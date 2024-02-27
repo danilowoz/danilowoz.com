@@ -2,12 +2,12 @@
 layout: ../../layout/post.astro
 type: article
 title: Blockchain and React Native applications
-tagline: A perspective of what it was like to create a Crypto Currency wallet using React Native.
+tagline: An personal perspective of what it was like to create a Crypto Currency wallet using React Native and its challenges.
 date: 2020-07-21
 timeToRead: 8 min read
 cover: /images/bringing-your-blockchain-business-to-react-native/cover.png
 tag: Retrospective
-enabled: false
+enabled: true
 ---
 
 Crypto wallets and Decentralised Applications ([dApp's](https://blockgeeks.com/guides/dapps/)) are becoming more popular each day. It is already possible to find a lot of industries adopting a decentralized approach: financial business, social networks, insurance, supply chain, only to mention a few.
