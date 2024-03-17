@@ -1,9 +1,11 @@
 import { defineConfig } from "astro/config";
 import robotsTxt from "astro-robots-txt";
+import react from "@astrojs/react";
 
 export default defineConfig({
   site: "https://danilowoz",
   integrations: [
+    react(),
     robotsTxt({
       sitemap: false,
     }),

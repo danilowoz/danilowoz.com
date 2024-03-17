@@ -1,3 +1,6 @@
 {
-  "moduleResolution": "node"
+  "compilerOptions": {
+    "jsx": "react",
+    "moduleResolution": "node"
+  }
 }

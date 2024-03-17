@@ -6,6 +6,7 @@ import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
 import MainHead from "../components/MainHead.astro";
 import List from "../components/List.astro";
+import UIGallery from "../components/UIGallery.astro";
 
 const blogsMd = await Astro.glob("./blog/*.md");
 const contentMd = await Astro.glob("../content/*.md");
@@ -37,12 +38,18 @@ const articles = content.filter(
     <main class="container grid">
       <Hero />
 
+      <Section title="UI garden">
+        <UIGallery />
+      </Section>
+
       <Section title="Writing">
         <List data={articles} />
       </Section>
+
       <Section title="Projects">
         <Cards data={projects} />
       </Section>
+
 
       <About />
 
