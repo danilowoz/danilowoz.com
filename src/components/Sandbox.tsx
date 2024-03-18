@@ -48,13 +48,20 @@ export const Sandbox: React.FC<{
       }}
     >
       <SandpackLayout>
-        <SandpackPreview showOpenInCodeSandbox={false} />
+        <SandpackPreview
+          showRefreshButton={false}
+          showOpenInCodeSandbox={false}
+        />
       </SandpackLayout>
 
       <div className="sandbox-details">
-        <p className="sandbox-details__title surface-0">{title}</p>
+        <div className="sandbox-details__content">
+          <p className="sandbox-details__title type_headline surface-0">
+            {title}
+          </p>
 
-        <p className="sandbox-details__desc surface-1">{description}</p>
+          <p className="sandbox-details__desc surface-1">{description}</p>
+        </div>
 
         <button
           onClick={() => setShowDetails((prev) => !prev)}

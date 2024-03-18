@@ -1,7 +1,12 @@
+.sandbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--unit) * 2);
+}
+
 .sandbox-details {
   display: flex;
   margin: calc(var(--unit)) 0;
-  align-items: center;
   gap: calc(var(--unit));
 
   & button {
@@ -21,8 +26,11 @@
   font-weight: 500;
 }
 
-.sandbox-details__desc {
+.sandbox-details__content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
 /**
