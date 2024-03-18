@@ -11,7 +11,8 @@ export const Sandbox: React.FC<{
   sandboxId: string;
   title: string;
   description: string;
-}> = ({ sandboxId, title, description }) => {
+  showRefreshButton: boolean;
+}> = ({ sandboxId, title, description, showRefreshButton=false }) => {
   const [showDetails, setShowDetails] = useState(false);
   const [files, setFiles] = useState();
   const [env, setEnv] = useState();
@@ -49,7 +50,7 @@ export const Sandbox: React.FC<{
     >
       <SandpackLayout>
         <SandpackPreview
-          showRefreshButton={false}
+          showRefreshButton={showRefreshButton}
           showOpenInCodeSandbox={false}
         />
       </SandpackLayout>
@@ -60,12 +61,12 @@ export const Sandbox: React.FC<{
             {title}
           </p>
 
-          <p className="sandbox-details__desc surface-1">{description}</p>
+          <p className="sandbox-details__desc type_footnote surface-1">{description}</p>
         </div>
 
         <button
           onClick={() => setShowDetails((prev) => !prev)}
-          className="color-brand type_footnote"
+          className="type_footnote color-brand type_footnote"
           data-open={showDetails}
         >
           {showDetails ? "Hide code" : "Show code"}
@@ -90,7 +91,7 @@ export const Sandbox: React.FC<{
       {showDetails && (
         <SandpackLayout>
           <SandpackFileExplorer />
-          <SandpackCodeEditor closableTabs showTabs showLineNumbers />
+          <SandpackCodeEditor closableTabs showTabs  />
         </SandpackLayout>
       )}
     </SandpackProvider>
