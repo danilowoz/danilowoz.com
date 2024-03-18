@@ -1,0 +1,57 @@
+.sandbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--unit) * 3);
+}
+
+.sandbox-details {
+  display: flex;
+  margin: calc(var(--unit)) 0;
+  gap: calc(var(--unit));
+
+  & button {
+    background: none;
+    cursor: pointer;
+    display: flex;
+    gap: calc(var(--unit) / 4);
+    transform: translateY(3px);
+
+    &[data-open="true"] svg {
+      transform: rotate(180deg) translate(0, -1px);
+    }
+  }
+}
+
+.sandbox-details__title {
+  font-weight: 500;
+}
+
+.sandbox-details__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+/**
+ * Sandpack
+ */
+.sp-layout {
+  --sp-border-radius: var(--radius);
+  /* --sp-colors-surface1: var(--surface-4); */
+  --sp-colors-surface2: var(--surface-3);
+  --sp-colors-surface3: var(--surface-4);
+  --sp-colors-base: var(--surface-1);
+
+  --sp-colors-clickable: var(--surface-0);
+  --sp-colors-hover: var(--surface-1);
+
+  --sp-colors-accent: var(--color-brand);
+
+  /* syntax */
+  --sp-syntax-color-tag: var(--color-brand);
+  --sp-syntax-color-string: var(--color-brand);
+  /* --sp-syntax-color-keyword: var(--color-brand); */
+  --sp-syntax-color-property: var(--surface-0);
+  --sp-syntax-color-plain: var(--surface-2);
+}
