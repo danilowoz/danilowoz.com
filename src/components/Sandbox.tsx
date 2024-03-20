@@ -12,7 +12,7 @@ export const Sandbox: React.FC<{
   title: string;
   description: string;
   showRefreshButton: boolean;
-}> = ({ sandboxId, title, description, showRefreshButton=false }) => {
+}> = ({ sandboxId, title, description, showRefreshButton = false }) => {
   const [showDetails, setShowDetails] = useState(false);
   const [files, setFiles] = useState();
   const [env, setEnv] = useState();
@@ -46,6 +46,7 @@ export const Sandbox: React.FC<{
           env === "react"
             ? "https://sandpack-bundler.codesandbox.io"
             : undefined,
+        initMode: "immediate",
       }}
     >
       <SandpackLayout>
@@ -61,7 +62,9 @@ export const Sandbox: React.FC<{
             {title}
           </p>
 
-          <p className="sandbox-details__desc type_footnote surface-1">{description}</p>
+          <p className="sandbox-details__desc type_footnote surface-1">
+            {description}
+          </p>
         </div>
 
         <button
@@ -91,7 +94,7 @@ export const Sandbox: React.FC<{
       {showDetails && (
         <SandpackLayout>
           <SandpackFileExplorer />
-          <SandpackCodeEditor closableTabs showTabs  />
+          <SandpackCodeEditor closableTabs showTabs />
         </SandpackLayout>
       )}
     </SandpackProvider>
