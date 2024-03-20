@@ -79,6 +79,25 @@ body {
   font-weight: normal;
 }
 
+.type_cta {
+  background: none;
+  cursor: pointer;
+
+  font-size: var(--text-size-small);
+  line-height: 1.43;
+  font-weight: normal;
+
+  color: var(--color-brand);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .surface-0 {
   color: var(--surface-0);
 }
