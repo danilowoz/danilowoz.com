@@ -76,14 +76,10 @@ const { data } = Astro.props;
               <div class="card-content">
                 <h1 class={`type_headline`}>
                   {item.frontmatter.title}{" "}
-                  {item.frontmatter.tag && (
-                    <span class="type_footnote">{item.frontmatter.tag}</span>
-                  )}
+                  {item.frontmatter.tag && <span>{item.frontmatter.tag}</span>}
                 </h1>
                 <p class="surface-1">{item.frontmatter.tagline}</p>
-                <p class="card-cta type_footnote color-brand">
-                  {renderCallToAction()}
-                </p>
+                <p class="card-cta color-brand">{renderCallToAction()}</p>
               </div>
             </article>
           </a>

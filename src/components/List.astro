@@ -34,7 +34,7 @@ const formatDate = (string) => {
             <article class="list-article">
               <h1 class={`type_headline`}>{item.frontmatter.title} </h1>
               <p class="surface-1">{item.frontmatter.tagline}</p>
-              <p class="type_footnote">{renderCallToAction()}</p>
+              <p class="surface-2">{renderCallToAction()}</p>
             </article>
           </a>
         </li>
@@ -116,7 +116,7 @@ const formatDate = (string) => {
     }
 
     .list__horizontal {
-      --height: calc(var(--unit) * 8.4);
+      --height: calc(var(--unit) * 8.7);
       --y: 0;
 
       .list-item {

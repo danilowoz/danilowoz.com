@@ -12,10 +12,8 @@
   --color-brand: #003dee;
 
   /* Types */
-  --text-size-xlarge: calc(var(--unit) * 1.5);
-  --text-size-large: calc(var(--unit) * 1);
+  --text-size-large: calc(var(--unit) * 1.5);
   --text-size-base: var(--unit);
-  --text-size-small: calc(var(--unit) * 0.75);
 
   /* Font-family */
   --serif: "Merriweather", serif;
@@ -28,8 +26,7 @@
 
 @media screen and (min-width: 800px) {
   :root {
-    --text-size-xlarge: calc(var(--unit) * 2);
-    --text-size-large: calc(var(--unit) * 1.5);
+    --text-size-large: calc(var(--unit) * 1.7);
   }
 }
 
@@ -45,16 +42,17 @@ body {
 }
 
 .type_main {
-  font-size: var(--text-size-xlarge);
+  font-size: var(--text-size-large);
   line-height: 1.4;
   font-family: var(--serif);
   font-weight: normal;
   position: relative;
+  text-wrap: balance;
 }
 
 .type_sub {
-  font-size: var(--text-size-large);
   line-height: 1.5;
+  font-size: var(--text-size-base);
   font-weight: normal;
 }
 
@@ -71,12 +69,6 @@ body {
 
 .type_content p {
   margin-bottom: var(--unit);
-}
-
-.type_footnote {
-  font-size: var(--text-size-small);
-  line-height: 1.43;
-  font-weight: normal;
 }
 
 .surface-0 {

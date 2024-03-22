@@ -30,7 +30,7 @@ const formatDate = (string) => {
         >
         <header class={`header ${cover ? "" : "header__noimage"}`}>
           <div>
-            <p class="type_footnote">
+            <p>
               Danilo Woznica,
               {formatDate(date)}
               <span class="surface-2">—</span>
@@ -122,6 +122,8 @@ const formatDate = (string) => {
         }
 
         .type_main {
+          margin-top: var(--unit);
+
           &:before {
             content: "";
             position: absolute;
@@ -140,10 +142,6 @@ const formatDate = (string) => {
           &.experiments:before {
             background-image: url("/assets/diferent.png");
           }
-        }
-
-        .type_footnote {
-          margin-bottom: var(--unit);
         }
       }
 
@@ -181,10 +179,6 @@ const formatDate = (string) => {
           font-weight: 500;
           color: var(--surface-0);
           margin-top: calc(var(--unit) * 2);
-        }
-
-        h2 {
-          font-size: var(--text-size-large);
         }
 
         ol,
@@ -246,7 +240,6 @@ const formatDate = (string) => {
 
         figcaption {
           text-align: center;
-          font-size: var(--text-size-small);
           margin-bottom: var(--unit);
         }
 
@@ -255,7 +248,7 @@ const formatDate = (string) => {
         }
 
         blockquote {
-          font-size: var(--text-size-xlarge);
+          font-size: var(--text-size-large);
           line-height: 1.4;
           font-family: var(--serif);
           margin: 1em 2em 1em 2em;
