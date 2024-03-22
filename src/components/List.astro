@@ -15,26 +15,13 @@ const formatDate = (string) => {
 <ul class={`list list__horizontal`}>
   {
     data?.map((item) => {
-      const external = /https/.test(item.frontmatter.link);
-      const github = /github/.test(item.frontmatter.link);
-
-      const renderCallToAction = () => {
-        if (github) return "See on GitHub";
-        if (external) return "Access website";
-
-        return `${formatDate(item.frontmatter.date)}`;
-      };
-
       return (
         <li class="list-item">
-          <a
-            href={item.frontmatter.link ?? item.url}
-            {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
-          >
+          <a href={item.frontmatter.link ?? item.url}>
             <article class="list-article">
-              <h1 class={`type_headline`}>{item.frontmatter.title} </h1>
-              <p class="surface-1">{item.frontmatter.tagline}</p>
-              <p class="surface-2">{renderCallToAction()}</p>
+              <h1 class="type_headline">{item.frontmatter.title} </h1>
+              <p>{item.frontmatter.tagline}</p>
+              <p class="surface-2">{formatDate(item.frontmatter.date)}</p>
             </article>
           </a>
         </li>

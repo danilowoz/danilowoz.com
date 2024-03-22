@@ -15,7 +15,11 @@
     "sass": "^1.45.0"
   },
   "dependencies": {
+    "@astrojs/react": "^3.1.0",
+    "@codesandbox/sandpack-react": "^2.13.5",
     "astro-robots-txt": "^0.3.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "satori": "^0.10.1",
     "sharp": "^0.32.1"
   }

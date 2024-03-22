@@ -36,14 +36,13 @@ const { data } = Astro.props;
       const github = /github/.test(item.frontmatter.link);
 
       const renderCallToAction = () => {
-        if (github) return "Go to GitHub";
-        if (external)
+        if (external || github)
           return (
             <>
-              <span>Access</span>
+              <span>{github ? "Go to GitHub" : "Access"}</span>
               <svg
-                width="15"
-                height="15"
+                width="13"
+                height="13"
                 viewBox="0 0 15 15"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +57,26 @@ const { data } = Astro.props;
             </>
           );
 
-        return "Read more";
+        return (
+          <>
+            <span>Read more</span>
+
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </>
+        );
       };
 
       return (
@@ -79,7 +97,8 @@ const { data } = Astro.props;
                   {item.frontmatter.tag && <span>{item.frontmatter.tag}</span>}
                 </h1>
                 <p class="surface-1">{item.frontmatter.tagline}</p>
-                <p class="card-cta color-brand">{renderCallToAction()}</p>
+
+                <p class="type_cta">{renderCallToAction()}</p>
               </div>
             </article>
           </a>
@@ -115,16 +134,14 @@ const { data } = Astro.props;
       transition: color var(--transition);
     }
 
-    &:hover {
-      > *:not(.color-brand) {
-        color: var(--surface-0);
-      }
+    &:hover .surface-1 {
+      color: var(--surface-0);
     }
   }
 
   /**
-      * Hover
-      */
+    * Hover
+    */
   @media screen and (min-width: 1000px) {
     .card-item__hover {
       height: var(--height);
@@ -181,15 +198,5 @@ const { data } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: calc(var(--unit) * 0.5);
-  }
-
-  .card-cta {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-
-    svg {
-      width: 1em;
-    }
   }
 </style>
