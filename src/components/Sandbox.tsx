@@ -58,13 +58,13 @@ export const Sandbox: React.FC<{
 
       <div className="sandbox-details">
         <div className="sandbox-details__content">
-          <p className="sandbox-details__title type_headline surface-0">
+          <p className="sandbox-details__title type_headline color-0">
             {title}
           </p>
 
           <button
             onClick={() => setShowDetails((prev) => !prev)}
-            className="sandbox-details__cta type_cta"
+            className="sandbox-details__cta text-highlight"
             data-open={showDetails}
           >
             <span>{showDetails ? "Hide code" : "Show code"}</span>
@@ -86,7 +86,7 @@ export const Sandbox: React.FC<{
           </button>
         </div>
 
-        <p className="sandbox-details__desc surface-1">{description}</p>
+        <p className="sandbox-details__desc color-1">{description}</p>
       </div>
 
       {showDetails && (

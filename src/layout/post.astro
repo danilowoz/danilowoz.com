@@ -25,7 +25,7 @@ const formatDate = (string) => {
   <body>
     <div class="overflow">
       <article class="container-post">
-        <a href="/" class="type_headline backlink"
+        <a href="/" class="text-medium backlink"
           ><span>&#8592;</span> Homepage</a
         >
         <header class={`header ${cover ? "" : "header__noimage"}`}>
@@ -33,10 +33,10 @@ const formatDate = (string) => {
             <p>
               Danilo Woznica,
               {formatDate(date)}
-              <span class="surface-2">—</span>
+              <span class="color-2">—</span>
               {timeToRead}
             </p>
-            <h1 class={`type_main ${type}`}>{title}</h1>
+            <h1 class={`text-large ${type}`}>{title}</h1>
           </div>
 
           {
@@ -48,7 +48,7 @@ const formatDate = (string) => {
           }
         </header>
 
-        <div class="type_content content">
+        <div class="text-content color-1 content">
           <slot />
         </div>
 
@@ -121,7 +121,7 @@ const formatDate = (string) => {
           width: 100%;
         }
 
-        .type_main {
+        .text-large {
           margin-top: var(--unit);
 
           &:before {
@@ -177,7 +177,7 @@ const formatDate = (string) => {
         h5 {
           font-size: var(--text-size-base);
           font-weight: 500;
-          color: var(--surface-0);
+          color: var(--color-0);
           margin-top: calc(var(--unit) * 2);
         }
 
@@ -210,7 +210,7 @@ const formatDate = (string) => {
         }
 
         table td {
-          border-bottom: 1px solid var(--surface-3);
+          border-bottom: 1px solid var(--color-3);
           padding: calc(var(--unit) * 0.4);
         }
 
@@ -220,14 +220,14 @@ const formatDate = (string) => {
         }
 
         table code {
-          background: var(--surface-3);
-          color: var(--surface-1);
+          background: var(--color-3);
+          color: var(--color-1);
           padding: calc(var(--unit) * 0.2);
           white-space: nowrap;
         }
 
         figure img {
-          border: 1px solid var(--surface-3);
+          border: 1px solid var(--color-3);
         }
 
         @media screen and (min-width: 800px) {
@@ -254,7 +254,7 @@ const formatDate = (string) => {
           margin: 1em 2em 1em 2em;
 
           span {
-            color: var(--surface-2);
+            color: var(--color-2);
             display: block;
             font-size: var(--text-size-large);
             margin-top: var(--unit);
@@ -265,21 +265,21 @@ const formatDate = (string) => {
           }
         }
 
-        --color-text: var(--surface-0);
+        --color-text: var(--color-0);
         --color-background: #ffffff;
         --token-constant: var(--color-brand);
-        --token-string: var(--surface-0);
+        --token-string: var(--color-0);
         --token-comment: #6a737d;
         --token-keyword: var(--color-brand);
         --token-parameter: var(--color-brand);
         --token-function: var(--color-brand);
         --token-string-expression: #a3be8c;
-        --token-punctuation: var(--surface-2);
+        --token-punctuation: var(--color-2);
         --token-link: #22863a;
 
         pre {
           padding: var(--unit);
-          border: 1px solid var(--surface-3);
+          border: 1px solid var(--color-3);
           border-radius: var(--radius);
           margin-bottom: var(--unit);
           font-size: 14px;

@@ -3,9 +3,9 @@
     <img src="/images/cover.jpg" />
   </div>
   <article>
-    <h2 class="type_main">About me</h2>
+    <h2 class="text-large">About me</h2>
 
-    <div class="type_content">
+    <div class="text-content color-1">
       <p>
         Hey, my name is Danilo Woznica. I’m from a small town in the south of
         Brazil where I was brought up, and now I live in one of the best places
@@ -74,12 +74,12 @@
     grid-column: 2/4;
   }
 
-  .type_main {
+  .text-large {
     margin-bottom: calc(var(--unit) * 2);
   }
 
   .section:before,
-  .type_main:before {
+  .text-large:before {
     content: "";
     display: block;
 
@@ -102,7 +102,7 @@
     }
   }
 
-  .type_main:before {
+  .text-large:before {
     display: none;
 
     @media screen and (min-width: 800px) {

@@ -19,9 +19,9 @@ const formatDate = (string) => {
         <li class="list-item">
           <a href={item.frontmatter.link ?? item.url}>
             <article class="list-article">
-              <h1 class="type_headline">{item.frontmatter.title} </h1>
-              <p>{item.frontmatter.tagline}</p>
-              <p class="surface-2">{formatDate(item.frontmatter.date)}</p>
+              <h1 class="text-medium">{item.frontmatter.title}</h1>
+              <p class="color-1">{item.frontmatter.tagline}</p>
+              <p class="color-2">{formatDate(item.frontmatter.date)}</p>
             </article>
           </a>
         </li>
@@ -44,14 +44,8 @@ const formatDate = (string) => {
       }
 
       &:hover * {
-        color: var(--surface-0);
+        color: var(--color-0);
       }
-    }
-
-    .type_headline span {
-      display: inline-block;
-      margin-left: var(--unit);
-      color: var(--color-brand);
     }
   }
 
@@ -89,7 +83,7 @@ const formatDate = (string) => {
         position: absolute;
         z-index: -1;
 
-        background: var(--surface-4);
+        background: var(--color-4);
         opacity: 0;
         border-radius: var(--radius);
 
@@ -98,7 +92,7 @@ const formatDate = (string) => {
 
         pointer-events: none;
         transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-        border: 1px solid var(--surface-3);
+        border: 1px solid var(--color-3);
       }
     }
 

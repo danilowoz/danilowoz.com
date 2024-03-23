@@ -1,5 +1,7 @@
 @import "./_reset.css";
 @import "./_vars.css";
+@import "./_colors.css";
+@import "./_typography.css";
 
 /* Components */
 @import "./_grid.css";

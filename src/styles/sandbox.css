@@ -35,13 +35,13 @@
  */
 .sp-layout {
   --sp-border-radius: var(--radius);
-  /* --sp-colors-surface1: var(--surface-4); */
-  --sp-colors-surface2: var(--surface-3);
-  --sp-colors-surface3: var(--surface-4);
-  --sp-colors-base: var(--surface-1);
+  /* --sp-colors-color1: var(--color-4); */
+  --sp-colors-color2: var(--color-3);
+  --sp-colors-color3: var(--color-4);
+  --sp-colors-base: var(--color-1);
 
-  --sp-colors-clickable: var(--surface-0);
-  --sp-colors-hover: var(--surface-1);
+  --sp-colors-clickable: var(--color-0);
+  --sp-colors-hover: var(--color-1);
   --sp-colors-accent: var(--color-brand);
 
   /* syntax */
@@ -52,7 +52,7 @@
   --sp-syntax-color-definition: #0e2b81;
   --sp-syntax-color-keyword: #466bda;
 
-  --sp-syntax-color-property: var(--surface-0);
-  --sp-syntax-color-plain: var(--surface-1);
-  --sp-syntax-color-punctuation: var(--surface-2);
+  --sp-syntax-color-property: var(--color-0);
+  --sp-syntax-color-plain: var(--color-1);
+  --sp-syntax-color-punctuation: var(--color-2);
 }

@@ -92,13 +92,13 @@ const { data } = Astro.props;
                 </div>
               )}
               <div class="card-content">
-                <h1 class={`type_headline`}>
+                <h1 class={`text-medium`}>
                   {item.frontmatter.title}{" "}
                   {item.frontmatter.tag && <span>{item.frontmatter.tag}</span>}
                 </h1>
-                <p class="surface-1">{item.frontmatter.tagline}</p>
+                <p class="color-1">{item.frontmatter.tagline}</p>
 
-                <p class="type_cta">{renderCallToAction()}</p>
+                <p class="text-highlight">{renderCallToAction()}</p>
               </div>
             </article>
           </a>
@@ -134,8 +134,8 @@ const { data } = Astro.props;
       transition: color var(--transition);
     }
 
-    &:hover .surface-1 {
-      color: var(--surface-0);
+    &:hover .color-1 {
+      color: var(--color-0);
     }
   }
 
@@ -152,7 +152,7 @@ const { data } = Astro.props;
       left: var(--x);
       top: var(--y);
 
-      background: var(--surface-4);
+      background: var(--color-4);
       border-radius: var(--radius);
 
       opacity: 0;
@@ -161,7 +161,7 @@ const { data } = Astro.props;
 
       pointer-events: none;
       transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-      border: 1px solid var(--surface-3);
+      border: 1px solid var(--color-3);
 
       &.active {
         opacity: 1;
@@ -178,7 +178,7 @@ const { data } = Astro.props;
     position: relative;
     border-radius: var(--radius);
 
-    background: var(--surface-4);
+    background: var(--color-4);
     background-image: radial-gradient(#d1d0d0 1px, transparent 0);
     background-size: calc(100% / 10) calc(100% / 6);
 
