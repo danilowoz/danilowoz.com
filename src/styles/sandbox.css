@@ -22,10 +22,6 @@
   flex: 1;
 }
 
-.sandbox-details__desc {
-  font-size: var(--text-size-base);
-}
-
 .sandbox-details__cta [data-open="true"] svg {
   transform: rotate(180deg) translate(0, -1px);
 }

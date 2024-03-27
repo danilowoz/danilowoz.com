@@ -21,7 +21,9 @@ const formatDate = (string) => {
             <article class="list-article">
               <h1 class="text-medium">{item.frontmatter.title}</h1>
               <p class="color-1">{item.frontmatter.tagline}</p>
-              <p class="color-2">{formatDate(item.frontmatter.date)}</p>
+              <p class="color-2 text-small">
+                {formatDate(item.frontmatter.date)}
+              </p>
             </article>
           </a>
         </li>
@@ -97,7 +99,7 @@ const formatDate = (string) => {
     }
 
     .list__horizontal {
-      --height: calc(var(--unit) * 8.7);
+      --height: calc(var(--unit) * 8.4);
       --y: 0;
 
       .list-item {
