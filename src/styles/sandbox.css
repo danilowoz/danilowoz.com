@@ -11,18 +11,16 @@
   flex-direction: column;
 }
 
-.sandbox-details__content {
-  flex: 1;
-  display: flex;
-  font-size: var(--text-size-base);
-}
-
 .sandbox-details__title {
   font-weight: 500;
   flex: 1;
 }
 
-.sandbox-details__cta [data-open="true"] svg {
+.sandbox-details__cta svg {
+  transform: translate(0, -1px);
+}
+
+.sandbox-details__cta[data-open="true"] svg {
   transform: rotate(180deg) translate(0, -1px);
 }
 
