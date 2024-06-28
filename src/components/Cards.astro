@@ -2,32 +2,6 @@
 const { data } = Astro.props;
 ---
 
-<script>
-  const container: HTMLDivElement = document.querySelector(".cards");
-  const cards = document.querySelectorAll(".card-item");
-  const hoverElement = document.querySelector(".card-item__hover");
-
-  if (container && cards) {
-    function onHover(event: MouseEvent) {
-      const target = event.target as unknown as HTMLLIElement;
-      const { height, width } = target.getBoundingClientRect();
-      container.style.setProperty("--height", height + "px");
-      container.style.setProperty("--width", width + 1 + "px");
-      container.style.setProperty("--x", target.offsetLeft - 1 + "px");
-      container.style.setProperty("--y", target.offsetTop + "px");
-
-      hoverElement.classList.add("active");
-    }
-
-    cards.forEach((element: HTMLDivElement) => {
-      element.addEventListener("mouseenter", onHover);
-    });
-
-    container.addEventListener("mouseleave", () => {
-      hoverElement.classList.remove("active");
-    });
-  }
-</script>
 <ul class="cards">
   {
     data?.map((item) => {
@@ -84,11 +58,12 @@ const { data } = Astro.props;
             href={item.frontmatter.link ?? item.url}
             {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
           >
-            <article class="card-article">
-              <div class="card-figure">
-                {item.frontmatter.image && <img src={item.frontmatter.image} />}
-              </div>
-
+            <article>
+              {item.frontmatter.image && (
+                <div class="card-figure">
+                  <img src={item.frontmatter.image} />
+                </div>
+              )}
               <div class="card-content">
                 <h1 class={`text-medium`}>
                   {item.frontmatter.title}{" "}
@@ -110,6 +85,16 @@ const { data } = Astro.props;
 
 <style lang="scss">
   .cards {
+    --gap: calc(var(--unit) * 2);
+
+    display: grid;
+    gap: var(--gap);
+    position: relative;
+
+    @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     & .text-medium {
       line-height: 1.45;
     }
@@ -118,7 +103,7 @@ const { data } = Astro.props;
   .card-item {
     border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid transparent;
+    border: 1px solid var(--color-3);
     transition: border var(--transition);
 
     * {
@@ -129,90 +114,33 @@ const { data } = Astro.props;
     &:hover .color-1 {
       color: var(--color-0);
     }
-  }
 
-  .card-item:not(:last-child) .card-article {
-    padding-bottom: calc(var(--unit) * 2);
-  }
-
-  .card-article {
-    display: flex;
-    flex-direction: row;
-    gap: calc(var(--unit) * 2);
-    align-items: center;
+    &:hover .text-highlight {
+      opacity: 0.7;
+    }
   }
 
   .card-content {
+    padding: calc(var(--unit) * 1);
+    text-wrap: balance;
+
     display: flex;
     flex-direction: column;
     gap: calc(var(--unit) * 0.25);
-    text-wrap: balance;
   }
 
   .card-figure {
-    height: calc(var(--unit) * 10);
+    width: 100%;
     aspect-ratio: 1.6;
     position: relative;
-    border-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
 
     img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      border-radius: var(--radius);
     }
   }
-
-  /**
-    * Hover
-    */
-  @media screen and (min-width: 1000px) {
-    .card-item__hover {
-      height: var(--height);
-      width: var(--width);
-
-      position: absolute;
-      z-index: -1;
-      left: var(--x);
-      top: var(--y);
-
-      background: var(--color-4);
-      border-radius: var(--radius);
-
-      opacity: 0;
-      transform: scale(1.04);
-      filter: blur(10px);
-
-      pointer-events: none;
-      transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-      border: 1px solid var(--color-3);
-
-      &.active {
-        opacity: 1;
-
-        transform: scale(1);
-        filter: blur(0px);
-      }
-    }
-  }
-
-  // .card-figure {
-  //   width: 100%;
-  //   aspect-ratio: 1.6;
-  //   position: relative;
-  //   border-radius: var(--radius);
-
-  //   background: var(--color-4);
-  //   background-image: radial-gradient(#d1d0d0 1px, transparent 0);
-  //   background-size: calc(100% / 10) calc(100% / 6);
-
-  //   img {
-  //     position: absolute;
-  //     inset: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     border-radius: var(--radius);
-  //   }
-  // }
 </style>

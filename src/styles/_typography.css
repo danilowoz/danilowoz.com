@@ -20,6 +20,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.3em;
+  transition: opacity var(--transition);
 
   & svg {
     transform: translateY(0.5px);
