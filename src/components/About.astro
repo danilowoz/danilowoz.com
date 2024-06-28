@@ -6,43 +6,75 @@
     <h2 class="text-large">About me</h2>
 
     <div class="text-content color-1">
+      <p class="text-base">
+        <span class="text-medium color-0">
+          A Brazilian living in Porto, Portugal.
+        </span>
+        I'm a front-end developer with a design background and more than ten years
+        of experience creating digital products. Over the past few years, I've been
+        enjoying building React web applications and empowering developers through
+        my contributions to open-source projects.
+      </p>
+
       <ul>
         <li>
-          <strong class="text-medium">I see code as a tool for design.</strong> What
-          I build is meant to solve real users' problems, and I will strive for the
-          best solution and the most polished experience. I'm a coworker on the design
-          team.
+          <p>
+            <span class="text-medium color-0"
+              >I see code as a tool for design.</span
+            >
+
+            What I build is meant to solve real users&#39; problems, and I
+            strive for the best solution and the most polished experience.
+            I&#39;m a coworker on the design team.
+          </p>
         </li>
         <li>
-          <strong class="text-medium">I'm a self-starter.</strong> The unknown doesn't
-          hold me back. I can find my way through the uncertainty and then set priorities
-          and stay focused. Independent worker.
+          <p>
+            <span class="text-medium color-0"
+              >I&#39;m obsessed with the problem.</span
+            > I like engaging in activities that require me to dive deep into the
+            uncertainty, from small details to big issues.
+          </p>
         </li>
         <li>
-          <strong class="text-medium">I'm a fast-paced problem-solver.</strong> In
-          challenging moments, I can wear as many hats as needed. There are moments
-          when the job just needs to get done.
+          <p>
+            <span class="text-medium color-0"
+              >I prioritize honest and pragmatic communication.</span
+            > No ego, no assumptions. My words will always be well-intentioned, even
+            if direct.
+          </p>
         </li>
         <li>
-          <strong class="text-medium">I'm obsessed with the unknown.</strong> I like
-          engaging in activities that require me to dive deep into the uncertainty,
-          from small details to big issues.
+          <p>
+            <span class="text-medium color-0">I&#39;m a self-starter.</span> I can
+            find my way through the uncertainty, set priorities, share learning,
+            stay focused and make plans.
+          </p>
         </li>
         <li>
-          <strong class="text-medium">I have an outstanding curiosity.</strong> I
-          always strive to learn more and understand the exotic, the undiscovered,
-          or the unmapped.
+          <p>
+            <span class="text-medium color-0"
+              >I have an outstanding curiosity.</span
+            > I'm always looking to learn more and understand the exotic, the undiscovered,
+            or the unmapped.
+          </p>
         </li>
         <li>
-          <strong class="text-medium"
-            >I want you to be involved in my creation process.</strong
-          > While I can move quickly alone, we can achieve much more as a team.
+          <p>
+            <span class="text-medium color-0"
+              >I&#39;m a fast-paced problem-solver.</span
+            > In challenging moments, I can wear as many hats as needed. There are
+            moments when the job needs to get done.
+          </p>
         </li>
+
         <li>
-          <strong class="text-medium"
-            >I prioritize honest and pragmatic communication.</strong
-          > No ego, no assumptions. My words will always be well-intentioned, even
-          if direct.
+          <p>
+            <span class="text-medium color-0"
+              >I want you to be involved in my creation process</span
+            >. While I can move quickly alone, we can achieve much more as a
+            team.
+          </p>
         </li>
       </ul>
     </div>
@@ -59,6 +91,7 @@
       img {
         width: 100%;
         margin-left: calc(-2 * var(--unit));
+        border-radius: var(--radius);
       }
     }
   }
@@ -68,6 +101,8 @@
     padding-top: var(--body-gap);
     padding-bottom: var(--body-gap);
     position: relative;
+
+    text-wrap: balance;
   }
 
   article {
@@ -126,12 +161,12 @@
   li {
     list-style: bullet;
     position: relative;
-    padding-bottom: 1em;
 
     &:before {
       content: "-";
       position: absolute;
-      left: -1em;
+      left: -0.9em;
+      top: 0em;
     }
   }
 </style>

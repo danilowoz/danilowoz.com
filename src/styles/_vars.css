@@ -30,14 +30,3 @@
     --text-size-large: calc(var(--unit) * 1.6);
   }
 }
-
-html,
-body {
-  font-size: 16px;
-  color: var(--color-0);
-  line-height: 1.43;
-  font-family: var(--sans-serif);
-  font-weight: normal;
-  scroll-behavior: smooth;
-  image-rendering: -webkit-optimize-contrast;
-}

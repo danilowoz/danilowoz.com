@@ -5,3 +5,9 @@
 
 /* Components */
 @import "./_grid.css";
+
+html,
+body {
+  scroll-behavior: smooth;
+  image-rendering: -webkit-optimize-contrast;
+}
