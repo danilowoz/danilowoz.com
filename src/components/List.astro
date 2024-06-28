@@ -37,7 +37,10 @@ const formatDate = (string) => {
    * List
    */
   .list {
-    a {
+    & .text-medium {
+      line-height: 1.45;
+    }
+    & a {
       display: block;
       transition: color var(--transition);
 
@@ -59,10 +62,6 @@ const formatDate = (string) => {
     display: flex;
     flex-direction: column;
     gap: calc(var(--unit) * 0.25);
-  }
-
-  .text-medium {
-    line-height: 1.45;
   }
 
   /**

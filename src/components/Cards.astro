@@ -28,7 +28,6 @@ const { data } = Astro.props;
     });
   }
 </script>
-
 <ul class="cards">
   {
     data?.map((item) => {
@@ -85,12 +84,11 @@ const { data } = Astro.props;
             href={item.frontmatter.link ?? item.url}
             {...(external ? { target: `_blank`, rel: `noreferrer` } : {})}
           >
-            <article>
-              {item.frontmatter.image && (
-                <div class="card-figure">
-                  <img src={item.frontmatter.image} />
-                </div>
-              )}
+            <article class="card-article">
+              <div class="card-figure">
+                {item.frontmatter.image && <img src={item.frontmatter.image} />}
+              </div>
+
               <div class="card-content">
                 <h1 class={`text-medium`}>
                   {item.frontmatter.title}{" "}
@@ -112,19 +110,9 @@ const { data } = Astro.props;
 
 <style lang="scss">
   .cards {
-    --gap: calc(var(--unit) * 2);
-
-    display: grid;
-    gap: var(--gap);
-    position: relative;
-
-    @media screen and (min-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
+    & .text-medium {
+      line-height: 1.45;
     }
-  }
-
-  .text-medium {
-    line-height: 1.45;
   }
 
   .card-item {
@@ -140,6 +128,39 @@ const { data } = Astro.props;
 
     &:hover .color-1 {
       color: var(--color-0);
+    }
+  }
+
+  .card-item:not(:last-child) .card-article {
+    padding-bottom: calc(var(--unit) * 2);
+  }
+
+  .card-article {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--unit) * 2);
+    align-items: center;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--unit) * 0.25);
+    text-wrap: balance;
+  }
+
+  .card-figure {
+    height: calc(var(--unit) * 10);
+    aspect-ratio: 1.6;
+    position: relative;
+    border-radius: var(--radius);
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius);
     }
   }
 
@@ -176,31 +197,22 @@ const { data } = Astro.props;
     }
   }
 
-  .card-figure {
-    width: 100%;
-    aspect-ratio: 1.6;
-    position: relative;
-    border-radius: var(--radius);
+  // .card-figure {
+  //   width: 100%;
+  //   aspect-ratio: 1.6;
+  //   position: relative;
+  //   border-radius: var(--radius);
 
-    background: var(--color-4);
-    background-image: radial-gradient(#d1d0d0 1px, transparent 0);
-    background-size: calc(100% / 10) calc(100% / 6);
+  //   background: var(--color-4);
+  //   background-image: radial-gradient(#d1d0d0 1px, transparent 0);
+  //   background-size: calc(100% / 10) calc(100% / 6);
 
-    img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--radius);
-    }
-  }
-
-  .card-content {
-    padding: calc(var(--unit) * 1);
-    text-wrap: balance;
-
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--unit) * 0.25);
-  }
+  //   img {
+  //     position: absolute;
+  //     inset: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     border-radius: var(--radius);
+  //   }
+  // }
 </style>
