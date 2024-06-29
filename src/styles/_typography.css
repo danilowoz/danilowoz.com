@@ -1,3 +1,12 @@
+html,
+body {
+  font-size: 16px;
+  color: var(--color-0);
+  line-height: 1.75;
+  font-family: var(--sans-serif);
+  font-weight: normal;
+}
+
 .text-highlight {
   background: none;
   cursor: pointer;
@@ -11,6 +20,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3em;
+  transition: opacity var(--transition);
 
   & svg {
     transform: translateY(0.5px);

@@ -6,45 +6,77 @@
     <h2 class="text-large">About me</h2>
 
     <div class="text-content color-1">
-      <p>
-        Hey, my name is Danilo Woznica. I’m from a small town in the south of
-        Brazil where I was brought up, and now I live in one of the best places
-        to be a wine lover - have you tried a great bottle of Portuguese wine?
+      <p class="text-base">
+        <span class="text-medium color-0">
+          A Brazilian living in Porto, Portugal.
+        </span>
+        I'm a front-end developer with a design background and more than ten years
+        of experience creating digital products. Over the past few years, I've been
+        enjoying building React web applications and empowering developers through
+        my contributions to open-source projects.
       </p>
 
-      <p>
-        It took me a while to realize that design is everywhere. No matter where
-        you look, how you feel or interact, everything aims to solve a problem
-        and has purposes, regardless if these things came from nature or were
-        manufactured. With these ideas in my mind, I made my way into Design
-        college back in 2012, which was mostly focused on product design, and
-        since then I’ve been trying to introduce most of the concepts from the
-        design process to different areas of my professional life, as much as I
-        can.
-      </p>
+      <ul>
+        <li>
+          <p>
+            <span class="text-medium color-0"
+              >I see code as a tool for design.</span
+            >
 
-      <p>
-        In my early coding career, which started in mid 2010, I realized that at
-        some level I could find the same problems both in conceptual design and
-        digital products. Thanks to many friends, I was introduced to the
-        ReactJs community, where I found many opportunities to improve the way
-        we interact with web applications, and as a result, I could narrow the
-        gap between the effort of building solid applications with a great user
-        experience. These challenges have helped me shape the necessary skills
-        to become a front-end developer driven by problems to be solved.
-      </p>
+            What I build is meant to solve real users&#39; problems, and I
+            strive for the best solution and the most polished experience.
+            I&#39;m a coworker on the design team.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="text-medium color-0"
+              >I&#39;m obsessed with the problem.</span
+            > I like engaging in activities that require me to dive deep into the
+            uncertainty, from small details to big problems.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="text-medium color-0"
+              >I prioritize honest and pragmatic communication.</span
+            > No ego, no assumptions. My words will always be well-intentioned, even
+            if direct.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="text-medium color-0">I&#39;m a self-starter.</span> I can
+            find my way through the uncertainty, set priorities, share learning,
+            stay focused and make plans.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="text-medium color-0"
+              >I have an outstanding curiosity.</span
+            > I'm always looking to learn more and understand the exotic, the undiscovered,
+            or the unmapped.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="text-medium color-0"
+              >I&#39;m a fast-paced problem-solver.</span
+            > In challenging moments, I can wear as many hats as needed. There are
+            moments when the job needs to get done.
+          </p>
+        </li>
 
-      <p>
-        This journey brought me to CodeSandbox, where I’m proud that my work
-        gets to many developers and it makes their life easier, providing a
-        remarkable experience to express their own ideas through coding, and
-        making products more enjoyable. Furthermore,
-        <strong
-          >the kinds of challenges I face every day make me go beyond what
-          inspires me and make me not only solve problems but empower users to
-          solve their problems themselves.</strong
-        >
-      </p>
+        <li>
+          <p>
+            <span class="text-medium color-0"
+              >I want you to be involved in my creation process</span
+            >. While I can move quickly alone, we can achieve much more as a
+            team.
+          </p>
+        </li>
+      </ul>
     </div>
   </article>
 </section>
@@ -59,6 +91,7 @@
       img {
         width: 100%;
         margin-left: calc(-2 * var(--unit));
+        border-radius: var(--radius);
       }
     }
   }
@@ -68,6 +101,8 @@
     padding-top: var(--body-gap);
     padding-bottom: var(--body-gap);
     position: relative;
+
+    text-wrap: balance;
   }
 
   article {
@@ -116,6 +151,22 @@
       left: calc(var(--unit) * -3);
       width: calc(var(--unit) * 2);
       height: calc(var(--unit) * 2);
+    }
+  }
+
+  ul {
+    padding-left: 1em;
+  }
+
+  li {
+    list-style: bullet;
+    position: relative;
+
+    &:before {
+      content: "-";
+      position: absolute;
+      left: -0.9em;
+      top: 0em;
     }
   }
 </style>

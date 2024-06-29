@@ -2,33 +2,6 @@
 const { data } = Astro.props;
 ---
 
-<script>
-  const container: HTMLDivElement = document.querySelector(".cards");
-  const cards = document.querySelectorAll(".card-item");
-  const hoverElement = document.querySelector(".card-item__hover");
-
-  if (container && cards) {
-    function onHover(event: MouseEvent) {
-      const target = event.target as unknown as HTMLLIElement;
-      const { height, width } = target.getBoundingClientRect();
-      container.style.setProperty("--height", height + "px");
-      container.style.setProperty("--width", width + 1 + "px");
-      container.style.setProperty("--x", target.offsetLeft - 1 + "px");
-      container.style.setProperty("--y", target.offsetTop + "px");
-
-      hoverElement.classList.add("active");
-    }
-
-    cards.forEach((element: HTMLDivElement) => {
-      element.addEventListener("mouseenter", onHover);
-    });
-
-    container.addEventListener("mouseleave", () => {
-      hoverElement.classList.remove("active");
-    });
-  }
-</script>
-
 <ul class="cards">
   {
     data?.map((item) => {
@@ -121,12 +94,16 @@ const { data } = Astro.props;
     @media screen and (min-width: 600px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    & .text-medium {
+      line-height: 1.45;
+    }
   }
 
   .card-item {
     border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid transparent;
+    border: 1px solid var(--color-3);
     transition: border var(--transition);
 
     * {
@@ -137,57 +114,9 @@ const { data } = Astro.props;
     &:hover .color-1 {
       color: var(--color-0);
     }
-  }
 
-  /**
-    * Hover
-    */
-  @media screen and (min-width: 1000px) {
-    .card-item__hover {
-      height: var(--height);
-      width: var(--width);
-
-      position: absolute;
-      z-index: -1;
-      left: var(--x);
-      top: var(--y);
-
-      background: var(--color-4);
-      border-radius: var(--radius);
-
-      opacity: 0;
-      transform: scale(1.04);
-      filter: blur(10px);
-
-      pointer-events: none;
-      transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-      border: 1px solid var(--color-3);
-
-      &.active {
-        opacity: 1;
-
-        transform: scale(1);
-        filter: blur(0px);
-      }
-    }
-  }
-
-  .card-figure {
-    width: 100%;
-    aspect-ratio: 1.6;
-    position: relative;
-    border-radius: var(--radius);
-
-    background: var(--color-4);
-    background-image: radial-gradient(#d1d0d0 1px, transparent 0);
-    background-size: calc(100% / 10) calc(100% / 6);
-
-    img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--radius);
+    &:hover .text-highlight {
+      opacity: 0.7;
     }
   }
 
@@ -197,6 +126,21 @@ const { data } = Astro.props;
 
     display: flex;
     flex-direction: column;
-    gap: calc(var(--unit) * 0.5);
+    gap: calc(var(--unit) * 0.25);
+  }
+
+  .card-figure {
+    width: 100%;
+    aspect-ratio: 1.6;
+    position: relative;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>
