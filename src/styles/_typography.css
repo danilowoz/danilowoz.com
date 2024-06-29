@@ -2,9 +2,16 @@ html,
 body {
   font-size: 16px;
   color: var(--color-0);
-  line-height: 1.75;
+  line-height: 1.45;
   font-family: var(--sans-serif);
   font-weight: normal;
+}
+
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    line-height: 1.75;
+  }  
 }
 
 .text-highlight {
@@ -57,6 +64,12 @@ body {
 }
 
 .text-content p {
-  line-height: 1.75;
   margin-bottom: var(--unit);
+}
+
+
+@media screen and (min-width: 768px) {
+  .text-content p {
+    line-height: 1.75;
+  }  
 }
