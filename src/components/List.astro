@@ -62,7 +62,8 @@ const formatDate = (string) => {
   .list-article {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--unit) * 0.25);
+    gap: calc(var(--unit) * 0.5);
+    line-height: 1.45;
   }
 
   /**
@@ -94,12 +95,13 @@ const formatDate = (string) => {
 
         pointer-events: none;
         transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-        border: 1px solid var(--color-3);
+
+        box-shadow: var(--shadow);
       }
     }
 
     .list__horizontal {
-      --height: calc(var(--unit) * 8.8);
+      --height: calc(var(--unit) * 8.5);
       --y: 0;
 
       .list-item {

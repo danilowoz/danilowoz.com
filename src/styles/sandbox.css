@@ -27,6 +27,11 @@
 /**
  * Sandpack
  */
+.sp-wrapper {
+  text-rendering: unset !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
 .sp-layout {
   --sp-border-radius: var(--radius);
   /* --sp-colors-color1: var(--color-4); */
@@ -49,4 +54,7 @@
   --sp-syntax-color-property: var(--color-0);
   --sp-syntax-color-plain: var(--color-1);
   --sp-syntax-color-punctuation: var(--color-2);
+
+  border: 0 !important;
+  box-shadow: var(--shadow);
 }
