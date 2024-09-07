@@ -17,7 +17,7 @@
   --text-size-small: calc(var(--unit) * 0.8);
 
   /* Font-family */
-  --serif: "Merriweather", serif;
+  --serif: "Nokora", serif;
   --sans-serif: "Inter", sans-serif;
 
   /* Misc */
@@ -31,6 +31,6 @@
 
 @media screen and (min-width: 800px) {
   :root {
-    --text-size-large: calc(var(--unit) * 1.6);
+    --text-size-large: calc(var(--unit) * 2);
   }
 }

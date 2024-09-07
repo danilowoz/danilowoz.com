@@ -76,7 +76,7 @@ const { data } = Astro.props;
   .card-item {
     border-radius: var(--radius);
     overflow: hidden;
-    transition: border var(--transition);
+    transition: all var(--transition);
 
     box-shadow: var(--shadow);
 
@@ -89,12 +89,16 @@ const { data } = Astro.props;
       transition: color var(--transition);
     }
 
-    &:hover .color-1 {
-      color: var(--color-0);
-    }
+    &:hover {
+      background: var(--color-4);
 
-    &:hover .text-highlight {
-      opacity: 0.7;
+      .color-1 {
+        color: var(--color-0);
+      }
+
+      .text-highlight {
+        opacity: 0.7;
+      }
     }
   }
 

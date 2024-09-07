@@ -74,12 +74,13 @@ const formatDate = (string) => {
       &:hover ~ &:last-child:before,
       &:hover:last-child:before {
         opacity: 1;
-
         transform: scale(1);
-        filter: blur(0px);
+        --move-duration: 0.5s;
       }
 
       &:last-child:before {
+        --move-duration: 999s;
+
         content: "";
         display: block;
 
@@ -89,12 +90,62 @@ const formatDate = (string) => {
         background: var(--color-4);
         opacity: 0;
         border-radius: var(--radius);
+        transform: scale(0.96);
 
-        transform: scale(1.04);
-        filter: blur(10px);
+        --spring-easing-bounce: linear(
+          0,
+          0.0053 1.01%,
+          0.0309 2.53%,
+          0.1095,
+          0.2173 7.58%,
+          0.6308 16.17%,
+          0.7351,
+          0.8247,
+          0.8985,
+          0.9569,
+          1.0008,
+          1.032 31.33%,
+          1.049,
+          1.06 35.37%,
+          1.0669,
+          1.0679,
+          1.0646,
+          1.0585 45.48%,
+          1.0274 55.08%,
+          1.016,
+          1.0073,
+          1.0013 67.2%,
+          0.997 72.26%,
+          0.9954 77.81%,
+          0.999 99.54%
+        );
+
+        --spring-easing-smooth: linear(
+          0,
+          0.0052 1.01%,
+          0.0299 2.53%,
+          0.1033 5.05%,
+          0.5356 15.66%,
+          0.6424 18.7%,
+          0.7188,
+          0.7836 23.75%,
+          0.8467,
+          0.8957 29.81%,
+          0.9375,
+          0.9663,
+          0.9852 40.42%,
+          0.9981 44.46%,
+          1.0051 49.01%,
+          1.0073 52.55%,
+          1.0076 57.1%,
+          1.0017 79.33%,
+          1 99.54%
+        );
 
         pointer-events: none;
-        transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+        transition: transform 0.5s var(--spring-easing-bounce),
+          opacity 0.3s ease-out,
+          top var(--move-duration) var(--spring-easing-smooth);
 
         box-shadow: var(--shadow);
       }
@@ -105,6 +156,14 @@ const formatDate = (string) => {
       --y: 0;
 
       .list-item {
+        &:first-child:hover ~ .list-item:last-child:before {
+          /**
+           * For some reason, this value needs to be different than initial value
+           * in order to trick a new animation stack with the new --move-duration value
+           */
+          --y: 0.1px;
+        }
+
         &:last-child:before {
           left: calc(var(--unit) * -1);
           right: calc(var(--unit) * -1);
