@@ -3,12 +3,6 @@ const { title } = Astro.props;
 ---
 
 <section class={`section grid ${title.toLowerCase()}`} id={title.toLowerCase()}>
-  <div>
-    <h2 class={`text-large ${title.toLowerCase()} sticky`}>
-      {title}
-    </h2>
-  </div>
-
   <div class="section-content">
     <slot />
   </div>
@@ -16,7 +10,7 @@ const { title } = Astro.props;
 
 <style lang="scss">
   .section {
-    grid-column: 1/4;
+    grid-column: 2/4;
     padding-bottom: var(--body-gap);
     padding-top: var(--body-gap);
     position: relative;
@@ -26,7 +20,6 @@ const { title } = Astro.props;
     }
   }
 
-  .text-large,
   .section {
     &:before {
       content: "";
@@ -42,6 +35,10 @@ const { title } = Astro.props;
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position: center;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
     }
 
     &.writing:before {
@@ -51,6 +48,7 @@ const { title } = Astro.props;
     &.experiments:before {
       background-image: url("/assets/diferent.png");
     }
+
     &.projects:before {
       background-image: url("/assets/section.png");
     }
@@ -60,47 +58,8 @@ const { title } = Astro.props;
     }
   }
 
-  @media screen and (min-width: 800px) {
-    .section:before {
-      display: none;
-    }
-  }
-
-  .text-large {
-    margin-bottom: calc(var(--unit) * 2);
-
-    &:before {
-      display: none;
-
-      @media screen and (min-width: 800px) {
-        display: block;
-        margin: 0;
-        position: absolute;
-        background-position: right center;
-
-        top: calc(var(--unit) * 0.4);
-        left: calc(var(--unit) * -2.5);
-        width: calc(var(--unit) * 1.6);
-        height: calc(var(--unit) * 1.6);
-      }
-    }
-  }
-
-  @media screen and (min-width: 800px) {
-    .text-large {
-      grid-column: 1/2;
-      margin: 0;
-      margin-top: calc(var(--unit) * -0.5);
-
-      &.sticky {
-        position: sticky;
-        top: calc(var(--unit) * 2);
-      }
-    }
-  }
-
   .section-content {
     position: relative;
-    grid-column: 2/4;
+    grid-column: 1/4;
   }
 </style>

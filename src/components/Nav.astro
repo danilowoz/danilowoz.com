@@ -1,0 +1,107 @@
+<div class="nav">
+  <h2 class="text-large">
+    <div class="track">
+      <div class="runner runner-icon">
+        <div class="item"><span class="icon writing"></span></div>
+        <div class="item"><span class="icon garden"></span></div>
+        <div class="item"><span class="icon projects"></span></div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="runner">
+        <div class="item">Writing</div>
+        <div class="item">UI garden</div>
+        <div class="item">Projects</div>
+      </div>
+    </div>
+  </h2>
+</div>
+
+<style lang="scss">
+  :root {
+    --total: 3;
+
+    timeline-scope: --main;
+  }
+
+  body {
+    animation: indicate both steps(var(--total));
+    animation-timeline: --main;
+    animation-range: entry 50% exit 0%;
+    counter-set: section var(--section);
+    view-timeline: --main;
+  }
+
+  @property --section {
+    inherits: true;
+    syntax: "<integer>";
+    initial-value: 0;
+  }
+
+  @keyframes indicate {
+    to {
+      --section: var(--total);
+    }
+  }
+
+  .nav {
+    grid-column: 1/2;
+    grid-row: 2 / 10;
+    margin-top: calc(var(--unit) * -0.5);
+
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  .text-large {
+    position: sticky;
+    top: calc(var(--unit) * 2);
+    margin-bottom: calc(var(--unit) * 2);
+    display: flex;
+    gap: calc(var(--unit) * 0.5);
+  }
+
+  .track {
+    overflow: hidden;
+    height: 1.3em;
+  }
+
+  .runner {
+    translate: 0 calc(var(--section) * -100% / var(--total));
+    transition: translate 300ms var(--spring-easing-bounce);
+  }
+
+  .runner-icon {
+    transition: translate 500ms var(--spring-easing-bounce);
+  }
+
+  .icon {
+    display: block;
+    width: calc(var(--unit) * 1.5);
+    height: 1.3em;
+
+    background-repeat: no-repeat;
+    background-size: auto 64%;
+    background-position: center 5px;
+
+    &.writing {
+      background-image: url("/assets/paragraph.png");
+    }
+
+    &.experiments {
+      background-image: url("/assets/diferent.png");
+    }
+
+    &.projects {
+      background-image: url("/assets/section.png");
+    }
+
+    &.garden {
+      background-image: url("/assets/garden.png");
+    }
+  }
+</style>

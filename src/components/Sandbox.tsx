@@ -74,15 +74,15 @@ export const Sandbox: React.FC<{
                   <title>Open on CodeSandbox</title>
                   <path
                     d="M6.66665 3.33337H4.33331C3.78103 3.33337 3.33331 3.78109 3.33331 4.33337V11.6667C3.33331 12.219 3.78103 12.6667 4.33331 12.6667H11.6666C12.2189 12.6667 12.6666 12.219 12.6666 11.6667V9.33337"
-                    stroke-linecap="round"
+                    strokeLinecap="round"
                   ></path>
                   <path
                     d="M10 3.33337H12.5667C12.6219 3.33337 12.6667 3.37815 12.6667 3.43337V6.00004"
-                    stroke-linecap="round"
+                    strokeLinecap="round"
                   ></path>
                   <path
                     d="M7.33331 8.66668L12.5333 3.46667"
-                    stroke-linecap="round"
+                    strokeLinecap="round"
                   ></path>
                 </svg>
               </SandpackRoundedButton>
