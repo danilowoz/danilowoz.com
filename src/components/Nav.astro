@@ -65,8 +65,32 @@
     gap: calc(var(--unit) * 0.5);
   }
 
+  .item {
+    transition: all 150ms;
+
+    --behind: calc(((var(--index) * -1) + var(--section)) * 3px);
+    --forward: calc((var(--index) - var(--section)) * 3px);
+    filter: blur(max(var(--forward), var(--behind)));
+
+    opacity: min(
+      calc((var(--index) + 1 - var(--section))),
+      calc(((var(--index) * -1) + var(--section) + 1))
+    );
+
+    &:nth-child(1) {
+      --index: 0;
+    }
+
+    &:nth-child(2) {
+      --index: 1;
+    }
+
+    &:nth-child(3) {
+      --index: 2;
+    }
+  }
+
   .track {
-    overflow: hidden;
     height: 1.3em;
   }
 
@@ -74,37 +98,11 @@
     translate: 0 calc(var(--section) * -100% / var(--total));
 
     transition-timing-function: var(--spring-easing-bounce);
-    transition-duration: 200ms;
+    transition-duration: 300ms;
   }
 
   .runner-icon {
     transition-duration: 400ms;
-  }
-
-  .item {
-    transition: all 200ms;
-
-    --behind: calc(((var(--index) * -1) + var(--section)) * 2px);
-    --forward: calc((var(--index) - var(--section)) * 2px);
-    filter: blur(max(var(--forward), var(--behind)));
-
-    // opacity: max(
-    //   calc((var(--index) - var(--section))),
-    //   calc(((var(--index) * -1) + var(--section)))
-    // );
-  }
-
-  .item:nth-child(1) {
-    opacity: calc(1 - var(--section));
-    --index: 0;
-  }
-
-  .item:nth-child(2) {
-    --index: 1;
-  }
-
-  .item:nth-child(3) {
-    --index: 2;
   }
 
   .icon {
