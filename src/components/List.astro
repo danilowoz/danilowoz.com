@@ -93,9 +93,11 @@ const formatDate = (string) => {
         transform: scale(0.96);
 
         pointer-events: none;
-        transition: transform 0.5s var(--spring-easing-bounce),
-          opacity 0.3s ease-out,
-          top var(--move-duration) var(--spring-easing-smooth);
+
+        transition-property: transform, opacity, top;
+        transition-duration: 0.5s, 0.3s, var(--move-duration);
+        transition-timing-function: var(--spring-easing-bounce), ease-out,
+          var(--spring-easing-smooth);
 
         box-shadow: var(--shadow);
       }

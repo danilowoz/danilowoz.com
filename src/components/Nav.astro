@@ -72,11 +72,39 @@
 
   .runner {
     translate: 0 calc(var(--section) * -100% / var(--total));
-    transition: translate 300ms var(--spring-easing-bounce);
+
+    transition-timing-function: var(--spring-easing-bounce);
+    transition-duration: 200ms;
   }
 
   .runner-icon {
-    transition: translate 500ms var(--spring-easing-bounce);
+    transition-duration: 400ms;
+  }
+
+  .item {
+    transition: all 200ms;
+
+    --behind: calc(((var(--index) * -1) + var(--section)) * 2px);
+    --forward: calc((var(--index) - var(--section)) * 2px);
+    filter: blur(max(var(--forward), var(--behind)));
+
+    // opacity: max(
+    //   calc((var(--index) - var(--section))),
+    //   calc(((var(--index) * -1) + var(--section)))
+    // );
+  }
+
+  .item:nth-child(1) {
+    opacity: calc(1 - var(--section));
+    --index: 0;
+  }
+
+  .item:nth-child(2) {
+    --index: 1;
+  }
+
+  .item:nth-child(3) {
+    --index: 2;
   }
 
   .icon {
