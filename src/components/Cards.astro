@@ -117,9 +117,16 @@ const { data } = Astro.props;
     width: calc(100% - var(--padding) * 2);
     aspect-ratio: 1.6;
     position: relative;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
     margin: var(--padding);
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: -1px;
+      border-radius: calc(var(--radius) - var(--padding) * 0.4);
+      box-shadow: inset 0 0 0 1px var(--color-3);
+    }
 
     img {
       border-radius: calc(var(--radius) - var(--padding) * 0.4);
