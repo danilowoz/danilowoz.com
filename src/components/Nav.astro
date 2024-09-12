@@ -1,18 +1,25 @@
+---
+const items = ["Writing", "UI Garden", "Projects"];
+---
+
 <div class="nav">
   <h2 class="text-large">
     <div class="track">
-      <div class="runner runner-icon">
-        <div class="item"><span class="icon writing"></span></div>
-        <div class="item"><span class="icon garden"></span></div>
-        <div class="item"><span class="icon projects"></span></div>
-      </div>
-    </div>
-
-    <div class="track">
       <div class="runner">
-        <div class="item">Writing</div>
-        <div class="item">UI garden</div>
-        <div class="item">Projects</div>
+        {
+          items.map((item, index) => {
+            return (
+              <div class="item" style={{ "--index": index }}>
+                <span class={`icon ${item.toLowerCase()}`} />
+                {item.split("").map((e, li) => (
+                  <span class="item-letter" style={{ "--letter-index": li }}>
+                    {e}
+                  </span>
+                ))}
+              </div>
+            );
+          })
+        }
       </div>
     </div>
   </h2>
@@ -61,32 +68,33 @@
     position: sticky !important;
     top: calc(var(--unit) * 2);
     margin-bottom: calc(var(--unit) * 2);
-    display: flex;
-    gap: calc(var(--unit) * 0.5);
   }
 
   .item {
-    transition: all 150ms;
-
-    --behind: calc(((var(--index) * -1) + var(--section)) * 3px);
-    --forward: calc((var(--index) - var(--section)) * 3px);
-    filter: blur(max(var(--forward), var(--behind)));
-
-    opacity: min(
+    --opacity: min(
       calc((var(--index) + 1 - var(--section))),
       calc(((var(--index) * -1) + var(--section) + 1))
     );
 
-    &:nth-child(1) {
-      --index: 0;
-    }
+    display: flex;
+    transition: all 400ms;
+  }
 
-    &:nth-child(2) {
-      --index: 1;
-    }
+  .item-letter {
+    transition-timing-function: var(--spring-easing-bounce);
 
-    &:nth-child(3) {
-      --index: 2;
+    opacity: var(--opacity);
+    transform: translateY(
+      calc((var(--letter-index)) * (var(--index) - var(--section)) * 2px)
+    );
+
+    display: inline-block;
+    min-width: 10px;
+
+    @for $i from 2 through 10 {
+      &:nth-child(#{$i}) {
+        transition: transform #{400 + $i * 20}ms, opacity 200ms;
+      }
     }
   }
 
@@ -101,18 +109,18 @@
     transition-duration: 300ms;
   }
 
-  .runner-icon {
-    transition-duration: 400ms;
-  }
-
   .icon {
     display: block;
     width: calc(var(--unit) * 1.5);
     height: 1.3em;
+    margin-right: calc(var(--unit) * 0.5);
 
     background-repeat: no-repeat;
     background-size: auto 64%;
     background-position: center 5px;
+
+    transition: opacity 300ms;
+    opacity: var(--opacity);
 
     &.writing {
       background-image: url("/assets/paragraph.png");
