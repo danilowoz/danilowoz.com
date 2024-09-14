@@ -28,7 +28,7 @@ const formatDate = (string) => {
         <a href="/" class="text-medium backlink"
           ><span>&#8592;</span> Homepage</a
         >
-        <header class={`header ${cover ? "" : "header__noimage"}`}>
+        <header class={`header`}>
           <div>
             <p>
               Danilo Woznica,
@@ -38,14 +38,6 @@ const formatDate = (string) => {
             </p>
             <h1 class={`text-large ${type}`}>{title}</h1>
           </div>
-
-          {
-            cover && (
-              <figure class="cover">
-                <img src={cover} alt={title} />
-              </figure>
-            )
-          }
         </header>
 
         <div class="text-content color-1 content">
@@ -110,15 +102,6 @@ const formatDate = (string) => {
         > div {
           margin-top: calc(var(--unit) * 2);
           margin-bottom: calc(var(--unit) * 4);
-
-          @media screen and (min-width: 800px) {
-            margin: 0;
-            width: 70%;
-          }
-        }
-
-        &.header__noimage > div {
-          width: 100%;
         }
 
         .text-large {
@@ -141,31 +124,6 @@ const formatDate = (string) => {
 
           &.experiments:before {
             background-image: url("/assets/diferent.png");
-          }
-        }
-      }
-
-      .cover {
-        height: 100%;
-        width: 30%;
-
-        @media screen and (min-width: 800px) {
-          width: 40%;
-          height: auto;
-          margin: 0;
-        }
-
-        img {
-          height: 100%;
-          margin-right: -30%;
-
-          @media screen and (min-width: 800px) {
-            height: auto;
-            position: absolute;
-            top: calc(var(--unit) * -8);
-            height: calc(100% + calc(var(--unit) * 8));
-            margin-left: calc(var(--unit) * 6);
-            margin-right: 0;
           }
         }
       }

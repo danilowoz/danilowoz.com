@@ -4,12 +4,19 @@
   --body-gap: calc(var(--unit) * 8);
 
   /* Colors */
-  --color-0: #202020;
-  --color-1: #646464;
-  --color-2: #838383;
-  --color-3: #e8e8e8; /* Border */
-  --color-4: #f9f9f9; /* Low background */
-  --color-brand: #003dee;
+  --hue: 225;
+  --saturation: 5%;
+
+  --color-0: hsl(var(--hue), var(--saturation), 13%);
+  --color-1: hsl(var(--hue), var(--saturation), 39%);
+  --color-2: hsl(var(--hue), var(--saturation), 51%);
+  --color-3: hsl(var(--hue), var(--saturation), 91%); /* Border */
+  --color-4: hsl(var(--hue), var(--saturation), 98%); /* Low background */
+  --color-brand: hsl(var(--hue), 100%, 47%);
+
+  --shadow: hsla(var(--hue), var(--saturation), 91%, 0.7) 0px 1px 5px -4px,
+    hsla(255, 75%, 16%, 0.1) 0px 0px 0px 1px,
+    hsla(255, 75%, 16%, 0.05) 0px 4px 8px 0px;
 
   /* Types */
   --text-size-large: calc(var(--unit) * 1.4);
@@ -23,10 +30,6 @@
   /* Misc */
   --transition: 0.2s ease;
   --radius: calc(var(--unit) * 0.5);
-
-  --shadow: rgba(232, 232, 232, 0.7) 0px 1px 5px -4px,
-    rgba(10, 50, 70, 0.08) 0px 0px 0px 1px,
-    rgba(10, 50, 70, 0.05) 0px 4px 8px 0px;
 
   --spring-easing-bounce: linear(
     0,
