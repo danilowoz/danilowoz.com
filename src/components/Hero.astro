@@ -11,7 +11,7 @@ import content from "../content";
       <span class="color-2">{content.hero.headline}</span>
     </h1>
 
-    <h2 class="text-base">Danilo Woznica</h2>
+    <h2 class="text-base"><span>Danilo Woznica</span></h2>
 
     <div class="hero_social color-1">
       <Social />
@@ -39,6 +39,32 @@ import content from "../content";
   .hero_social {
     display: flex;
     align-items: center;
+  }
+
+  .text-base {
+    span {
+      display: inline-block;
+      background: linear-gradient(
+        90deg,
+        var(--color-0) 40%,
+        var(--color-2),
+        var(--color-0) 60%
+      );
+      background-clip: text;
+      color: transparent;
+      background-size: 200%;
+      background-position: 120%;
+
+      &:hover {
+        animation: slide 1s ease-out;
+      }
+    }
+  }
+
+  @keyframes slide {
+    100% {
+      background-position: -20%;
+    }
   }
 
   .hero_img {
