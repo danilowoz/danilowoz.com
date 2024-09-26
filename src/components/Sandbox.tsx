@@ -92,7 +92,7 @@ export const Sandbox: React.FC<{
       </SandpackLayout>
 
       <div className="sandbox-details">
-        <p className="sandbox-details__title text-base color-0">{title}</p>
+        <p className="sandbox-details__title text-medium color-0">{title}</p>
 
         <p className="color-1 text-base">{description}</p>
 
