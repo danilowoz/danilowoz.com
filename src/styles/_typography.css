@@ -11,7 +11,7 @@ body {
   html,
   body {
     line-height: 1.75;
-  }  
+  }
 }
 
 .text-highlight {
@@ -67,9 +67,8 @@ body {
   margin-bottom: var(--unit);
 }
 
-
 @media screen and (min-width: 768px) {
   .text-content p {
     line-height: 1.75;
-  }  
+  }
 }

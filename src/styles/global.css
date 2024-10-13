@@ -11,3 +11,36 @@ body {
   scroll-behavior: smooth;
   image-rendering: -webkit-optimize-contrast;
 }
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip:before {
+  content: attr(data-content);
+  position: absolute;
+  z-index: 2;
+
+  top: calc(-100% - var(--unit));
+  transform: translateX(-50%) translateY(calc(var(--unit) / 2));
+  left: 50%;
+
+  padding: calc(var(--unit) / 2);
+  border-radius: var(--radius);
+
+  font-size: var(--text-size-small);
+  text-align: center;
+  line-height: 1;
+
+  box-shadow: var(--shadow);
+  background: var(--color-4);
+  width: 100%;
+  transition: var(--transition);
+
+  opacity: 0;
+}
+
+.tooltip:hover:before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

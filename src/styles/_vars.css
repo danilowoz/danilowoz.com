@@ -28,7 +28,7 @@
   --sans-serif: "Inter", sans-serif;
 
   /* Misc */
-  --transition: 0.2s ease;
+  --transition: 0.2s ease-in-out;
   --radius: calc(var(--unit) * 0.5);
 
   --spring-easing-bounce: linear(
