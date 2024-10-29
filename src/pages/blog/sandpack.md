@@ -10,7 +10,7 @@ tag: Learning
 
 ## A bit of self-reflection
 
-From a particular moment in my career, React.js started becoming omnipresent in the front-end community. Seeing so much innovation in the open-source community cultivated a strong desire in me to contribute to something real with a positive impact. Something that could last and possibly make the world a bit fairer.
+From a particular moment in my career, React.js started becoming omnipresent in the front-end community. Seeing so much innovation in the open-source community cultivated a strong desire in me to contribute to something real with a positive impact. <strong>Something that could last and possibly make the world a bit fairer.</strong>
 
 This internal force manifested in impulsive actions and made me go beyond to pursue my goals. Maybe unconsciously, I knew when I joined the CodeSandbox team that its values (to be accessible, collaborative, and empowering) could give me the chance to achieve this goal in my career.
 

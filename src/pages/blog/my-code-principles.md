@@ -13,7 +13,7 @@ Over my career, I have learned many code principles such as KISS, DRY, SOLID, et
 
 I believe everyone has their very own relationship with code and how to approach some problems. That being said, I realized I usually spend more time on other aspects when I'm coding rather than subjective points, like if a piece of code looks elegant and/or satisfactorily implemented.
 
-What’s more, over time, we grow a set of practices to solve some problems that we face many times throughout our careers as developers The more often we use these practices, the stronger they'll become in our code routine, influencing code quality and career growth.
+What’s more, over time, we grow a set of practices to solve some problems that we face many times throughout our careers as developers. The more often we use these practices, the stronger they'll become in our code routine, influencing code quality and career growth.
 
 At least for me, this set of practices are more human abstractions, such as values, concerns, mental models, and even results from some sort of traumas from previous experiences, rather than any other rules I learned in college or on a blog post. These are my principles, which I split into three main categories:
 
