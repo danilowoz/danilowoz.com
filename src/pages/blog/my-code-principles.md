@@ -29,7 +29,7 @@ In most cases, the implementation could not be pixel-perfect or made using the l
 
 If I look at the bigger picture holistically, I can understand the key points to achieve the main goal of a task, and sometimes it's not just delivering it to production. Hopefully, design has a ton of methods that guides us to embrace the problem, and at the end of the day, that's what matters: it’s the problem that needs to be solved, not a solution that needs to be implemented.
 
-> "Fall in love with the problem,<br/> not with the solution." <span>― Marty Cagan</span>
+> “Fall in love with the problem,<br/> not with the solution.” <span>― Marty Cagan</span>
 
 ## Development experience
 
@@ -37,7 +37,7 @@ When you're hosting a party, you want everyone to feel welcome and make themselv
 
 By making a code more **explicit**, **discoverable**, and **searchable**, I believe I can provide a clear path about what I was thinking about when I wrote that piece of code. It doesn't mean that it must be declarative or imperative. I think the right answer will come when you realize how fast you're navigating through the codebase, how productive you feel, and don’t have any doubts about the consequences of the changes you’ve made.
 
-> "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live." <span> ― John Woods</span>
+> “Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.” <span> ― John Woods</span>
 
 Moreover, maintaining a codebase from someone else is an exercise of empathy, so I put myself in the code owner's shoes, putting my judgment aside and trying to leave the codebase better than I found it.
 
@@ -54,7 +54,7 @@ I aim to build a codebase that is:
 
 So, I imagine that the codebase is a living organism or a sort of unfished piece of art. Many people interact with what you have written, and many others are yet to. So for the very last time: we should write code for humans and, definitely, for ourselves. That’s why I stay creative and proactive to make it a better "place to live." Otherwise, every time I open the editor, the code I see will suck, and I might be the author.
 
-> "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." <span>― Martin Fowler</span>
+> “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” <span>― Martin Fowler</span>
 
 ## A disclaimer
 
