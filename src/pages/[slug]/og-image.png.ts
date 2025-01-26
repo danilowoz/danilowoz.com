@@ -22,10 +22,10 @@ export async function getStaticPaths() {
 
 export const get: APIRoute = async function get({ params, request, props }) {
   const interData = await fetch(
-    "https://fonts.cdnfonts.com/s/19795/Inter-Regular.woff"
+    "https://fonts.cdnfonts.com/s/19795/Inter-Regular.woff",
   );
   const merriData = await fetch(
-    "https://fonts.cdnfonts.com/s/12231/Merriweather-Regular.woff"
+    "https://fonts.cdnfonts.com/s/12231/Merriweather-Regular.woff",
   );
   const inter = await interData.arrayBuffer();
   const merri = await merriData.arrayBuffer();
@@ -110,7 +110,7 @@ export const get: APIRoute = async function get({ params, request, props }) {
           style: "normal",
         },
       ],
-    }
+    },
   );
 
   const png = await sharp(Buffer.from(svg)).png().toBuffer();

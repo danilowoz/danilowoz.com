@@ -20,7 +20,7 @@ export const Sandbox: React.FC<{
 
   useEffect(() => {
     fetch(
-      `https://codesandbox.io/api/v1/sandboxes/csb-id-${sandboxId}/sandpack`
+      `https://codesandbox.io/api/v1/sandboxes/csb-id-${sandboxId}/sandpack`,
     )
       .then((res) => res.json())
       .then((data) => {
@@ -30,10 +30,10 @@ export const Sandbox: React.FC<{
             .reduce((acc, curr) => {
               acc[curr[0]] = curr[1];
               return acc;
-            }, {})
+            }, {}),
         );
         setEnv(
-          data.environment === "create-react-app" ? "react" : data.environment
+          data.environment === "create-react-app" ? "react" : data.environment,
         );
       });
   }, []);
@@ -58,7 +58,7 @@ export const Sandbox: React.FC<{
                 onClick={() => {
                   window.open(
                     `https://codesandbox.io/p/sandbox/${sandboxId}`,
-                    "_blank"
+                    "_blank",
                   );
                 }}
                 className="sp-icon-standalone"

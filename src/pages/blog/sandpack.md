@@ -14,17 +14,17 @@ From a particular moment in my career, React.js started becoming omnipresent in 
 
 This internal force manifested in impulsive actions and made me go beyond to pursue my goals. Maybe unconsciously, I knew when I joined the CodeSandbox team that its values (to be accessible, collaborative, and empowering) could give me the chance to achieve this goal in my career.
 
-Never would I have imagined getting the chance to contribute to the long-awaited new React.js documentation, which may be the hugest thing I've done in the open-source space[^1]. So, I couldn't have been more motivated when CodeSandbox set this challenge for me and the team.
+Never would I have imagined getting the chance to contribute to the long-awaited new React.js documentation, which may be the hugest thing I've done in the open-source space<label class="margin-toggle sidenote-number"></label><span class="sidenote">[React.dev: docs contributors](https://react.dev/community/docs-contributors)</span>. So, I couldn't have been more motivated when CodeSandbox set this challenge for me and the team.
 
 ## React.dev meets Sandpack
 
 React team challenged us to provide a browser-based playground (sandboxes) for the React.js documentation and ensure these sandboxes are accessible not just for everyone but everywhere. The goal was to use these sandboxes to demonstrate React APIs, create internal challenges to be solved by users, promote best practices, and ultimately educate users on how to code using React.
 
-<figure class="large">
+<figure class="fullwidth">
     <img
         src="/images/sandpack/react-dev.png"
         alt="Example of a sandbox on react.dev"
-        width="1277"
+        width="1029"
         height="714"
     />
     <figcaption>Example of a Sandpack sandbox on react.dev</figcaption>
@@ -50,16 +50,16 @@ The first Sandpack version was based on the bundler used by CodeSandbox.io. Howe
 
 That is why the team came up with a new solution built from scratch shaped to be modularized and only load, transpile and evaluate what the sandbox would use. This resulted in a more streamlined and faster solution. So to get to know this solution, let's break it down into two main components:
 
-- Sandpack CDN [^2]: With a custom CDN we could skip the transpiling step for dependencies by caching them in a custom-built solution. Plus, it optimizes npm modules for browsers by keeping the full registry on disk and serving them in a msgpack bundle to clients. Its speedy resolver uses the in-memory/on-disk npm registry.
-- Sandpack Bundler [^3]: To start, it uses fewer resources by avoiding fetching unnecessary files. Moreover, it's significantly faster, primarily due to a new architecture that allows it to lazily load framework support, but also because it introduces support to the latest transpiler version, and removes many bottlenecks observed on the previous bundler.
+- Sandpack CDN<label class="margin-toggle sidenote-number"></label><span class="sidenote">[codesandbox/sandpack-bundler](https://github.com/codesandbox/sandpack-bundler)</span>: With a custom CDN we could skip the transpiling step for dependencies by caching them in a custom-built solution. Plus, it optimizes npm modules for browsers by keeping the full registry on disk and serving them in a msgpack bundle to clients. Its speedy resolver uses the in-memory/on-disk npm registry.
+- Sandpack Bundler<label class="margin-toggle sidenote-number"></label><span class="sidenote">[codesandbox/sandpack-cdn](https://github.com/codesandbox/sandpack-cdn)</span>: To start, it uses fewer resources by avoiding fetching unnecessary files. Moreover, it's significantly faster, primarily due to a new architecture that allows it to lazily load framework support, but also because it introduces support to the latest transpiler version, and removes many bottlenecks observed on the previous bundler.
 
 This is simply the work of a genius: Jasper!
 
-### Debug code [^4]
+### Debug code <label class="margin-toggle sidenote-number"></label><span class="sidenote">[feat: Add SandpackConsole component](https://github.com/codesandbox/sandpack/pull/546)</span>
 
 We understood that console is still the most friendly way to debug code and introduce a sort of checkpoints while coding. This was essential for React.dev to tell the story behind some exercises. So, Sandpack created an interface between the console native method on the bundler and the Sandpack UI to render logs next to the sandbox.
 
-### Make it educational [^5]
+### Make it educational <label class="margin-toggle sidenote-number"></label><span class="sidenote">[feat: Adds eslint integration on Sandpack](https://github.com/reactjs/react.dev/pull/4665)</span>
 
 The release of the new React hooks API also brought along a set of ESLint rules. So, an integration between sandboxes and linting the current code was fundamental to providing a stable and safe environment for learning. Fortunately, we could run ESLint on the client side. This made it possible to execute a set of rules and build a custom plugin on CodeMirror to highlight any errors right on the code editor.
 
@@ -74,9 +74,3 @@ During this journey: **as a developer, I’ve learned I'm not an impostor; as a 
 ## Thanks to
 
 [Alex](https://twitter.com/alexnmoldovan), [Ives](https://twitter.com/CompuIves), [Jasper](https://twitter.com/JasperDeMoor), and the whole CodeSandbox team.
-
-[^1]: [React.dev: docs contributors](https://react.dev/community/docs-contributors)
-[^2]: [github.com/codesandbox/sandpack-bundler](https://github.com/codesandbox/sandpack-bundler)
-[^3]: [github.com/codesandbox/sandpack-cdn](https://github.com/codesandbox/sandpack-cdn)
-[^4]: [feat: Add SandpackConsole component](https://github.com/codesandbox/sandpack/pull/546)
-[^5]: [feat: Adds eslint integration on Sandpack](https://github.com/reactjs/react.dev/pull/4665)

@@ -1,6 +1,6 @@
 ---
-import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
+import MainHead from "../components/MainHead.astro";
 
 const {
   content: { title, date, tagline, timeToRead, cover, type },
@@ -22,86 +22,54 @@ const formatDate = (string) => {
     <MainHead {title} description={tagline} image={false} />
   </head>
 
-  <body>
-    <div class="overflow">
-      <article class="container-post">
-        <a href="/" class="text-medium backlink"
-          ><span>&#8592;</span> Homepage</a
-        >
-        <header class={`header`}>
-          <div>
-            <p>
-              Danilo Woznica,
-              {formatDate(date)}
-              <span class="color-2">—</span>
-              {timeToRead}
-            </p>
-            <h1 class={`text-large ${type}`}>{title}</h1>
-          </div>
-        </header>
+  <body class="post">
+    <article>
+      <a href="/" class="text-medium backlink">
+        <span>&#8592;</span> Homepage</a
+      >
 
-        <div class="text-content color-1 content">
-          <slot />
-        </div>
+      <h1 class={`text-large ${type}`}>{title}</h1>
+      <p>
+        Danilo Woznica,
+        {formatDate(date)}
+        <span class="color-2">—</span>
+        {timeToRead}
+      </p>
 
-        <Footer />
-      </article>
-    </div>
+      <header class={`header`}>
+        <div></div>
+      </header>
+
+      <section class="color-1 text-content">
+        <slot />
+      </section>
+
+      <Footer />
+    </article>
+
     <style lang="scss" is:global>
-      .overflow {
-        width: 100vw;
-        overflow-x: hidden;
-      }
-
-      .container-post {
-        max-width: calc(var(--unit) * 41);
-
-        padding-left: var(--unit);
-        padding-right: var(--unit);
-
-        padding-top: calc(var(--unit) * 1);
-        padding-bottom: calc(var(--unit) * 1);
-
+      /* Tufte CSS styles */
+      .post {
+        width: 87.5%;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 12.5%;
+        max-width: 1400px;
+        counter-reset: sidenote-counter;
+
+        .backlink span {
+          display: inline-block;
+          transition: transform var(--transition);
+        }
+
+        .backlink:hover span {
+          transform: translateX(calc(var(--unit) * -0.2));
+        }
 
         @media screen and (min-width: 800px) {
-          padding-top: calc(var(--unit) * 8);
-        }
-      }
-
-      .backlink span {
-        display: inline-block;
-        transition: transform var(--transition);
-      }
-
-      .backlink:hover span {
-        transform: translateX(calc(var(--unit) * -0.2));
-      }
-
-      @media screen and (min-width: 800px) {
-        .backlink {
-          margin-left: calc(var(--unit) * -1);
-        }
-      }
-
-      .header {
-        display: flex;
-        align-items: center;
-        position: relative;
-
-        @supports not (aspect-ratio: 1.6) {
-          height: 390px;
-        }
-
-        @supports (aspect-ratio: 1.6) {
-          aspect-ratio: 1.6;
-          height: auto;
-        }
-
-        > div {
-          margin-top: calc(var(--unit) * 2);
-          margin-bottom: calc(var(--unit) * 4);
+          .backlink {
+            margin-left: calc(var(--unit) * -1);
+          }
         }
 
         .text-large {
@@ -126,9 +94,7 @@ const formatDate = (string) => {
             background-image: url("/assets/diferent.png");
           }
         }
-      }
 
-      .content {
         h2,
         h3,
         h4,
@@ -139,12 +105,6 @@ const formatDate = (string) => {
           margin-top: calc(var(--unit) * 2);
         }
 
-        ol,
-        ul {
-          padding-left: calc(var(--unit) * 2);
-          margin-bottom: var(--unit);
-        }
-
         ol {
           list-style: decimal;
         }
@@ -153,126 +113,273 @@ const formatDate = (string) => {
           list-style: disc;
         }
 
-        ol li {
-          list-style: decimal;
+        hr {
+          display: block;
+          height: 1px;
+          width: 55%;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em 0;
+          padding: 0;
         }
 
-        video,
-        img {
-          max-width: 100%;
-          height: auto;
+        article {
+          padding: 5rem 0rem;
         }
 
-        a {
-          color: var(--color-brand);
-        }
+        section {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
 
-        table td {
-          border-bottom: 1px solid var(--color-3);
-          padding: calc(var(--unit) * 0.4);
-        }
-
-        table th {
-          text-align: left;
-          padding: calc(var(--unit) * 0.4);
-        }
-
-        table code {
-          background: var(--color-3);
           color: var(--color-1);
-          padding: calc(var(--unit) * 0.2);
-          white-space: nowrap;
-        }
 
-        figure img {
-          border: 1px solid var(--color-3);
-        }
+          a {
+            text-decoration: underline;
 
-        @media screen and (min-width: 800px) {
-          figure.large img {
-            margin: 0 -10vw;
-            max-width: none;
-            width: calc(100% + 20vw);
+            &:hover {
+              color: var(--color-brand);
+            }
+          }
+
+          & > p,
+          & > footer,
+          & > table,
+          & > h3 {
+            width: 55%;
+          }
+
+          & > dl,
+          & > ol,
+          & > ul {
+            width: 55%;
+            -webkit-padding-start: 5%;
           }
         }
 
-        figcaption {
-          text-align: center;
-          margin-bottom: var(--unit);
-        }
-
-        .footnotes p {
-          margin-bottom: 0;
+        p {
+          margin-top: 1.4rem;
+          margin-bottom: 1.4rem;
+          padding-right: 0;
+          vertical-align: baseline;
         }
 
         blockquote {
-          font-size: var(--text-size-large);
-          line-height: 1.4;
-          font-family: var(--serif);
-          margin: 1em 2em 1em 2em;
+          font-size: 1.4rem;
+          margin: 3rem;
 
-          span {
-            color: var(--color-2);
-            display: block;
-            font-size: var(--text-size-large);
-            margin-top: var(--unit);
+          p {
+            width: 55%;
+            margin-right: 40px;
           }
 
-          @media screen and (min-width: 800px) {
-            margin: 1em -4em 1em 3em;
+          cite {
+            display: block;
+            width: 100%;
+            font-size: 1.1rem;
+            text-align: right;
           }
         }
 
-        --color-text: var(--color-0);
-        --color-background: #ffffff;
-        --token-constant: var(--color-brand);
-        --token-string: var(--color-0);
-        --token-comment: #6a737d;
-        --token-keyword: var(--color-brand);
-        --token-parameter: var(--color-brand);
-        --token-function: var(--color-brand);
-        --token-string-expression: #a3be8c;
-        --token-punctuation: var(--color-2);
-        --token-link: #22863a;
+        dt:not(:first-child),
+        li:not(:first-child) {
+          margin-top: 0.25rem;
+        }
 
-        pre {
-          padding: var(--unit);
+        figure {
+          padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+          max-width: 55%;
+          -webkit-margin-start: 0;
+          -webkit-margin-end: 0;
+          margin: 0 0 3em 0;
+
+          figcaption {
+            float: right;
+            clear: right;
+            vertical-align: baseline;
+            position: relative;
+            max-width: 40%;
+            color: var(--color-2);
+            font-size: 0.8rem;
+          }
+
+          &.fullwidth figcaption {
+            margin-right: 24%;
+          }
+        }
+
+        /* Sidenotes, margin notes, figures, captions */
+        img {
+          max-width: 100%;
+          height: auto;
           border: 1px solid var(--color-3);
           border-radius: var(--radius);
-          margin-bottom: var(--unit);
-          font-size: 14px;
-          line-height: 1.4;
-          overflow: auto;
+        }
 
-          background: var(--color-background);
-          color: var(--color-text);
+        .sidenote,
+        .marginnote {
+          float: right;
+          clear: right;
+          margin-right: -60%;
+          width: 50%;
+          margin-top: 0.3rem;
+          margin-bottom: 0;
+          vertical-align: baseline;
+          position: relative;
+          color: var(--color-2);
+          font-size: 0.8rem;
+        }
 
-          .constant {
-            color: var(--token-constant);
+        .sidenote-number {
+          counter-increment: sidenote-counter;
+        }
+
+        .sidenote-number:after,
+        .sidenote:before {
+          position: relative;
+          vertical-align: baseline;
+        }
+
+        .sidenote-number:after {
+          content: counter(sidenote-counter);
+          font-size: 0.6rem;
+          top: -0.5rem;
+          left: 0.1rem;
+        }
+
+        .sidenote:before {
+          content: counter(sidenote-counter) " ";
+          font-size: 0.6rem;
+          top: -0.5rem;
+        }
+
+        blockquote .sidenote,
+        blockquote .marginnote {
+          margin-right: -82%;
+          min-width: 59%;
+          text-align: left;
+        }
+
+        div.fullwidth {
+          width: 100%;
+        }
+
+        .marginnote > code,
+        .sidenote > code {
+          font-size: 1rem;
+        }
+
+        pre > code {
+          font-size: 0.9rem;
+          width: 52.5%;
+          margin-left: 2.5%;
+          overflow-x: auto;
+          display: block;
+        }
+
+        pre.fullwidth > code {
+          width: 90%;
+        }
+
+        .fullwidth {
+          max-width: 90%;
+          clear: both;
+        }
+
+        span.newthought {
+          font-variant: small-caps;
+          font-size: 1.2em;
+        }
+
+        input.margin-toggle {
+          display: none;
+        }
+
+        label.sidenote-number {
+          display: inline-block;
+          max-height: 2rem; /* should be less than or equal to paragraph line-height */
+        }
+
+        label.margin-toggle:not(.sidenote-number) {
+          display: none;
+        }
+
+        .iframe-wrapper {
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 */
+          padding-top: 25px;
+          height: 0;
+        }
+
+        .iframe-wrapper iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        @media (max-width: 760px) {
+          & {
+            width: 100%;
+            padding: 0;
           }
-          .string {
-            color: var(--token-string);
+
+          article {
+            padding: var(--unit);
           }
-          .comment {
-            color: var(--token-comment);
+
+          hr,
+          section > p,
+          section > footer,
+          section > table {
+            width: 100%;
           }
-          .keyword {
-            color: var(--token-keyword);
+
+          pre > code {
+            width: 97%;
           }
-          .parameter {
-            color: var(--token-parameter);
+
+          section > dl,
+          section > ol,
+          section > ul {
+            width: 90%;
           }
-          .function {
-            color: var(--token-function);
+
+          figure {
+            max-width: 90%;
           }
-          .string-expression {
-            color: var(--token-string-expression);
+
+          figcaption,
+          figure.fullwidth figcaption {
+            margin-right: 0%;
+            max-width: none;
           }
-          .punctuation {
-            color: var(--token-punctuation);
+
+          blockquote {
+            margin-left: 1.5em;
+            margin-right: 0em;
           }
-          .link {
-            color: var(--token-link);
+
+          blockquote p,
+          blockquote footer {
+            width: 100%;
+          }
+
+          label.margin-toggle:not(.sidenote-number) {
+            display: inline;
+          }
+
+          .sidenote,
+          .marginnote {
+            display: none;
+          }
+
+          img {
+            width: 100%;
           }
         }
       }
