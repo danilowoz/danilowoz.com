@@ -2,15 +2,19 @@ import react from "@astrojs/react";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://danilowoz",
+
 	integrations: [
 		react(),
 		robotsTxt({
 			sitemap: false,
 		}),
 	],
+
 	markdown: {
 		shikiConfig: {
 			// Choose from Shiki's built-in themes (or add your own)
@@ -24,5 +28,7 @@ export default defineConfig({
 			wrap: true,
 		},
 	},
+
 	output: "server",
+	adapter: vercel(),
 });
