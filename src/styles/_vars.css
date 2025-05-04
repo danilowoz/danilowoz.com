@@ -1,79 +1,80 @@
 :root {
-  /* Spacing */
-  --unit: 1rem;
-  --body-gap: calc(var(--unit) * 8);
+	/* Spacing */
+	--unit: 1rem;
+	--body-gap: calc(var(--unit) * 8);
 
-  /* Colors */
-  --hue: 225;
-  --saturation: 5%;
+	/* Colors */
+	--hue: 225;
+	--saturation: 5%;
 
-  --color-0: hsl(var(--hue), var(--saturation), 13%);
-  --color-1: hsl(var(--hue), var(--saturation), 39%);
-  --color-2: hsl(var(--hue), var(--saturation), 51%);
-  --color-3: hsl(var(--hue), var(--saturation), 91%); /* Border */
-  --color-4: hsl(var(--hue), var(--saturation), 98%); /* Low background */
-  --color-brand: hsl(var(--hue), 100%, 47%);
+	--color-0: hsl(var(--hue), var(--saturation), 13%);
+	--color-1: hsl(var(--hue), var(--saturation), 39%);
+	--color-2: hsl(var(--hue), var(--saturation), 51%);
+	--color-3: hsl(var(--hue), var(--saturation), 91%); /* Border */
+	--color-4: hsl(var(--hue), var(--saturation), 98%); /* Low background */
+	--color-brand: hsl(var(--hue), 100%, 47%);
 
-  --shadow: hsla(var(--hue), var(--saturation), 91%, 0.7) 0px 1px 5px -4px,
-    hsla(255, 75%, 16%, 0.1) 0px 0px 0px 1px,
-    hsla(255, 75%, 16%, 0.05) 0px 4px 8px 0px;
+	--shadow:
+		hsla(var(--hue), var(--saturation), 91%, 0.7) 0px 1px 5px -4px,
+		hsla(255, 75%, 16%, 0.1) 0px 0px 0px 1px,
+		hsla(255, 75%, 16%, 0.05) 0px 4px 8px 0px;
 
-  /* Types */
-  --text-size-large: calc(var(--unit) * 1.4);
-  --text-size-base: var(--unit);
-  --text-size-small: calc(var(--unit) * 0.8);
+	/* Types */
+	--text-size-large: calc(var(--unit) * 1.4);
+	--text-size-base: var(--unit);
+	--text-size-small: calc(var(--unit) * 0.8);
 
-  /* Font-family */
-  --serif: "Nokora", serif;
-  --sans-serif: "Inter", sans-serif;
+	/* Font-family */
+	--serif: "Nokora", serif;
+	--sans-serif: "Inter", sans-serif;
 
-  /* Misc */
-  --transition: 0.2s ease-in-out;
-  --radius: calc(var(--unit) * 0.5);
+	/* Misc */
+	--transition: 0.2s ease-in-out;
+	--radius: calc(var(--unit) * 0.5);
 
-  --spring-easing-bounce: linear(
-    0,
-    0.0053 1.01%,
-    0.0309 2.53%,
-    0.2173 7.58%,
-    0.6308 16.17%,
-    1.032 31.33%,
-    1.06 35.37%,
-    1.0585 45.48%,
-    1.0274 55.08%,
-    1.016,
-    1.0073,
-    1.0013 67.2%,
-    0.997 72.26%,
-    0.9954 77.81%,
-    0.999 99.54%
-  );
+	--spring-easing-bounce: linear(
+		0,
+		0.0053 1.01%,
+		0.0309 2.53%,
+		0.2173 7.58%,
+		0.6308 16.17%,
+		1.032 31.33%,
+		1.06 35.37%,
+		1.0585 45.48%,
+		1.0274 55.08%,
+		1.016,
+		1.0073,
+		1.0013 67.2%,
+		0.997 72.26%,
+		0.9954 77.81%,
+		0.999 99.54%
+	);
 
-  --spring-easing-smooth: linear(
-    0,
-    0.0052 1.01%,
-    0.0299 2.53%,
-    0.1033 5.05%,
-    0.5356 15.66%,
-    0.6424 18.7%,
-    0.7188,
-    0.7836 23.75%,
-    0.8467,
-    0.8957 29.81%,
-    0.9375,
-    0.9663,
-    0.9852 40.42%,
-    0.9981 44.46%,
-    1.0051 49.01%,
-    1.0073 52.55%,
-    1.0076 57.1%,
-    1.0017 79.33%,
-    1 99.54%
-  );
+	--spring-easing-smooth: linear(
+		0,
+		0.0052 1.01%,
+		0.0299 2.53%,
+		0.1033 5.05%,
+		0.5356 15.66%,
+		0.6424 18.7%,
+		0.7188,
+		0.7836 23.75%,
+		0.8467,
+		0.8957 29.81%,
+		0.9375,
+		0.9663,
+		0.9852 40.42%,
+		0.9981 44.46%,
+		1.0051 49.01%,
+		1.0073 52.55%,
+		1.0076 57.1%,
+		1.0017 79.33%,
+		1 99.54%
+	);
 }
 
 @media screen and (min-width: 800px) {
-  :root {
-    --text-size-large: calc(var(--unit) * 2);
-  }
+	:root {
+		--text-size-large: calc(var(--unit) * 2);
+	}
 }
