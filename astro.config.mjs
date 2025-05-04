@@ -1,15 +1,14 @@
 import { defineConfig } from "astro/config";
 import robotsTxt from "astro-robots-txt";
 import react from "@astrojs/react";
+import cloudflare from "@astrojs/cloudflare";
 
+// https://astro.build/config
 export default defineConfig({
   site: "https://danilowoz",
-  integrations: [
-    react(),
-    robotsTxt({
-      sitemap: false,
-    }),
-  ],
+  integrations: [react(), robotsTxt({
+    sitemap: false
+  })],
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
@@ -20,7 +19,9 @@ export default defineConfig({
       // https://github.com/shikijs/shiki/blob/main/docs/languages.md
       langs: [],
       // Enable word wrap to prevent horizontal scrolling
-      wrap: true,
-    },
+      wrap: true
+    }
   },
+  output: "server",
+  adapter: cloudflare()
 });
