@@ -69,4 +69,4 @@ During this journey: **as a developer, I’ve learned I'm not an impostor; as a 
 
 ## Thanks to
 
-[Alex](https://twitter.com/alexnmoldovan), [Ives](https://twitter.com/CompuIves), [Jasper](https://twitter.com/JasperDeMoor), and the whole CodeSandbox team.
+[Alex](https://twitter.com/alexnmoldovan), [Ives](https://twitter.com/CompuIves), [Jasper](https://twitter.com/JasperDeMoor), and the entire CodeSandbox team.
