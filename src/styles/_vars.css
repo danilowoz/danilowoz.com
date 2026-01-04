@@ -30,7 +30,7 @@
 
 	/* Misc */
 	--transition: 0.2s ease-in-out;
-	--radius: calc(var(--unit) * 0.5);
+	--radius: calc(var(--unit) * 0.3);
 
 	--spring-easing-bounce: linear(
 		0,
