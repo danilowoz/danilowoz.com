@@ -1,33 +1,38 @@
 ---
 import { Sandbox } from "./Sandbox";
+import { sandboxes } from "../data/sandboxes";
 import "../styles/sandbox.css";
 ---
 
 <div class="sandbox-list">
   <Sandbox
     client:only="react"
-    sandboxId="s46fp8"
+    files={sandboxes["s46fp8"].files}
+    environment={sandboxes["s46fp8"].environment}
     title="Rainbow button"
     description="CSS-only button that lights up on hover."
   />
 
   <Sandbox
     client:only="react"
-    sandboxId="pztylm"
+    files={sandboxes["pztylm"].files}
+    environment={sandboxes["pztylm"].environment}
     title="Glow button"
     description="CSS-only glowy button with transparent background."
   />
 
   <Sandbox
     client:only="react"
-    sandboxId="hmmmvf"
+    files={sandboxes["hmmmvf"].files}
+    environment={sandboxes["hmmmvf"].environment}
     title="Independent gradients"
     description="Independent stroke and fill gradients without extra elements."
   />
 
   <Sandbox
     client:only="react"
-    sandboxId="n57fpk"
+    files={sandboxes["n57fpk"].files}
+    environment={sandboxes["n57fpk"].environment}
     title="Filter Spotify menu"
     description="SVG for the merging effect, and Framer Motion to animate transition."
     showRefreshButton
@@ -35,7 +40,8 @@ import "../styles/sandbox.css";
 
   <Sandbox
     client:only="react"
-    sandboxId="n9g694"
+    files={sandboxes["n9g694"].files}
+    environment={sandboxes["n9g694"].environment}
     title="CSS only album navigation"
     description="Reproduction of 'Apple Music: 100 best albums' website but using only CSS."
     showRefreshButton
