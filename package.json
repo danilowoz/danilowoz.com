@@ -16,7 +16,7 @@
 	},
 	"dependencies": {
 		"@astrojs/react": "^4.2.7",
-		"@astrojs/vercel": "^8.1.4",
+		"@astrojs/vercel": "^8.2.11",
 		"@codesandbox/sandpack-react": "^2.13.5",
 		"astro": "^5.7.10",
 		"astro-robots-txt": "^0.3.8",
