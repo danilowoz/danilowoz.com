@@ -1,0 +1,37 @@
+---
+import Footer from "../components/Footer.astro";
+import MainHead from "../components/MainHead.astro";
+import Section from "../components/Section.astro";
+import UIGallery from "../components/UIGallery.astro";
+---
+
+<html lang="en">
+  <head>
+    <MainHead title="UI garden" />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+
+  <body>
+    <main class="container grid">
+      <Section title="UI garden">
+        <UIGallery />
+      </Section>
+
+      <Footer />
+    </main>
+    <style lang="scss">
+      .grid {
+        position: relative;
+        z-index: 1;
+        padding-top: calc(var(--unit) * 1);
+        padding-bottom: calc(var(--unit) * 1);
+      }
+
+      @media screen and (min-width: 800px) {
+        .grid {
+          padding-top: calc(var(--unit) * 8);
+        }
+      }
+    </style>
+  </body>
+</html>
