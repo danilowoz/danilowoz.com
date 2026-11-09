@@ -5,7 +5,6 @@ import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import List from "../components/List.astro";
 import MainHead from "../components/MainHead.astro";
-import Nav from "../components/Nav.astro";
 import Section from "../components/Section.astro";
 
 const blogsMd = await Astro.glob("./blog/*.md");
@@ -37,8 +36,6 @@ const articles = content.filter(
   <body>
     <main class="container grid">
       <Hero />
-
-      <Nav />
 
       <Section title="Writing">
         <List data={articles} />
