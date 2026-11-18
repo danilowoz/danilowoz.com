@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "plugins": [{ "name": "workflow" }]
   }
 }
