@@ -3,7 +3,6 @@ import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
 
 import vercel from "@astrojs/vercel";
-import { workflow } from "workflow/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +13,6 @@ export default defineConfig({
 		robotsTxt({
 			sitemap: false,
 		}),
-		workflow(),
 	],
 
 	markdown: {
