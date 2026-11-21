@@ -26,6 +26,53 @@ const projects = content
 const articles = content.filter(
 	({ frontmatter }) => frontmatter.type === "article",
 );
+
+const inspiration = [
+	{
+		name: "Albert Camus",
+		traits: "Lucid, defiant, in love with life",
+	},
+	{
+		name: "Anthony Bourdain",
+		traits: "Acid, true to yourself, honest",
+	},
+	{
+		name: "Bob Dylan",
+		traits: "Restless, uncompromising, always reinventing",
+	},
+	{
+		name: "Chico Buarque",
+		traits: "Lyrical, subtle, brave",
+	},
+	{
+		name: "Chico Science",
+		traits: "Inventive, rooted, fearless at mixing worlds",
+	},
+	{
+		name: "Fernando Pessoa",
+		traits: "Introspective, restless, many selves",
+	},
+	{
+		name: "Gabriel García Márquez",
+		traits: "Imaginative, patient, rooted in where he came from",
+	},
+	{
+		name: "George Harrison",
+		traits: "Quiet, spiritual, generous",
+	},
+	{
+		name: "Lhakpa Sherpa",
+		traits: "Relentless, unassuming, self-made",
+	},
+	{
+		name: "Tenzing Norgay",
+		traits: "Humble, resilient, quietly ambitious",
+	},
+	{
+		name: "Wong Kar-wai",
+		traits: "Atmospheric, melancholic, obsessed with detail",
+	},
+];
 ---
 
 <html lang="en">
@@ -45,6 +92,19 @@ const articles = content.filter(
         <Cards data={projects} />
       </Section>
 
+      <Section title="Inspirations">
+        <ul class="inspiration">
+          {
+            inspiration.map(({ name, traits }) => (
+              <li>
+                <h1 class="text-medium">{name}</h1>
+                <p class="color-1">{traits}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </Section>
+
       <About />
 
       <Footer />
@@ -55,6 +115,13 @@ const articles = content.filter(
         z-index: 1;
         padding-top: calc(var(--unit) * 1);
         padding-bottom: calc(var(--unit) * 1);
+      }
+
+      .inspiration {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--unit) * 1.5);
+        line-height: 1.45;
       }
 
       @media screen and (min-width: 800px) {

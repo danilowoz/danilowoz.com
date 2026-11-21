@@ -84,6 +84,7 @@ const { data } = Astro.props;
 
   .card-item {
     border-radius: var(--radius);
+    corner-shape: squircle;
     overflow: hidden;
     transition: all var(--transition);
 
@@ -123,13 +124,10 @@ const { data } = Astro.props;
   .card-figure {
     --padding: calc(var(--unit) * 0.7);
     --card-radius: calc(var(--radius) - var(--padding) * 0.3);
-    --shadow: hsla(var(--hue), var(--saturation), 91%, 0.7) 0px 1px 5px -4px,
-      hsla(255, 75%, 16%, 0.1) 0px 4px 8px 0px;
-
     width: calc(100% - var(--padding) * 2);
     margin: var(--padding);
-    box-shadow: var(--shadow);
     border-radius: var(--card-radius);
+    corner-shape: squircle;
     position: relative;
 
     &:after {
@@ -140,6 +138,7 @@ const { data } = Astro.props;
       border: 1px solid hsla(255, 75%, 16%, 0.1);
       z-index: 99;
       border-radius: var(--card-radius);
+      corner-shape: squircle;
     }
   }
 

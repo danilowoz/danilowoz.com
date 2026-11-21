@@ -1,7 +1,7 @@
 ---
 layout: ../../layout/post.astro
 type: article
-title: "Building Sandpack: an embeddable sandbox for everyone"
+title: Building Sandpack for React.dev
 tagline: My journey in contributing to React.dev and empowering developers worldwide has been an incredible, filled with growth, learning, and meaningful connections.
 date: 2023-06-21T15:06:01.607Z
 timeToRead: 5 min read

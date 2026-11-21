@@ -14,10 +14,7 @@
 	--color-4: hsl(var(--hue), var(--saturation), 98%); /* Low background */
 	--color-brand: hsl(var(--hue), 100%, 47%);
 
-	--shadow:
-		hsla(var(--hue), var(--saturation), 91%, 0.7) 0px 1px 5px -4px,
-		hsla(255, 75%, 16%, 0.1) 0px 0px 0px 1px,
-		hsla(255, 75%, 16%, 0.05) 0px 4px 8px 0px;
+	--shadow: hsla(255, 75%, 16%, 0.1) 0px 0px 0px 1px;
 
 	/* Types */
 	--text-size-large: calc(var(--unit) * 1.4);
@@ -38,16 +35,16 @@
 		0.0309 2.53%,
 		0.2173 7.58%,
 		0.6308 16.17%,
-		1.032 31.33%,
-		1.06 35.37%,
-		1.0585 45.48%,
-		1.0274 55.08%,
-		1.016,
-		1.0073,
-		1.0013 67.2%,
-		0.997 72.26%,
-		0.9954 77.81%,
-		0.999 99.54%
+		1.011 31.33%,
+		1.02 35.37%,
+		1.0195 45.48%,
+		1.009 55.08%,
+		1.0053,
+		1.0024,
+		1.0004 67.2%,
+		0.999 72.26%,
+		0.9985 77.81%,
+		1 99.54%
 	);
 
 	--spring-easing-smooth: linear(
@@ -76,5 +73,11 @@
 @media screen and (min-width: 800px) {
 	:root {
 		--text-size-large: calc(var(--unit) * 2);
+	}
+}
+
+@supports (corner-shape: squircle) {
+	:root {
+		--radius: calc(var(--unit) * 0.7);
 	}
 }

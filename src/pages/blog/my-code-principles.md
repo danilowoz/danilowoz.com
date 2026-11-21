@@ -1,7 +1,7 @@
 ---
 layout: ../../layout/post.astro
 type: article
-title: "My code principles: more human abstractions than coding rules"
+title: My code principles
 tagline: I believe everyone has their very own relationship with code and how to approach some problems, and these are my own.
 date: 2022-08-31T19:28:06.529Z
 timeToRead: 5 min read

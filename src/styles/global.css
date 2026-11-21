@@ -27,6 +27,7 @@ body {
 
   padding: calc(var(--unit) / 2);
   border-radius: var(--radius);
+  corner-shape: squircle;
 
   font-size: var(--text-size-small);
   text-align: center;
