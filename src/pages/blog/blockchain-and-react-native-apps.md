@@ -1,7 +1,7 @@
 ---
 layout: ../../layout/post.astro
 type: article
-title: Blockchain and React Native applications
+title: Blockchain and React Native apps
 tagline: An personal perspective of what it was like to create a Crypto Currency wallet using React Native and its challenges.
 date: 2020-07-21
 timeToRead: 8 min read

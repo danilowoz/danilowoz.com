@@ -2,7 +2,7 @@
 layout: ../../layout/post.astro
 type: article
 title: AI didn't kill taste
-tagline: In a world where anyone can cheaply generate anything, taste is the ability to resist the defaults.
+tagline: In a world where anyone can cheaply generate anything, taste is the ability to resist the defaults and make something memorable beyond the average.
 date: 2026-09-23T12:00:00.000Z
 timeToRead: 2 min read
 tag: Note
