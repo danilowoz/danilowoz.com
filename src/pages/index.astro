@@ -120,8 +120,17 @@ const inspiration = [
       .inspiration {
         display: flex;
         flex-direction: column;
-        gap: calc(var(--unit) * 1.5);
-        line-height: 1.45;
+        gap: calc(var(--unit) * 2);
+        line-height: 1.5;
+
+        li {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .text-medium {
+          margin-bottom: calc(var(--unit) * 0.25);
+        }
       }
 
       @media screen and (min-width: 800px) {

@@ -1,5 +1,6 @@
 body {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -17,6 +18,10 @@ strong {
   font-weight: normal;
   background-color: rgba(255, 225, 0, 0.3);
   color: inherit;
+}
+
+th {
+  font-weight: 500;
 }
 
 li {

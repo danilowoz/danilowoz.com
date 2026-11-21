@@ -2,7 +2,7 @@
 layout: ../../layout/post.astro
 type: article
 title: No detail is too small
-tagline: If the end result is the sum of all small details, then taste is what ties them together, deciding what belongs, what doesn't and in what proportion.
+tagline: If the end result is the sum of all small details, then taste is what ties them together, deciding what belongs, what doesn’t and in what proportion.
 date: 2026-07-27T12:00:00.000Z
 timeToRead: 2 min read
 tag: Note
