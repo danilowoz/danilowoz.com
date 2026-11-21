@@ -120,12 +120,24 @@ const inspiration = [
       .inspiration {
         display: flex;
         flex-direction: column;
-        gap: calc(var(--unit) * 2);
+        gap: calc(var(--unit) * 1);
         line-height: 1.5;
 
         li {
           display: flex;
           flex-direction: column;
+        }
+
+        p {
+          position: relative;
+          padding-left: 1em;
+
+          &:before {
+            content: "-";
+            position: absolute;
+            left: 0.1em;
+            top: 0;
+          }
         }
 
         .text-medium {
