@@ -78,7 +78,7 @@ const { data } = Astro.props;
     }
 
     & .text-medium {
-      line-height: 1.45;
+      line-height: 1.5;
     }
   }
 
@@ -117,8 +117,15 @@ const { data } = Astro.props;
 
     display: flex;
     flex-direction: column;
-    gap: calc(var(--unit) * 0.5);
-    line-height: 1.45;
+    line-height: 1.5;
+
+    .text-medium {
+      margin-bottom: calc(var(--unit) * 0.25);
+    }
+
+    .text-highlight {
+      margin-top: calc(var(--unit) * 0.75);
+    }
   }
 
   .card-figure {
